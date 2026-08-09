@@ -1,0 +1,201 @@
+customer_notes,Priority
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+Bulk import fails silently for files containing special characters in column headers.,Medium
+Tab order in the user profile form is inconsistent. Minor UX issue.,Low
+SSL certificate expired in production. All HTTPS connections failing. Immediate renewal required.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Critical integration with banking API has broken. No transactions processed in 4 hours. Regulatory deadline at risk.,High
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+Authentication service is returning 500 errors for all users across all regions. Entire workforce locked out.,High
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+User permission inheritance is not working correctly for nested groups.,Medium
+Tab order in the user profile form is inconsistent. Minor UX issue.,Low
+Database migration script caused corruption in 30% of records. Rollback in progress but data integrity uncertain.,High
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+Bulk import fails silently for files containing special characters in column headers.,Medium
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Would love a dark mode option. The current light theme is hard on the eyes for long sessions.,Low
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Critical integration with banking API has broken. No transactions processed in 4 hours. Regulatory deadline at risk.,High
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Production database completely unresponsive. All customer-facing services are down. Revenue impact is critical. Need escalation NOW.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+User permission inheritance is not working correctly for nested groups.,Medium
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+Tab order in the user profile form is inconsistent. Minor UX issue.,Low
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+The loading spinner is slightly off-center on the dashboard page in Firefox.,Low
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Bulk import fails silently for files containing special characters in column headers.,Medium
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+Critical integration with banking API has broken. No transactions processed in 4 hours. Regulatory deadline at risk.,High
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Bulk import fails silently for files containing special characters in column headers.,Medium
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+It would be helpful to have a 'duplicate record' button in the item list view.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Bulk import fails silently for files containing special characters in column headers.,Medium
+User permission inheritance is not working correctly for nested groups.,Medium
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+Production database completely unresponsive. All customer-facing services are down. Revenue impact is critical. Need escalation NOW.,High
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+It would be helpful to have a 'duplicate record' button in the item list view.,Low
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+It would be helpful to have a 'duplicate record' button in the item list view.,Low
+User permission inheritance is not working correctly for nested groups.,Medium
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+User permission inheritance is not working correctly for nested groups.,Medium
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+Production database completely unresponsive. All customer-facing services are down. Revenue impact is critical. Need escalation NOW.,High
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Would love a dark mode option. The current light theme is hard on the eyes for long sessions.,Low
+Report scheduler is triggering at incorrect times when users are in non-UTC timezones.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Payment processing has been failing for all transactions since 09:00 UTC. Unable to process any orders. This is a P0 incident.,High
+The loading spinner is slightly off-center on the dashboard page in Firefox.,Low
+The loading spinner is slightly off-center on the dashboard page in Firefox.,Low
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Database migration script caused corruption in 30% of records. Rollback in progress but data integrity uncertain.,High
+Payment processing has been failing for all transactions since 09:00 UTC. Unable to process any orders. This is a P0 incident.,High
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Critical integration with banking API has broken. No transactions processed in 4 hours. Regulatory deadline at risk.,High
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+Would love a dark mode option. The current light theme is hard on the eyes for long sessions.,Low
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+User permission inheritance is not working correctly for nested groups.,Medium
+Security breach suspected: unauthorized access attempts detected across 200+ accounts. SOC team has been notified.,High
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Tab order in the user profile form is inconsistent. Minor UX issue.,Low
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+It would be helpful to have a 'duplicate record' button in the item list view.,Low
+Bulk import fails silently for files containing special characters in column headers.,Medium
+The tooltip text on the help button in the settings page is grammatically incorrect.,Low
+Search results are returning stale data after record updates. Cache invalidation issue suspected.,Medium
+Would love a dark mode option. The current light theme is hard on the eyes for long sessions.,Low
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+The confirmation dialog for bulk delete uses 'OK' instead of 'Delete' as the button label.,Low
+Bulk import fails silently for files containing special characters in column headers.,Medium
+Mobile app crashes when switching between accounts on iOS 17.2. Reproducible consistently.,Medium
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Payment processing has been failing for all transactions since 09:00 UTC. Unable to process any orders. This is a P0 incident.,High
+Production database completely unresponsive. All customer-facing services are down. Revenue impact is critical. Need escalation NOW.,High
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+Bulk import fails silently for files containing special characters in column headers.,Medium
+Dashboard loading time has increased from 2 to 15 seconds after the latest deployment.,Medium
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+User permission inheritance is not working correctly for nested groups.,Medium
+Would love a dark mode option. The current light theme is hard on the eyes for long sessions.,Low
+Two-factor authentication flow has a broken redirect on the second step for SAML users.,Medium
+Critical integration with banking API has broken. No transactions processed in 4 hours. Regulatory deadline at risk.,High
+User permission inheritance is not working correctly for nested groups.,Medium
+Automated payroll processing failed. 500 employees will not receive payment on Friday if not resolved today.,High
+Data loss detected in primary storage cluster. Backup verification in progress. Potential compliance implications.,High
+Production database completely unresponsive. All customer-facing services are down. Revenue impact is critical. Need escalation NOW.,High
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+Payment processing has been failing for all transactions since 09:00 UTC. Unable to process any orders. This is a P0 incident.,High
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+User permission inheritance is not working correctly for nested groups.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Password reset emails not being delivered for new user accounts. Affects onboarding flow.,Medium
+SSL certificate expired in production. All HTTPS connections failing. Immediate renewal required.,High
+Platform completely unavailable for 2 hours. SLA breach guaranteed. Customer escalations flooding in.,High
+"API rate limiting is being applied incorrectly, throttling well below contracted limits.",Medium
+The logo in the PDF exports appears slightly blurry on high-DPI screens.,Low
+Payment processing has been failing for all transactions since 09:00 UTC. Unable to process any orders. This is a P0 incident.,High
+SSL certificate expired in production. All HTTPS connections failing. Immediate renewal required.,High
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+User permission inheritance is not working correctly for nested groups.,Medium
+"Export to CSV is generating malformed files for datasets over 10,000 rows. Workaround in place but not scalable.",Medium
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+The date picker doesn't support keyboard navigation. Not blocking but improves accessibility.,Low
+Pagination controls are not visible without scrolling on smaller laptop screens.,Low
+Column sorting preference isn't remembered between sessions. Minor inconvenience.,Low
+It would be helpful to have a 'duplicate record' button in the item list view.,Low

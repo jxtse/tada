@@ -1,0 +1,201 @@
+RecordID,CustomerName,Industry,country,city
+REC-0001,Uma Dubois,Retail,JP,Frankfurt
+REC-0002,Wendy Scott,Media,CN,London
+REC-0003,Diana Patel,Healthcare,CA,Guangzhou
+REC-0004,Irene Hall,Consulting,FRG,Beijing
+REC-0005,Brigitte Thomas,Healthcare,FRG,Berlin
+REC-0006,Bob Hill,Media,Brazil,London
+REC-0007,Bob Kim,Consulting,Deutschland,Munich
+REC-0008,Olivia Moore,Media,Deutschland,Marseille
+REC-0009,Brigitte Taylor,Media,BR,Guangzhou
+REC-0010,Uma Chen,Real Estate,U.S.,San Francisco
+REC-0011,Fatima Jackson,Consulting,France,Bristol
+REC-0012,Victor Walker,Real Estate,Canada,Munich
+REC-0013,Hannah Robinson,Education,Australia,Lyon
+REC-0014,Kevin Chen,Finance,??,Edinburgh
+REC-0015,Paul Jackson,Education,america,Frankfurt
+REC-0016,Rachel Santos,Education,P.R. China,Yokohama
+REC-0017,Irene Hall,Real Estate,Brasil,Osaka
+REC-0018,Paul Kim,Real Estate,CN,Lyon
+REC-0019,Grace Lopez,Healthcare,Canada,Cologne
+REC-0020,Diana Lewis,Finance,Brasil,Miami
+REC-0021,James Wright,Technology,CA,Edinburgh
+REC-0022,Uma King,Real Estate,Canada,London
+REC-0023,Uma Kim,Education,CAN,Edinburgh
+REC-0024,Marco Davis,Manufacturing,BR,Manchester
+REC-0025,Steve Harris,Consulting,United States,Bordeaux
+REC-0026,Nathan Anderson,Manufacturing,Australia,Hamburg
+REC-0027,Frank Wright,Media,US,Yokohama
+REC-0028,Julia Taylor,Real Estate,FRG,Yokohama
+REC-0029,Diana Lewis,Retail,CA,Seattle
+REC-0030,Laura Wilson,Education,Brasil,Munich
+REC-0031,Julia Chen,Education,USA,Boston
+REC-0032,Julia Johnson,Consulting,Deutschland,Yokohama
+REC-0033,Nina Williams,Manufacturing,JP,Edinburgh
+REC-0034,George Brown,Healthcare,??,Paris
+REC-0035,James Miller,Logistics,Canada,Chicago
+REC-0036,Wendy Young,Finance,DE,Boston
+REC-0037,Zara Dubois,Technology,AUS,Miami
+REC-0038,James Santos,Finance,IN,Yokohama
+REC-0039,Quinn Lee,Retail,??,London
+REC-0040,Eric Williams,Technology,US,Austin
+REC-0041,George Hall,Education,PRC,Manchester
+REC-0042,Fatima Johnson,Consulting,Oz,Seattle
+REC-0043,Laura Williams,Retail,India,Austin
+REC-0044,Wendy Garcia,Real Estate,CN,Beijing
+REC-0045,Nathan Anderson,Logistics,??,Birmingham
+REC-0046,Xiang Müller,Consulting,United States of America,Cologne
+REC-0047,Victor Moore,Education,DE,Marseille
+REC-0048,Chen Johnson,Media,FR,Seattle
+REC-0049,Zara Jackson,Healthcare,BR,Nagoya
+REC-0050,Nathan Moore,Real Estate,UK,Beijing
+REC-0051,Laura Walker,Education,République française,Osaka
+REC-0052,Kevin Clark,Retail,Canada,Osaka
+REC-0053,Nathan Thomas,Education,India,Berlin
+REC-0054,Uma Nguyen,Consulting,??,Yokohama
+REC-0055,Julia Robinson,Retail,Brazil,Guangzhou
+REC-0056,Bob Brown,Technology,Great Britain,New York
+REC-0057,Yuki Kowalski,Healthcare,France,Frankfurt
+REC-0058,Maria Green,Education,UK,Munich
+REC-0059,Tina Williams,Finance,United Kingdom,Beijing
+REC-0060,Nathan Davis,Technology,France,Frankfurt
+REC-0061,Frank Harris,Media,Canada,San Francisco
+REC-0062,Rachel Johnson,Real Estate,BR,Marseille
+REC-0063,Nathan Jones,Consulting,Canada,Osaka
+REC-0064,Brigitte Nguyen,Consulting,Australia,Miami
+REC-0065,Emma Lewis,Manufacturing,Germany,Paris
+REC-0066,Rachel Moore,Retail,Canada,Berlin
+REC-0067,Kevin Green,Logistics,Canada,Tokyo
+REC-0068,Steve Wright,Finance,Canada,Tokyo
+REC-0069,Ivan Taylor,Education,Brasil,Guangzhou
+REC-0070,James Hall,Education,??,Bordeaux
+REC-0071,Xiang Nguyen,Education,AU,Toulouse
+REC-0072,Ivan Scott,Education,France,Yokohama
+REC-0073,Irene Young,Education,Australia,Marseille
+REC-0074,Carol Young,Logistics,CA,Lyon
+REC-0075,Kevin Wilson,Retail,Deutschland,Lyon
+REC-0076,George Dubois,Technology,Australia,Beijing
+REC-0077,Quinn Santos,Healthcare,India,Paris
+REC-0078,Uma Wright,Logistics,P.R. China,Beijing
+REC-0079,Wendy Scott,Finance,Oz,Bristol
+REC-0080,Alice Müller,Finance,??,Manchester
+REC-0081,Paul Hill,Manufacturing,Canada,Seattle
+REC-0082,Maria Johnson,Technology,CN,Tokyo
+REC-0083,Leo Jones,Finance,United States of America,Austin
+REC-0084,Wendy Hill,Technology,FR,Denver
+REC-0085,Xiang Jackson,Manufacturing,Brasil,Frankfurt
+REC-0086,Laura Williams,Media,Oz,Nagoya
+REC-0087,Bob Clark,Media,america,Hamburg
+REC-0088,Nina King,Media,Australia,Hangzhou
+REC-0089,Frank Chen,Manufacturing,the US,Miami
+REC-0090,Grace Nguyen,Consulting,India,Austin
+REC-0091,Carol Hall,Manufacturing,Japan,Toulouse
+REC-0092,Nina Scott,Finance,Republic of India,Shanghai
+REC-0093,George Patel,Finance,U.S.A.,Paris
+REC-0094,Kevin Lopez,Logistics,India,Shenzhen
+REC-0095,Hannah Kim,Healthcare,United States of America,Paris
+REC-0096,Steve Young,Consulting,CA,London
+REC-0097,Maria Chen,Media,England,London
+REC-0098,Yuki Williams,Manufacturing,China,Shanghai
+REC-0099,Fatima Lee,Media,DE,Cologne
+REC-0100,Irene Kowalski,Technology,UK,Manchester
+REC-0101,Bob Rossi,Education,CA,Frankfurt
+REC-0102,Carol Lewis,Consulting,India,Guangzhou
+REC-0103,Emma Garcia,Manufacturing,Republic of India,Beijing
+REC-0104,Paul Wilson,Finance,JP,Hangzhou
+REC-0105,Maria Patel,Logistics,U.S.A.,Chicago
+REC-0106,Emma Thomas,Real Estate,??,Frankfurt
+REC-0107,Olivia Moore,Healthcare,Australia,Paris
+REC-0108,Alice Wright,Technology,France,Yokohama
+REC-0109,Laura Rossi,Technology,India,Seattle
+REC-0110,Eric Jackson,Retail,France,Munich
+REC-0111,Grace Thomas,Consulting,CA,Shanghai
+REC-0112,Emma Anderson,Healthcare,Republic of India,Nagoya
+REC-0113,George Jones,Real Estate,India,Miami
+REC-0114,Xiang Lee,Manufacturing,DE,Yokohama
+REC-0115,Uma Hill,Technology,Australia,Beijing
+REC-0116,Marco Lee,Healthcare,P.R. China,Guangzhou
+REC-0117,Karen Harris,Real Estate,CAN,Toulouse
+REC-0118,Brigitte Johnson,Consulting,IN,Beijing
+REC-0119,Carol Wright,Manufacturing,Great Britain,Chicago
+REC-0120,Tina Dubois,Real Estate,AUS,Shenzhen
+REC-0121,Fatima Lopez,Real Estate,JP,Hangzhou
+REC-0122,Kevin Wilson,Media,Republic of India,Bordeaux
+REC-0123,Victor Dubois,Logistics,Japan,Yokohama
+REC-0124,Rachel Lewis,Manufacturing,BR,Seattle
+REC-0125,Uma Harris,Real Estate,BR,Edinburgh
+REC-0126,Victor Rossi,Consulting,P.R. China,Munich
+REC-0127,Maria Wilson,Manufacturing,FR,Toulouse
+REC-0128,Julia Hall,Retail,P.R. China,Nagoya
+REC-0129,Henry Robinson,Retail,CAN,Lyon
+REC-0130,Leo Kim,Education,CN,Kyoto
+REC-0131,Kevin Nguyen,Logistics,??,Shenzhen
+REC-0132,Emma Clark,Finance,Japan,Cologne
+REC-0133,Maria Clark,Media,Oz,San Francisco
+REC-0134,George Kowalski,Consulting,CAN,Marseille
+REC-0135,Fatima Miller,Media,P.R. China,Denver
+REC-0136,Irene Thomas,Finance,Oz,Berlin
+REC-0137,Rachel Miller,Logistics,Japan,San Francisco
+REC-0138,Brigitte Jackson,Technology,IN,London
+REC-0139,Victor Lewis,Manufacturing,Brazil,San Francisco
+REC-0140,Nina Kowalski,Manufacturing,AU,Manchester
+REC-0141,Bob Santos,Real Estate,IN,Manchester
+REC-0142,Nathan Dubois,Real Estate,Japan,Birmingham
+REC-0143,Fatima Davis,Finance,U.S.A.,Seattle
+REC-0144,Diana Taylor,Healthcare,??,Manchester
+REC-0145,Paul Walker,Consulting,P.R. China,New York
+REC-0146,Nathan Lee,Finance,BR,Guangzhou
+REC-0147,Chen Anderson,Consulting,Britain,Yokohama
+REC-0148,Nathan Kim,Consulting,Brasil,Seattle
+REC-0149,Fatima Müller,Real Estate,IN,Berlin
+REC-0150,Xiang Anderson,Finance,Oz,Lyon
+REC-0151,Karen Hill,Retail,BR,Yokohama
+REC-0152,Rachel Harris,Manufacturing,P.R. China,Frankfurt
+REC-0153,Bob Kowalski,Retail,??,Toulouse
+REC-0154,Yuki Kowalski,Education,Britain,Tokyo
+REC-0155,Brigitte Patel,Consulting,JP,Miami
+REC-0156,Olivia Lewis,Education,Britain,Hamburg
+REC-0157,Olivia Okafor,Logistics,FR,Manchester
+REC-0158,Yuki Wright,Technology,BR,London
+REC-0159,Frank Santos,Technology,China,Osaka
+REC-0160,Chen Anderson,Manufacturing,France,Marseille
+REC-0161,Olivia Scott,Manufacturing,FRG,Munich
+REC-0162,Nina Brown,Real Estate,Germany,London
+REC-0163,Brigitte Taylor,Retail,Deutschland,Toulouse
+REC-0164,Emma Miller,Manufacturing,United States,Paris
+REC-0165,Xiang Thomas,Healthcare,Germany,Hangzhou
+REC-0166,Uma Taylor,Manufacturing,India,London
+REC-0167,David Hill,Healthcare,India,Bordeaux
+REC-0168,Irene Harris,Real Estate,Germany,Shanghai
+REC-0169,Paul Nguyen,Healthcare,??,Frankfurt
+REC-0170,Marco Williams,Finance,England,Manchester
+REC-0171,Diana Rossi,Media,AU,Seattle
+REC-0172,Hannah King,Real Estate,Oz,Toulouse
+REC-0173,Quinn Rossi,Consulting,BR,Yokohama
+REC-0174,Nathan Jones,Real Estate,FRG,London
+REC-0175,Yuki Lopez,Manufacturing,JP,Denver
+REC-0176,Maria Johnson,Retail,Japan,Frankfurt
+REC-0177,Irene Walker,Consulting,AU,Hangzhou
+REC-0178,Chen Clark,Media,PRC,Austin
+REC-0179,Xiang Jackson,Media,Oz,Yokohama
+REC-0180,James Miller,Manufacturing,FRG,Austin
+REC-0181,Yuki Green,Finance,Japan,Frankfurt
+REC-0182,Julia Chen,Technology,Brasil,Cologne
+REC-0183,Maria Walker,Logistics,Canada,Hamburg
+REC-0184,Julia Lewis,Technology,Germany,Chicago
+REC-0185,Xiang Johnson,Media,United States,Nagoya
+REC-0186,Wendy Hall,Manufacturing,AUS,Toulouse
+REC-0187,Henry Patel,Media,Japan,Bordeaux
+REC-0188,Kevin Müller,Finance,Australia,Nagoya
+REC-0189,Rachel Anderson,Healthcare,FRG,Frankfurt
+REC-0190,Rachel Hill,Retail,China,Toulouse
+REC-0191,Irene Moore,Consulting,US,Berlin
+REC-0192,Brigitte Santos,Real Estate,Brazil,Shanghai
+REC-0193,Karen Williams,Manufacturing,France,San Francisco
+REC-0194,Karen Kim,Finance,Canada,Birmingham
+REC-0195,Nina Wright,Media,England,Shenzhen
+REC-0196,Victor Hall,Logistics,République française,Bordeaux
+REC-0197,Olivia Johnson,Consulting,Deutschland,Lyon
+REC-0198,Tina Kim,Consulting,CA,Cologne
+REC-0199,James Santos,Retail,United States of America,Berlin
+REC-0200,Grace Dubois,Logistics,PRC,Shanghai

@@ -1,0 +1,22 @@
+ProjectID,project_description
+PRJ-001,"Project Alpha: Unified Customer Data Platform
+
+Project Lead: Jennifer Wu (Head of Data Engineering)
+Budget: $850,000 (approved Q1 2024)
+Deadline: September 30, 2024
+
+Description: The goal of Project Alpha is to consolidate customer data from seven disparate source systems (CRM, billing, support, web analytics, mobile events, loyalty program, and third-party enrichment vendors) into a single unified Customer Data Platform (CDP). The platform will provide a 360-degree customer view, support real-time segment updates, and serve as the foundation for personalization, churn prediction, and LTV modeling initiatives. Key deliverables include the data ingestion pipeline, identity resolution engine, a unified data model with 80+ customer attributes, and a self-service query interface for the marketing and analytics teams."
+PRJ-002,"Project Beacon: Next-Generation Mobile Application
+
+Project Lead: Marcus Thompson (VP of Product)
+Budget: $1,200,000
+Deadline: December 15, 2024
+
+Description: Project Beacon involves a complete ground-up redesign and rebuild of our customer-facing mobile application for iOS and Android. The current app, built in 2019, suffers from technical debt, poor performance on mid-range devices, and an outdated UX. The new app will be built using React Native for cross-platform consistency, feature offline-first architecture, personalized home screens driven by ML recommendations, biometric authentication, deep-link support, and seamless integration with the new CDP. The project includes three phases: discovery and design (Q2), development (Q3), and beta testing plus rollout (Q4)."
+PRJ-003,"Project Fortify: Zero-Trust Security Transformation
+
+Project Lead: Aisha Okafor (CISO)
+Budget: $620,000
+Deadline: June 30, 2025
+
+Description: Project Fortify is a multi-phase security modernization initiative aimed at transitioning the organization's network and access model from perimeter-based security to a zero-trust architecture. Phase 1 covers identity and access management (IAM) consolidation, MFA enforcement across all systems, and privileged access workstation rollout. Phase 2 addresses microsegmentation of the production network, device health attestation, and secrets management. Phase 3 delivers SIEM integration, continuous monitoring dashboards, and annual red team exercises. The project is driven by regulatory requirements and a recent third-party security assessment that identified critical gaps."

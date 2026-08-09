@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>人工校准 39 题(v3 精简版)</title>
+<style>body{font-family:-apple-system,'PingFang SC';max-width:880px;margin:30px auto;padding:0 16px;line-height:1.55;color:#1a1d23;background:#fafafa}
+.card{border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin:16px 0;background:#fff}
+.hd{font-weight:700;font-size:15px} .qid{color:#9ca3af;font-weight:400;font-size:12px}
+.guide{background:#eff6ff;border-radius:6px;padding:8px 10px;font-size:13.5px;margin:8px 0;color:#1e40af}
+.fieldnote{background:#fffbeb;border-radius:6px;padding:6px 10px;font-size:13px;margin:6px 0;color:#b45309;font-weight:600}
+.fullq{font-size:12.5px;color:#6b7280;margin:6px 0} .fullq div{padding:6px 10px;background:#f7f7f8;border-radius:6px;margin-top:4px}
+.srclabel{font-size:12px;color:#6b7280;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px}
+.srcrow{background:#f7f7f8;border-radius:6px;padding:8px 10px;font-size:13.5px;margin:4px 0}
+.colname{display:inline-block;font-family:ui-monospace,Menlo;font-size:11.5px;color:#0f766e;background:#f0fdfa;border-radius:4px;padding:1px 6px;margin-bottom:4px}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px} .a,.b{border:1px solid #e5e7eb;border-radius:8px;padding:10px;font-size:13.5px}
+.v{margin-top:10px;font-size:14px} label{margin-right:16px}
+button{position:fixed;bottom:20px;right:20px;padding:12px 20px;font-size:15px;border-radius:10px;border:none;background:#0f766e;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.progress{position:fixed;bottom:24px;left:20px;font-size:13px;color:#6b7280;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px}</style></head>
+<body><h1>人工校准 · 39 题盲标(v3 精简版)</h1>
+<p><b>怎么标:</b>每题先看蓝色任务说明和灰色输入数据,再比较 A / B 两个答案,凭专业判断选更好的一边;两个都可接受就选持平。字段抽取类的题只判黄框标注的那一个字段——其他字段双方相同,已自动判平;答案更短不等于漏抽。不需要查资料,每题 30–60 秒,预计 25 分钟。<b>标完点右下角导出</b>,把下载的文件发回。</p>
+<div class="card"><div class="hd">#1 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>供应链评估完成，recommended vendor 是 Option B，价格和 reliability 综合评分最高。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The supply chain evaluation is complete; the recommended vendor is Option B, which scored highest overall on price and reliability.</div><div class="b"><b>答案 B</b><br>The supply chain assessment is complete; the recommended vendor is Option B, which has the highest combined score for price and reliability.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v1" value="A">A 更好</label>
+<label><input type="radio" name="v1" value="B">B 更好</label>
+<label><input type="radio" name="v1" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#2 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>An ablation removing positional encoding showed a 2% accuracy drop; the experiment was run once on the validation split.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>Running the hyperparameter search for only one epoch may produce unreliable estimates. Please justify or expand the search budget.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div></div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>An ablation removing positional encoding showed a 2% accuracy drop; the experiment was run once on the validation split. The hyperparameter search was re-run over three full epochs to verify the one-epoch proxy heuristic.</div><div class="b"><b>答案 B</b><br>An ablation removing positional encoding showed a 2% accuracy drop; the experiment was run once on the validation split. We expanded the hyperparameter search budget beyond a single epoch to obtain more reliable estimates of the optimal configuration.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v2" value="A">A 更好</label>
+<label><input type="radio" name="v2" value="B">B 更好</label>
+<label><input type="radio" name="v2" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#3 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>The related work section cites nothing after 2020. Please update the review and clarify how your method differs from recent work.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div>Fine-tuning the encoder for 5 epochs (lr=1e-5) improved F1 by 2.7% over the frozen setting at 40% extra compute.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used. The related work section was updated to include papers from 2021_2024, with explicit comparison to recent baselines. Updated experiments show fine-tuning the encoder yields +2.7% F1 at the cost of 40% additional training time.</div><div class="b"><b>答案 B</b><br>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used. We updated the related work section to include recent post-2020 methods and clarified how our approach differs; additionally, fine-tuning the encoder for 5 epochs at lr=1e-5 improved F1 by 2.7% over the frozen setting, at the cost of 40% extra compute.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v3" value="A">A 更好</label>
+<label><input type="radio" name="v3" value="B">B 更好</label>
+<label><input type="radio" name="v3" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#4 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>The related work section cites nothing after 2020. Please update the review and clarify how your method differs from recent work.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div>Cosine annealing reduced final validation loss by 8% and improved convergence stability over 3 independent runs.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used. We updated the related work section to include post-2020 methods and clarified how our approach differs; separately, we found that a cosine annealing schedule reduced final validation loss by 8% and improved convergence stability over three independent runs.</div><div class="b"><b>答案 B</b><br>The dataset was split 80/10/10 without examining class distribution; a fixed seed of 0 was used. The related work section was updated to include papers from 2021_2024, with explicit comparison to recent baselines. Updated experiments show cosine annealing reduces validation loss by 8% and stabilizes convergence across runs.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v4" value="A">A 更好</label>
+<label><input type="radio" name="v4" value="B">B 更好</label>
+<label><input type="radio" name="v4" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#5 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Tariff changes have disrupted our just-in-time model. Buffer stock policy is being revised.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>7</div><div class="b"><b>答案 B</b><br>8</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v5" value="A">A 更好</label>
+<label><input type="radio" name="v5" value="B">B 更好</label>
+<label><input type="radio" name="v5" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#6 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>销售额本季度 exceeded target by 12%。主要来自 enterprise segment 的增长。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Sales exceeded the target by 12% this quarter, driven mainly by growth in the enterprise segment.</div><div class="b"><b>答案 B</b><br>Sales this quarter exceeded the target by 12%, mainly driven by growth in the enterprise segment.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v6" value="A">A 更好</label>
+<label><input type="radio" name="v6" value="B">B 更好</label>
+<label><input type="radio" name="v6" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#7 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>数据库 query performance 优化后，average response time reduced from 1.2s to 0.3s。效果显著。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>After optimizing the database query performance, the average response time was reduced from 1.2s to 0.3s. The improvement is significant.</div><div class="b"><b>答案 B</b><br>After optimizing database query performance, the average response time was reduced from 1.2s to 0.3s. The results are significant.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v7" value="A">A 更好</label>
+<label><input type="radio" name="v7" value="B">B 更好</label>
+<label><input type="radio" name="v7" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#8 · 事故报告字段抽取 <span class="qid">(Q10)</span></div>
+<div class="guide">从每条事故报告中抽取 Time(时间)、Location(位置/组件)、Affected Scope(影响范围)、Root Cause(根因)。本题只比较标注的那一个字段,其余字段双方答案相同、已自动判平。答案更短不等于漏抽,判断标准只有一条:对这个字段而言哪边更准确。</div><div class="fieldnote">本题只判「root」这一个字段</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Extract Time, Location, Affected Scope, and Root Cause from every incident_report. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">incident_report</span><div>Incident reported at 2024-04-11 15:33 UTC. Affected component: Media processing pipeline. Impact scope: Video thumbnail generation failing for newly uploaded content. Root cause and resolution: Dependency on ffmpeg v5.1 incompatible with new codec; downgraded and containerized.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Dependency on ffmpeg v5.1 incompatible with new codec; downgraded and containerized</div><div class="b"><b>答案 B</b><br>Dependency on ffmpeg v5.1 incompatible with new codec</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v8" value="A">A 更好</label>
+<label><input type="radio" name="v8" value="B">B 更好</label>
+<label><input type="radio" name="v8" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#9 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>Industry-leading solution: A team communications platform combining threaded messaging, video conferencing for up to 200 participants, async video messages, searchable knowledge base, advanced workflow automation, and granular notification controls.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Team communications platform combining threaded messaging, video conferencing, async video, searchable knowledge base, workflow automation, and notification controls.</div><div class="b"><b>答案 B</b><br>Team communications platform with threaded messaging, 200-participant video conferencing, async video, searchable knowledge base, workflow automation, and notification controls.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v9" value="A">A 更好</label>
+<label><input type="radio" name="v9" value="B">B 更好</label>
+<label><input type="radio" name="v9" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#10 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Supplier lead times have increased by 60% since last quarter due to port congestion in Asia.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>9</div><div class="b"><b>答案 B</b><br>10</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v10" value="A">A 更好</label>
+<label><input type="radio" name="v10" value="B">B 更好</label>
+<label><input type="radio" name="v10" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#11 · 事故报告字段抽取 <span class="qid">(Q10)</span></div>
+<div class="guide">从每条事故报告中抽取 Time(时间)、Location(位置/组件)、Affected Scope(影响范围)、Root Cause(根因)。本题只比较标注的那一个字段,其余字段双方答案相同、已自动判平。答案更短不等于漏抽,判断标准只有一条:对这个字段而言哪边更准确。</div><div class="fieldnote">本题只判「scope」这一个字段</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Extract Time, Location, Affected Scope, and Root Cause from every incident_report. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">incident_report</span><div>Incident reported at 2024-11-20 08:00 UTC. Affected component: Access control service. Impact scope: Incorrect permission grants for ~50 recently provisioned accounts. Root cause and resolution: Race condition in group membership propagation; synchronous propagation enforced.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Incorrect permission grants for ~50 recently provisioned accounts</div><div class="b"><b>答案 B</b><br>Incorrect permission grants for ~50 recently provisioned accounts.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v11" value="A">A 更好</label>
+<label><input type="radio" name="v11" value="B">B 更好</label>
+<label><input type="radio" name="v11" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#12 · 事故报告字段抽取 <span class="qid">(Q10)</span></div>
+<div class="guide">从每条事故报告中抽取 Time(时间)、Location(位置/组件)、Affected Scope(影响范围)、Root Cause(根因)。本题只比较标注的那一个字段,其余字段双方答案相同、已自动判平。答案更短不等于漏抽,判断标准只有一条:对这个字段而言哪边更准确。</div><div class="fieldnote">本题只判「scope」这一个字段</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Extract Time, Location, Affected Scope, and Root Cause from every incident_report. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">incident_report</span><div>Incident reported at 2024-06-02 08:15 UTC. Affected component: EU West region, primary load balancer. Impact scope: All EU traffic, ~1,800 concurrent sessions. Root cause and resolution: Misconfigured routing rule deployed during maintenance window; rolled back within 22 minutes.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>All EU traffic, ~1,800 concurrent sessions.</div><div class="b"><b>答案 B</b><br>All EU traffic, ~1,800 concurrent sessions</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v12" value="A">A 更好</label>
+<label><input type="radio" name="v12" value="B">B 更好</label>
+<label><input type="radio" name="v12" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#13 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>用户调研结果显示，most users find the new UI confusing at first。建议增加 guided tour。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>User research results show that most users find the new UI confusing at first. It is recommended to add a guided tour.</div><div class="b"><b>答案 B</b><br>User research results show that most users find the new UI confusing at first. We recommend adding a guided tour.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v13" value="A">A 更好</label>
+<label><input type="radio" name="v13" value="B">B 更好</label>
+<label><input type="radio" name="v13" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#14 · 任务优先级推断(1-5) <span class="qid">(Q26)</span></div>
+<div class="guide">根据任务描述和类别推断优先级,1=最低,5=最高(明确锚定的整数量表)。判断哪个优先级更合理。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Infer priority from description and category on an explicitly anchored integer 1-5 scale where 1=lowest and 5=highest. Save all rows with priority to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>Teams want to see where collaborators are editing in real time. Competitive parity feature — all major alternatives support this. Key request from enterprise renewal conversations.</div></div><div class="srcrow"><span class="colname">category</span><div>Feature</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>3</div><div class="b"><b>答案 B</b><br>2</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v14" value="A">A 更好</label>
+<label><input type="radio" name="v14" value="B">B 更好</label>
+<label><input type="radio" name="v14" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#15 · 评论情感打分(1-10) <span class="qid">(Q19)</span></div>
+<div class="guide">1=最负面,10=最正面。判断哪个分数更符合评论的实际情感强度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Score sentiment on an explicitly anchored 1-10 scale where 1=most negative and 10=most positive, then sort reviews descending. Save all rows with SentimentScore to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">review</span><div>We&#x27;ve cut onboarding time for new employees by half since adopting this tool.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>9</div><div class="b"><b>答案 B</b><br>8</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v15" value="A">A 更好</label>
+<label><input type="radio" name="v15" value="B">B 更好</label>
+<label><input type="radio" name="v15" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#16 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>Training used mini-batch SGD with batch size 32 for 50 epochs under a fixed learning rate without any decay schedule.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>The absence of a quality check is a concern. Please describe the noise level in the data and any filtering steps applied.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div></div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Training used mini-batch SGD with batch size 32 for 50 epochs under a fixed learning rate without any decay schedule. A quality review of 500 randomly sampled data points was conducted and a filtering step was added to the pipeline.</div><div class="b"><b>答案 B</b><br>Training used mini-batch SGD with batch size 32 for 50 epochs under a fixed learning rate without any decay schedule. We subsequently reviewed the training data for noise and describe the filtering steps applied to address this concern.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v16" value="A">A 更好</label>
+<label><input type="radio" name="v16" value="B">B 更好</label>
+<label><input type="radio" name="v16" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#17 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Marketing campaign 效果超出预期，CTR 达到 8.3%，比上季度提升了 two percentage points。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The marketing campaign performed better than expected, with CTR reaching 8.3%, an increase of two percentage points over last quarter.</div><div class="b"><b>答案 B</b><br>The marketing campaign outperformed expectations, with the CTR reaching 8.3%, up two percentage points from last quarter.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v17" value="A">A 更好</label>
+<label><input type="radio" name="v17" value="B">B 更好</label>
+<label><input type="radio" name="v17" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#18 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Revenue forecast adjusted downward — some due to supply but also weaker demand signals.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>6</div><div class="b"><b>答案 B</b><br>5</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v18" value="A">A 更好</label>
+<label><input type="radio" name="v18" value="B">B 更好</label>
+<label><input type="radio" name="v18" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#19 · 工单紧急度分级 <span class="qid">(Q02)</span></div>
+<div class="guide">对客服工单按紧急程度标 High / Medium / Low。判断标准:影响范围、是否阻塞业务、是否有安全风险。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Assign each customer_notes row exactly High, Medium, or Low based on urgency. Save all rows with a new priority column to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">customer_notes</span><div>Password reset emails not being delivered for new user accounts. Affects onboarding flow.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>High</div><div class="b"><b>答案 B</b><br>Medium</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v19" value="A">A 更好</label>
+<label><input type="radio" name="v19" value="B">B 更好</label>
+<label><input type="radio" name="v19" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#20 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>Error analysis examined 50 randomly sampled misclassifications, finding most errors in negation and sarcasm examples.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>The related work section cites nothing after 2020. Please update the review and clarify how your method differs from recent work.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div></div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Error analysis examined 50 randomly sampled misclassifications, finding most errors in negation and sarcasm examples. The related work section was updated to include papers from 2021_2024, with explicit comparison to recent baselines.</div><div class="b"><b>答案 B</b><br>Error analysis examined 50 randomly sampled misclassifications, finding most errors in negation and sarcasm examples. We have updated the related work section to include relevant post-2020 papers and clarified how our approach differs from these more recent methods.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v20" value="A">A 更好</label>
+<label><input type="radio" name="v20" value="B">B 更好</label>
+<label><input type="radio" name="v20" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#21 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Our warehouse team flagged issues with inventory tracking software accuracy.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>3</div><div class="b"><b>答案 B</b><br>4</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v21" value="A">A 更好</label>
+<label><input type="radio" name="v21" value="B">B 更好</label>
+<label><input type="radio" name="v21" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#22 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>用户增长本月 slowed down slightly，主要受 seasonal factors 影响。不用过于担心。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>User growth slowed down slightly this month, mainly due to seasonal factors. There is no need to worry too much.</div><div class="b"><b>答案 B</b><br>User growth slowed down slightly this month, mainly due to seasonal factors. No need to worry too much.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v22" value="A">A 更好</label>
+<label><input type="radio" name="v22" value="B">B 更好</label>
+<label><input type="radio" name="v22" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#23 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>Industry-leading solution: A DevSecOps platform that integrates SAST, DAST, and SCA scanning into CI/CD pipelines, provides vulnerability prioritization using CVSS and reachability analysis, policy-as-code enforcement, and developer-friendly remediation guidance.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>DevSecOps platform integrating SAST, DAST, and SCA scanning into CI/CD, with vulnerability prioritization, policy-as-code, and remediation guidance.</div><div class="b"><b>答案 B</b><br>DevSecOps platform integrating SAST, DAST, SCA into CI/CD, with CVSS/reachability prioritization, policy-as-code, and developer remediation guidance.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v23" value="A">A 更好</label>
+<label><input type="radio" name="v23" value="B">B 更好</label>
+<label><input type="radio" name="v23" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#24 · 学生文档修订 <span class="qid">(Q12)</span></div>
+<div class="guide">只对空白的 revised_document 单元格,根据原文、导师反馈和新实验证据生成修订版文档。判断哪边的修订更好地落实了反馈、纳入了新证据、且忠实于原文。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Fill only blank revised_document cells using original_document, supervisor_feedback, and new_experiment_evidence. Preserve nonblank values. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">original_document</span><div>The model uses a frozen BERT encoder followed by a two-layer MLP classifier outputting probabilities over five sentiment classes.</div></div><div class="srcrow"><span class="colname">supervisor_feedback</span><div>Single-seed evaluation does not capture variance. Please report results over at least three seeds with mean and standard deviation.</div></div><div class="srcrow"><span class="colname">new_experiment_evidence</span><div>Cosine annealing reduced final validation loss by 8% and improved convergence stability over 3 independent runs.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The model uses a frozen BERT encoder followed by a two-layer MLP classifier outputting probabilities over five sentiment classes. The evaluation was repeated over five random seeds; mean and standard deviation are now reported. Updated experiments show cosine annealing reduces validation loss by 8% and stabilizes convergence across runs.</div><div class="b"><b>答案 B</b><br>The model uses a frozen BERT encoder followed by a two-layer MLP classifier outputting probabilities over five sentiment classes. We repeated the evaluation across three seeds to report mean and standard deviation; separately, we found that a cosine annealing schedule reduced final validation loss by 8% and improved convergence stability across three independent runs.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v24" value="A">A 更好</label>
+<label><input type="radio" name="v24" value="B">B 更好</label>
+<label><input type="radio" name="v24" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#25 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>A professional enterprise cloud-native relational database offering auto-scaling storage, point-in-time recovery up to 35 days, read replicas across multiple availability zones, built-in query optimizer, and PSQL-compatible wire protocol for drop-in migration.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Cloud-native relational database with auto-scaling storage, point-in-time recovery, multi-zone read replicas, query optimizer, and PSQL-compatible protocol.</div><div class="b"><b>答案 B</b><br>Cloud-native relational database with auto-scaling storage, 35-day point-in-time recovery, multi-AZ read replicas, query optimizer, and PSQL-compatible protocol.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v25" value="A">A 更好</label>
+<label><input type="radio" name="v25" value="B">B 更好</label>
+<label><input type="radio" name="v25" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#26 · 事故报告字段抽取 <span class="qid">(Q10)</span></div>
+<div class="guide">从每条事故报告中抽取 Time(时间)、Location(位置/组件)、Affected Scope(影响范围)、Root Cause(根因)。本题只比较标注的那一个字段,其余字段双方答案相同、已自动判平。答案更短不等于漏抽,判断标准只有一条:对这个字段而言哪边更准确。</div><div class="fieldnote">本题只判「root」这一个字段</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Extract Time, Location, Affected Scope, and Root Cause from every incident_report. Save all rows to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">incident_report</span><div>Incident reported at 2024-03-29 07:30 UTC. Affected component: Webhook delivery service. Impact scope: Webhook callbacks failing for 35% of configured endpoints. Root cause and resolution: TLS handshake failures with certain customer endpoints; SNI support gap patched.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>TLS handshake failures with certain customer endpoints</div><div class="b"><b>答案 B</b><br>TLS handshake failures with certain customer endpoints; SNI support gap patched</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v26" value="A">A 更好</label>
+<label><input type="radio" name="v26" value="B">B 更好</label>
+<label><input type="radio" name="v26" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#27 · 评论情感打分(1-10) <span class="qid">(Q19)</span></div>
+<div class="guide">1=最负面,10=最正面。判断哪个分数更符合评论的实际情感强度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Score sentiment on an explicitly anchored 1-10 scale where 1=most negative and 10=most positive, then sort reviews descending. Save all rows with SentimentScore to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">review</span><div>We&#x27;ve cut onboarding time for new employees by half since adopting this tool.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>9</div><div class="b"><b>答案 B</b><br>8</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v27" value="A">A 更好</label>
+<label><input type="radio" name="v27" value="B">B 更好</label>
+<label><input type="radio" name="v27" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#28 · 任务优先级推断(1-5) <span class="qid">(Q26)</span></div>
+<div class="guide">根据任务描述和类别推断优先级,1=最低,5=最高(明确锚定的整数量表)。判断哪个优先级更合理。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Infer priority from description and category on an explicitly anchored integer 1-5 scale where 1=lowest and 5=highest. Save all rows with priority to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>Worker pods restart every 6 hours due to uncollected heap memory. Causes brief downtime for PDF exports. Root cause traced to unclosed streams in third-party library.</div></div><div class="srcrow"><span class="colname">category</span><div>Bug</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>4</div><div class="b"><b>答案 B</b><br>3</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v28" value="A">A 更好</label>
+<label><input type="radio" name="v28" value="B">B 更好</label>
+<label><input type="radio" name="v28" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#29 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Tariff changes have disrupted our just-in-time model. Buffer stock policy is being revised.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>7</div><div class="b"><b>答案 B</b><br>8</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v29" value="A">A 更好</label>
+<label><input type="radio" name="v29" value="B">B 更好</label>
+<label><input type="radio" name="v29" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#30 · 任务优先级推断(1-5) <span class="qid">(Q26)</span></div>
+<div class="guide">根据任务描述和类别推断优先级,1=最低,5=最高(明确锚定的整数量表)。判断哪个优先级更合理。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Infer priority from description and category on an explicitly anchored integer 1-5 scale where 1=lowest and 5=highest. Save all rows with priority to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>CSV export produces malformed output when row count exceeds 50,000. Affects enterprise customers who rely on scheduled exports. Three customers escalated this week.</div></div><div class="srcrow"><span class="colname">category</span><div>Bug</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>4</div><div class="b"><b>答案 B</b><br>5</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v30" value="A">A 更好</label>
+<label><input type="radio" name="v30" value="B">B 更好</label>
+<label><input type="radio" name="v30" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#31 · 任务优先级推断(1-5) <span class="qid">(Q26)</span></div>
+<div class="guide">根据任务描述和类别推断优先级,1=最低,5=最高(明确锚定的整数量表)。判断哪个优先级更合理。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Infer priority from description and category on an explicitly anchored integer 1-5 scale where 1=lowest and 5=highest. Save all rows with priority to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>Worker pods restart every 6 hours due to uncollected heap memory. Causes brief downtime for PDF exports. Root cause traced to unclosed streams in third-party library.</div></div><div class="srcrow"><span class="colname">category</span><div>Bug</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>3</div><div class="b"><b>答案 B</b><br>4</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v31" value="A">A 更好</label>
+<label><input type="radio" name="v31" value="B">B 更好</label>
+<label><input type="radio" name="v31" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#32 · 中英混合笔记翻译 <span class="qid">(Q25)</span></div>
+<div class="guide">把中英混合的笔记翻成标准英文,已是英文的部分保留。判断哪边翻译更准确、更自然。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Translate notes (mixed Chinese/English) into standard English; keep already-English text. Save all rows with notes_en to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>新员工入职培训 schedule 已确认，onboarding 从下周一开始。请提前准备设备。</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>The new employee onboarding training schedule has been confirmed; onboarding starts next Monday. Please prepare the equipment in advance.</div><div class="b"><b>答案 B</b><br>The new employee onboarding training schedule has been confirmed; onboarding will start next Monday. Please prepare equipment in advance.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v32" value="A">A 更好</label>
+<label><input type="radio" name="v32" value="B">B 更好</label>
+<label><input type="radio" name="v32" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#33 · 主题相关性打分(1-10) <span class="qid">(Q20)</span></div>
+<div class="guide">分析主题:『供应链中断及其对产品交付时间线的影响』。1=完全无关,10=直接相关。判断哪个分数更符合该笔记与主题的相关程度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Use analysis theme &#x27;supply chain disruption and its impact on product delivery timelines&#x27;. Score every notes row on anchored 1-10 relevance (1=irrelevant,10=directly relevant), sort descending, save result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">notes</span><div>Employee overtime costs are rising due to manual rework of delayed shipments.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>7</div><div class="b"><b>答案 B</b><br>6</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v33" value="A">A 更好</label>
+<label><input type="radio" name="v33" value="B">B 更好</label>
+<label><input type="radio" name="v33" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#34 · 评论情感打分(1-10) <span class="qid">(Q19)</span></div>
+<div class="guide">1=最负面,10=最正面。判断哪个分数更符合评论的实际情感强度。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Score sentiment on an explicitly anchored 1-10 scale where 1=most negative and 10=most positive, then sort reviews descending. Save all rows with SentimentScore to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">review</span><div>Works well on Windows but there are some inconsistencies on macOS.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>5</div><div class="b"><b>答案 B</b><br>6</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v34" value="A">A 更好</label>
+<label><input type="radio" name="v34" value="B">B 更好</label>
+<label><input type="radio" name="v34" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#35 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>A visual data pipeline builder designed for data engineers, supporting connectors for 150+ data sources, real-time streaming via Apache Kafka, built-in data quality checks, schema evolution handling, and orchestration via Apache Airflow.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Visual data pipeline builder for engineers with 150+ connectors, Kafka streaming, data quality checks, schema evolution, and Airflow orchestration.</div><div class="b"><b>答案 B</b><br>Visual ETL pipeline builder for engineers, with 150+ connectors, Kafka streaming, data quality checks, schema evolution, and Airflow orchestration.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v35" value="A">A 更好</label>
+<label><input type="radio" name="v35" value="B">B 更好</label>
+<label><input type="radio" name="v35" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#36 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>A team communications platform combining threaded messaging, video conferencing for up to 200 participants, async video messages, searchable knowledge base, advanced workflow automation, and granular notification controls.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Team communications platform combining threaded messaging, video conferencing, async video, searchable knowledge base, workflow automation, and notification controls.</div><div class="b"><b>答案 B</b><br>Team communications platform with threaded messaging, 200-participant video conferencing, async video, searchable knowledge base, workflow automation, and notification controls.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v36" value="A">A 更好</label>
+<label><input type="radio" name="v36" value="B">B 更好</label>
+<label><input type="radio" name="v36" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#37 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>An enterprise-grade cloud storage platform offering end-to-end encryption, real-time collaboration tools, version history up to 365 days, granular permission management, and integrations with Slack, Teams, and Google Workspace.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Enterprise cloud storage with end-to-end encryption, real-time collaboration, 365-day version history, granular permissions, and Slack/Teams/Google Workspace integration.</div><div class="b"><b>答案 B</b><br>Cloud storage platform offering end-to-end encryption, real-time collaboration, version history, granular permissions, and integrations with Slack, Teams, Google Workspace.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v37" value="A">A 更好</label>
+<label><input type="radio" name="v37" value="B">B 更好</label>
+<label><input type="radio" name="v37" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#38 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>A legally compliant e-signature platform supporting qualified electronic signatures (eIDAS, ESIGN), audit trails, bulk send workflows, signer authentication via SMS or biometric ID, template library, and integration with leading document management systems. Suitable for teams of all sizes.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>Legally compliant e-signature platform with eIDAS/ESIGN signatures, audit trails, bulk send, SMS/biometric authentication, templates, and document-management integrations.</div><div class="b"><b>答案 B</b><br>Legally compliant e-signature platform supporting qualified signatures, audit trails, bulk send, signer authentication, templates, and document management integrations.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v38" value="A">A 更好</label>
+<label><input type="radio" name="v38" value="B">B 更好</label>
+<label><input type="radio" name="v38" value="tie">持平/都可接受</label></div></div><div class="card"><div class="hd">#39 · 产品描述摘要(≤20词) <span class="qid">(Q24)</span></div>
+<div class="guide">为每条产品描述写不超过 20 个英文单词的忠实摘要。判断哪边摘要更好:是否抓住核心信息、是否忠实、有无遗漏关键点。</div>
+<details class="fullq"><summary>原始 query(英文全文)</summary><div>Write a faithful summary of at most 20 words for each description. Save all rows with summary to result.csv.</div></details>
+<div class="srclabel">输入数据(该行完整内容):</div><div class="srcrow"><span class="colname">description</span><div>A white-label video streaming solution offering adaptive bitrate delivery, DRM protection, live and on-demand support, detailed viewer analytics, custom player embedding, and CDN delivery across 45 global PoPs. Suitable for teams of all sizes.</div></div>
+<div class="ab"><div class="a"><b>答案 A</b><br>White-label video streaming solution with adaptive bitrate delivery, DRM protection, live and on-demand support, analytics, and global CDN delivery.</div><div class="b"><b>答案 B</b><br>White-label video streaming with adaptive bitrate, DRM, live and on-demand, viewer analytics, custom player embedding, and 45-PoP CDN.</div></div>
+<div class="v">你的判断:<label><input type="radio" name="v39" value="A">A 更好</label>
+<label><input type="radio" name="v39" value="B">B 更好</label>
+<label><input type="radio" name="v39" value="tie">持平/都可接受</label></div></div>
+<div class="progress" id="pg">已标 0 / 39</div>
+<button onclick="ex()">导出标注结果</button>
+<script>
+document.addEventListener('change',()=>{let n=0;for(let i=1;i<=39;i++)if(document.querySelector('input[name=v'+i+']:checked'))n++;document.getElementById('pg').textContent='已标 '+n+' / 39';});
+function ex(){let out=[],miss=[];for(let i=1;i<=39;i++){let v=document.querySelector('input[name=v'+i+']:checked');if(!v)miss.push(i);out.push(i+','+(v?v.value:''));}
+if(miss.length&&!confirm('还有 '+miss.length+' 题未标('+miss.slice(0,8).join(',')+(miss.length>8?'...':'')+'),确定导出?'))return;
+let blob=new Blob(['idx,verdict\n'+out.join('\n')],{type:'text/csv'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='calibration39_answers.csv';a.click();}
+</script></body></html>

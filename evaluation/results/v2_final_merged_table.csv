@@ -1,0 +1,26 @@
+class,arm,mean,sd
+Row-wise semantic materialization (12),skill_on,99.0,0.0
+Row-wise semantic materialization (12),operator_on,91.7,4.7
+Row-wise semantic materialization (12),skill_off,97.9,0.9
+Row-wise semantic materialization (12),code_only,95.2,1.5
+Row-wise semantic materialization (12),direct,83.1,5.8
+Semantic scoring & ranking (4),skill_on,87.0,1.9
+Semantic scoring & ranking (4),operator_on,72.3,6.4
+Semantic scoring & ranking (4),skill_off,72.0,2.2
+Semantic scoring & ranking (4),code_only,56.6,5.9
+Semantic scoring & ranking (4),direct,73.9,3.3
+Constrained generation (5),skill_on,91.1,6.3
+Constrained generation (5),operator_on,85.6,3.2
+Constrained generation (5),skill_off,84.4,9.5
+Constrained generation (5),code_only,45.9,5.1
+Constrained generation (5),direct,65.5,2.0
+Semantic row selection (9),skill_on,100.0,0.0
+Semantic row selection (9),operator_on,85.2,6.4
+Semantic row selection (9),skill_off,63.0,12.8
+Semantic row selection (9),code_only,70.4,6.4
+Semantic row selection (9),direct,55.6,0.0
+Corpus-level synthesis (10),skill_on,80.0,14.1
+Corpus-level synthesis (10),operator_on,63.3,11.5
+Corpus-level synthesis (10),skill_off,86.7,5.8
+Corpus-level synthesis (10),code_only,73.3,15.3
+Corpus-level synthesis (10),direct,56.7,11.5

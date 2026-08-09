@@ -1,0 +1,201 @@
+TicketID,Customer,subject,body
+TKT-0001,Carla Jones,Password reset,"The password reset email never arrives, and I've checked spam."
+TKT-0002,Mona Garcia,Password reset,My invoice shows a plan I downgraded from two months ago.
+TKT-0003,Xenia Rossi,Something broken,File uploads stall at 99 percent and never complete.
+TKT-0004,Vera Nakamura,Feature idea,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0005,Vera Fischer,Question,My invoice shows a plan I downgraded from two months ago.
+TKT-0006,Liam Nakamura,Info needed,Is there a public roadmap I can share with my manager?
+TKT-0007,Mona Yamada,Suggestion,Please support keyboard shortcuts for the review workflow.
+TKT-0008,Alice Xu,Support needed,Where can I find the SOC 2 report for our compliance team?
+TKT-0009,Alice Jones,Charged twice?,The card on file was billed after I cancelled; I need this reversed.
+TKT-0010,Ivy Rossi,Something broken,File uploads stall at 99 percent and never complete.
+TKT-0011,Elena Ibrahim,Urgent,Do you offer academic discounts for university labs?
+TKT-0012,Sam Miller,Locked out,My account says suspended although I've paid; I cannot log in.
+TKT-0013,Frank Park,Support needed,Do you offer academic discounts for university labs?
+TKT-0014,Mona Chen,Follow-up,What is your data retention policy for cancelled accounts?
+TKT-0015,Yusuf Huang,Help,The card on file was billed after I cancelled; I need this reversed.
+TKT-0016,Rita Singh,Charged twice?,What is your data retention policy for cancelled accounts?
+TKT-0017,Xenia Miller,Billing discrepancy,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0018,Elena Evans,Support needed,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0019,Mona Ibrahim,Password reset,"The password reset email never arrives, and I've checked spam."
+TKT-0020,Yusuf Evans,Invoice question,There's a mystery line item of $74.55 on this month's statement.
+TKT-0021,Rita Taylor,Suggestion,An API endpoint for bulk export would save us hours weekly.
+TKT-0022,Karen Varga,Support needed,Do you offer academic discounts for university labs?
+TKT-0023,Liam Garcia,Question,What is your data retention policy for cancelled accounts?
+TKT-0024,Liam Taylor,Suggestion,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0025,Grace Varga,Suggestion,An API endpoint for bulk export would save us hours weekly.
+TKT-0026,Tina Evans,Locked out,My account says suspended although I've paid; I cannot log in.
+TKT-0027,Olga Park,Login help,"The password reset email never arrives, and I've checked spam."
+TKT-0028,Rita Quinn,Invoice question,The card on file was billed after I cancelled; I need this reversed.
+TKT-0029,Will Varga,Password reset,SSO through my company portal loops back to the login page.
+TKT-0030,Frank Brown,Charged twice?,There's a mystery line item of $84.84 on this month's statement.
+TKT-0031,Mona Varga,Invoice question,My account says suspended although I've paid; I cannot log in.
+TKT-0032,Hassan Miller,Support needed,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0033,Carla Fischer,Hello,What is your data retention policy for cancelled accounts?
+TKT-0034,Jorge Kim,Password reset,Sync fails silently; changes on mobile never reach the web app.
+TKT-0035,Liam Ueda,Question,It would help to have per-project notification settings.
+TKT-0036,Ivy Miller,Password reset,My account says suspended although I've paid; I cannot log in.
+TKT-0037,Vera Evans,Support needed,The card on file was billed after I cancelled; I need this reversed.
+TKT-0038,Vera Huang,Billing discrepancy,There's a mystery line item of $76.86 on this month's statement.
+TKT-0039,Tina Kim,Question,An API endpoint for bulk export would save us hours weekly.
+TKT-0040,Jorge Wang,App crashing,An API endpoint for bulk export would save us hours weekly.
+TKT-0041,Carla Rossi,Bug report,Do you offer academic discounts for university labs?
+TKT-0042,Xenia Anderson,Quick question,What is your data retention policy for cancelled accounts?
+TKT-0043,Elena Yamada,Question,SSO through my company portal loops back to the login page.
+TKT-0044,Sam Taylor,Feature idea,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0045,Yusuf Park,Billing discrepancy,File uploads stall at 99 percent and never complete.
+TKT-0046,Pedro Evans,Bug report,Sync fails silently; changes on mobile never reach the web app.
+TKT-0047,Ivy Nakamura,Help,File uploads stall at 99 percent and never complete.
+TKT-0048,Pedro Wang,Hello,File uploads stall at 99 percent and never complete.
+TKT-0049,Tina Xu,Help,SSO through my company portal loops back to the login page.
+TKT-0050,Tina Rossi,Feature idea,Please support keyboard shortcuts for the review workflow.
+TKT-0051,Hassan Quinn,Help,What is your data retention policy for cancelled accounts?
+TKT-0052,Grace Jones,Help,Is there a public roadmap I can share with my manager?
+TKT-0053,Frank Nakamura,Would love this,It would help to have per-project notification settings.
+TKT-0054,Carla Xu,Support needed,"The password reset email never arrives, and I've checked spam."
+TKT-0055,Rita Evans,Hello,What is your data retention policy for cancelled accounts?
+TKT-0056,Will Garcia,Hello,It would help to have per-project notification settings.
+TKT-0057,Zoe Fischer,Feature idea,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0058,Carla Quinn,Question,I was charged $24.90 twice for the same subscription period; please refund one.
+TKT-0059,Karen Singh,Urgent,An API endpoint for bulk export would save us hours weekly.
+TKT-0060,Nathan Jones,App crashing,File uploads stall at 99 percent and never complete.
+TKT-0061,Alice Taylor,App crashing,SSO through my company portal loops back to the login page.
+TKT-0062,Zoe Anderson,Password reset,"The password reset email never arrives, and I've checked spam."
+TKT-0063,Olga Nakamura,Info needed,Is there a public roadmap I can share with my manager?
+TKT-0064,Umar Rossi,Password reset,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0065,Elena Brown,Suggestion,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0066,Frank Varga,Suggestion,Where can I find the SOC 2 report for our compliance team?
+TKT-0067,Carla Yamada,Locked out,My account says suspended although I've paid; I cannot log in.
+TKT-0068,Rita Chen,Login help,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0069,Karen Quinn,Login help,SSO through my company portal loops back to the login page.
+TKT-0070,Xenia Wang,Charged twice?,An API endpoint for bulk export would save us hours weekly.
+TKT-0071,Qing Singh,Info needed,Where can I find the SOC 2 report for our compliance team?
+TKT-0072,Xenia Ueda,Hello,Where can I find the SOC 2 report for our compliance team?
+TKT-0073,Alice Diaz,Locked out,It would help to have per-project notification settings.
+TKT-0074,Zoe Taylor,Invoice question,There's a mystery line item of $90.15 on this month's statement.
+TKT-0075,Alice Ueda,Urgent,It would help to have per-project notification settings.
+TKT-0076,Rita Kim,Follow-up,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0077,Tina Anderson,Follow-up,I was charged $52.43 twice for the same subscription period; please refund one.
+TKT-0078,Pedro Zhang,Bug report,File uploads stall at 99 percent and never complete.
+TKT-0079,Karen Olsen,Billing discrepancy,My invoice shows a plan I downgraded from two months ago.
+TKT-0080,Karen Rossi,Feature idea,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0081,Carla Evans,Info needed,What is your data retention policy for cancelled accounts?
+TKT-0082,Sam Taylor,Locked out,"The password reset email never arrives, and I've checked spam."
+TKT-0083,Will Kim,Would love this,An API endpoint for bulk export would save us hours weekly.
+TKT-0084,Liam Olsen,Urgent,The card on file was billed after I cancelled; I need this reversed.
+TKT-0085,Yusuf Garcia,Suggestion,My account says suspended although I've paid; I cannot log in.
+TKT-0086,Elena Garcia,Billing discrepancy,There's a mystery line item of $74.03 on this month's statement.
+TKT-0087,Yusuf Diaz,Locked out,SSO through my company portal loops back to the login page.
+TKT-0088,Qing Diaz,Feature idea,Do you offer academic discounts for university labs?
+TKT-0089,Karen Olsen,Invoice question,The card on file was billed after I cancelled; I need this reversed.
+TKT-0090,Alice Singh,Charged twice?,I was charged $76.98 twice for the same subscription period; please refund one.
+TKT-0091,Karen Yamada,Feature idea,My account says suspended although I've paid; I cannot log in.
+TKT-0092,Tina Rossi,Invoice question,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0093,Ivy Evans,Question,What is your data retention policy for cancelled accounts?
+TKT-0094,Rita Olsen,Question,My account says suspended although I've paid; I cannot log in.
+TKT-0095,David Miller,Invoice question,My invoice shows a plan I downgraded from two months ago.
+TKT-0096,Liam Jones,Hello,I was charged $64.50 twice for the same subscription period; please refund one.
+TKT-0097,Sam Evans,Login help,My account says suspended although I've paid; I cannot log in.
+TKT-0098,Pedro Huang,Support needed,There's a mystery line item of $22.58 on this month's statement.
+TKT-0099,Frank Wang,Bug report,File uploads stall at 99 percent and never complete.
+TKT-0100,Liam Park,Quick question,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0101,Elena Quinn,Follow-up,An API endpoint for bulk export would save us hours weekly.
+TKT-0102,Zoe Jones,Invoice question,There's a mystery line item of $23.41 on this month's statement.
+TKT-0103,Hassan Rossi,Follow-up,Is there a public roadmap I can share with my manager?
+TKT-0104,Nathan Zhang,Follow-up,Sync fails silently; changes on mobile never reach the web app.
+TKT-0105,Will Singh,Billing discrepancy,Please support keyboard shortcuts for the review workflow.
+TKT-0106,David Olsen,Follow-up,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0107,Tina Yamada,Something broken,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0108,Grace Evans,Suggestion,Please support keyboard shortcuts for the review workflow.
+TKT-0109,Tina Singh,Login help,What is your data retention policy for cancelled accounts?
+TKT-0110,Sam Zhang,Would love this,An API endpoint for bulk export would save us hours weekly.
+TKT-0111,Qing Miller,Password reset,SSO through my company portal loops back to the login page.
+TKT-0112,Alice Wang,App crashing,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0113,Nathan Wang,Quick question,Where can I find the SOC 2 report for our compliance team?
+TKT-0114,Mona Nakamura,Info needed,Is there a public roadmap I can share with my manager?
+TKT-0115,Nathan Evans,Would love this,Do you offer academic discounts for university labs?
+TKT-0116,Xenia Park,Invoice question,My account says suspended although I've paid; I cannot log in.
+TKT-0117,Olga Zhang,Would love this,An API endpoint for bulk export would save us hours weekly.
+TKT-0118,Rita Olsen,Support needed,Is there a public roadmap I can share with my manager?
+TKT-0119,Sam Park,Help,Please support keyboard shortcuts for the review workflow.
+TKT-0120,Ben Singh,App crashing,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0121,Elena Xu,Help,Please support keyboard shortcuts for the review workflow.
+TKT-0122,Pedro Ueda,Invoice question,Where can I find the SOC 2 report for our compliance team?
+TKT-0123,Yusuf Anderson,Billing discrepancy,The card on file was billed after I cancelled; I need this reversed.
+TKT-0124,Nathan Lopez,Would love this,It would help to have per-project notification settings.
+TKT-0125,Xenia Jones,Password reset,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0126,Sam Brown,Urgent,Where can I find the SOC 2 report for our compliance team?
+TKT-0127,Ivy Evans,Charged twice?,"The password reset email never arrives, and I've checked spam."
+TKT-0128,Frank Singh,Billing discrepancy,Where can I find the SOC 2 report for our compliance team?
+TKT-0129,Pedro Fischer,Urgent,Sync fails silently; changes on mobile never reach the web app.
+TKT-0130,Elena Park,Hello,What is your data retention policy for cancelled accounts?
+TKT-0131,Grace Singh,Urgent,It would help to have per-project notification settings.
+TKT-0132,Frank Olsen,Locked out,"The password reset email never arrives, and I've checked spam."
+TKT-0133,Hassan Miller,Feature idea,It would help to have per-project notification settings.
+TKT-0134,Alice Jones,Would love this,It would help to have per-project notification settings.
+TKT-0135,David Rossi,Suggestion,It would help to have per-project notification settings.
+TKT-0136,Ivy Ibrahim,Login help,SSO through my company portal loops back to the login page.
+TKT-0137,Xenia Varga,Urgent,The card on file was billed after I cancelled; I need this reversed.
+TKT-0138,Karen Rossi,Quick question,Do you offer academic discounts for university labs?
+TKT-0139,David Varga,Follow-up,I was charged $18.01 twice for the same subscription period; please refund one.
+TKT-0140,Ben Anderson,Urgent,Please support keyboard shortcuts for the review workflow.
+TKT-0141,Tina Ueda,Quick question,What is your data retention policy for cancelled accounts?
+TKT-0142,Will Fischer,Locked out,I was charged $21.77 twice for the same subscription period; please refund one.
+TKT-0143,Olga Ibrahim,Password reset,Two-factor codes are rejected even though my phone clock is synced.
+TKT-0144,Yusuf Brown,Would love this,Please support keyboard shortcuts for the review workflow.
+TKT-0145,Frank Olsen,Question,It would help to have per-project notification settings.
+TKT-0146,David Evans,Support needed,There's a mystery line item of $35.78 on this month's statement.
+TKT-0147,Will Ibrahim,Info needed,Is there a public roadmap I can share with my manager?
+TKT-0148,Yusuf Olsen,Charged twice?,I was charged $19.09 twice for the same subscription period; please refund one.
+TKT-0149,Vera Miller,Invoice question,There's a mystery line item of $29.83 on this month's statement.
+TKT-0150,Will Yamada,Password reset,My account says suspended although I've paid; I cannot log in.
+TKT-0151,Rita Huang,Suggestion,It would help to have per-project notification settings.
+TKT-0152,Karen Varga,Charged twice?,There's a mystery line item of $71.15 on this month's statement.
+TKT-0153,Carla Lopez,Password reset,SSO through my company portal loops back to the login page.
+TKT-0154,Umar Garcia,Info needed,Where can I find the SOC 2 report for our compliance team?
+TKT-0155,Umar Wang,Quick question,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0156,Elena Brown,Urgent,SSO through my company portal loops back to the login page.
+TKT-0157,Zoe Rossi,Help,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0158,Ben Kim,Locked out,SSO through my company portal loops back to the login page.
+TKT-0159,Rita Evans,Hello,The card on file was billed after I cancelled; I need this reversed.
+TKT-0160,Umar Anderson,Info needed,Do you offer academic discounts for university labs?
+TKT-0161,Frank Ueda,Suggestion,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0162,Carla Diaz,Billing discrepancy,The card on file was billed after I cancelled; I need this reversed.
+TKT-0163,Karen Zhang,Login help,There's a mystery line item of $86.78 on this month's statement.
+TKT-0164,Karen Zhang,Suggestion,Please support keyboard shortcuts for the review workflow.
+TKT-0165,Ivy Evans,Help,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0166,Ben Evans,Something broken,An API endpoint for bulk export would save us hours weekly.
+TKT-0167,Alice Anderson,Invoice question,There's a mystery line item of $30.02 on this month's statement.
+TKT-0168,Will Evans,Support needed,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0169,Frank Taylor,Urgent,File uploads stall at 99 percent and never complete.
+TKT-0170,Zoe Jones,Billing discrepancy,My invoice shows a plan I downgraded from two months ago.
+TKT-0171,David Taylor,Billing discrepancy,SSO through my company portal loops back to the login page.
+TKT-0172,Ivy Brown,Locked out,My account says suspended although I've paid; I cannot log in.
+TKT-0173,Pedro Fischer,Bug report,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0174,Nathan Ibrahim,Urgent,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0175,Frank Fischer,Password reset,SSO through my company portal loops back to the login page.
+TKT-0176,Olga Singh,Password reset,There's a mystery line item of $75.14 on this month's statement.
+TKT-0177,Hassan Yamada,Info needed,Where can I find the SOC 2 report for our compliance team?
+TKT-0178,Mona Huang,Quick question,The card on file was billed after I cancelled; I need this reversed.
+TKT-0179,Grace Taylor,Quick question,There's a mystery line item of $84.62 on this month's statement.
+TKT-0180,Liam Ibrahim,Something broken,An API endpoint for bulk export would save us hours weekly.
+TKT-0181,Ivy Evans,App crashing,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0182,Jorge Taylor,Suggestion,There's a mystery line item of $68.53 on this month's statement.
+TKT-0183,Nathan Quinn,App crashing,File uploads stall at 99 percent and never complete.
+TKT-0184,Alice Xu,Would love this,An API endpoint for bulk export would save us hours weekly.
+TKT-0185,Sam Evans,Urgent,An API endpoint for bulk export would save us hours weekly.
+TKT-0186,Yusuf Quinn,Feature idea,What is your data retention policy for cancelled accounts?
+TKT-0187,Olga Park,Help,There's a mystery line item of $77.50 on this month's statement.
+TKT-0188,Elena Lopez,Quick question,"The desktop app crashes on startup since the latest update, error code 0xC17."
+TKT-0189,Frank Wang,Question,My account says suspended although I've paid; I cannot log in.
+TKT-0190,Mona Fischer,Feature idea,Could you add dark mode to the mobile app? It's the only thing missing.
+TKT-0191,Ben Jones,Feature idea,SSO through my company portal loops back to the login page.
+TKT-0192,Zoe Varga,Suggestion,Please support keyboard shortcuts for the review workflow.
+TKT-0193,Liam Brown,Billing discrepancy,The card on file was billed after I cancelled; I need this reversed.
+TKT-0194,Liam Fischer,Charged twice?,There's a mystery line item of $56.59 on this month's statement.
+TKT-0195,Karen Huang,Quick question,What is your data retention policy for cancelled accounts?
+TKT-0196,Will Garcia,Hello,What is your data retention policy for cancelled accounts?
+TKT-0197,Ivy Brown,Bug report,The export to PDF produces blank pages for documents over 20 pages.
+TKT-0198,David Park,Follow-up,The card on file was billed after I cancelled; I need this reversed.
+TKT-0199,Grace Olsen,Help,Where can I find the SOC 2 report for our compliance team?
+TKT-0200,David Fischer,Help,I was charged $60.22 twice for the same subscription period; please refund one.

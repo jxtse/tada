@@ -1,0 +1,26 @@
+class,arm,mean,sd
+"S2 Open grouping (Q04,Q05,Q36)",skill_on,50.0,23.6
+"S2 Open grouping (Q04,Q05,Q36)",operator_on,44.4,19.2
+"S2 Open grouping (Q04,Q05,Q36)",skill_off,77.8,19.2
+"S2 Open grouping (Q04,Q05,Q36)",code_only,55.6,19.2
+"S2 Open grouping (Q04,Q05,Q36)",direct,33.3,33.3
+"S3 Semantic filtering (Q06-Q08,Q29,Q38)",skill_on,100.0,0.0
+"S3 Semantic filtering (Q06-Q08,Q29,Q38)",operator_on,80.0,20.0
+"S3 Semantic filtering (Q06-Q08,Q29,Q38)",skill_off,80.0,20.0
+"S3 Semantic filtering (Q06-Q08,Q29,Q38)",code_only,53.3,11.5
+"S3 Semantic filtering (Q06-Q08,Q29,Q38)",direct,80.0,0.0
+"S6 Aggregation/summar. (Q13-Q15,Q32)",skill_on,75.0,0.0
+"S6 Aggregation/summar. (Q13-Q15,Q32)",operator_on,66.7,14.4
+"S6 Aggregation/summar. (Q13-Q15,Q32)",skill_off,66.7,28.9
+"S6 Aggregation/summar. (Q13-Q15,Q32)",code_only,83.3,14.4
+"S6 Aggregation/summar. (Q13-Q15,Q32)",direct,91.7,14.4
+"S7 Numerical/temporal (Q16,Q17,Q31)",skill_on,50.0,23.6
+"S7 Numerical/temporal (Q16,Q17,Q31)",operator_on,77.8,19.2
+"S7 Numerical/temporal (Q16,Q17,Q31)",skill_off,66.7,0.0
+"S7 Numerical/temporal (Q16,Q17,Q31)",code_only,66.7,0.0
+"S7 Numerical/temporal (Q16,Q17,Q31)",direct,66.7,0.0
+"S10 Anomaly/outlier (Q21,Q22,Q37,Q44)",skill_on,100.0,0.0
+"S10 Anomaly/outlier (Q21,Q22,Q37,Q44)",operator_on,91.7,14.4
+"S10 Anomaly/outlier (Q21,Q22,Q37,Q44)",skill_off,83.3,14.4
+"S10 Anomaly/outlier (Q21,Q22,Q37,Q44)",code_only,83.3,14.4
+"S10 Anomaly/outlier (Q21,Q22,Q37,Q44)",direct,100.0,0.0

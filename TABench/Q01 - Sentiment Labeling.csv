@@ -1,0 +1,202 @@
+CustomerID,CustomerName,PurchaseDate,ProductName,customer_feedback,Sentiment
+CUST-0001,Rachel Harris,2023/8/17,CloudSync 360,"It works for the most part, though the advanced features feel undercooked.",Neutral
+CUST-0002,Frank Okafor,2024/3/8,SmartHub Pro,"Monthly review: The new dashboard is an improvement, though some workflows now take more steps.",Neutral
+CUST-0003,Olivia Mller,2024/9/8,SmartHub Pro,Outstanding quality. I've been using it daily for three months with zero issues.,Positive
+CUST-0004,Ahmed Lee,2024/4/4,ConnectSphere,Monthly review: The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0005,Karen Green,2023/12/15,EchoDesk 5,Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0006,Grace Garcia,2024/1/25,NovaScan X2,The update last month significantly improved performance. Great to see continuous improvement.,Positive
+CUST-0007,Marco Clark,2023/2/14,InnoTrack Plus,Sync keeps failing with no clear error message. This has cost us hours of productivity.,Negative
+CUST-0008,Yuki Garcia,2024/7/19,EchoDesk 5,Do not buy this if you care about data privacy. Their terms are extremely vague.,Negative
+CUST-0009,Xiang Kowalski,2023/7/16,InnoTrack Plus,Monthly review: Works well on Windows but there are some inconsistencies on macOS.,Neutral
+CUST-0010,Steve Garcia,2023/8/27,NexGen Router,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0011,Diana Wright,2023/6/16,PixelBoard Ultra,Five stars without hesitation. Everything works as advertised and the documentation is clear.,Positive
+CUST-0012,Emma Taylor,2024/6/30,InnoTrack Plus,Sync keeps failing with no clear error message. This has cost us hours of productivity.,Negative
+CUST-0013,Yuki Lewis,2024/10/17,InnoTrack Plus,Re: CloudSync 360  Impressive speed improvements over the previous version. Definitely worth the upgrade.,Positive
+CUST-0014,David Lee,2023/2/2,FlexPanel 9,The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0015,Emma Jackson,2024/8/3,QuickSign Enterprise,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0016,Fatima Hill,2024/10/20,TaskMaster AI,Setup was straightforward. Performance has been acceptable but not exceptional.,Neutral
+CUST-0017,Paul Santos,2024/7/5,EchoDesk 5,The update last month significantly improved performance. Great to see continuous improvement.,Positive
+CUST-0018,Laura Hill,2024/1/6,DataFlow Elite,"Re: ConnectSphere  The new dashboard is an improvement, though some workflows now take more steps.",Neutral
+CUST-0019,Frank Brown,2023/4/23,CloudSync 360,"Re: VaultGuard Pro  After comparing several options, this was the clear winner. Value for money is unbeatable.",Positive
+CUST-0020,Marco Jones,2024/1/30,StreamVault,"Re: CloudSync 360  It works for the most part, though the advanced features feel undercooked.",Neutral
+CUST-0021,Quinn Santos,2023/1/12,RapidBase,Monthly review: I've submitted four tickets. None have been resolved. We're actively looking for alternatives.,Negative
+CUST-0022,Rachel Young,2023/4/25,EchoDesk 5,"Monthly review: It does what it says on the box. No surprises, positive or negative.",Neutral
+CUST-0023,Alice Clark,2024/5/27,FlexPanel 9,Re: CloudSync 360  The UI is confusing and there's no way to customize the dashboard to our workflow.,Negative
+CUST-0024,Tina Mller,2024/9/15,DataFlow Elite,The reporting features alone justify the subscription cost. Very happy with this decision.,Positive
+CUST-0025,Ivan Rossi,2023/1/1,ConnectSphere,The update last month significantly improved performance. Great to see continuous improvement.,Positive
+CUST-0026,Henry Wright,2023/11/11,DataFlow Elite,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0027,Frank Garcia,2024/5/12,NexGen Router,Monthly review: Seamless integration with our existing tools. The onboarding experience was excellent.,Positive
+CUST-0028,Irene Wilson,2024/11/6,TaskMaster AI,Monthly review: This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0029,Hannah Green,2023/8/5,QuickSign Enterprise,The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0030,Tina Hill,2024/11/18,RapidBase,Three months in and we're still hitting the same bug that was reported on day one.,Negative
+CUST-0031,Chen Davis,2023/9/11,DataFlow Elite,"Monthly review: Extremely slow to load, even on a high-speed connection. Unacceptable for a paid tier.",Negative
+CUST-0032,Laura Santos,2023/8/24,ConnectSphere,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0033,David Lee,2023/3/11,QuickSign Enterprise,We've cut onboarding time for new employees by half since adopting this tool.,Positive
+CUST-0034,Emma Mller,2023/9/1,EchoDesk 5,The customer support team was incredibly helpful and resolved my issue within an hour.,Positive
+CUST-0035,Ivan Wilson,2024/8/7,ConnectSphere,Good product overall but customer support response times leave room for improvement.,Neutral
+CUST-0036,Ahmed Moore,2023/4/7,NovaScan X2,Re: DataFlow Elite  Setup took an entire day and the instructions were full of errors. Terrible experience.,Negative
+CUST-0037,Brigitte Scott,2024/4/23,NexGen Router,Good product overall but customer support response times leave room for improvement.,Neutral
+CUST-0038,David Hill,2023/12/14,FlexPanel 9,"It does what it says on the box. No surprises, positive or negative.",Neutral
+CUST-0039,Maria Moore,2024/7/3,TaskMaster AI,It's a solid starting point. Curious to see where the product goes in the next year.,Neutral
+CUST-0040,Rachel Nguyen,2023/9/13,NexGen Router,"After comparing several options, this was the clear winner. Value for money is unbeatable.",Positive
+CUST-0041,Julia Miller,2023/2/21,RapidBase,Re: NovaScan X2  Pricing is mid-tier and quality is mid-tier. Exactly what you'd expect.,Neutral
+CUST-0042,Frank Harris,2023/6/20,StreamVault,Three months in and we're still hitting the same bug that was reported on day one.,Negative
+CUST-0043,Zara Brown,2023/6/18,StreamVault,Customer service is only reachable by email and takes 4872 hours to respond. Ridiculous.,Negative
+CUST-0044,Diana Robinson,2024/3/9,InnoTrack Plus,Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0045,Fatima Anderson,2023/7/14,EchoDesk 5,"Monthly review: It does what it says on the box. No surprises, positive or negative.",Neutral
+CUST-0046,Ivan Brown,2023/11/18,SmartHub Pro,Monthly review: The API documentation is thorough and integration was painless. Developer experience is top-notch.,Positive
+CUST-0047,George Rossi,2023/6/11,SmartHub Pro,Re: ConnectSphere  Seamless integration with our existing tools. The onboarding experience was excellent.,Positive
+CUST-0048,Emma Jones,2024/11/22,NexGen Router,The hardware arrived with a visible dent and the company refused a replacement.,Negative
+CUST-0049,Kevin Harris,2024/8/15,ConnectSphere,Impressive speed improvements over the previous version. Definitely worth the upgrade.,Positive
+CUST-0050,Ahmed Okafor,2024/8/1,VaultGuard Pro,The customer support team was incredibly helpful and resolved my issue within an hour.,Positive
+CUST-0051,Nathan Hall,2023/9/2,EchoDesk 5,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0052,Diana Hall,2023/3/16,SmartHub Pro,Documentation is outdated and the support team doesn't seem to know the product.,Negative
+CUST-0053,Grace Jones,2024/7/4,DataFlow Elite,Monthly review: Do not buy this if you care about data privacy. Their terms are extremely vague.,Negative
+CUST-0054,Wendy Jones,2023/9/8,PixelBoard Ultra,The hardware arrived with a visible dent and the company refused a replacement.,Negative
+CUST-0055,Ivan Walker,2024/9/18,FlexPanel 9,"Re: CloudSync 360  I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0056,Julia Walker,2024/11/10,NovaScan X2,"Decent value, but the UI could use a refresh. Core functionality is fine.",Neutral
+CUST-0057,Henry Miller,2024/7/20,CloudSync 360,"Nothing to complain about, but also nothing that truly wows me.",Neutral
+CUST-0058,Nathan Young,2023/7/28,RapidBase,Monthly review: Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0059,George Kim,2023/9/15,QuickSign Enterprise,"It works for the most part, though the advanced features feel undercooked.",Neutral
+CUST-0060,Frank Green,2023/10/11,SmartHub Pro,The integrations work but can be fragile. Had two incidents last quarter.,Negative
+CUST-0061,Quinn Taylor,2024/3/28,VaultGuard Pro,Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0062,Alice Davis,2023/3/19,QuickSign Enterprise,Monthly review: Setup was straightforward. Performance has been acceptable but not exceptional.,Neutral
+CUST-0063,Ivan Williams,2024/1/14,ConnectSphere,Meets our basic requirements. Haven't explored all the features yet.,Neutral
+CUST-0064,Irene Williams,2023/11/12,PixelBoard Ultra,Re: CloudSync 360  The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0065,Wendy Jackson,2024/11/29,DataFlow Elite,Some learning curve at the beginning but it's become part of our daily workflow now.,Positive
+CUST-0066,Julia Scott,2024/9/27,InnoTrack Plus,Good product overall but customer support response times leave room for improvement.,Neutral
+CUST-0067,Karen Thomas,2024/2/27,SmartHub Pro,The update last month significantly improved performance. Great to see continuous improvement.,Positive
+CUST-0068,Ahmed Harris,2023/10/1,CloudSync 360,The reporting features alone justify the subscription cost. Very happy with this decision.,Positive
+CUST-0069,Yuki Williams,2024/4/26,DataFlow Elite,The feature set covers 80% of our needs. The remaining 20% we handle with workarounds.,Neutral
+CUST-0070,Wendy Walker,2023/8/22,DataFlow Elite,"Re: NexGen Router  Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0071,Zara Young,2023/10/13,NexGen Router,Outstanding quality. I've been using it daily for three months with zero issues.,Positive
+CUST-0072,Wendy Mller,2024/2/14,RapidBase,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0073,Bob Davis,2023/9/25,CloudSync 360,Works well on Windows but there are some inconsistencies on macOS.,Neutral
+CUST-0074,Grace Green,2023/12/20,InnoTrack Plus,The onboarding specialist clearly didn't understand our use case. Generic and unhelpful.,Negative
+CUST-0075,Marco Mller,2023/4/29,StreamVault,Re: PixelBoard Ultra  The feature set covers 80% of our needs. The remaining 20% we handle with workarounds.,Neutral
+CUST-0076,Quinn Williams,2024/12/26,StreamVault,Some learning curve at the beginning but it's become part of our daily workflow now.,Positive
+CUST-0077,Maria Wright,2024/3/17,NovaScan X2,Monthly review: Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0078,Nina Hall,2024/11/10,NexGen Router,Good product overall but customer support response times leave room for improvement.,Neutral
+CUST-0079,George Walker,2024/11/13,StreamVault,Really impressed with how smoothly everything runs. The team clearly put thought into UX.,Positive
+CUST-0080,Julia Wilson,2023/7/16,StreamVault,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0081,Nina Kowalski,2023/11/5,StreamVault,Good product overall but customer support response times leave room for improvement.,Neutral
+CUST-0082,Tina Robinson,2023/8/4,StreamVault,The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0083,Uma Nguyen,2024/3/28,TaskMaster AI,Monthly review: The feature set covers 80% of our needs. The remaining 20% we handle with workarounds.,Neutral
+CUST-0084,Eric Taylor,2024/11/5,NovaScan X2,Monthly review: Some quirks in the reporting module but nothing that blocks day-to-day work.,Neutral
+CUST-0085,Victor Garcia,2023/8/29,RapidBase,"Monthly review: I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0086,James Johnson,2023/2/17,DataFlow Elite,The search functionality is incredibly powerful. Finds what I need instantly every time.,Positive
+CUST-0087,Diana Scott,2024/10/6,ConnectSphere,Setup took an entire day and the instructions were full of errors. Terrible experience.,Negative
+CUST-0088,Fatima Hill,2023/9/7,CloudSync 360,"Re: InnoTrack Plus  Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0089,Grace Green,2023/8/13,CloudSync 360,"Decent value, but the UI could use a refresh. Core functionality is fine.",Neutral
+CUST-0090,Diana Brown,2024/7/24,DataFlow Elite,Monthly review: Adequate for small teams. Would need more load-testing before recommending for enterprise.,Neutral
+CUST-0091,Diana Wilson,2024/4/20,RapidBase,The integrations work but can be fragile. Had two incidents last quarter.,Negative
+CUST-0092,Uma Patel,2024/9/19,NexGen Router,Monthly review: This product drained our battery much faster than advertised. Not even close to specs.,Negative
+CUST-0093,Brigitte Santos,2024/4/1,QuickSign Enterprise,"Monthly review: It does what it says on the box. No surprises, positive or negative.",Neutral
+CUST-0094,Chen Clark,2023/9/11,NexGen Router,Re: InnoTrack Plus  My whole team has switched to this and productivity has noticeably gone up.,Positive
+CUST-0095,Fatima Harris,2023/10/9,TaskMaster AI,"Monthly review: It works for the most part, though the advanced features feel undercooked.",Neutral
+CUST-0096,Paul Lewis,2023/12/10,PixelBoard Ultra,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0097,Irene Anderson,2023/8/25,StreamVault,Some learning curve at the beginning but it's become part of our daily workflow now.,"
+Positive"
+CUST-0098,Emma Scott,2024/2/22,PixelBoard Ultra,Meets our basic requirements. Haven't explored all the features yet.,Neutral
+CUST-0099,David Jackson,2024/3/6,StreamVault,Re: TaskMaster AI  Three months in and we're still hitting the same bug that was reported on day one.,Negative
+CUST-0100,Bob Kowalski,2024/1/25,TaskMaster AI,Monthly review: Some learning curve at the beginning but it's become part of our daily workflow now.,Positive
+CUST-0101,Yuki Scott,2024/7/5,InnoTrack Plus,Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0102,Olivia Kim,2023/8/13,EchoDesk 5,"Monthly review: The new dashboard is an improvement, though some workflows now take more steps.",Neutral
+CUST-0103,Yuki Young,2024/11/15,RapidBase,The UI is confusing and there's no way to customize the dashboard to our workflow.,Negative
+CUST-0104,Diana Wilson,2024/9/29,VaultGuard Pro,Adequate for small teams. Would need more load-testing before recommending for enterprise.,Neutral
+CUST-0105,Laura Kowalski,2024/11/9,SmartHub Pro,Re: QuickSign Enterprise  Outstanding quality. I've been using it daily for three months with zero issues.,Positive
+CUST-0106,Irene Nguyen,2023/7/6,SmartHub Pro,Re: RapidBase  Best purchase I've made this year. The build quality is premium and delivery was fast.,Positive
+CUST-0107,Nathan Nguyen,2023/12/1,PixelBoard Ultra,The mobile app is just as polished as the desktop version. Great cross-platform consistency.,Positive
+CUST-0108,Rachel Scott,2023/9/16,NexGen Router,Re: QuickSign Enterprise  Price point is reasonable for what you get. A few minor bugs that haven't been fixed.,Neutral
+CUST-0109,Ivan Brown,2023/12/25,DataFlow Elite,Best purchase I've made this year. The build quality is premium and delivery was fast.,Positive
+CUST-0110,Bob Harris,2023/7/24,NexGen Router,"Decent value, but the UI could use a refresh. Core functionality is fine.",Neutral
+CUST-0111,Paul Wilson,2024/4/29,RapidBase,Outstanding quality. I've been using it daily for three months with zero issues.,Positive
+CUST-0112,Diana Clark,2024/1/13,CloudSync 360,Really impressed with how smoothly everything runs. The team clearly put thought into UX.,Positive
+CUST-0113,Karen Walker,2023/4/21,ConnectSphere,I've submitted four tickets. None have been resolved. We're actively looking for alternatives.,Negative
+CUST-0114,Kevin Lopez,2024/2/11,InnoTrack Plus,Outstanding quality. I've been using it daily for three months with zero issues.,Positive
+CUST-0115,Paul Miller,2024/12/14,FlexPanel 9,"Monthly review: Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0116,Henry Kowalski,2023/2/12,PixelBoard Ultra,Monthly review: The search functionality is incredibly powerful. Finds what I need instantly every time.,Positive
+CUST-0117,Emma Mller,2024/10/25,PixelBoard Ultra,Three months in and we're still hitting the same bug that was reported on day one.,Negative
+CUST-0118,Fatima Miller,2024/3/19,PixelBoard Ultra,Re: NexGen Router  Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0119,James Green,2023/6/30,InnoTrack Plus,"Re: QuickSign Enterprise  It works for the most part, though the advanced features feel undercooked.",Neutral
+CUST-0120,Nina Dubois,2024/5/10,TaskMaster AI,This product drained our battery much faster than advertised. Not even close to specs.,Negative
+CUST-0121,Rachel Hall,2023/9/9,NexGen Router,Monthly review: The UI is confusing and there's no way to customize the dashboard to our workflow.,Negative
+CUST-0122,Chen Harris,2024/4/20,ConnectSphere,Pricing is mid-tier and quality is mid-tier. Exactly what you'd expect.,Neutral
+CUST-0123,Victor Johnson,2024/5/21,NexGen Router,Re: RapidBase  The product is fundamentally broken for multi-user environments. A critical oversight.,Negative
+CUST-0124,Nathan King,2023/9/22,PixelBoard Ultra,Re: CloudSync 360  Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0125,Rachel Santos,2023/1/11,VaultGuard Pro,Monthly review: Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0126,Ahmed Kim,2024/7/22,FlexPanel 9,"Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0127,Fatima Patel,2023/1/18,NovaScan X2,Re: InnoTrack Plus  Impressive speed improvements over the previous version. Definitely worth the upgrade.,Positive
+CUST-0128,Paul Walker,2024/11/10,ConnectSphere,"Re: DataFlow Elite  I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0129,Hannah King,2024/3/11,InnoTrack Plus,"Monthly review: Extremely slow to load, even on a high-speed connection. Unacceptable for a paid tier.",Negative
+CUST-0130,Diana Lewis,2023/11/10,EchoDesk 5,The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0131,Uma Davis,2024/7/2,FlexPanel 9,We've cut onboarding time for new employees by half since adopting this tool.,Positive
+CUST-0132,Nathan Chen,2023/10/11,InnoTrack Plus,Meets our basic requirements. Haven't explored all the features yet.,Neutral
+CUST-0133,Marco Robinson,2023/4/13,NexGen Router,Monthly review: The onboarding specialist clearly didn't understand our use case. Generic and unhelpful.,Negative
+CUST-0134,Xiang Thomas,2023/11/6,SmartHub Pro,"Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0135,Rachel Williams,2023/2/25,VaultGuard Pro,Setup was straightforward. Performance has been acceptable but not exceptional.,Neutral
+CUST-0136,Fatima Miller,2023/1/13,ConnectSphere,"I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0137,Chen Young,2023/7/8,SmartHub Pro,"Re: TaskMaster AI  I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0138,Henry Jones,2024/2/15,TaskMaster AI,Re: NexGen Router  The mobile app is just as polished as the desktop version. Great cross-platform consistency.,Positive
+CUST-0139,James Anderson,2024/7/30,EchoDesk 5,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0140,Julia Scott,2024/9/12,ConnectSphere,Best purchase I've made this year. The build quality is premium and delivery was fast.,Positive
+CUST-0141,Hannah Lopez,2024/4/6,QuickSign Enterprise,The feature set covers 80% of our needs. The remaining 20% we handle with workarounds.,Neutral
+CUST-0142,Brigitte Walker,2024/8/5,ConnectSphere,"Monthly review: After the last update, several features we relied on simply stopped working.",Negative
+CUST-0143,Nathan Jackson,2023/9/28,RapidBase,Seamless integration with our existing tools. The onboarding experience was excellent.,Positive
+CUST-0144,Leo Santos,2023/3/18,CloudSync 360,Best purchase I've made this year. The build quality is premium and delivery was fast.,Positive
+CUST-0145,Marco Chen,2023/10/26,SmartHub Pro,Re: StreamVault  Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0146,Diana Jones,2024/12/4,DataFlow Elite,We've cut onboarding time for new employees by half since adopting this tool.,Positive
+CUST-0147,Maria Green,2023/4/28,VaultGuard Pro,Monthly review: Pricing is mid-tier and quality is mid-tier. Exactly what you'd expect.,Neutral
+CUST-0148,Rachel Anderson,2023/3/15,SmartHub Pro,We've cut onboarding time for new employees by half since adopting this tool.,Positive
+CUST-0149,Marco Kowalski,2023/10/23,TaskMaster AI,My whole team has switched to this and productivity has noticeably gone up.,Positive
+CUST-0150,Zara Lewis,2024/5/27,VaultGuard Pro,Really impressed with how smoothly everything runs. The team clearly put thought into UX.,Positive
+CUST-0151,Marco Williams,2024/3/18,InnoTrack Plus,Customer service is only reachable by email and takes 4872 hours to respond. Ridiculous.,Negative
+CUST-0152,Bob Garcia,2023/8/23,RapidBase,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0153,Laura Johnson,2024/11/19,NexGen Router,Monthly review: Works well on Windows but there are some inconsistencies on macOS.,Neutral
+CUST-0154,Leo Chen,2024/6/15,RapidBase,Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0155,Leo Okafor,2024/3/22,RapidBase,"After the last update, several features we relied on simply stopped working.",Negative
+CUST-0156,Eric King,2024/2/23,PixelBoard Ultra,The product is evolving but the roadmap communication could be more transparent.,Neutral
+CUST-0157,Karen Young,2024/2/26,InnoTrack Plus,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0158,Julia Williams,2024/4/10,NovaScan X2,Re: EchoDesk 5  Customer service is only reachable by email and takes 4872 hours to respond. Ridiculous.,Negative
+CUST-0159,Henry Hill,2024/6/10,NexGen Router,Very disappointed. The product stopped working after two weeks and support was unhelpful.,Negative
+CUST-0160,Diana Scott,2023/2/25,DataFlow Elite,Monthly review: Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0161,Fatima Patel,2023/2/22,DataFlow Elite,Monthly review: This product drained our battery much faster than advertised. Not even close to specs.,Negative
+CUST-0162,Steve Patel,2024/12/16,TaskMaster AI,Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0163,Paul Taylor,2023/11/15,VaultGuard Pro,Monthly review: Really impressed with how smoothly everything runs. The team clearly put thought into UX.,Positive
+CUST-0164,Frank Lee,2023/4/27,TaskMaster AI,Re: VaultGuard Pro  Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0165,Fatima Robinson,2024/6/5,InnoTrack Plus,Really impressed with how smoothly everything runs. The team clearly put thought into UX.,Positive
+CUST-0166,Eric Harris,2024/4/12,VaultGuard Pro,Re: StreamVault  Everything from packaging to performance screams quality. Will definitely reorder.,Positive
+CUST-0167,Marco Mller,2023/5/20,NexGen Router,The update last month significantly improved performance. Great to see continuous improvement.,Positive
+CUST-0168,Victor Mller,2023/10/1,NexGen Router,Re: EchoDesk 5  This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0169,Laura Okafor,2024/11/6,TaskMaster AI,Absolutely love this product! It exceeded all my expectations and the setup was a breeze.,Positive
+CUST-0170,Ivan Chen,2023/12/20,PixelBoard Ultra,Re: CloudSync 360  It's a solid starting point. Curious to see where the product goes in the next year.,Neutral
+CUST-0171,Yuki Nguyen,2023/11/26,NexGen Router,Monthly review: The trial period is misleading  many core features are locked behind a higher tier.,Negative
+CUST-0172,Kevin Lopez,2023/8/28,NexGen Router,"Solid, reliable, and well-designed. Would strongly recommend to any business in our space.",Positive
+CUST-0173,Uma Chen,2024/12/23,QuickSign Enterprise,"Generally reliable, with occasional slowdowns during peak hours.",Neutral
+CUST-0174,James Kim,2023/2/7,CloudSync 360,Re: StreamVault  Adequate for small teams. Would need more load-testing before recommending for enterprise.,Neutral
+CUST-0175,Grace Patel,2023/4/13,VaultGuard Pro,The hardware arrived with a visible dent and the company refused a replacement.,Negative
+CUST-0176,James Scott,2024/11/1,CloudSync 360,The integrations work but can be fragile. Had two incidents last quarter.,Negative
+CUST-0177,Victor Hill,2024/10/27,NovaScan X2,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0178,Yuki Hall,2024/10/3,InnoTrack Plus,Monthly review: Happy enough to renew but hoping for more attention to the mobile experience.,Positive
+CUST-0179,Ivan Williams,2024/9/24,NovaScan X2,"Re: FlexPanel 9  Nothing to complain about, but also nothing that truly wows me.",Neutral
+CUST-0180,Olivia Garcia,2024/3/20,NovaScan X2,Impressive speed improvements over the previous version. Definitely worth the upgrade.,Positive
+CUST-0181,Chen Taylor,2024/12/11,EchoDesk 5,Price point is reasonable for what you get. A few minor bugs that haven't been fixed.,Neutral
+CUST-0182,Uma Brown,2023/10/28,PixelBoard Ultra,Some learning curve at the beginning but it's become part of our daily workflow now.,Positive
+CUST-0183,Paul Rossi,2024/2/26,ConnectSphere,"Extremely slow to load, even on a high-speed connection. Unacceptable for a paid tier.",Negative
+CUST-0184,Karen Thomas,2023/3/22,ConnectSphere,Some quirks in the reporting module but nothing that blocks day-to-day work.,Neutral
+CUST-0185,Paul Kim,2024/8/20,CloudSync 360,Monthly review: It's a solid starting point. Curious to see where the product goes in the next year.,Neutral
+CUST-0186,Diana Clark,2024/11/13,SmartHub Pro,We've cut onboarding time for new employees by half since adopting this tool.,Positive
+CUST-0187,Steve Dubois,2023/6/11,NovaScan X2,Re: FlexPanel 9  Some learning curve at the beginning but it's become part of our daily workflow now.,Positive
+CUST-0188,Tina Green,2024/12/7,EchoDesk 5,"Monthly review: After the last update, several features we relied on simply stopped working.",Negative
+CUST-0189,Maria Lopez,2024/5/9,NovaScan X2,Do not buy this if you care about data privacy. Their terms are extremely vague.,Negative
+CUST-0190,Wendy Kowalski,2023/10/30,InnoTrack Plus,Monthly review: Impressive speed improvements over the previous version. Definitely worth the upgrade.,Positive
+CUST-0191,Rachel Smith,2024/8/2,NexGen Router,"Re: SmartHub Pro  I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0192,Marco Kim,2023/10/21,FlexPanel 9,Some quirks in the reporting module but nothing that blocks day-to-day work.,Neutral
+CUST-0193,Wendy Lee,2024/10/13,DataFlow Elite,Monthly review: Adequate for small teams. Would need more load-testing before recommending for enterprise.,Neutral
+CUST-0194,Grace Williams,2023/11/13,FlexPanel 9,The product is fundamentally broken for multi-user environments. A critical oversight.,Negative
+CUST-0195,Xiang Wilson,2023/4/3,QuickSign Enterprise,"Monthly review: After the last update, several features we relied on simply stopped working.",Negative
+CUST-0196,Leo Moore,2023/5/16,FlexPanel 9,"Re: PixelBoard Ultra  I was skeptical at first but after 6 weeks, I'm a complete convert. Highly recommended.",Positive
+CUST-0197,Hannah Mller,2023/10/7,NexGen Router,Three months in and we're still hitting the same bug that was reported on day one.,Negative
+CUST-0198,Steve Young,2023/4/28,TaskMaster AI,Re: EchoDesk 5  My whole team has switched to this and productivity has noticeably gone up.,Positive
+CUST-0199,Zara Santos,2024/1/10,NovaScan X2,This is exactly what we needed. Performance is rock-solid and the UI is intuitive.,Positive
+CUST-0200,Quinn Dubois,2023/5/7,TaskMaster AI,The feature set covers 80% of our needs. The remaining 20% we handle with workarounds.,Neutral

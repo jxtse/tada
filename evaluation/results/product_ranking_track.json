@@ -1,0 +1,8 @@
+{
+ "shortcut_ai|Q19": "rho=0.606 n=200 (row order)",
+ "excelagent_gpt|Q19": "rho=0.784 n=200 (score col)",
+ "claude_in_excel|Q19": "rho=0.926 n=200 (score col (labels mapped))",
+ "shortcut_ai|Q20": "rho=0.924 n=200 (row order)",
+ "excelagent_gpt|Q20": "rho=0.913 n=200 (score col)",
+ "claude_in_excel|Q20": "rho=0.899 n=200 (row order)"
+}

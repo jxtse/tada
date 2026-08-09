@@ -1,0 +1,18 @@
+{
+ "shortcut_ai": {
+  "whole_task_missing": [
+   "Q08",
+   "Q11",
+   "Q17"
+  ],
+  "n_missing": 3
+ },
+ "excelagent_gpt": {
+  "whole_task_missing": [],
+  "n_missing": 0
+ },
+ "claude_in_excel": {
+  "whole_task_missing": [],
+  "n_missing": 0
+ }
+}

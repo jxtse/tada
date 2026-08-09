@@ -1,0 +1,201 @@
+TicketID,Subject,AssignedTo,LastUpdated,status,notes
+TKT-0001,Export bug,Brigitte Moore,2024-10-04,Open,The fix was deployed and verified in production three days ago. All clear.
+TKT-0002,UI glitch,Uma Jones,2023-03-31,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0003,Mobile crash,Uma Lewis,2024-06-16,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0004,Search malfunction,Nina Okafor,2024-06-19,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0005,Permission issue,James Anderson,2024-08-03,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0006,Webhook failure,Grace Kowalski,2023-04-14,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0007,Webhook failure,Wendy Scott,2023-09-28,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0008,SSO error,Marco Chen,2023-02-08,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0009,API timeout,Nina Hill,2023-02-09,Open,The fix was deployed and verified in production three days ago. All clear.
+TKT-0010,Dashboard issue,Paul Brown,2024-05-01,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0011,Login failure,Victor Walker,2023-11-15,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0012,Import error,Grace Lee,2023-05-18,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0013,Report failure,Uma Lewis,2024-03-02,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0014,Billing discrepancy,Chen Jackson,2024-02-21,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0015,Import error,Xiang Brown,2024-06-11,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0016,UI glitch,George Hill,2023-05-19,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0017,Webhook failure,Kevin Johnson,2023-06-27,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0018,Import error,David Harris,2023-02-03,Closed,Customer says the issue is happening more frequently now than before.
+TKT-0019,Dashboard issue,Maria Lewis,2024-01-13,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0020,Permission issue,Henry Johnson,2023-09-05,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0021,Report failure,Leo Chen,2024-08-23,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0022,API timeout,Quinn Garcia,2023-10-19,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0023,API timeout,Kevin Jackson,2023-08-15,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0024,Billing discrepancy,Rachel Scott,2024-06-09,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0025,Report failure,Irene Thomas,2024-09-07,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0026,UI glitch,Marco Walker,2024-12-30,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0027,UI glitch,Brigitte Lopez,2023-12-24,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0028,Report failure,Tina Rossi,2024-09-30,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0029,Login failure,George Wright,2024-07-28,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0030,UI glitch,Tina Miller,2024-05-08,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0031,Notification bug,Uma Lewis,2023-09-25,Resolved,No fix has been applied yet. Team is still debating the approach.
+TKT-0032,UI glitch,Maria Anderson,2024-06-13,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0033,Search malfunction,Marco Hill,2024-11-07,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0034,Dashboard issue,Bob Kim,2023-10-30,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0035,Permission issue,Yuki Williams,2024-08-20,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0036,Import error,Maria Young,2024-12-31,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0037,Notification bug,Eric King,2024-06-03,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0038,Import error,Julia Thomas,2023-10-28,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0039,Dashboard issue,Quinn Santos,2023-07-07,Closed,The problem persists after the supposed fix. Need to reopen and escalate.
+TKT-0040,Notification bug,Frank Lee,2023-12-30,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0041,Permission issue,Victor Wright,2023-09-24,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0042,Import error,Henry Chen,2023-02-24,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0043,SSO error,Nina Jones,2024-04-28,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0044,Export bug,Yuki Rossi,2023-11-02,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0045,API timeout,Maria Young,2024-02-24,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0046,API timeout,Uma Thomas,2023-03-24,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0047,API timeout,Uma Brown,2023-01-05,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0048,Search malfunction,Karen Kowalski,2023-06-12,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0049,API timeout,Nina Green,2024-10-10,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0050,Report failure,Yuki Smith,2023-02-08,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0051,Data sync error,Alice Hall,2024-06-27,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0052,Notification bug,Paul Lee,2024-12-11,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0053,API timeout,Grace Lopez,2024-05-30,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0054,Export bug,Carol Walker,2023-10-25,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0055,SSO error,Hannah Young,2024-03-20,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0056,Data sync error,Fatima King,2023-07-12,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0057,Login failure,Olivia Lee,2023-05-15,Open,The fix was deployed and verified in production three days ago. All clear.
+TKT-0058,SSO error,George Taylor,2023-05-07,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0059,Search malfunction,Carol Lopez,2024-10-17,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0060,SSO error,David Brown,2024-11-08,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0061,Login failure,Henry Scott,2024-03-30,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0062,UI glitch,Eric Anderson,2023-07-30,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0063,Login failure,Tina Scott,2024-11-08,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0064,UI glitch,Nina Wilson,2024-03-04,Closed,Reoccurred twice this week. The initial fix clearly did not address the underlying cause.
+TKT-0065,Mobile crash,Nina Davis,2023-10-17,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0066,Report failure,Maria Moore,2023-09-27,Closed,We are still waiting for the database team to respond. This remains unresolved.
+TKT-0067,Data sync error,Ahmed Robinson,2023-06-14,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0068,Webhook failure,Nathan Chen,2023-12-05,On Hold,This is actively being worked on. Patch is in code review right now.
+TKT-0069,Notification bug,Frank Davis,2024-08-10,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0070,Export bug,George Jones,2023-04-14,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0071,Billing discrepancy,Diana Robinson,2023-09-28,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0072,Import error,Leo Williams,2023-10-25,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0073,Data sync error,Brigitte Davis,2023-04-08,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0074,Login failure,Irene Taylor,2023-12-03,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0075,SSO error,Rachel Garcia,2024-01-17,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0076,Export bug,Zara Hill,2024-04-12,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0077,Dashboard issue,Eric Scott,2024-10-26,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0078,Export bug,Irene Brown,2023-06-13,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0079,Report failure,Kevin Patel,2023-07-05,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0080,SSO error,Bob Wilson,2024-05-09,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0081,Webhook failure,Ahmed Patel,2023-02-17,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0082,Login failure,Hannah Kowalski,2024-08-01,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0083,Import error,Victor Rossi,2024-06-19,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0084,Export bug,Brigitte Harris,2024-05-08,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0085,Notification bug,Yuki Anderson,2024-07-25,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0086,Login failure,Alice Taylor,2024-06-01,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0087,Import error,Karen Jones,2024-05-18,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0088,UI glitch,David Müller,2023-08-17,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0089,Permission issue,Paul Garcia,2024-04-15,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0090,Report failure,Frank Kim,2024-04-02,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0091,Dashboard issue,Bob Miller,2024-02-18,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0092,Mobile crash,Alice Garcia,2024-09-10,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0093,UI glitch,George Santos,2023-07-31,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0094,Data sync error,Xiang Brown,2023-08-17,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0095,Mobile crash,Nina Chen,2024-11-03,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0096,Export bug,Grace Lee,2023-01-03,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0097,Search malfunction,Steve Santos,2024-06-18,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0098,Login failure,Karen Kim,2023-05-24,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0099,Dashboard issue,Ahmed Miller,2023-09-18,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0100,Export bug,Zara Jackson,2024-04-13,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0101,Dashboard issue,Victor Miller,2024-02-29,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0102,Export bug,Chen Nguyen,2024-11-05,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0103,API timeout,Fatima Smith,2024-06-27,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0104,Webhook failure,Brigitte Okafor,2024-05-09,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0105,Dashboard issue,Laura Thomas,2023-05-12,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0106,SSO error,Uma Müller,2024-01-29,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0107,Webhook failure,Paul Lewis,2024-02-12,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0108,Report failure,Irene Wilson,2024-02-27,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0109,Mobile crash,Tina Santos,2023-11-18,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0110,Notification bug,Nathan Moore,2023-08-03,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0111,Notification bug,Wendy Wilson,2024-12-28,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0112,Mobile crash,Ivan Hall,2024-12-28,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0113,Mobile crash,Eric Okafor,2024-08-07,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0114,Permission issue,Ivan Robinson,2024-03-08,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0115,Export bug,Bob Lopez,2023-05-29,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0116,Billing discrepancy,Rachel Taylor,2023-10-21,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0117,Import error,David Robinson,2023-07-28,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0118,Data sync error,Chen Miller,2024-09-22,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0119,Mobile crash,Olivia Santos,2024-02-03,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0120,UI glitch,David Lopez,2024-02-01,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0121,Data sync error,Julia Brown,2023-01-14,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0122,SSO error,Chen Lee,2024-10-10,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0123,Data sync error,Laura Dubois,2024-09-09,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0124,UI glitch,Chen Thomas,2024-11-30,Closed,Customer says the issue is happening more frequently now than before.
+TKT-0125,Dashboard issue,George Davis,2024-01-22,Closed,The problem persists after the supposed fix. Need to reopen and escalate.
+TKT-0126,Mobile crash,Quinn Wilson,2023-06-14,Resolved,No fix has been applied yet. Team is still debating the approach.
+TKT-0127,Login failure,Victor Nguyen,2024-12-27,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0128,API timeout,Uma Brown,2024-10-02,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0129,UI glitch,Fatima Kowalski,2024-07-17,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0130,Data sync error,Hannah Lee,2023-07-08,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0131,API timeout,Ahmed Dubois,2024-07-03,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0132,Billing discrepancy,Nathan Young,2023-12-06,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0133,Search malfunction,Nina Rossi,2024-05-01,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0134,Login failure,Henry King,2024-04-01,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0135,SSO error,Nina Harris,2023-02-10,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0136,Permission issue,Henry Lopez,2023-09-20,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0137,Login failure,Hannah Wright,2024-06-10,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0138,Report failure,Carol Robinson,2024-10-29,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0139,Export bug,Grace Taylor,2024-07-04,Closed,Reoccurred twice this week. The initial fix clearly did not address the underlying cause.
+TKT-0140,Export bug,Nathan Jackson,2024-12-02,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0141,Billing discrepancy,Ivan Green,2024-10-24,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0142,Dashboard issue,James Johnson,2024-04-15,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0143,Export bug,Emma Brown,2023-07-02,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0144,Export bug,Kevin Lee,2023-09-22,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0145,Notification bug,Zara Green,2023-11-20,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0146,Mobile crash,Alice Jones,2024-08-22,Closed,We are still waiting for the database team to respond. This remains unresolved.
+TKT-0147,Data sync error,George Miller,2023-10-24,Closed,We are still waiting for the database team to respond. This remains unresolved.
+TKT-0148,SSO error,Frank Robinson,2024-03-24,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0149,Login failure,Eric Taylor,2024-06-30,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0150,Search malfunction,Ivan Robinson,2024-10-11,Open,The fix was deployed and verified in production three days ago. All clear.
+TKT-0151,Login failure,Julia Santos,2023-05-25,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0152,SSO error,Marco Hill,2024-07-04,Closed,Customer just called in again. Issue is still occurring. This was never actually fixed.
+TKT-0153,UI glitch,Nathan King,2023-08-05,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0154,Import error,George Anderson,2023-06-14,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0155,Import error,Quinn Moore,2023-04-28,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0156,Import error,David Santos,2024-04-17,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0157,UI glitch,Emma Clark,2023-04-11,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0158,Report failure,Victor King,2023-05-12,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0159,Export bug,Steve Jones,2023-07-18,Open,Still investigating the root cause. Awaiting response from the infrastructure team.
+TKT-0160,Data sync error,Nina Walker,2024-12-11,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0161,SSO error,Xiang Hall,2024-03-14,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0162,Billing discrepancy,Olivia Green,2023-10-11,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0163,Notification bug,Victor Chen,2024-04-18,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0164,Report failure,Julia Miller,2023-06-29,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0165,Import error,Rachel Wilson,2024-07-05,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0166,Dashboard issue,Emma Johnson,2024-06-03,Closed,We are still waiting for the database team to respond. This remains unresolved.
+TKT-0167,SSO error,Zara Okafor,2023-08-06,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0168,UI glitch,Ivan Dubois,2024-04-28,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0169,Data sync error,Zara Lee,2024-08-26,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0170,API timeout,Diana Müller,2024-06-06,Open,Customer has not responded to our last two follow-ups. Keeping open pending reply.
+TKT-0171,Mobile crash,Alice Harris,2024-09-20,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0172,API timeout,Chen Taylor,2023-07-03,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0173,Notification bug,James Chen,2024-01-03,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0174,Billing discrepancy,Emma Clark,2024-01-14,On Hold,This is actively being worked on. Patch is in code review right now.
+TKT-0175,Billing discrepancy,Hannah Wright,2024-02-02,Resolved,Fix deployed. Customer confirmed resolution in follow-up email.
+TKT-0176,Webhook failure,Carol Williams,2024-10-26,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0177,Mobile crash,Rachel Clark,2024-08-15,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0178,Permission issue,Yuki Wright,2024-08-24,Closed,Customer confirmed the workaround resolved their issue. Ticket closed.
+TKT-0179,Mobile crash,Quinn Lopez,2023-08-17,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0180,Import error,Wendy Kim,2024-05-08,Open,Issue is reproducible but fix has not yet been deployed to production.
+TKT-0181,Mobile crash,Irene Patel,2023-06-19,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0182,Notification bug,Rachel Jackson,2023-06-03,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0183,SSO error,Henry Lee,2024-02-29,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0184,Export bug,Eric Chen,2024-05-05,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.
+TKT-0185,Notification bug,Ahmed Johnson,2023-09-07,Closed,The problem persists after the supposed fix. Need to reopen and escalate.
+TKT-0186,SSO error,Karen Wilson,2024-10-06,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0187,API timeout,David Taylor,2023-09-22,On Hold,Fix deprioritized pending business review. Will reassess next sprint.
+TKT-0188,Permission issue,Marco Kowalski,2024-10-14,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0189,Export bug,Nathan Patel,2024-09-13,Resolved,No fix has been applied yet. Team is still debating the approach.
+TKT-0190,API timeout,Olivia Scott,2024-09-07,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0191,Import error,Leo Müller,2023-09-28,In Progress,Team confirmed they are not currently assigned to this ticket.
+TKT-0192,Webhook failure,Diana Okafor,2023-03-12,Resolved,The root cause is still unknown. Marking resolved seems premature.
+TKT-0193,API timeout,Grace Johnson,2023-07-27,In Progress,Engineering team currently working on the fix. ETA is end of week.
+TKT-0194,Notification bug,Ahmed Anderson,2024-09-12,On Hold,Waiting for customer to provide requested logs. On hold until then.
+TKT-0195,Webhook failure,Nina Williams,2024-06-28,On Hold,This is actively being worked on. Patch is in code review right now.
+TKT-0196,Export bug,Eric Wilson,2024-09-09,Closed,Bug was reproduced and patched in v2.3.1. Verified by QA. Closing ticket.
+TKT-0197,Webhook failure,Brigitte Rossi,2024-03-06,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0198,Dashboard issue,Hannah Green,2023-08-23,Closed,Issue confirmed resolved. Customer acknowledged the fix. No further action needed.
+TKT-0199,Search malfunction,Yuki King,2024-08-26,In Progress,Escalated to Tier 2 support. Active investigation underway.
+TKT-0200,SSO error,Grace Green,2023-05-18,Resolved,Root cause addressed. Monitoring for recurrence over next 48 hours.

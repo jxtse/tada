@@ -1,0 +1,201 @@
+CustomerID,CustomerName,CustomerTier,Region,Date,feedback
+CUST-0001,Maria Hill,Regular,North America,2023-10-12,"Good product overall, but support response times can be slow during busy periods."
+CUST-0002,George Kim,VIP,Europe,2024-07-19,"Honestly, the VIP tier pricing is high. The service is good but I question if the premium is worth it."
+CUST-0003,Kevin Kowalski,Regular,Europe,2023-03-08,Support is decent but you can tell VIP customers get faster responses.
+CUST-0004,Irene Jones,Regular,Europe,2023-09-23,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0005,Olivia Rossi,Regular,Asia Pacific,2023-07-16,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0006,Bob Dubois,Regular,Middle East,2023-09-16,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0007,Julia Nguyen,VIP,North America,2024-03-13,Integration support provided by our CSM has saved us months of development time.
+CUST-0008,David Hall,VIP,Latin America,2024-02-21,Integration support provided by our CSM has saved us months of development time.
+CUST-0009,Henry Rossi,VIP,Latin America,2024-05-22,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0010,Hannah Williams,Regular,Europe,2023-02-18,Community forums are helpful when official support is slow.
+CUST-0011,Ahmed Dubois,Regular,Latin America,2023-11-20,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0012,Zara Moore,VIP,Asia Pacific,2023-03-25,The dedicated account manager is invaluable. Having a direct line of support changes everything.
+CUST-0013,Bob Lee,VIP,Latin America,2023-03-18,"Honestly, the VIP tier pricing is high. The service is good but I question if the premium is worth it."
+CUST-0014,Maria Taylor,Regular,Asia Pacific,2023-11-15,Support is decent but you can tell VIP customers get faster responses.
+CUST-0015,Grace Johnson,VIP,Latin America,2024-03-18,"As a VIP customer, the service level is excellent, but I expect the same quality for all customers."
+CUST-0016,Laura Young,Regular,Asia Pacific,2023-09-11,"Good product overall, but support response times can be slow during busy periods."
+CUST-0017,Eric Harris,Regular,Asia Pacific,2023-02-25,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0018,Hannah Harris,Regular,North America,2024-09-06,Community forums are helpful when official support is slow.
+CUST-0019,Chen Miller,Regular,Latin America,2024-08-15,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0020,Frank Brown,Regular,North America,2024-01-22,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0021,Emma Wilson,Regular,North America,2024-03-28,Community forums are helpful when official support is slow.
+CUST-0022,Tina Green,Regular,North America,2023-04-15,"Good product overall, but support response times can be slow during busy periods."
+CUST-0023,David Santos,Regular,North America,2023-10-29,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0024,Zara Miller,Regular,Middle East,2024-02-25,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0025,Marco Smith,Regular,Latin America,2024-01-29,Support is decent but you can tell VIP customers get faster responses.
+CUST-0026,Brigitte Miller,VIP,Asia Pacific,2024-10-28,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0027,Bob Nguyen,VIP,Middle East,2023-12-03,Integration support provided by our CSM has saved us months of development time.
+CUST-0028,Maria Miller,Regular,North America,2023-01-13,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0029,Emma Okafor,Regular,Europe,2024-08-09,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0030,George Clark,Regular,Asia Pacific,2024-03-07,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0031,Nina Patel,Regular,Europe,2023-09-06,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0032,Carol Brown,Regular,Europe,2023-11-16,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0033,Brigitte Müller,Regular,Asia Pacific,2023-11-15,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0034,Ivan Anderson,VIP,Europe,2024-04-25,"Honestly, the VIP tier pricing is high. The service is good but I question if the premium is worth it."
+CUST-0035,Marco Young,VIP,Asia Pacific,2024-01-13,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0036,Hannah Okafor,Regular,Europe,2023-02-28,"Good product overall, but support response times can be slow during busy periods."
+CUST-0037,George Santos,Regular,North America,2024-03-08,Support is decent but you can tell VIP customers get faster responses.
+CUST-0038,Maria Moore,VIP,Europe,2023-03-12,I've noticed feature requests from VIP accounts get actioned faster. Makes a big difference.
+CUST-0039,Maria Chen,Regular,Latin America,2024-09-06,Community forums are helpful when official support is slow.
+CUST-0040,Victor Okafor,Regular,Middle East,2023-12-10,The tutorial videos are outdated but the product itself is solid.
+CUST-0041,Tina Scott,Regular,Asia Pacific,2023-06-16,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0042,Diana Williams,Regular,Latin America,2023-08-13,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0043,Olivia Lee,Regular,Latin America,2024-09-30,"Good product overall, but support response times can be slow during busy periods."
+CUST-0044,Paul Chen,Regular,Asia Pacific,2024-01-20,Support is decent but you can tell VIP customers get faster responses.
+CUST-0045,Zara Thomas,Regular,North America,2024-01-07,Support is decent but you can tell VIP customers get faster responses.
+CUST-0046,Emma King,Regular,North America,2024-07-22,"Good product overall, but support response times can be slow during busy periods."
+CUST-0047,James Robinson,Regular,Latin America,2023-07-19,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0048,Laura Wright,VIP,North America,2023-01-31,Integration support provided by our CSM has saved us months of development time.
+CUST-0049,Maria Robinson,Regular,Europe,2023-08-13,Support is decent but you can tell VIP customers get faster responses.
+CUST-0050,Leo Young,Regular,Middle East,2023-09-09,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0051,Maria Johnson,Regular,Europe,2023-09-26,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0052,Bob Wilson,Regular,Latin America,2024-11-01,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0053,Victor Jackson,Regular,Asia Pacific,2024-04-12,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0054,Xiang Wright,Regular,Europe,2024-06-23,Support is decent but you can tell VIP customers get faster responses.
+CUST-0055,Brigitte Jones,Regular,North America,2023-05-28,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0056,Maria Moore,Regular,Middle East,2024-01-23,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0057,Xiang Hall,Regular,Middle East,2024-03-15,The tutorial videos are outdated but the product itself is solid.
+CUST-0058,Paul Williams,Regular,Middle East,2024-08-24,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0059,Ivan Robinson,Regular,Europe,2023-12-02,Support is decent but you can tell VIP customers get faster responses.
+CUST-0060,David Lewis,Regular,Europe,2024-06-04,Support is decent but you can tell VIP customers get faster responses.
+CUST-0061,Fatima Jackson,Regular,North America,2024-04-26,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0062,Nina Jones,Regular,Europe,2024-06-04,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0063,George Wright,VIP,Latin America,2024-06-15,The quarterly business reviews are genuinely useful. Helps us plan our usage and renewals.
+CUST-0064,Leo Hall,VIP,Asia Pacific,2024-06-22,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0065,Eric Kim,VIP,Latin America,2023-10-02,I appreciate the dedicated security reviews included in the enterprise tier.
+CUST-0066,Zara Okafor,Regular,North America,2023-08-01,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0067,Maria Patel,Regular,Europe,2024-02-10,Support is decent but you can tell VIP customers get faster responses.
+CUST-0068,Tina Green,VIP,Latin America,2024-08-08,Our account team proactively identifies issues before they affect us. That's world-class service.
+CUST-0069,Xiang Clark,Regular,Middle East,2023-03-28,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0070,Frank Robinson,Regular,Latin America,2024-06-15,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0071,Olivia Okafor,Regular,North America,2024-04-21,Community forums are helpful when official support is slow.
+CUST-0072,Nina Young,VIP,Latin America,2024-04-06,The executive sponsor program is a nice touch. Shows the company views us as a strategic partner.
+CUST-0073,Brigitte Scott,Regular,Asia Pacific,2024-05-24,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0074,Rachel Lopez,VIP,North America,2023-07-03,I've noticed feature requests from VIP accounts get actioned faster. Makes a big difference.
+CUST-0075,Olivia Clark,Regular,North America,2024-01-03,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0076,Steve Müller,Regular,Middle East,2024-07-13,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0077,Frank Lewis,VIP,Europe,2023-04-11,Integration support provided by our CSM has saved us months of development time.
+CUST-0078,Emma Wright,VIP,North America,2024-07-13,"As a VIP customer, the service level is excellent, but I expect the same quality for all customers."
+CUST-0079,Victor Moore,Regular,Asia Pacific,2023-09-14,Support is decent but you can tell VIP customers get faster responses.
+CUST-0080,Rachel Moore,VIP,Middle East,2023-05-22,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0081,Ivan Clark,Regular,North America,2023-11-03,The tutorial videos are outdated but the product itself is solid.
+CUST-0082,Wendy Hill,VIP,Latin America,2024-08-16,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0083,Alice Chen,VIP,Middle East,2023-06-02,Integration support provided by our CSM has saved us months of development time.
+CUST-0084,Olivia Lee,VIP,Europe,2024-04-30,The quarterly business reviews are genuinely useful. Helps us plan our usage and renewals.
+CUST-0085,Hannah Okafor,VIP,Middle East,2024-04-24,Our account team proactively identifies issues before they affect us. That's world-class service.
+CUST-0086,Diana Young,Regular,North America,2023-11-17,The tutorial videos are outdated but the product itself is solid.
+CUST-0087,Brigitte Scott,Regular,Europe,2024-03-25,Support is decent but you can tell VIP customers get faster responses.
+CUST-0088,Julia Johnson,VIP,Asia Pacific,2023-05-23,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0089,Irene Walker,Regular,North America,2024-05-26,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0090,Wendy Young,Regular,Europe,2024-03-05,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0091,Zara Dubois,Regular,Asia Pacific,2023-11-30,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0092,Bob Kowalski,Regular,North America,2023-05-23,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0093,Victor Kowalski,VIP,Middle East,2024-09-14,The premium tier delivers real value — priority support and early access to features is worth the premium.
+CUST-0094,Zara Lopez,Regular,Europe,2024-02-05,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0095,Ivan Lopez,VIP,Europe,2024-05-01,"As a VIP customer, the service level is excellent, but I expect the same quality for all customers."
+CUST-0096,Victor Kowalski,VIP,Latin America,2024-10-16,"As a VIP customer, the service level is excellent, but I expect the same quality for all customers."
+CUST-0097,Frank Taylor,Regular,North America,2024-11-22,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0098,Leo Williams,Regular,Middle East,2024-05-15,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0099,Leo Moore,Regular,North America,2024-01-31,"Good product overall, but support response times can be slow during busy periods."
+CUST-0100,Nathan Lee,VIP,Asia Pacific,2024-11-06,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0101,Emma Nguyen,Regular,North America,2024-01-13,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0102,Alice Taylor,Regular,Asia Pacific,2024-02-25,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0103,Karen Davis,Regular,Europe,2024-07-03,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0104,Eric Jones,Regular,Latin America,2023-07-31,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0105,Nathan Walker,Regular,Latin America,2024-12-27,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0106,Eric Taylor,VIP,Middle East,2024-08-11,Integration support provided by our CSM has saved us months of development time.
+CUST-0107,Laura Moore,Regular,Middle East,2024-12-02,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0108,Rachel Moore,Regular,North America,2023-05-27,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0109,Emma Hill,Regular,Middle East,2023-09-10,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0110,Victor Kowalski,Regular,Latin America,2024-04-16,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0111,Kevin Williams,VIP,North America,2023-10-22,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0112,Diana King,Regular,Asia Pacific,2024-02-05,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0113,Leo Scott,VIP,Europe,2023-07-03,"Honestly, the VIP tier pricing is high. The service is good but I question if the premium is worth it."
+CUST-0114,Brigitte Nguyen,Regular,Latin America,2024-11-05,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0115,Kevin Miller,VIP,Latin America,2024-12-16,The premium tier delivers real value — priority support and early access to features is worth the premium.
+CUST-0116,Paul Taylor,Regular,Asia Pacific,2024-10-05,"Good product overall, but support response times can be slow during busy periods."
+CUST-0117,Steve Jones,VIP,Europe,2024-05-20,The executive sponsor program is a nice touch. Shows the company views us as a strategic partner.
+CUST-0118,Julia Davis,Regular,Asia Pacific,2023-03-20,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0119,George Hall,Regular,Latin America,2024-04-06,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0120,Quinn Jackson,Regular,Middle East,2023-02-15,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0121,Bob Jones,VIP,Latin America,2024-01-26,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0122,Zara Moore,VIP,Latin America,2023-02-08,I've noticed feature requests from VIP accounts get actioned faster. Makes a big difference.
+CUST-0123,Quinn Davis,Regular,Europe,2023-12-01,"Good product overall, but support response times can be slow during busy periods."
+CUST-0124,Diana Kim,VIP,Latin America,2023-03-11,Integration support provided by our CSM has saved us months of development time.
+CUST-0125,Julia Harris,Regular,Latin America,2023-05-24,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0126,Rachel Taylor,Regular,Europe,2023-01-19,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0127,Grace Thomas,Regular,Asia Pacific,2023-05-08,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0128,Zara Taylor,VIP,North America,2024-11-18,The executive sponsor program is a nice touch. Shows the company views us as a strategic partner.
+CUST-0129,Rachel Anderson,Regular,Latin America,2024-01-02,"Good product overall, but support response times can be slow during busy periods."
+CUST-0130,Nathan Williams,Regular,Middle East,2023-08-10,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0131,David Rossi,Regular,North America,2024-02-04,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0132,Tina Patel,VIP,North America,2024-09-04,I appreciate the dedicated security reviews included in the enterprise tier.
+CUST-0133,David Lopez,Regular,Europe,2023-09-13,"Good product overall, but support response times can be slow during busy periods."
+CUST-0134,Paul Moore,Regular,North America,2023-01-17,Community forums are helpful when official support is slow.
+CUST-0135,Bob Smith,Regular,Asia Pacific,2023-07-16,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0136,Emma Lee,VIP,North America,2024-11-11,Integration support provided by our CSM has saved us months of development time.
+CUST-0137,Karen Williams,VIP,Latin America,2024-06-08,The premium tier delivers real value — priority support and early access to features is worth the premium.
+CUST-0138,Uma Hall,Regular,Middle East,2024-10-03,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0139,Nina Jackson,VIP,Middle East,2024-02-09,Our account team proactively identifies issues before they affect us. That's world-class service.
+CUST-0140,Henry Lee,Regular,Europe,2023-04-19,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0141,Uma Thomas,VIP,North America,2024-02-16,I've noticed feature requests from VIP accounts get actioned faster. Makes a big difference.
+CUST-0142,Uma Smith,Regular,Latin America,2023-08-06,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0143,Olivia Jones,Regular,Asia Pacific,2024-10-27,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0144,Xiang Williams,Regular,North America,2023-08-12,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0145,Tina Kim,Regular,North America,2024-12-30,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0146,Kevin Taylor,Regular,Asia Pacific,2023-04-08,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0147,Uma Lopez,Regular,Europe,2023-12-07,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0148,Uma Chen,Regular,North America,2023-12-10,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0149,Marco Okafor,Regular,Latin America,2024-01-27,"Good product overall, but support response times can be slow during busy periods."
+CUST-0150,Olivia Müller,Regular,Middle East,2024-12-22,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0151,Olivia Johnson,Regular,Middle East,2023-05-08,"Good product overall, but support response times can be slow during busy periods."
+CUST-0152,Paul Green,Regular,Europe,2024-09-26,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0153,David Wilson,Regular,Asia Pacific,2024-05-25,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0154,Maria Anderson,Regular,Latin America,2023-07-29,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0155,Carol Harris,Regular,Middle East,2024-03-30,No complaints about the core functionality. The extras in higher tiers are tempting.
+CUST-0156,Victor Wilson,Regular,Asia Pacific,2023-11-22,The tutorial videos are outdated but the product itself is solid.
+CUST-0157,Carol Rossi,VIP,Latin America,2024-10-25,Integration support provided by our CSM has saved us months of development time.
+CUST-0158,Bob Lee,VIP,Asia Pacific,2023-12-17,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0159,Nathan Dubois,VIP,North America,2024-11-11,Our account team proactively identifies issues before they affect us. That's world-class service.
+CUST-0160,Olivia Lopez,Regular,Middle East,2023-11-26,Support is decent but you can tell VIP customers get faster responses.
+CUST-0161,Chen Smith,Regular,North America,2024-05-18,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0162,Maria Brown,Regular,Europe,2023-07-29,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0163,Frank Thomas,Regular,Middle East,2024-07-16,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0164,Paul Müller,Regular,North America,2024-03-12,Support is decent but you can tell VIP customers get faster responses.
+CUST-0165,Diana Walker,Regular,Europe,2023-07-22,The tutorial videos are outdated but the product itself is solid.
+CUST-0166,Brigitte Thomas,Regular,Middle East,2023-09-12,Support is decent but you can tell VIP customers get faster responses.
+CUST-0167,Steve Kowalski,Regular,Latin America,2024-10-12,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0168,Rachel Chen,Regular,North America,2024-01-04,Support is decent but you can tell VIP customers get faster responses.
+CUST-0169,Yuki Taylor,VIP,Latin America,2024-03-27,The quarterly business reviews are genuinely useful. Helps us plan our usage and renewals.
+CUST-0170,George Green,Regular,Europe,2024-05-08,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0171,Yuki Green,Regular,North America,2023-11-04,"Good product overall, but support response times can be slow during busy periods."
+CUST-0172,Ivan Anderson,Regular,Middle East,2023-06-29,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0173,Yuki Nguyen,Regular,Asia Pacific,2024-04-09,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0174,Yuki Santos,VIP,Middle East,2024-05-07,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0175,Victor Wilson,Regular,Latin America,2023-07-20,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0176,Maria Smith,Regular,North America,2024-05-27,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0177,Xiang Kim,Regular,Latin America,2024-03-01,The tutorial videos are outdated but the product itself is solid.
+CUST-0178,Xiang Lopez,Regular,Latin America,2023-11-12,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0179,Laura Jones,VIP,Latin America,2023-02-09,Integration support provided by our CSM has saved us months of development time.
+CUST-0180,Yuki Kowalski,VIP,Europe,2023-07-18,"As a VIP customer, the service level is excellent, but I expect the same quality for all customers."
+CUST-0181,Quinn King,Regular,Middle East,2024-12-27,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0182,Xiang Brown,Regular,Latin America,2024-03-10,"Product reliability is good. Had one outage in the past year, handled well."
+CUST-0183,Paul Harris,VIP,Latin America,2023-02-05,I appreciate the dedicated security reviews included in the enterprise tier.
+CUST-0184,Bob Anderson,Regular,Asia Pacific,2024-09-11,Community forums are helpful when official support is slow.
+CUST-0185,James Clark,VIP,Europe,2024-09-08,"As a long-term enterprise customer, we get customizations that aren't available to others. Great."
+CUST-0186,Karen Smith,Regular,North America,2023-04-05,Feature releases are exciting but sometimes introduce regressions that affect paying customers.
+CUST-0187,Yuki Hill,VIP,Middle East,2023-03-24,Integration support provided by our CSM has saved us months of development time.
+CUST-0188,Maria Green,VIP,Europe,2024-03-13,The executive sponsor program is a nice touch. Shows the company views us as a strategic partner.
+CUST-0189,Tina Müller,VIP,Middle East,2024-11-05,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0190,Laura Walker,Regular,Latin America,2023-04-02,Pricing is competitive but I wish there were more features in the mid-tier plan.
+CUST-0191,Kevin King,Regular,Europe,2023-10-03,The self-service documentation is helpful but some use cases are poorly covered.
+CUST-0192,Nathan Hill,Regular,Asia Pacific,2023-01-07,The tutorial videos are outdated but the product itself is solid.
+CUST-0193,Fatima Smith,Regular,North America,2023-03-13,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0194,Ahmed Rossi,VIP,Latin America,2024-11-01,I appreciate the dedicated security reviews included in the enterprise tier.
+CUST-0195,Brigitte Taylor,Regular,Europe,2024-01-19,The product works well for basic use cases. Advanced features need better documentation.
+CUST-0196,Irene Moore,VIP,Latin America,2023-07-06,The premium tier delivers real value — priority support and early access to features is worth the premium.
+CUST-0197,Henry Patel,Regular,Middle East,2023-08-06,The standard onboarding was sufficient but felt rushed compared to what others describe.
+CUST-0198,Maria Brown,Regular,Europe,2023-07-16,Value for money is acceptable. Nothing exceptional about the experience.
+CUST-0199,Ahmed Patel,VIP,Middle East,2023-04-22,SLA guarantees for VIP accounts are consistently met. The reliability is excellent.
+CUST-0200,Karen Garcia,Regular,Asia Pacific,2023-03-29,No complaints about the core functionality. The extras in higher tiers are tempting.

@@ -1,0 +1,201 @@
+CustomerID,CustomerName,Tier,AccountAge,LastContactDate,customer_comment
+ACC-0001,Zara Nguyen,Silver,48 months,2024-12-14,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0002,Frank Williams,Gold,39 months,2024-02-20,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0003,Julia Chen,Gold,49 months,2024-10-14,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0004,Frank Kim,Platinum,22 months,2024-10-22,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0005,Kevin Miller,Gold,43 months,2023-08-24,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0006,Rachel Williams,Gold,61 months,2024-12-01,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0007,Ivan Kowalski,Gold,36 months,2023-07-03,Absolutely recommending this at the industry conference next month.
+ACC-0008,Bob Jackson,Silver,41 months,2024-12-30,Absolutely recommending this at the industry conference next month.
+ACC-0009,Emma Walker,Silver,51 months,2024-07-31,Our team actively looks forward to new releases. Product keeps getting better.
+ACC-0010,Ivan Young,Platinum,50 months,2023-05-24,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0011,George King,Gold,11 months,2023-04-11,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0012,Emma Young,Platinum,30 months,2023-12-01,I tried reaching support five times. Never got a response. Can't operate a business this way.
+ACC-0013,Chen Kim,Silver,35 months,2023-12-31,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0014,Brigitte Thomas,Platinum,49 months,2023-03-29,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0015,Paul Jones,Gold,38 months,2023-10-02,Renewed for the third year. This tool is deeply embedded in our workflow now.
+ACC-0016,James Lopez,Bronze,49 months,2024-01-05,I used to recommend this to everyone. Not anymore. Quality has declined noticeably.
+ACC-0017,Alice Walker,Platinum,12 months,2024-01-04,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0018,Grace Wilson,Gold,35 months,2023-07-11,Renewed for the third year. This tool is deeply embedded in our workflow now.
+ACC-0019,Julia Santos,Platinum,58 months,2023-04-16,I tried reaching support five times. Never got a response. Can't operate a business this way.
+ACC-0020,Wendy Santos,Gold,12 months,2024-09-03,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0021,Yuki Smith,Bronze,42 months,2024-02-28,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0022,Julia Harris,Silver,11 months,2024-12-02,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0023,Irene Lewis,Bronze,22 months,2023-10-02,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0024,Emma Taylor,Platinum,19 months,2023-10-10,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0025,Eric Jones,Bronze,39 months,2023-09-15,I tried reaching support five times. Never got a response. Can't operate a business this way.
+ACC-0026,Marco Moore,Platinum,64 months,2023-04-20,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0027,Alice Hill,Bronze,39 months,2024-09-27,I used to recommend this to everyone. Not anymore. Quality has declined noticeably.
+ACC-0028,Chen Young,Platinum,43 months,2024-10-28,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0029,Tina Hall,Silver,18 months,2024-05-05,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0030,Zara Hall,Bronze,23 months,2024-12-12,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0031,Kevin Harris,Bronze,63 months,2024-01-21,The account team is always proactive. We feel genuinely supported as a customer.
+ACC-0032,Xiang Davis,Silver,51 months,2024-08-29,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0033,Julia Johnson,Platinum,24 months,2024-12-26,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0034,Steve Jones,Platinum,57 months,2024-11-20,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0035,Tina Harris,Bronze,18 months,2024-11-05,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0036,Yuki Jones,Platinum,55 months,2024-09-04,I used to recommend this to everyone. Not anymore. Quality has declined noticeably.
+ACC-0037,Ivan Müller,Platinum,52 months,2024-07-10,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0038,Ivan Garcia,Gold,47 months,2023-09-12,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0039,Karen Williams,Platinum,46 months,2023-12-06,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0040,Grace Smith,Gold,56 months,2023-09-22,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0041,Hannah Santos,Silver,66 months,2024-04-01,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0042,Diana Okafor,Silver,51 months,2023-12-20,Honestly disappointed. I fought internally to renew last year. I'm not sure I can make that case again.
+ACC-0043,Grace Robinson,Platinum,62 months,2023-03-29,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0044,Wendy Walker,Bronze,19 months,2024-04-11,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0045,Hannah Chen,Bronze,27 months,2024-05-02,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0046,Chen Hall,Gold,57 months,2023-11-04,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0047,Bob Young,Gold,15 months,2024-11-24,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0048,Paul Rossi,Silver,22 months,2024-07-19,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0049,Julia Green,Platinum,43 months,2023-08-26,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0050,Leo Thomas,Platinum,52 months,2024-02-10,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0051,Chen Okafor,Platinum,26 months,2024-02-03,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0052,Nathan Lewis,Gold,28 months,2024-08-14,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0053,Leo Wright,Bronze,69 months,2023-07-21,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0054,Quinn Kim,Bronze,15 months,2024-09-03,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0055,Laura Davis,Bronze,51 months,2023-12-27,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0056,Nina Thomas,Bronze,59 months,2024-09-21,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0057,Irene Hall,Gold,11 months,2023-09-02,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0058,Leo Wright,Silver,15 months,2024-06-07,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0059,Marco Wilson,Platinum,54 months,2024-03-09,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0060,Ivan Thomas,Silver,63 months,2024-05-16,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0061,Leo Hall,Platinum,18 months,2024-09-26,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0062,Alice Kim,Silver,46 months,2023-07-19,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0063,Julia Müller,Platinum,50 months,2024-02-23,Our team actively looks forward to new releases. Product keeps getting better.
+ACC-0064,Ahmed Patel,Platinum,63 months,2023-06-21,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0065,Olivia Robinson,Gold,4 months,2023-10-09,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0066,Steve Taylor,Platinum,69 months,2024-08-02,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0067,Julia Müller,Gold,64 months,2024-08-09,We flagged a bug last month and it was fixed in the next patch. Responsive and professional.
+ACC-0068,Ivan Wright,Gold,35 months,2024-03-27,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0069,Brigitte Miller,Silver,28 months,2023-11-01,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0070,Chen Clark,Bronze,5 months,2023-03-31,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0071,Paul Jackson,Bronze,16 months,2024-12-28,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0072,Karen Wilson,Silver,55 months,2023-07-31,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0073,Kevin King,Bronze,8 months,2024-09-03,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0074,Uma Robinson,Bronze,22 months,2024-08-09,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0075,Grace Wilson,Platinum,66 months,2023-03-02,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0076,Irene Harris,Silver,17 months,2024-12-29,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0077,Zara Kim,Silver,32 months,2024-08-14,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0078,Ahmed Lopez,Platinum,35 months,2023-03-19,The account team is always proactive. We feel genuinely supported as a customer.
+ACC-0079,Zara Müller,Bronze,12 months,2024-12-12,The account team is always proactive. We feel genuinely supported as a customer.
+ACC-0080,Diana Kim,Bronze,48 months,2024-08-18,Absolutely recommending this at the industry conference next month.
+ACC-0081,Diana King,Gold,12 months,2024-07-01,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0082,Brigitte Jackson,Platinum,28 months,2023-10-02,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0083,Victor Santos,Silver,37 months,2024-08-02,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0084,Victor Brown,Gold,63 months,2023-04-12,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0085,Bob Davis,Silver,59 months,2024-03-27,The account team is always proactive. We feel genuinely supported as a customer.
+ACC-0086,Brigitte Moore,Silver,1 months,2024-10-27,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0087,Rachel Garcia,Bronze,21 months,2023-09-14,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0088,Karen Brown,Platinum,48 months,2024-10-02,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0089,Brigitte Garcia,Gold,30 months,2023-01-02,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0090,Emma Wilson,Silver,62 months,2024-06-15,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0091,Alice Smith,Bronze,57 months,2023-05-04,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0092,Irene Chen,Gold,55 months,2023-08-23,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0093,Grace Miller,Bronze,12 months,2024-01-12,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0094,Irene Lopez,Silver,39 months,2024-10-18,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0095,Emma Rossi,Gold,19 months,2024-09-16,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0096,Chen King,Silver,22 months,2024-10-05,The account team is always proactive. We feel genuinely supported as a customer.
+ACC-0097,Ahmed Patel,Silver,20 months,2023-03-30,We flagged a bug last month and it was fixed in the next patch. Responsive and professional.
+ACC-0098,Irene Davis,Platinum,13 months,2023-12-26,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0099,Irene Harris,Bronze,41 months,2024-10-22,I tried reaching support five times. Never got a response. Can't operate a business this way.
+ACC-0100,Julia Robinson,Gold,32 months,2024-11-05,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0101,Nathan Rossi,Silver,39 months,2024-02-06,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0102,Paul Kim,Platinum,7 months,2023-04-26,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0103,Marco Jones,Gold,64 months,2024-01-05,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0104,Irene Lopez,Platinum,41 months,2024-01-10,Absolutely recommending this at the industry conference next month.
+ACC-0105,Eric Jones,Gold,23 months,2024-08-24,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0106,Quinn Jackson,Gold,2 months,2023-03-03,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0107,George Robinson,Platinum,51 months,2024-03-09,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0108,Frank Dubois,Silver,52 months,2023-10-12,The quarterly business review was insightful. Always appreciate the partnership.
+ACC-0109,Frank Müller,Silver,40 months,2023-06-09,"If the billing issues aren't resolved by next renewal, I'll have to seriously reconsider."
+ACC-0110,Zara Okafor,Gold,42 months,2023-11-14,The training resources are excellent. Our newest hire was up to speed within a week.
+ACC-0111,Paul Brown,Silver,56 months,2023-03-30,The quarterly business review was insightful. Always appreciate the partnership.
+ACC-0112,Henry Nguyen,Gold,56 months,2023-11-13,Absolutely recommending this at the industry conference next month.
+ACC-0113,Henry Smith,Silver,23 months,2024-12-19,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0114,Fatima King,Bronze,21 months,2023-06-20,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0115,Rachel Davis,Gold,17 months,2023-12-10,Honestly disappointed. I fought internally to renew last year. I'm not sure I can make that case again.
+ACC-0116,Rachel Rossi,Gold,55 months,2023-09-27,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0117,Fatima Nguyen,Bronze,10 months,2023-02-26,The quarterly business review was insightful. Always appreciate the partnership.
+ACC-0118,Xiang Taylor,Bronze,22 months,2023-04-16,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0119,Olivia Müller,Gold,15 months,2023-02-15,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0120,Paul Williams,Platinum,2 months,2024-01-08,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0121,Leo Williams,Platinum,20 months,2023-08-18,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0122,Ahmed Hall,Bronze,32 months,2023-03-21,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0123,Henry Müller,Gold,48 months,2023-07-03,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0124,Carol Hill,Gold,67 months,2024-04-21,Support used to be great. Now it's just a ticket queue. Feels like we're not valued as a customer anymore.
+ACC-0125,Tina Hall,Gold,37 months,2024-07-20,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0126,Xiang Moore,Bronze,2 months,2024-07-31,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0127,Nina Harris,Platinum,39 months,2024-01-13,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0128,Maria Dubois,Silver,64 months,2023-06-04,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0129,Bob Lee,Bronze,53 months,2024-10-13,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0130,Victor Smith,Platinum,2 months,2023-11-11,Our team actively looks forward to new releases. Product keeps getting better.
+ACC-0131,Hannah Harris,Platinum,27 months,2024-05-18,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0132,Rachel Garcia,Gold,19 months,2023-08-26,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0133,Ahmed Wright,Platinum,67 months,2023-03-28,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0134,George Wilson,Platinum,13 months,2023-03-18,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0135,Brigitte Wilson,Silver,8 months,2023-10-26,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0136,Zara Hall,Bronze,41 months,2024-04-08,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0137,Emma Moore,Silver,30 months,2024-08-21,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0138,Grace Taylor,Platinum,20 months,2024-04-22,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0139,Henry Dubois,Bronze,53 months,2023-08-01,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0140,Diana Clark,Gold,40 months,2023-04-03,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0141,Marco Williams,Silver,39 months,2023-12-02,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0142,Paul King,Platinum,12 months,2024-06-09,I used to recommend this to everyone. Not anymore. Quality has declined noticeably.
+ACC-0143,Quinn Thomas,Gold,39 months,2024-02-19,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0144,Julia Santos,Silver,58 months,2023-04-07,We tried a competitor for a month and came back. Nothing compares for our use case.
+ACC-0145,Irene Davis,Gold,14 months,2023-03-05,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0146,Irene Moore,Platinum,29 months,2024-01-17,Our team actively looks forward to new releases. Product keeps getting better.
+ACC-0147,Laura Okafor,Bronze,11 months,2023-03-18,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0148,Maria Patel,Silver,9 months,2023-04-05,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0149,Henry Williams,Platinum,43 months,2023-02-21,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0150,Zara Kim,Gold,56 months,2024-01-27,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0151,Leo King,Silver,55 months,2023-07-11,Performance is exactly what we need for our workload. No complaints at all.
+ACC-0152,Chen Anderson,Gold,36 months,2024-09-20,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0153,Steve Kim,Platinum,32 months,2024-07-17,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0154,Frank Lewis,Platinum,8 months,2023-05-21,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0155,Hannah Harris,Gold,26 months,2024-01-27,I tried reaching support five times. Never got a response. Can't operate a business this way.
+ACC-0156,Eric Dubois,Platinum,46 months,2023-12-19,The new dashboard update is excellent. It's exactly what we asked for in feedback sessions.
+ACC-0157,Uma Lopez,Bronze,65 months,2023-07-04,Absolutely recommending this at the industry conference next month.
+ACC-0158,Marco Lee,Gold,41 months,2023-10-15,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0159,Hannah King,Silver,61 months,2023-06-13,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0160,Paul Lewis,Gold,32 months,2023-08-13,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0161,Wendy Thomas,Silver,50 months,2023-08-31,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0162,Wendy Okafor,Gold,41 months,2024-12-21,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0163,Kevin Kowalski,Silver,46 months,2024-07-30,The quarterly business review was insightful. Always appreciate the partnership.
+ACC-0164,Ivan Walker,Silver,64 months,2024-05-17,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0165,David Lee,Silver,12 months,2023-01-21,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0166,Alice Young,Silver,62 months,2023-05-14,"Had a minor billing question, was resolved quickly. Happy with the service."
+ACC-0167,Uma Brown,Gold,23 months,2023-06-01,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0168,Henry Rossi,Bronze,19 months,2023-03-16,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0169,Laura Miller,Bronze,51 months,2023-11-06,Honestly disappointed. I fought internally to renew last year. I'm not sure I can make that case again.
+ACC-0170,Karen Green,Platinum,18 months,2024-10-26,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0171,Julia King,Silver,23 months,2024-11-12,Our legal team is reviewing the contract to understand exit clauses. Things aren't great right now.
+ACC-0172,Yuki Walker,Bronze,23 months,2023-05-11,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0173,Kevin Hill,Gold,1 months,2023-07-06,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0174,Nina Lee,Gold,41 months,2024-05-23,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0175,Emma Harris,Bronze,43 months,2023-11-24,I used to recommend this to everyone. Not anymore. Quality has declined noticeably.
+ACC-0176,Victor Patel,Gold,12 months,2023-09-29,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0177,Emma King,Bronze,32 months,2023-04-21,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0178,David Lopez,Platinum,1 months,2024-03-05,We flagged a bug last month and it was fixed in the next patch. Responsive and professional.
+ACC-0179,Fatima Lopez,Bronze,53 months,2024-07-13,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0180,Eric Kowalski,Silver,13 months,2023-06-16,Several of our team members are back to using spreadsheets because the tool keeps failing them.
+ACC-0181,Carol Robinson,Gold,10 months,2023-11-23,The gap between what was promised and what we have is growing. Something needs to change urgently.
+ACC-0182,Emma Young,Silver,14 months,2024-01-20,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0183,Julia Garcia,Bronze,10 months,2024-08-31,My contract is up in three months and I'm not sure I'll be renewing. The service isn't what it was.
+ACC-0184,Bob Green,Silver,62 months,2024-09-13,We've extended our contract for another two years. Completely satisfied with the direction.
+ACC-0185,Karen Brown,Gold,56 months,2023-12-06,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0186,Ahmed Santos,Bronze,25 months,2024-11-07,"We've started evaluating alternatives. Not a decision yet, but the current issues are pushing us there."
+ACC-0187,Paul Miller,Gold,39 months,2024-02-07,I've recommended switching to three colleagues this week. This just isn't working for us anymore.
+ACC-0188,Fatima Anderson,Gold,71 months,2024-01-05,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0189,Frank Robinson,Platinum,55 months,2023-07-24,"Honestly, I've been a customer for four years but this year has been a rough experience. Reevaluating my options."
+ACC-0190,Nathan Taylor,Bronze,4 months,2023-03-25,We've had three outages in two months. Our team is starting to lose confidence in this platform.
+ACC-0191,Tina Hill,Platinum,15 months,2024-05-15,Great product as always. Looking forward to the new features announced at the conference.
+ACC-0192,Frank Dubois,Platinum,34 months,2023-07-09,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0193,Xiang Thomas,Platinum,49 months,2023-02-15,Honestly disappointed. I fought internally to renew last year. I'm not sure I can make that case again.
+ACC-0194,Diana Clark,Silver,57 months,2023-10-03,The price increase wasn't accompanied by any improvement in service. That's a problem.
+ACC-0195,James Miller,Gold,8 months,2024-11-15,Very pleased with the stability improvements this quarter. The team can tell the difference.
+ACC-0196,Ahmed Okafor,Silver,70 months,2024-07-20,Honestly disappointed. I fought internally to renew last year. I'm not sure I can make that case again.
+ACC-0197,Hannah Scott,Platinum,50 months,2024-08-09,The competitor you know who I mean is offering the same features at half the price. Hard to ignore.
+ACC-0198,Eric Walker,Gold,31 months,2024-02-09,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0199,George Kowalski,Silver,5 months,2023-05-04,The SLA has been met every month without exception. That's what reliability looks like.
+ACC-0200,Leo Taylor,Silver,58 months,2023-07-17,Renewed for the third year. This tool is deeply embedded in our workflow now.

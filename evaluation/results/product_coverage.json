@@ -1,0 +1,302 @@
+{
+ "shortcut_ai|Q01": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 190,
+  "diff": 10,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q01.csv"
+ },
+ "shortcut_ai|Q02": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 177,
+  "diff": 23,
+  "missing": 0,
+  "status": "positional_alignment",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q02.csv"
+ },
+ "shortcut_ai|Q03": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q03.csv"
+ },
+ "shortcut_ai|Q09": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 330,
+  "diff": 70,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q09.csv"
+ },
+ "shortcut_ai|Q10": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 400,
+  "diff": 400,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q10.csv"
+ },
+ "shortcut_ai|Q12": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 131,
+  "diff": 69,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q12.csv"
+ },
+ "shortcut_ai|Q18": {
+  "anchor_rows": 24,
+  "product_rows": 100,
+  "equal": 24,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q18__Emails.csv"
+ },
+ "shortcut_ai|Q23": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 188,
+  "diff": 12,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q23.csv",
+  "note": "in_place_overwrite"
+ },
+ "shortcut_ai|Q24": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 0,
+  "diff": 200,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q24.csv"
+ },
+ "shortcut_ai|Q25": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 30,
+  "diff": 170,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q25.csv"
+ },
+ "shortcut_ai|Q26": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 136,
+  "diff": 64,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/shortcut_ai/Q26.csv"
+ },
+ "excelagent_gpt|Q01": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 163,
+  "diff": 37,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q01.csv"
+ },
+ "excelagent_gpt|Q02": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 177,
+  "diff": 23,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q02.csv"
+ },
+ "excelagent_gpt|Q03": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q03.csv"
+ },
+ "excelagent_gpt|Q09": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 400,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q09.csv"
+ },
+ "excelagent_gpt|Q10": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 400,
+  "diff": 400,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q10.csv"
+ },
+ "excelagent_gpt|Q12": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 148,
+  "diff": 52,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q12.csv"
+ },
+ "excelagent_gpt|Q18": {
+  "anchor_rows": 24,
+  "product_rows": 100,
+  "equal": 24,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q18__Emails.csv"
+ },
+ "excelagent_gpt|Q23": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q23.csv",
+  "note": "in_place_overwrite"
+ },
+ "excelagent_gpt|Q24": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 0,
+  "diff": 200,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q24.csv"
+ },
+ "excelagent_gpt|Q25": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 16,
+  "diff": 184,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q25.csv"
+ },
+ "excelagent_gpt|Q26": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 59,
+  "diff": 141,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/excelagent_gpt/Q26.csv"
+ },
+ "claude_in_excel|Q01": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 160,
+  "diff": 40,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q01.csv"
+ },
+ "claude_in_excel|Q02": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 177,
+  "diff": 23,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q02.csv"
+ },
+ "claude_in_excel|Q03": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q03.csv"
+ },
+ "claude_in_excel|Q09": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 400,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q09.csv"
+ },
+ "claude_in_excel|Q10": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 600,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q10.csv"
+ },
+ "claude_in_excel|Q12": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 148,
+  "diff": 52,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q12.csv"
+ },
+ "claude_in_excel|Q18": {
+  "anchor_rows": 24,
+  "product_rows": 100,
+  "equal": 24,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q18__Emails.csv"
+ },
+ "claude_in_excel|Q23": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 200,
+  "diff": 0,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q23.csv",
+  "note": "in_place_overwrite"
+ },
+ "claude_in_excel|Q24": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 0,
+  "diff": 200,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q24_copy.csv"
+ },
+ "claude_in_excel|Q25": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 14,
+  "diff": 186,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q25.csv"
+ },
+ "claude_in_excel|Q26": {
+  "anchor_rows": 200,
+  "product_rows": 200,
+  "equal": 0,
+  "diff": 200,
+  "missing": 0,
+  "status": "ok",
+  "file": "/Volumes/Storage/hermes/workspace/feishu-tasks/tada-paper-revision/tabench_rq2/product_csv/claude_in_excel/Q26_copy.csv"
+ }
+}

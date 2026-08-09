@@ -1,0 +1,90 @@
+DefectID,Reporter,product_defect
+DEF-0046,Vera Ibrahim,Audio crackling from the speakers at moderate to high volume.
+DEF-0007,Rita Chen,"Flickering panel at elevated brightness, unusable in a bright room."
+DEF-0010,Carla Garcia,The charge disappears in about 2 hours even when idle.
+DEF-0086,Vera Xu,Screen protector pre-applied at factory has a bubble under it.
+DEF-0055,Rita Huang,Screen has a cluster of dead pixels in the upper right corner.
+DEF-0040,Carla Huang,Touchpad cursor jumps around while typing.
+DEF-0049,Tina Ueda,Speaker distortion issue at higher volume settings.
+DEF-0066,Umar Olsen,BT headphones crackle and stutter at short distances.
+DEF-0089,Ivy Yamada,The mute indicator light is inverted: on means unmuted.
+DEF-0045,Liam Garcia,Speaker crackles and distorts at volumes above 50 percent.
+DEF-0002,Alice Xu,Screen keeps flashing on and off at high brightness levels.
+DEF-0027,Liam Lopez,Wi-Fi radio disconnects itself again and again during video calls.
+DEF-0030,Xenia Olsen,There is a harsh grinding sound from the fan during rendering.
+DEF-0079,Frank Zhang,The webcam privacy shutter slides open on its own in a bag.
+DEF-0012,Tina Anderson,Power cell empties itself in a couple of hours doing nothing.
+DEF-0050,Frank Rossi,USB-C port only charges when the cable is held at an angle.
+DEF-0022,Karen Ibrahim,Wi-Fi disconnects every few minutes and needs manual reconnection.
+DEF-0071,Xenia Singh,All pictures are out of focus even after wiping the camera.
+DEF-0025,David Chen,Network keeps dropping; I must rejoin the Wi-Fi over and over.
+DEF-0018,Ivy Zhang,"Left-side hinge snapped during regular use, no drops."
+DEF-0019,Alice Yamada,Hinge cracking near the left corner after light daily use.
+DEF-0069,Xenia Rossi,Severe Bluetooth stutter at even one to two meters range.
+DEF-0067,Elena Ibrahim,Bluetooth playback skips constantly unless the device is adjacent.
+DEF-0075,Qing Park,The power button LED stays lit even when the device is fully off.
+DEF-0033,Rita Jones,Loud mechanical grinding from the cooler under stress.
+DEF-0008,Sam Nakamura,At max brightness the display pulses like a strobe light.
+DEF-0085,Rita Anderson,The charger brick whines audibly when the device sleeps.
+DEF-0088,Rita Yamada,Device name resets to factory default after every reboot.
+DEF-0041,David Miller,Pointer leaps across the screen when palms hover over the touchpad.
+DEF-0029,Zoe Brown,Cooling fan grinds audibly whenever the CPU works hard.
+DEF-0064,Grace Ueda,It gets extremely hot and turns itself off while rendering video.
+DEF-0062,Grace Singh,The unit powers off from heat under heavy video workloads.
+DEF-0074,Hassan Evans,Camera focus failure: every shot is smeared.
+DEF-0058,Ben Huang,A group of unresponsive pixels sits at the screen's top right.
+DEF-0013,Rita Garcia,Battery life is roughly two hours despite light workloads.
+DEF-0072,Nathan Singh,"The rear camera cannot produce a sharp image, always hazy."
+DEF-0077,Ben Diaz,The serial number sticker peeled off within the first week.
+DEF-0028,Tina Ibrahim,Fan makes a loud grinding noise under any sustained load.
+DEF-0076,Carla Yamada,Packaging arrived with the wrong regional power adapter included.
+DEF-0081,Tina Chen,The SD card reader ejects cards with too much spring force.
+DEF-0017,Olga Singh,The hinge on the left side developed a fracture within a month.
+DEF-0011,Hassan Quinn,Full battery is gone before lunch with minimal usage.
+DEF-0036,Grace Wang,"Single key presses come out twice, especially E and A."
+DEF-0031,Rita Diaz,The fan rattles and grinds as soon as load increases.
+DEF-0043,Umar Lopez,Cursor teleports randomly during text entry due to touchpad.
+DEF-0051,Xenia Huang,Charging via USB-C works only if I wiggle the connector.
+DEF-0009,Ben Anderson,Battery drains from full to empty within two hours of light use.
+DEF-0035,Liam Singh,Typing produces duplicated characters on many keys.
+DEF-0005,Xenia Diaz,Display flashing issue shows up once brightness passes roughly 80%.
+DEF-0032,Mona Chen,"Grinding fan noise under load, sounds like bearing failure."
+DEF-0047,Will Varga,The built-in speakers buzz and distort past half volume.
+DEF-0053,Mona Ibrahim,"USB-C charging is intermittent, cable position sensitive."
+DEF-0006,Vera Xu,The screen strobes when brightness is turned up high.
+DEF-0037,Carla Brown,The keyboard double-types letters randomly.
+DEF-0061,Ivy Chen,Thermal shutdown occurs midway through exporting footage.
+DEF-0004,Hassan Evans,Backlight blinks rapidly at high brightness settings.
+DEF-0016,Nathan Huang,Left hinge cracked after a few weeks of normal opening and closing.
+DEF-0073,Mona Lopez,"Photos are consistently soft and blurry, lens is clean."
+DEF-0052,Frank Olsen,The type-C socket is loose; charging cuts out unless angled.
+DEF-0054,Umar Wang,Port feels loose and the charger disconnects unless propped up.
+DEF-0057,Yusuf Yamada,Dead pixel patch in the upper right region of the panel.
+DEF-0024,Yusuf Kim,The unit loses its Wi-Fi link constantly throughout the day.
+DEF-0060,Karen Miller,Device overheats and shuts down during video export.
+DEF-0087,David Varga,The laptop sleeve sold as a bundle is one size too small.
+DEF-0003,Ivy Huang,Panel strobes visibly whenever I push brightness near maximum.
+DEF-0063,Will Kim,Overheating causes abrupt shutdowns during long exports.
+DEF-0042,Ivy Olsen,The trackpad makes the cursor jump erratically mid-typing.
+DEF-0082,Mona Miller,The status LED shows amber instead of the documented white.
+DEF-0068,Elena Huang,Audio over Bluetooth breaks up beyond arm's length.
+DEF-0070,Rita Ibrahim,Camera photos come out blurry despite cleaning the lens.
+DEF-0084,Qing Ibrahim,The kickstand does not lock at the advertised 165-degree angle.
+DEF-0048,Umar Chen,Sound gets crackly whenever volume exceeds 50%.
+DEF-0020,Zoe Fischer,The lid's left hinge split apart after about three weeks.
+DEF-0026,Mona Diaz,"Constant wireless dropouts, roughly every five minutes."
+DEF-0078,Elena Ueda,Rubber feet on the bottom detach and leave sticky residue.
+DEF-0039,Yusuf Jones,Duplicate keystroke problem across the whole keyboard.
+DEF-0014,Will Ueda,"Device dies after two hours off the charger, barely used."
+DEF-0080,Vera Nakamura,Firmware update reset my language settings to German.
+DEF-0023,Elena Garcia,"Wireless connection drops repeatedly, reconnect required each time."
+DEF-0065,Pedro Miller,Bluetooth audio stutters when the phone is more than a meter away.
+DEF-0034,Umar Taylor,Keyboard keys register double presses for single keystrokes.
+DEF-0001,Umar Diaz,The display flickers intermittently when brightness is set above 80 percent.
+DEF-0059,Ben Zhang,Top-right corner of the display shows a dead-pixel cluster.
+DEF-0021,Will Nakamura,Left hinge broke off though the laptop was never mishandled.
+DEF-0056,Vera Kim,Several stuck pixels visible near the top-right of the display.
+DEF-0038,Vera Huang,Keys chatter: one press yields two characters.
+DEF-0015,Will Rossi,The battery discharges completely in under two hours of standby.
+DEF-0044,Frank Lopez,Erratic touchpad: mouse pointer skips around as I type.
+DEF-0083,Tina Olsen,Included quick-start guide references a different model entirely.

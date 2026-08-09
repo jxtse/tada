@@ -1,0 +1,201 @@
+LogID,Date,project_log
+LOG-0001,2026-01-10,"Hassan Brown originally owned the SSO integration, but handed it over to Hassan Chen before going on leave."
+LOG-0002,2026-03-16,"Vera Xu nominated Alice Wang for the billing reconciliation script; Alice Wang declined, so Frank Diaz stepped in."
+LOG-0003,2026-12-25,"Liam Quinn suggested that Qing Zhang take over the billing reconciliation script, and Qing Zhang agreed."
+LOG-0004,2026-02-09,Ivy Xu will take on the mobile crash triage and report progress on Friday.
+LOG-0005,2026-08-28,"Will Singh suggested that Umar Chen take over the churn dashboard, and Umar Chen agreed."
+LOG-0006,2026-11-24,"After discussion between Sam Fischer and Liam Fischer, it was decided Sam Fischer keeps the quarterly load test for now."
+LOG-0007,2026-08-12,David Huang will take on the API gateway upgrade and report progress on Friday.
+LOG-0008,2026-04-14,Mona Evans will take on the mobile crash triage and report progress on Friday.
+LOG-0009,2026-01-06,"Xenia Kim originally owned the quarterly load test, but handed it over to Ivy Chen before going on leave."
+LOG-0010,2026-05-11,"After discussion between Hassan Zhang and Qing Brown, it was decided Hassan Zhang keeps the SSO integration for now."
+LOG-0011,2026-05-24,"Carla Rossi originally owned the vendor security review, but handed it over to Olga Anderson before going on leave."
+LOG-0012,2026-09-25,"Tina Huang nominated Olga Lopez for the onboarding tutorial rewrite; Olga Lopez declined, so Sam Park stepped in."
+LOG-0013,2026-11-27,"Zoe Huang originally owned the onboarding tutorial rewrite, but handed it over to Elena Anderson before going on leave."
+LOG-0014,2026-12-10,"After discussion between Will Anderson and Karen Anderson, it was decided Will Anderson keeps the mobile crash triage for now."
+LOG-0015,2026-03-23,Qing Huang volunteered for the API gateway upgrade even though David Garcia had drafted the original plan.
+LOG-0016,2026-12-03,"Ivy Chen suggested that Ben Huang take over the data retention audit, and Ben Huang agreed."
+LOG-0017,2026-01-14,"Sam Diaz originally owned the quarterly load test, but handed it over to Qing Evans before going on leave."
+LOG-0018,2026-12-11,"Vera Evans nominated Hassan Jones for the mobile crash triage; Hassan Jones declined, so Ivy Kim stepped in."
+LOG-0019,2026-10-04,"Karen Olsen nominated Ivy Huang for the billing reconciliation script; Ivy Huang declined, so Carla Garcia stepped in."
+LOG-0020,2026-06-25,Elena Diaz will take on the mobile crash triage and report progress on Friday.
+LOG-0021,2026-11-10,Grace Olsen will take on the quarterly load test and report progress on Friday.
+LOG-0022,2026-04-12,Will Wang will take on the billing reconciliation script and report progress on Friday.
+LOG-0023,2026-07-28,Mona Quinn will take on the billing reconciliation script and report progress on Friday.
+LOG-0024,2026-03-04,Olga Rossi will take on the SSO integration and report progress on Friday.
+LOG-0025,2026-11-21,"Alice Brown suggested that Yusuf Huang take over the mobile crash triage, and Yusuf Huang agreed."
+LOG-0026,2026-11-15,Carla Singh will take on the quarterly load test and report progress on Friday.
+LOG-0027,2026-01-06,Carla Zhang volunteered for the API gateway upgrade even though Zoe Evans had drafted the original plan.
+LOG-0028,2026-03-12,"Sam Nakamura nominated Xenia Miller for the mobile crash triage; Xenia Miller declined, so Pedro Anderson stepped in."
+LOG-0029,2026-10-08,"Grace Fischer originally owned the API gateway upgrade, but handed it over to Ivy Ibrahim before going on leave."
+LOG-0030,2026-07-05,Umar Jones will take on the API gateway upgrade and report progress on Friday.
+LOG-0031,2026-07-26,"After discussion between Nathan Garcia and Umar Zhang, it was decided Nathan Garcia keeps the churn dashboard for now."
+LOG-0032,2026-09-11,Pedro Rossi volunteered for the data retention audit even though Will Lopez had drafted the original plan.
+LOG-0033,2026-05-02,Mona Ibrahim will take on the onboarding tutorial rewrite and report progress on Friday.
+LOG-0034,2026-02-08,Qing Lopez volunteered for the onboarding tutorial rewrite even though Zoe Park had drafted the original plan.
+LOG-0035,2026-04-19,"Vera Huang nominated Ivy Rossi for the API gateway upgrade; Ivy Rossi declined, so Zoe Xu stepped in."
+LOG-0036,2026-12-23,"Zoe Miller suggested that Liam Fischer take over the backup restore drill, and Liam Fischer agreed."
+LOG-0037,2026-10-07,"Liam Singh originally owned the backup restore drill, but handed it over to Alice Wang before going on leave."
+LOG-0038,2026-04-20,Zoe Park will take on the API gateway upgrade and report progress on Friday.
+LOG-0039,2026-03-11,Hassan Anderson will take on the backup restore drill and report progress on Friday.
+LOG-0040,2026-03-25,"Will Fischer originally owned the billing reconciliation script, but handed it over to Zoe Kim before going on leave."
+LOG-0041,2026-06-10,"David Quinn originally owned the mobile crash triage, but handed it over to Liam Chen before going on leave."
+LOG-0042,2026-03-23,"Karen Evans originally owned the SSO integration, but handed it over to Frank Xu before going on leave."
+LOG-0043,2026-07-10,"After discussion between Rita Wang and Tina Zhang, it was decided Rita Wang keeps the backup restore drill for now."
+LOG-0044,2026-10-13,Jorge Evans volunteered for the API gateway upgrade even though Xenia Wang had drafted the original plan.
+LOG-0045,2026-10-04,Yusuf Singh will take on the backup restore drill and report progress on Friday.
+LOG-0046,2026-03-21,Karen Xu volunteered for the data retention audit even though Pedro Evans had drafted the original plan.
+LOG-0047,2026-04-08,Carla Wang will take on the SSO integration and report progress on Friday.
+LOG-0048,2026-08-24,Will Chen will take on the API gateway upgrade and report progress on Friday.
+LOG-0049,2026-08-26,"Nathan Fischer suggested that Nathan Park take over the churn dashboard, and Nathan Park agreed."
+LOG-0050,2026-01-10,Sam Ueda will take on the SSO integration and report progress on Friday.
+LOG-0051,2026-03-24,"After discussion between Alice Kim and Ivy Diaz, it was decided Alice Kim keeps the billing reconciliation script for now."
+LOG-0052,2026-07-21,"Carla Rossi nominated Carla Kim for the SSO integration; Carla Kim declined, so Tina Taylor stepped in."
+LOG-0053,2026-04-14,Frank Taylor will take on the data retention audit and report progress on Friday.
+LOG-0054,2026-02-02,Will Rossi will take on the vendor security review and report progress on Friday.
+LOG-0055,2026-02-10,Mona Singh will take on the data retention audit and report progress on Friday.
+LOG-0056,2026-11-10,Vera Ueda will take on the API gateway upgrade and report progress on Friday.
+LOG-0057,2026-11-09,"Carla Park suggested that David Jones take over the SSO integration, and David Jones agreed."
+LOG-0058,2026-08-02,"Carla Ueda suggested that Rita Miller take over the mobile crash triage, and Rita Miller agreed."
+LOG-0059,2026-12-22,Ivy Olsen will take on the backup restore drill and report progress on Friday.
+LOG-0060,2026-10-08,Vera Lopez volunteered for the mobile crash triage even though David Chen had drafted the original plan.
+LOG-0061,2026-04-16,"Rita Brown originally owned the SSO integration, but handed it over to Mona Quinn before going on leave."
+LOG-0062,2026-10-22,Mona Wang volunteered for the backup restore drill even though Jorge Chen had drafted the original plan.
+LOG-0063,2026-04-05,David Yamada volunteered for the billing reconciliation script even though Tina Evans had drafted the original plan.
+LOG-0064,2026-05-11,"After discussion between Ben Nakamura and Carla Varga, it was decided Ben Nakamura keeps the billing reconciliation script for now."
+LOG-0065,2026-05-17,"Xenia Zhang originally owned the mobile crash triage, but handed it over to Carla Chen before going on leave."
+LOG-0066,2026-02-14,"After discussion between Olga Anderson and Zoe Wang, it was decided Olga Anderson keeps the churn dashboard for now."
+LOG-0067,2026-10-25,Sam Singh volunteered for the quarterly load test even though Elena Evans had drafted the original plan.
+LOG-0068,2026-08-19,"David Zhang suggested that Jorge Rossi take over the vendor security review, and Jorge Rossi agreed."
+LOG-0069,2026-11-23,"Tina Park originally owned the billing reconciliation script, but handed it over to Ben Fischer before going on leave."
+LOG-0070,2026-05-12,"Mona Brown nominated Mona Kim for the API gateway upgrade; Mona Kim declined, so Will Huang stepped in."
+LOG-0071,2026-11-04,"After discussion between Alice Kim and Zoe Jones, it was decided Alice Kim keeps the SSO integration for now."
+LOG-0072,2026-07-20,Hassan Evans will take on the data retention audit and report progress on Friday.
+LOG-0073,2026-06-27,"Umar Chen nominated Grace Olsen for the SSO integration; Grace Olsen declined, so Grace Nakamura stepped in."
+LOG-0074,2026-09-19,"Ben Quinn suggested that Zoe Fischer take over the churn dashboard, and Zoe Fischer agreed."
+LOG-0075,2026-06-23,"Alice Fischer suggested that Grace Garcia take over the API gateway upgrade, and Grace Garcia agreed."
+LOG-0076,2026-04-12,"Grace Ibrahim nominated Liam Olsen for the quarterly load test; Liam Olsen declined, so Qing Miller stepped in."
+LOG-0077,2026-03-27,"Pedro Taylor suggested that Olga Fischer take over the churn dashboard, and Olga Fischer agreed."
+LOG-0078,2026-10-25,Ivy Xu will take on the mobile crash triage and report progress on Friday.
+LOG-0079,2026-09-01,"Grace Huang nominated Umar Huang for the vendor security review; Umar Huang declined, so Vera Garcia stepped in."
+LOG-0080,2026-01-08,"Yusuf Yamada originally owned the billing reconciliation script, but handed it over to Vera Anderson before going on leave."
+LOG-0081,2026-07-28,"Ivy Taylor suggested that Zoe Jones take over the vendor security review, and Zoe Jones agreed."
+LOG-0082,2026-07-19,"After discussion between Liam Olsen and Ivy Garcia, it was decided Liam Olsen keeps the churn dashboard for now."
+LOG-0083,2026-05-22,"David Anderson originally owned the backup restore drill, but handed it over to Qing Varga before going on leave."
+LOG-0084,2026-05-21,"After discussion between David Park and Carla Kim, it was decided David Park keeps the data retention audit for now."
+LOG-0085,2026-10-13,"After discussion between Will Ueda and Jorge Garcia, it was decided Will Ueda keeps the onboarding tutorial rewrite for now."
+LOG-0086,2026-05-14,Vera Evans volunteered for the SSO integration even though Vera Kim had drafted the original plan.
+LOG-0087,2026-06-24,"After discussion between Mona Miller and Xenia Brown, it was decided Mona Miller keeps the backup restore drill for now."
+LOG-0088,2026-11-12,Vera Rossi volunteered for the SSO integration even though Will Huang had drafted the original plan.
+LOG-0089,2026-03-24,Qing Jones will take on the vendor security review and report progress on Friday.
+LOG-0090,2026-04-12,"Ivy Xu nominated Zoe Rossi for the data retention audit; Zoe Rossi declined, so Yusuf Fischer stepped in."
+LOG-0091,2026-05-15,Hassan Xu will take on the data retention audit and report progress on Friday.
+LOG-0092,2026-04-17,David Park will take on the backup restore drill and report progress on Friday.
+LOG-0093,2026-03-05,"After discussion between David Varga and Mona Quinn, it was decided David Varga keeps the API gateway upgrade for now."
+LOG-0094,2026-03-25,"After discussion between Grace Kim and Nathan Singh, it was decided Grace Kim keeps the data retention audit for now."
+LOG-0095,2026-05-07,Carla Park will take on the API gateway upgrade and report progress on Friday.
+LOG-0096,2026-02-05,"After discussion between Yusuf Yamada and Frank Singh, it was decided Yusuf Yamada keeps the SSO integration for now."
+LOG-0097,2026-01-18,"Tina Nakamura suggested that Umar Nakamura take over the SSO integration, and Umar Nakamura agreed."
+LOG-0098,2026-11-01,Grace Xu will take on the churn dashboard and report progress on Friday.
+LOG-0099,2026-07-17,Umar Xu will take on the vendor security review and report progress on Friday.
+LOG-0100,2026-09-20,"Sam Jones suggested that Frank Chen take over the vendor security review, and Frank Chen agreed."
+LOG-0101,2026-04-06,"Qing Kim suggested that Nathan Varga take over the SSO integration, and Nathan Varga agreed."
+LOG-0102,2026-01-19,Zoe Miller will take on the billing reconciliation script and report progress on Friday.
+LOG-0103,2026-11-09,"Qing Fischer suggested that David Lopez take over the API gateway upgrade, and David Lopez agreed."
+LOG-0104,2026-02-14,Yusuf Rossi will take on the API gateway upgrade and report progress on Friday.
+LOG-0105,2026-11-21,Olga Miller will take on the billing reconciliation script and report progress on Friday.
+LOG-0106,2026-10-23,Alice Jones will take on the churn dashboard and report progress on Friday.
+LOG-0107,2026-02-16,Elena Nakamura will take on the quarterly load test and report progress on Friday.
+LOG-0108,2026-07-10,"Grace Taylor suggested that Grace Yamada take over the onboarding tutorial rewrite, and Grace Yamada agreed."
+LOG-0109,2026-01-01,"Frank Brown suggested that Rita Park take over the SSO integration, and Rita Park agreed."
+LOG-0110,2026-09-03,David Singh volunteered for the billing reconciliation script even though Vera Chen had drafted the original plan.
+LOG-0111,2026-05-09,David Ibrahim volunteered for the SSO integration even though Xenia Xu had drafted the original plan.
+LOG-0112,2026-06-14,"After discussion between Olga Brown and David Fischer, it was decided Olga Brown keeps the data retention audit for now."
+LOG-0113,2026-03-11,"Xenia Diaz nominated David Yamada for the billing reconciliation script; David Yamada declined, so Ben Anderson stepped in."
+LOG-0114,2026-03-04,"After discussion between Liam Olsen and Tina Ibrahim, it was decided Liam Olsen keeps the data retention audit for now."
+LOG-0115,2026-11-26,"After discussion between Mona Miller and Olga Ibrahim, it was decided Mona Miller keeps the SSO integration for now."
+LOG-0116,2026-10-16,Frank Diaz will take on the billing reconciliation script and report progress on Friday.
+LOG-0117,2026-10-01,"Zoe Singh nominated Vera Olsen for the mobile crash triage; Vera Olsen declined, so Frank Taylor stepped in."
+LOG-0118,2026-02-09,"Vera Xu suggested that Elena Park take over the mobile crash triage, and Elena Park agreed."
+LOG-0119,2026-04-22,"Umar Kim nominated Alice Wang for the backup restore drill; Alice Wang declined, so Vera Quinn stepped in."
+LOG-0120,2026-12-08,"Karen Quinn suggested that Qing Wang take over the quarterly load test, and Qing Wang agreed."
+LOG-0121,2026-09-20,"After discussion between Pedro Lopez and Vera Varga, it was decided Pedro Lopez keeps the billing reconciliation script for now."
+LOG-0122,2026-02-25,"After discussion between Ben Anderson and Umar Fischer, it was decided Ben Anderson keeps the SSO integration for now."
+LOG-0123,2026-11-13,Pedro Kim will take on the churn dashboard and report progress on Friday.
+LOG-0124,2026-08-15,"Mona Huang suggested that Carla Olsen take over the backup restore drill, and Carla Olsen agreed."
+LOG-0125,2026-01-18,"Karen Diaz suggested that Pedro Xu take over the quarterly load test, and Pedro Xu agreed."
+LOG-0126,2026-09-07,"After discussion between Rita Anderson and Carla Zhang, it was decided Rita Anderson keeps the vendor security review for now."
+LOG-0127,2026-06-18,"After discussion between Umar Varga and Olga Kim, it was decided Umar Varga keeps the onboarding tutorial rewrite for now."
+LOG-0128,2026-02-04,"Yusuf Taylor nominated Tina Park for the data retention audit; Tina Park declined, so Will Varga stepped in."
+LOG-0129,2026-06-23,"Yusuf Varga originally owned the vendor security review, but handed it over to Hassan Anderson before going on leave."
+LOG-0130,2026-10-07,David Brown will take on the mobile crash triage and report progress on Friday.
+LOG-0131,2026-02-25,"Grace Diaz nominated Mona Garcia for the onboarding tutorial rewrite; Mona Garcia declined, so Olga Zhang stepped in."
+LOG-0132,2026-10-17,"Nathan Brown suggested that Umar Varga take over the SSO integration, and Umar Varga agreed."
+LOG-0133,2026-10-16,Alice Quinn volunteered for the churn dashboard even though Elena Park had drafted the original plan.
+LOG-0134,2026-11-20,Qing Yamada will take on the billing reconciliation script and report progress on Friday.
+LOG-0135,2026-06-10,Tina Kim will take on the onboarding tutorial rewrite and report progress on Friday.
+LOG-0136,2026-12-18,Olga Zhang will take on the churn dashboard and report progress on Friday.
+LOG-0137,2026-12-10,Karen Wang will take on the onboarding tutorial rewrite and report progress on Friday.
+LOG-0138,2026-12-21,"Vera Lopez originally owned the billing reconciliation script, but handed it over to Vera Evans before going on leave."
+LOG-0139,2026-11-23,"Karen Wang originally owned the SSO integration, but handed it over to David Yamada before going on leave."
+LOG-0140,2026-01-13,"Nathan Varga originally owned the API gateway upgrade, but handed it over to Xenia Rossi before going on leave."
+LOG-0141,2026-11-09,Vera Brown volunteered for the billing reconciliation script even though Elena Brown had drafted the original plan.
+LOG-0142,2026-08-04,Elena Brown will take on the churn dashboard and report progress on Friday.
+LOG-0143,2026-09-26,"Tina Varga suggested that Xenia Rossi take over the churn dashboard, and Xenia Rossi agreed."
+LOG-0144,2026-07-14,Will Jones volunteered for the API gateway upgrade even though Zoe Zhang had drafted the original plan.
+LOG-0145,2026-08-27,Zoe Varga will take on the vendor security review and report progress on Friday.
+LOG-0146,2026-10-07,"Hassan Ueda originally owned the backup restore drill, but handed it over to Will Wang before going on leave."
+LOG-0147,2026-03-24,Yusuf Xu will take on the quarterly load test and report progress on Friday.
+LOG-0148,2026-03-19,Qing Diaz will take on the churn dashboard and report progress on Friday.
+LOG-0149,2026-06-20,Ivy Anderson will take on the API gateway upgrade and report progress on Friday.
+LOG-0150,2026-09-12,"After discussion between Ben Yamada and Umar Taylor, it was decided Ben Yamada keeps the SSO integration for now."
+LOG-0151,2026-09-06,"Carla Zhang originally owned the billing reconciliation script, but handed it over to Will Kim before going on leave."
+LOG-0152,2026-11-11,"After discussion between Nathan Rossi and Rita Miller, it was decided Nathan Rossi keeps the onboarding tutorial rewrite for now."
+LOG-0153,2026-09-27,"Karen Lopez suggested that Jorge Garcia take over the churn dashboard, and Jorge Garcia agreed."
+LOG-0154,2026-11-20,Yusuf Ueda will take on the SSO integration and report progress on Friday.
+LOG-0155,2026-09-24,"Tina Huang suggested that Ben Varga take over the quarterly load test, and Ben Varga agreed."
+LOG-0156,2026-01-10,"Jorge Anderson suggested that Qing Yamada take over the churn dashboard, and Qing Yamada agreed."
+LOG-0157,2026-09-18,Karen Quinn volunteered for the billing reconciliation script even though Umar Garcia had drafted the original plan.
+LOG-0158,2026-07-27,"After discussion between Alice Ueda and Carla Garcia, it was decided Alice Ueda keeps the onboarding tutorial rewrite for now."
+LOG-0159,2026-02-24,"David Garcia originally owned the mobile crash triage, but handed it over to Rita Wang before going on leave."
+LOG-0160,2026-01-06,Vera Evans will take on the API gateway upgrade and report progress on Friday.
+LOG-0161,2026-08-21,"Zoe Ibrahim suggested that Rita Chen take over the vendor security review, and Rita Chen agreed."
+LOG-0162,2026-11-24,"Mona Nakamura originally owned the quarterly load test, but handed it over to Karen Anderson before going on leave."
+LOG-0163,2026-09-04,"Tina Chen suggested that Yusuf Xu take over the quarterly load test, and Yusuf Xu agreed."
+LOG-0164,2026-08-13,"Jorge Zhang nominated Vera Jones for the vendor security review; Vera Jones declined, so Tina Chen stepped in."
+LOG-0165,2026-07-26,Mona Varga will take on the onboarding tutorial rewrite and report progress on Friday.
+LOG-0166,2026-01-18,Jorge Ueda volunteered for the data retention audit even though Zoe Rossi had drafted the original plan.
+LOG-0167,2026-09-03,"Rita Evans suggested that David Brown take over the backup restore drill, and David Brown agreed."
+LOG-0168,2026-11-28,"Jorge Garcia suggested that Xenia Xu take over the onboarding tutorial rewrite, and Xenia Xu agreed."
+LOG-0169,2026-03-22,Qing Evans will take on the vendor security review and report progress on Friday.
+LOG-0170,2026-11-03,Zoe Singh will take on the churn dashboard and report progress on Friday.
+LOG-0171,2026-11-21,"Ivy Diaz suggested that Grace Xu take over the data retention audit, and Grace Xu agreed."
+LOG-0172,2026-06-20,"Hassan Diaz suggested that Jorge Taylor take over the data retention audit, and Jorge Taylor agreed."
+LOG-0173,2026-06-14,"Vera Jones suggested that Will Singh take over the backup restore drill, and Will Singh agreed."
+LOG-0174,2026-06-05,Frank Anderson will take on the mobile crash triage and report progress on Friday.
+LOG-0175,2026-08-18,"Vera Xu nominated Karen Park for the data retention audit; Karen Park declined, so Olga Olsen stepped in."
+LOG-0176,2026-04-09,"After discussion between David Fischer and Umar Taylor, it was decided David Fischer keeps the billing reconciliation script for now."
+LOG-0177,2026-10-19,"Xenia Ueda originally owned the churn dashboard, but handed it over to Carla Xu before going on leave."
+LOG-0178,2026-09-16,"Mona Yamada originally owned the vendor security review, but handed it over to Sam Garcia before going on leave."
+LOG-0179,2026-05-05,"Umar Yamada nominated Elena Lopez for the backup restore drill; Elena Lopez declined, so Mona Huang stepped in."
+LOG-0180,2026-04-28,Olga Quinn will take on the churn dashboard and report progress on Friday.
+LOG-0181,2026-03-19,"Zoe Taylor suggested that Vera Fischer take over the billing reconciliation script, and Vera Fischer agreed."
+LOG-0182,2026-08-08,Sam Varga will take on the data retention audit and report progress on Friday.
+LOG-0183,2026-06-13,"Carla Ibrahim originally owned the onboarding tutorial rewrite, but handed it over to Liam Huang before going on leave."
+LOG-0184,2026-09-21,"Pedro Olsen nominated Ben Brown for the quarterly load test; Ben Brown declined, so Umar Kim stepped in."
+LOG-0185,2026-07-12,"Ivy Xu suggested that Ivy Singh take over the billing reconciliation script, and Ivy Singh agreed."
+LOG-0186,2026-06-27,"Sam Ueda originally owned the onboarding tutorial rewrite, but handed it over to Carla Quinn before going on leave."
+LOG-0187,2026-08-06,"After discussion between Liam Park and Zoe Park, it was decided Liam Park keeps the churn dashboard for now."
+LOG-0188,2026-06-20,Hassan Chen will take on the billing reconciliation script and report progress on Friday.
+LOG-0189,2026-08-22,"Will Diaz nominated Vera Huang for the data retention audit; Vera Huang declined, so Nathan Zhang stepped in."
+LOG-0190,2026-01-05,Pedro Park will take on the mobile crash triage and report progress on Friday.
+LOG-0191,2026-03-02,"After discussion between Sam Singh and Frank Evans, it was decided Sam Singh keeps the API gateway upgrade for now."
+LOG-0192,2026-12-24,"Frank Ibrahim originally owned the backup restore drill, but handed it over to Frank Quinn before going on leave."
+LOG-0193,2026-03-08,"After discussion between Vera Jones and Carla Garcia, it was decided Vera Jones keeps the SSO integration for now."
+LOG-0194,2026-09-09,"Nathan Taylor originally owned the billing reconciliation script, but handed it over to Elena Zhang before going on leave."
+LOG-0195,2026-07-13,Frank Xu will take on the backup restore drill and report progress on Friday.
+LOG-0196,2026-10-04,"After discussion between Elena Diaz and Alice Garcia, it was decided Elena Diaz keeps the mobile crash triage for now."
+LOG-0197,2026-02-03,"Frank Park originally owned the churn dashboard, but handed it over to Tina Taylor before going on leave."
+LOG-0198,2026-06-28,"Pedro Varga originally owned the mobile crash triage, but handed it over to Elena Taylor before going on leave."
+LOG-0199,2026-07-12,"After discussion between Ben Wang and Qing Nakamura, it was decided Ben Wang keeps the SSO integration for now."
+LOG-0200,2026-05-16,"Sam Zhang suggested that Xenia Yamada take over the quarterly load test, and Xenia Yamada agreed."

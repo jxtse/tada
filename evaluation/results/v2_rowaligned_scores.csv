@@ -1,0 +1,31 @@
+class,arm,mean,sd
+S1 Row-wise classification,skill_on,60.0,0.0
+S1 Row-wise classification,operator_on,59.9,0.1
+S1 Row-wise classification,skill_off,60.0,0.0
+S1 Row-wise classification,code_only,60.0,0.1
+S1 Row-wise classification,direct,57.7,0.7
+S4 Field extraction,skill_on,40.0,0.0
+S4 Field extraction,operator_on,40.0,0.0
+S4 Field extraction,skill_off,40.0,0.0
+S4 Field extraction,code_only,40.0,0.0
+S4 Field extraction,direct,37.6,0.6
+S9 Semantic ranking,skill_on,49.6,0.5
+S9 Semantic ranking,operator_on,49.0,0.5
+S9 Semantic ranking,skill_off,49.0,0.6
+S9 Semantic ranking,code_only,45.9,1.9
+S9 Semantic ranking,direct,47.4,0.5
+S11 Normalization & repair,skill_on,50.0,0.0
+S11 Normalization & repair,operator_on,49.9,0.1
+S11 Normalization & repair,skill_off,49.9,0.1
+S11 Normalization & repair,code_only,49.9,0.1
+S11 Normalization & repair,direct,50.0,0.0
+S12 Constrained generation,skill_on,73.5,1.2
+S12 Constrained generation,operator_on,73.2,0.4
+S12 Constrained generation,skill_off,74.0,0.3
+S12 Constrained generation,code_only,73.0,0.7
+S12 Constrained generation,direct,60.5,1.7
+S6-alt Email classification (Q42),skill_on,0.0,0.0
+S6-alt Email classification (Q42),operator_on,0.0,0.0
+S6-alt Email classification (Q42),skill_off,0.0,0.0
+S6-alt Email classification (Q42),code_only,0.0,0.0
+S6-alt Email classification (Q42),direct,0.0,0.0

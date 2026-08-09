@@ -1,0 +1,23 @@
+{
+  "v1_config_2026_07_22": {
+    "host": "claude-opus-4.8",
+    "atoms": "claude-opus-4.8 (TA_MODEL)",
+    "judge": "gpt-5.5",
+    "task_set": "26 cases",
+    "runs": "skill_on/skill_off/direct/code_only x3 (full26_runs/), operator_on x3 (operator_runs/)"
+  },
+  "v2_config_2026_07_26": {
+    "host": "claude-opus-5",
+    "atoms": "claude-sonnet-5 (TA_MODEL, both textanalysis and semanticoperators)",
+    "judge": "gpt-5.5 (UNCHANGED by decision: keeps the 39-unit human calibration valid, kappa=0.68)",
+    "task_set": "23 cases (Q11, Q12, Q18 excluded)",
+    "runs_dir": "matrix_v2_runs/",
+    "rationale": {
+      "host_upgrade": "claude-opus-5 endpoint verified end-to-end via the Claude CLI (2026-07-26)",
+      "weaker_atoms": "restores the strong-host / weaker-atoms deployment assumption of the original 2026-04 design (host opus-4.6-1m + atoms haiku); v1's host=atoms=opus-4.8 made sub-calls unrealistically strong and compressed the interface contrast",
+      "task_exclusions": "Q11 (doc-to-table), Q12 (semantic imputation), and Q18 (semantic join) were treated as outside the two-atom contract and moved to the scope discussion.",
+      "judge_kept": "changing judge would require redoing the human calibration; gpt-5.6-sol availability verified but not adopted"
+    },
+    "historical_note": "v1 results remain in full26_runs/ + operator_runs/ and are NOT comparable with v2 (different host, atoms, and task set)."
+  }
+}

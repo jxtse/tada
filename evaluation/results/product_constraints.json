@@ -1,0 +1,17 @@
+{
+ "q24_max20words": {
+  "shortcut_ai": "0/200",
+  "excelagent_gpt": "0/200",
+  "claude_in_excel": "0/200"
+ },
+ "q26_scale_1to5": {
+  "shortcut_ai": "0/200",
+  "excelagent_gpt": "0/200",
+  "claude_in_excel": "161/200 (used 1-10 scale)"
+ },
+ "q23_preserve_original": {
+  "shortcut_ai": "violated (in-place overwrite)",
+  "excelagent_gpt": "violated (in-place overwrite)",
+  "claude_in_excel": "violated (in-place overwrite)"
+ }
+}

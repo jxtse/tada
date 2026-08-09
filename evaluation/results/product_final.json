@@ -1,0 +1,215 @@
+{
+ "shortcut_ai": {
+  "Q01": {
+   "anchor_win": 0,
+   "cand_win": 10,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 190,
+   "missing": 0,
+   "net": -10
+  },
+  "Q02": {
+   "anchor_win": 23,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 177,
+   "missing": 0,
+   "net": 23
+  },
+  "Q09": {
+   "anchor_win": 70,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 330,
+   "missing": 0,
+   "net": 70
+  },
+  "Q10": {
+   "anchor_win": 210,
+   "cand_win": 0,
+   "tie": 190,
+   "tie_band": 0,
+   "equal": 400,
+   "missing": 0,
+   "net": 210
+  },
+  "Q12": {
+   "anchor_win": 44,
+   "cand_win": 12,
+   "tie": 13,
+   "tie_band": 0,
+   "equal": 131,
+   "missing": 0,
+   "net": 32
+  },
+  "Q23": {
+   "anchor_win": 12,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 188,
+   "missing": 0,
+   "net": 12
+  },
+  "Q24": {
+   "anchor_win": 196,
+   "cand_win": 1,
+   "tie": 3,
+   "tie_band": 0,
+   "equal": 0,
+   "missing": 0,
+   "net": 195
+  },
+  "Q25": {
+   "anchor_win": 42,
+   "cand_win": 18,
+   "tie": 110,
+   "tie_band": 0,
+   "equal": 30,
+   "missing": 0,
+   "net": 24
+  },
+  "Q26": {
+   "anchor_win": 0,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 64,
+   "equal": 136,
+   "missing": 0,
+   "net": 0
+  }
+ },
+ "excelagent_gpt": {
+  "Q01": {
+   "anchor_win": 32,
+   "cand_win": 3,
+   "tie": 2,
+   "tie_band": 0,
+   "equal": 163,
+   "missing": 0,
+   "net": 29
+  },
+  "Q02": {
+   "anchor_win": 23,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 177,
+   "missing": 0,
+   "net": 23
+  },
+  "Q10": {
+   "anchor_win": 200,
+   "cand_win": 0,
+   "tie": 200,
+   "tie_band": 0,
+   "equal": 400,
+   "missing": 0,
+   "net": 200
+  },
+  "Q12": {
+   "anchor_win": 18,
+   "cand_win": 5,
+   "tie": 29,
+   "tie_band": 0,
+   "equal": 148,
+   "missing": 0,
+   "net": 13
+  },
+  "Q24": {
+   "anchor_win": 200,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 0,
+   "missing": 0,
+   "net": 200
+  },
+  "Q25": {
+   "anchor_win": 76,
+   "cand_win": 13,
+   "tie": 95,
+   "tie_band": 0,
+   "equal": 16,
+   "missing": 0,
+   "net": 63
+  },
+  "Q26": {
+   "anchor_win": 32,
+   "cand_win": 2,
+   "tie": 2,
+   "tie_band": 105,
+   "equal": 59,
+   "missing": 0,
+   "net": 30
+  }
+ },
+ "claude_in_excel": {
+  "Q01": {
+   "anchor_win": 38,
+   "cand_win": 1,
+   "tie": 1,
+   "tie_band": 0,
+   "equal": 160,
+   "missing": 0,
+   "net": 37
+  },
+  "Q02": {
+   "anchor_win": 23,
+   "cand_win": 0,
+   "tie": 0,
+   "tie_band": 0,
+   "equal": 177,
+   "missing": 0,
+   "net": 23
+  },
+  "Q10": {
+   "anchor_win": 400,
+   "cand_win": 0,
+   "tie": 200,
+   "tie_band": 0,
+   "equal": 200,
+   "missing": 0,
+   "net": 400
+  },
+  "Q12": {
+   "anchor_win": 44,
+   "cand_win": 1,
+   "tie": 7,
+   "tie_band": 0,
+   "equal": 148,
+   "missing": 0,
+   "net": 43
+  },
+  "Q24": {
+   "anchor_win": 196,
+   "cand_win": 0,
+   "tie": 4,
+   "tie_band": 0,
+   "equal": 0,
+   "missing": 0,
+   "net": 196
+  },
+  "Q25": {
+   "anchor_win": 61,
+   "cand_win": 27,
+   "tie": 98,
+   "tie_band": 0,
+   "equal": 14,
+   "missing": 0,
+   "net": 34
+  },
+  "Q26": {
+   "anchor_win": 193,
+   "cand_win": 3,
+   "tie": 0,
+   "tie_band": 4,
+   "equal": 0,
+   "missing": 0,
+   "net": 190
+  }
+ }
+}

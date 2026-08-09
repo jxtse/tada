@@ -1,0 +1,201 @@
+ReviewID,UserName,Rating,ReviewDate,user_review,Category,Sub-Cluster
+REV-0001,Paul Moore,1,2023/10/27,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Shipping & Delivery
+REV-0002,James Santos,5,2023/1/3,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0003,Leo Moore,5,2024/2/2,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0004,Henry Garcia,5,2023/9/24,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0005,Olivia Moore,1,2023/3/24,A price increase without new features is hard to accept.,Pricing & Value,Pricing Transparency
+REV-0006,Marco Dubois,1,2023/4/13,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0007,Frank Miller,5,2024/4/17,Competitively priced and worth every dollar.,Pricing & Value,Price-Quality Ratio
+REV-0008,Rachel Patel,5,2023/5/5,Incredibly intuitive. My entire team was onboarded in a day.,Product Quality & Performance,User Interface & UX
+REV-0009,Zara Okafor,5,2024/6/27,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0010,Eric Hill,2,2024/1/29,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0011,Fatima Williams,3,2024/3/19,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0012,David Chen,1,2023/5/31,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0013,Bob Kim,3,2024/3/1,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0014,Eric Anderson,1,2024/12/18,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0015,Diana Davis,4,2024/5/2,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0016,Quinn Jackson,1,2023/6/15,"Flimsy construction, doesn't match the promotional images.",Product Quality & Performance,Build Quality & Durability
+REV-0017,David Lee,5,2024/1/24,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0018,George Lewis,5,2023/4/16,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0019,Steve Dubois,3,2023/10/22,Disputed charge took 6 weeks to resolve. Very frustrating.,Customer Support & Logistics,Returns & Refunds
+REV-0020,Laura Kim,1,2023/2/6,Support team resolved my issue within one business hour.,Customer Support & Logistics,Support Responsiveness
+REV-0021,Alice Garcia,1,2024/6/6,The interface is dense and not beginner-friendly.,Product Quality & Performance,User Interface & UX
+REV-0022,Brigitte Taylor,1,2024/11/11,Incredibly intuitive. My entire team was onboarded in a day.,Product Quality & Performance,User Interface & UX
+REV-0023,Fatima Dubois,4,2023/7/18,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0024,Steve Garcia,5,2023/11/28,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0025,Xiang Chen,5,2024/2/8,Very knowledgeable and patient support staff.,Customer Support & Logistics,Support Responsiveness
+REV-0026,Yuki Santos,3,2023/3/22,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0027,James Wilson,3,2024/12/13,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0028,Nina Santos,5,2024/11/24,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0029,Laura Davis,2,2023/10/5,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0030,David Rossi,5,2024/8/19,Setup guide is excellent. Was running in 15 minutes.,Product Quality & Performance,User Interface & UX
+REV-0031,Frank Wright,4,2024/10/24,Very knowledgeable and patient support staff.,Customer Support & Logistics,Support Responsiveness
+REV-0032,Chen Anderson,4,2024/2/19,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0033,Alice Davis,1,2024/1/20,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0034,Marco Clark,2,2024/7/9,Exceptional materials and finish. Clearly made to last.,Product Quality & Performance,Build Quality & Durability
+REV-0035,Carol Santos,4,2024/6/7,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0036,Eric Jackson,5,2024/8/4,Overpriced given the feature gaps compared to alternatives.,Pricing & Value,Price-Quality Ratio
+REV-0037,Eric Lee,2,2024/5/12,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0038,Julia Moore,4,2024/12/14,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0039,Tina Young,3,2024/10/21,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0040,Nathan Clark,3,2023/8/20,Very knowledgeable and patient support staff.,Customer Support & Logistics,Support Responsiveness
+REV-0041,Quinn Rossi,4,2023/10/27,Performance is solid and consistent under load.,Product Quality & Performance,Speed & Performance
+REV-0042,Grace Chen,5,2024/11/29,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Shipping & Delivery
+REV-0043,Leo Smith,3,2024/8/19,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0044,Zara Miller,4,2024/7/8,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0045,Yuki Taylor,4,2024/2/2,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0046,Bob Walker,3,2024/3/25,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0047,Kevin Jones,4,2023/12/5,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0048,Marco Davis,3,2023/12/31,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0049,James Taylor,1,2024/5/19,The hardware quality is well above average for this price.,Pricing & Value,Price-Quality Ratio
+REV-0050,Wendy Garcia,3,2023/5/21,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0051,Bob Chen,5,2023/4/14,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0052,Maria Okafor,1,2024/5/9,A price increase without new features is hard to accept.,Pricing & Value,Price-Quality Ratio
+REV-0053,Bob Garcia,1,2023/3/1,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0054,Diana Lewis,4,2024/7/4,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Pricing Transparency
+REV-0055,Xiang Rossi,2,2024/8/21,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0056,Leo Santos,2,2023/10/12,Overpriced given the feature gaps compared to alternatives.,Pricing & Value,Price-Quality Ratio
+REV-0057,Ivan Dubois,1,2024/6/18,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0058,Eric Harris,1,2024/7/12,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0059,Ahmed Okafor,4,2023/4/9,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0060,Fatima Lee,3,2024/6/3,Support team resolved my issue within one business hour.,Customer Support & Logistics,Support Responsiveness
+REV-0061,Victor Chen,3,2023/11/19,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0062,Bob Santos,2,2024/9/6,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0063,Nathan Green,2,2024/9/8,Screaming fast. Handles our heaviest workloads without strain.,Product Quality & Performance,Speed & Performance
+REV-0064,Tina Young,2,2023/4/30,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0065,Marco Kowalski,4,2023/7/5,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Pricing Transparency
+REV-0066,James Thomas,1,2023/2/6,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0067,Xiang Kim,3,2024/7/27,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0068,Rachel Green,5,2023/4/9,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0069,Irene Wright,4,2023/7/7,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0070,Rachel Robinson,1,2024/12/12,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0071,Alice Taylor,3,2023/10/3,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0072,Quinn Young,2,2024/10/27,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0073,Leo Williams,1,2024/12/21,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0074,Nathan Hill,2,2023/5/7,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Pricing Transparency
+REV-0075,Tina Jackson,5,2024/4/21,Very knowledgeable and patient support staff.,Customer Support & Logistics,Support Responsiveness
+REV-0076,Zara Miller,2,2024/11/14,Setup guide is excellent. Was running in 15 minutes.,Product Quality & Performance,User Interface & UX
+REV-0077,Laura Johnson,2,2023/11/12,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0078,Rachel Wilson,2,2024/11/29,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0079,Frank Young,5,2024/6/18,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0080,Zara Lopez,4,2023/1/26,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0081,Nina Jackson,4,2024/3/12,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0082,James Rossi,5,2024/1/2,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0083,Tina Patel,2,2023/3/10,Overpriced given the feature gaps compared to alternatives.,Pricing & Value,Price-Quality Ratio
+REV-0084,Alice Scott,3,2024/2/7,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0085,Diana Johnson,4,2024/4/12,Impossible to reach a real person. Only automated responses.,Customer Support & Logistics,Support Responsiveness
+REV-0086,Xiang Williams,1,2023/8/25,Fast and reliable shipping every time I've ordered.,Customer Support & Logistics,Shipping & Delivery
+REV-0087,Tina Robinson,1,2024/3/26,Support team resolved my issue within one business hour.,Customer Support & Logistics,Support Responsiveness
+REV-0088,Uma Jones,1,2023/10/18,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0089,Tina Johnson,3,2024/12/8,Fast and reliable shipping every time I've ordered.,Customer Support & Logistics,Shipping & Delivery
+REV-0090,Frank Moore,1,2024/5/24,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0091,Victor Lopez,1,2024/8/6,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0092,Julia Taylor,5,2023/8/14,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Shipping & Delivery
+REV-0093,Carol Green,4,2024/1/18,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0094,Carol Johnson,5,2023/8/23,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0095,Alice Harris,4,2024/1/14,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0096,Zara Rossi,5,2023/1/24,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0097,Brigitte Moore,1,2024/9/5,Disputed charge took 6 weeks to resolve. Very frustrating.,Customer Support & Logistics,Returns & Refunds
+REV-0098,Eric Robinson,2,2023/12/13,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0099,Diana Santos,2,2023/12/7,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Shipping & Delivery
+REV-0100,Wendy Brown,2,2024/3/4,Setup guide is excellent. Was running in 15 minutes.,Product Quality & Performance,User Interface & UX
+REV-0101,Zara Thomas,1,2024/8/21,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0102,Irene Jackson,5,2024/7/26,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0103,Henry Anderson,5,2023/1/18,The hardware quality is well above average for this price.,Product Quality & Performance,Build Quality & Durability
+REV-0104,Paul Lopez,1,2024/10/19,A price increase without new features is hard to accept.,Pricing & Value,Pricing Transparency
+REV-0105,Eric Rossi,4,2024/4/27,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0106,Tina Taylor,4,2023/10/8,"Arrived with cosmetic damage, not ideal for a new product.",Customer Support & Logistics,Shipping & Delivery
+REV-0107,Kevin Thomas,4,2023/5/4,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0108,Yuki Smith,5,2024/9/19,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0109,Henry Chen,3,2024/8/29,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0110,Ahmed Kim,3,2023/11/13,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0111,Chen Davis,2,2023/2/15,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0112,Bob Hall,4,2024/2/25,Support team resolved my issue within one business hour.,Customer Support & Logistics,Support Responsiveness
+REV-0113,Paul Kowalski,2,2023/11/2,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0114,Uma Miller,5,2023/2/4,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0115,Leo Wilson,5,2024/5/26,Overpriced given the feature gaps compared to alternatives.,Pricing & Value,Price-Quality Ratio
+REV-0116,Karen King,2,2023/6/29,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0117,David Green,1,2024/1/28,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0118,Grace Okafor,5,2024/7/23,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Returns & Refunds
+REV-0119,Xiang Green,2,2023/12/4,Incredibly intuitive. My entire team was onboarded in a day.,Product Quality & Performance,User Interface & UX
+REV-0120,David Williams,5,2023/1/2,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0121,Wendy Williams,1,2024/5/14,"Arrived with cosmetic damage, not ideal for a new product.",Customer Support & Logistics,Shipping & Delivery
+REV-0122,Karen Miller,3,2024/5/16,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0123,Julia Anderson,1,2024/4/22,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0124,Nathan Chen,1,2024/4/17,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0125,Ivan Lewis,3,2023/5/17,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0126,Fatima Rossi,4,2024/11/24,Enterprise pricing is opaque  took 3 conversations to get a quote.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0127,Yuki Walker,2,2024/8/11,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0128,Rachel Patel,2,2024/5/12,Package was damaged on arrival. Replacement took another 10 days.,Customer Support & Logistics,Returns & Refunds
+REV-0129,Grace Robinson,5,2024/2/11,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0130,Brigitte Kowalski,5,2024/9/24,The interface is dense and not beginner-friendly.,Product Quality & Performance,User Interface & UX
+REV-0131,Alice Thomas,2,2023/1/20,Performance is solid and consistent under load.,Product Quality & Performance,Speed & Performance
+REV-0132,Brigitte Lopez,3,2023/6/18,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0133,Chen Patel,4,2023/1/6,A price increase without new features is hard to accept.,Pricing & Value,Pricing Transparency
+REV-0134,Laura Chen,5,2023/10/26,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0135,Paul Kim,4,2023/3/11,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0136,Nathan Miller,5,2024/3/14,The hardware quality is well above average for this price.,Product Quality & Performance,Build Quality & Durability
+REV-0137,David Lewis,4,2023/6/14,"Flimsy construction, doesn't match the promotional images.",Product Quality & Performance,Build Quality & Durability
+REV-0138,Ahmed Smith,2,2024/11/20,Screaming fast. Handles our heaviest workloads without strain.,Product Quality & Performance,Speed & Performance
+REV-0139,Henry Hall,3,2024/1/30,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0140,Uma Johnson,4,2024/8/29,Competitively priced and worth every dollar.,Pricing & Value,Price-Quality Ratio
+REV-0141,Quinn Scott,1,2024/12/6,The monthly pricing is fair given the feature depth.,Pricing & Value,Price-Quality Ratio
+REV-0142,Julia M_ler,1,2024/12/21,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0143,Alice M_ler,1,2023/8/1,Impossible to reach a real person. Only automated responses.,Customer Support & Logistics,Support Responsiveness
+REV-0144,Brigitte Santos,5,2023/10/28,The UX is clean but the advanced settings are hard to find.,Product Quality & Performance,User Interface & UX
+REV-0145,Grace Robinson,4,2023/12/11,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0146,James Robinson,2,2024/10/28,Competitively priced and worth every dollar.,Pricing & Value,Price-Quality Ratio
+REV-0147,Nina Green,1,2023/12/25,"Flimsy construction, doesn't match the promotional images.",Product Quality & Performance,Build Quality & Durability
+REV-0148,Olivia Dubois,4,2024/12/22,Disputed charge took 6 weeks to resolve. Very frustrating.,Customer Support & Logistics,Returns & Refunds
+REV-0149,Marco Hall,1,2024/9/27,Setup guide is excellent. Was running in 15 minutes.,Product Quality & Performance,User Interface & UX
+REV-0150,Tina Brown,1,2023/7/9,"Refund processed within 2 business days, no questions asked.",Customer Support & Logistics,Returns & Refunds
+REV-0151,Paul Wilson,1,2024/12/20,A price increase without new features is hard to accept.,Pricing & Value,Pricing Transparency
+REV-0152,Steve Hall,4,2023/12/14,Premium build  feels solid and well-engineered.,Product Quality & Performance,Build Quality & Durability
+REV-0153,Leo Harris,1,2024/2/14,Support team resolved my issue within one business hour.,Customer Support & Logistics,Support Responsiveness
+REV-0154,Paul Johnson,5,2023/6/29,Impossible to reach a real person. Only automated responses.,Customer Support & Logistics,Support Responsiveness
+REV-0155,David Clark,2,2024/11/17,"Arrived with cosmetic damage, not ideal for a new product.",Product Quality & Performance,Build Quality & Durability
+REV-0156,Julia Clark,3,2024/10/25,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0157,Steve Kowalski,1,2023/4/8,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0158,Quinn Moore,3,2024/2/18,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0159,Carol M_ler,1,2024/11/14,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0160,Bob Nguyen,1,2023/2/2,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0161,Hannah Williams,2,2023/8/2,The hardware quality is well above average for this price.,Pricing & Value,Price-Quality Ratio
+REV-0162,David Walker,2,2023/9/22,Impossible to reach a real person. Only automated responses.,Customer Support & Logistics,Support Responsiveness
+REV-0163,Marco Williams,1,2023/4/6,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0164,Victor Young,1,2024/6/3,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0165,Frank Jackson,1,2023/7/4,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0166,Rachel Patel,3,2023/2/22,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0167,Frank Wilson,1,2024/5/30,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0168,Rachel Robinson,3,2024/7/10,Annual plan saves nearly 40%  strongly recommend it.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0169,Quinn Kowalski,4,2023/1/10,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0170,Emma Okafor,2,2024/3/18,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0171,Xiang Hall,5,2024/12/22,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0172,Karen Patel,5,2023/4/19,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0173,Chen Green,3,2024/9/23,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0174,Carol Williams,5,2024/7/25,Noticeable slowdown after 6 months of use.,Product Quality & Performance,Longevity & Reliability
+REV-0175,Alice Robinson,1,2023/10/17,Arrived 3 days before the estimated date. Great logistics.,Customer Support & Logistics,Shipping & Delivery
+REV-0176,Steve Wright,2,2023/1/3,Fast and reliable shipping every time I've ordered.,Customer Support & Logistics,Shipping & Delivery
+REV-0177,Henry King,2,2023/1/28,Incredibly intuitive. My entire team was onboarded in a day.,Product Quality & Performance,User Interface & UX
+REV-0178,James Hill,5,2023/5/4,Fast and reliable shipping every time I've ordered.,Customer Support & Logistics,Shipping & Delivery
+REV-0179,Wendy Lopez,5,2024/9/30,Setup guide is excellent. Was running in 15 minutes.,Product Quality & Performance,User Interface & UX
+REV-0180,Henry Smith,2,2024/7/31,Disputed charge took 6 weeks to resolve. Very frustrating.,Customer Support & Logistics,Returns & Refunds
+REV-0181,Xiang Lewis,3,2023/2/4,Competitively priced and worth every dollar.,Pricing & Value,Price-Quality Ratio
+REV-0182,Karen Miller,5,2024/8/30,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0183,Diana Nguyen,1,2024/6/14,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0184,Rachel Anderson,5,2024/5/25,The monthly pricing is fair given the feature depth.,Pricing & Value,Subscription & Enterprise Pricing
+REV-0185,Marco Wright,5,2024/9/3,Incredibly intuitive. My entire team was onboarded in a day.,Product Quality & Performance,User Interface & UX
+REV-0186,David Anderson,3,2023/10/11,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0187,Karen Jones,2,2023/8/19,The hardware quality is well above average for this price.,Pricing & Value,Price-Quality Ratio
+REV-0188,Leo Miller,3,2024/1/27,Impossible to reach a real person. Only automated responses.,Customer Support & Logistics,Support Responsiveness
+REV-0189,George Kim,3,2023/10/31,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0190,Rachel Lopez,5,2024/3/22,Free tier is generous enough to evaluate before committing.,Pricing & Value,Free Tier & Trials
+REV-0191,Ivan Rossi,1,2024/1/3,The interface is dense and not beginner-friendly.,Product Quality & Performance,User Interface & UX
+REV-0192,Karen Smith,1,2023/5/15,Tracking information was inaccurate  showed delivered but wasn't.,Customer Support & Logistics,Order Tracking
+REV-0193,Rachel Jackson,1,2023/4/19,The processing speed has been a game-changer for our workflows.,Product Quality & Performance,Speed & Performance
+REV-0194,David Scott,5,2024/1/21,Waited three weeks for a response. Unacceptable.,Customer Support & Logistics,Support Responsiveness
+REV-0195,Alice Patel,2,2024/10/19,Return process was complicated and took multiple follow-ups.,Customer Support & Logistics,Returns & Refunds
+REV-0196,Olivia Scott,3,2023/3/28,Best price-to-quality ratio in the market right now.,Pricing & Value,Price-Quality Ratio
+REV-0197,George King,4,2024/2/6,A price increase without new features is hard to accept.,Pricing & Value,Pricing Transparency
+REV-0198,Julia Davis,4,2024/9/15,Overpriced given the feature gaps compared to alternatives.,Pricing & Value,Price-Quality Ratio
+REV-0199,Frank Lewis,4,2023/3/18,The 30-day return policy is fair and easy to use.,Customer Support & Logistics,Returns & Refunds
+REV-0200,Alice Garcia,1,2023/6/22,Competitively priced and worth every dollar.,Pricing & Value,Price-Quality Ratio

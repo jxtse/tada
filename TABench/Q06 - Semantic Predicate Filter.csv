@@ -1,0 +1,201 @@
+MeetingID,Date,Attendees,Duration,meeting_notes,Follow-Up Needed
+MTG-0001,2024/11/23,"Bob Lewis, Paul Lee, Irene Miller",90 min,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0002,2023/8/14,"Frank Okafor, Brigitte Williams, Bob Garcia, Nathan Lee, George Johnson, Julia Moore, Ivan Scott",1.5 hours,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0003,2024/1/25,"Alice Taylor, Brigitte Young, Rachel Anderson, Nathan Young, Grace Garcia",30 min,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0004,2024/10/5,"Marco Clark, Carol Nguyen, Ivan Davis, Yuki Garcia, Julia Robinson",2 hours,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0005,2023/10/12,"Kevin Moore, Emma Williams, Olivia Robinson, Frank Lee, Grace Lopez",1.5 hours,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0006,2023/6/17,"Karen Wright, Wendy Jackson, Rachel Jones, Marco Taylor, Ivan Harris",1.5 hours,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0007,2023/8/5,"Julia Lee, Uma Brown, Olivia Williams, Uma Hill, Rachel Jones",2 hours,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0008,2023/9/27,"Nathan Kim, Zara Nguyen, James Clark, Irene Harris, Julia Dubois",90 min,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0009,2024/11/27,"Laura Hill, Xiang Lee, Irene M_ler, Fatima Garcia, David Davis, James Taylor",1.5 hours,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0010,2024/7/20,"Yuki Lopez, Marco Nguyen, Hannah Clark",30 min,Knowledge transfer session from outgoing engineer. Notes shared with the team.,No
+MTG-0011,2023/6/11,"Ivan Lewis, Victor Davis, Steve Green",1.5 hours,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0012,2023/6/15,"George Thomas, George Miller, Tina M_ler, Marco Moore, James Wright",2 hours,Discussed Q3 budget allocation. Finance team will need to follow up with department heads by end of week.,Yes
+MTG-0013,2023/3/12,"Alice Hall, Fatima Johnson, Henry Wright, Tina Harris, David Harris, Kevin Garcia, Frank Kim",2 hours,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0014,2023/8/5,"Irene Chen, Julia Taylor, Quinn Rossi, Marco Green",2 hours,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0015,2023/8/19,"Tina Hill, Xiang Patel, Hannah Patel, Henry Harris",30 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0016,2023/3/14,"Laura Santos, Olivia Okafor, Olivia Smith",90 min,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0017,2023/9/1,"Olivia Jones, Carol Young, Emma M_ler",1 hour,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0018,2024/11/5,"Nathan Dubois, Irene Kowalski, Kevin Chen, Paul Chen, Ahmed Moore, Grace Miller",1.5 hours,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0019,2024/4/4,"Ahmed Nguyen, David Miller, David Hill, Victor Miller, Paul Moore, Maria Dubois",45 min,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0020,2024/10/29,"Rachel Nguyen, Paul Jones, Chen Santos, Grace Brown",2 hours,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0021,2023/8/7,"Frank Harris, Karen Scott, Fatima Chen",1.5 hours,"Discussed industry trends in AI tooling. Informational session, no decisions required.",No
+MTG-0022,2023/10/20,"Karen Lopez, Alice Lopez, Quinn Nguyen",1.5 hours,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0023,2024/5/29,"Fatima Anderson, Maria Robinson, Nathan Brown, Laura Dubois, David Hall, David Brown, Laura Chen",2 hours,Quarterly all-hands meeting. Leadership presented company strategy and financial highlights.,No
+MTG-0024,2024/11/22,"George Garcia, Leo Jones, Marco Jones",45 min,Reviewed support backlog. Engineering committed to investigating the P1 issue  needs follow-up in 48 hours.,Yes
+MTG-0025,2024/3/5,"Kevin Harris, Laura Williams, Nina Garcia",90 min,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0026,2024/4/14,"Hannah Hall, Quinn Jackson, Uma Harris, Quinn Hill, Irene Walker, Diana Hall, Emma Smith",2 hours,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0027,2023/12/24,"Emma Dubois, Nathan M_ler, Quinn Wilson",30 min,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0028,2023/1/9,"Xiang Robinson, Karen Patel, Ivan Walker, Nina Rossi",90 min,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0029,2024/12/4,"Tina Miller, Irene Clark, Henry Miller, Julia Anderson, Rachel Robinson, Marco Jackson, Victor Jackson",90 min,"Discussed industry trends in AI tooling. Informational session, no decisions required.",No
+MTG-0030,2023/5/14,"George Kim, Quinn Brown, Frank Green, Rachel Williams, Alice Young",90 min,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0031,2024/7/12,"Chen Santos, Brigitte Santos, Alice Davis, Emma Anderson",30 min,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0032,2023/8/4,"Laura Santos, James Green, Irene Williams, Tina Wright, Carol King",90 min,"Discussed industry trends in AI tooling. Informational session, no decisions required.",No
+MTG-0033,2023/7/1,"Wendy Santos, Ahmed Anderson, Paul Taylor",1.5 hours,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0034,2024/4/26,"Victor Scott, Paul Lewis, Karen Miller, Yuki Williams",45 min,Discussed Q3 budget allocation. Finance team will need to follow up with department heads by end of week.,Yes
+MTG-0035,2024/10/18,"Wendy Walker, Olivia Lee, Bob Moore, Zara Young, Rachel Jones, Rachel King",2 hours,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0036,2023/4/29,"Victor Johnson, Henry Clark, Leo Okafor, Quinn Williams, Grace Green, Wendy Hall, Brigitte M_ler",1.5 hours,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0037,2024/11/10,"Maria Clark, Carol Green, Alice Rossi, Ivan Moore, Xiang Green, Emma Young, Nina Hall",30 min,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0038,2024/11/11,"George Walker, Ahmed Hall, Zara Robinson, Julia Wilson, Maria Scott",1.5 hours,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0039,2023/8/4,"Nina Kowalski, Tina Hill, Julia Smith, Tina Robinson",1.5 hours,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0040,2023/4/6,"Marco Hall, Diana Patel, Chen Jackson, George Chen, Karen Garcia, Steve M_ler, Nina Young",45 min,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0041,2024/10/6,"Olivia Moore, James Johnson, Carol Harris, Eric Jones, Diana Scott",2 hours,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0042,2024/7/24,"Fatima Hill, Paul Anderson, Alice Miller, Brigitte Lee, Leo Rossi, Diana Brown",45 min,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0043,2024/3/29,"Diana Wilson, Diana Rossi, Julia Hall",2 hours,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0044,2023/3/21,"Brigitte Santos, Chen Taylor, Eric Patel, Quinn Harris, Rachel Rossi, Fatima Harris, Rachel Patel",90 min,"Discussed industry trends in AI tooling. Informational session, no decisions required.",No
+MTG-0045,2024/1/28,"Rachel Young, Uma Dubois, Frank Wilson, James Lee",90 min,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0046,2023/7/31,"Emma Scott, Ahmed Young, Ivan Nguyen, Ahmed Brown",1.5 hours,Status check on enterprise pipeline. Tom will follow up with the three pending accounts by Friday EOD.,Yes
+MTG-0047,2023/10/7,"Bob Kowalski, Yuki Chen, Alice King, Tina Lopez, Ahmed Dubois, Ivan Lee, Fatima Lee",1.5 hours,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0048,2024/9/29,"Yuki Young, Zara Taylor, Diana Wilson",2 hours,Team shared updates on current sprint progress. All items on track for delivery.,No
+MTG-0049,2023/8/5,"Laura Kowalski, Bob Garcia, Brigitte Wilson, Diana Thomas, David Clark, Yuki Hall",1.5 hours,Discussed Q3 budget allocation. Finance team will need to follow up with department heads by end of week.,Yes
+MTG-0050,2023/8/18,"Yuki Lewis, Ahmed Clark, Frank Chen, Bob Dubois, David King",90 min,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0051,2023/9/2,"Bob Harris, Maria Johnson, Nina Anderson",45 min,Alignment meeting on OKRs. Sarah to circle back with engineering on the capacity estimate. Follow-up needed.,Yes
+MTG-0052,2024/9/12,"Kevin Jackson, Diana Clark, Xiang Taylor",2 hours,Team shared updates on current sprint progress. All items on track for delivery.,No
+MTG-0053,2024/8/12,"Karen Walker, Grace Okafor, Bob Walker",90 min,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0054,2024/3/14,"Zara Moore, Emma Okafor, Paul Miller, Tina Davis, Kevin Williams, Wendy Dubois",90 min,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0055,2024/3/19,"George Young, Alice Scott, Fatima Miller",1 hour,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0056,2023/9/9,"James Green, Leo Rossi, Rachel Dubois, Eric Nguyen, Brigitte Okafor, Rachel Hall",30 min,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0057,2023/9/22,"Paul Nguyen, Kevin Lopez, Victor Johnson, Fatima Hall, Leo Kim, Nathan King",1 hour,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0058,2023/1/18,"Rachel Santos, Alice Rossi, Maria Garcia, Paul Scott, Fatima Santos, Paul Chen, Fatima Patel",30 min,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0059,2023/12/19,"Zara Harris, Tina Okafor, Xiang Chen, Julia Rossi",1.5 hours,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0060,2023/8/10,"Victor King, Diana Lewis, Tina Clark, Olivia Davis, Maria Hall, Henry Dubois, Leo Moore",90 min,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0061,2023/11/6,"Laura Rossi, Marco Robinson, Grace Moore, Steve Lee, Xiang Thomas",30 min,Team shared updates on current sprint progress. All items on track for delivery.,No
+MTG-0062,2024/3/27,"Irene Lewis, Carol Brown, Julia Robinson, Irene Kim, Grace Smith, Kevin Robinson, Eric Chen",1 hour,Quarterly all-hands meeting. Leadership presented company strategy and financial highlights.,No
+MTG-0063,2023/3/17,"Quinn Chen, Henry Jones, Zara Kim",2 hours,Reviewed support backlog. Engineering committed to investigating the P1 issue  needs follow-up in 48 hours.,Yes
+MTG-0064,2023/5/2,"James Anderson, Kevin Walker, Frank Harris",2 hours,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0065,2024/9/16,"Marco Lee, Hannah Lopez, Chen Patel, Tina Okafor, Brigitte Walker, Kevin Brown",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0066,2023/6/10,"Nathan Clark, Frank Taylor, Paul Thomas, Julia Jones",30 min,Discussed vendor contract renewal. Legal team should revisit the SLA terms and report back next sprint.,Yes
+MTG-0067,2024/11/8,"Marco Chen, Steve Williams, Olivia Robinson, Steve Nguyen, Emma Lee, Quinn Okafor",45 min,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0068,2023/3/3,"Ivan Lee, James Lewis, James Jones",45 min,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0069,2024/7/6,"Marco Kowalski, Steve Patel, Henry Nguyen, Tina Hill, Rachel M_ler",1.5 hours,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0070,2023/1/27,"Marco Williams, Brigitte Hall, Marco Clark",30 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0071,2023/4/4,"Laura Johnson, Rachel Kowalski, Carol Thomas, Eric Rossi, Chen Lewis, Leo Okafor, Brigitte Kim",1.5 hours,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0072,2023/4/1,"Victor Hall, Grace Taylor, Victor Scott, Fatima Robinson, Zara Santos, Carol Nguyen",1 hour,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0073,2024/1/6,"Henry Hill, George Smith, Ivan Nguyen, Ahmed Brown, Maria Rossi",2 hours,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0074,2024/12/27,"Chen Brown, Nathan Lewis, Julia Wilson, Steve Patel, Fatima Davis, Bob Harris",45 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0075,2024/5/9,"Alice Santos, Ahmed Garcia, Olivia Davis, Diana Davis, James Kim, Steve M_ler, Rachel Scott",1.5 hours,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0076,2023/10/1,"Julia Anderson, Yuki Moore, Marco M_ler, Irene Jones, Rachel Scott, Victor M_ler",30 min,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0077,2024/7/10,"Laura Okafor, Fatima Anderson, Chen Dubois, Eric King, Victor Santos",1.5 hours,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0078,2024/1/31,"Maria Harris, Kevin Lopez, Olivia Scott, Carol Hall, Eric Lopez",90 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0079,2023/4/13,"Fatima Williams, Irene M_ler, Laura Young, Grace Patel",2 hours,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0080,2024/11/21,"Alice Anderson, Ahmed Anderson, Emma Chen, Quinn Young, Nina Hill, Frank Young",2 hours,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0081,2024/10/10,"Fatima Dubois, Carol Jones, Paul Robinson, Olivia Garcia, Brigitte Miller",90 min,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0082,2023/2/27,"Chen Taylor, Tina Johnson, Carol Hall",1 hour,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0083,2024/9/16,"Brigitte Anderson, Paul Rossi, Ahmed Kowalski, Leo Taylor, Leo Garcia",1.5 hours,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0084,2024/11/13,"Fatima Okafor, James Lee, Diana Clark, Diana Clark",30 min,Knowledge transfer session from outgoing engineer. Notes shared with the team.,No
+MTG-0085,2023/7/23,"Steve Dubois, Karen Jones, Chen King, Laura Walker, Brigitte Clark, Diana Walker",1.5 hours,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0086,2024/8/2,"Grace Harris, Yuki Kowalski, Wendy Kowalski, Steve Robinson, Bob Hill, Rachel Smith",90 min,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0087,2023/8/13,"Marco Kim, Steve Lee, Marco King",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0088,2023/6/29,"Quinn Wilson, Grace Williams, Tina Patel, Carol Okafor, Xiang Wilson, Frank Robinson, Uma Scott",45 min,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0089,2024/11/23,"Xiang Rossi, George Lewis, Karen Clark, Eric Robinson, Victor Davis, Diana Jones, James Lee",90 min,Status check on enterprise pipeline. Tom will follow up with the three pending accounts by Friday EOD.,Yes
+MTG-0090,2024/1/26,"Julia Wright, Frank Hill, Alice Clark, Ivan Davis, Diana Wright, Quinn Okafor",90 min,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0091,2024/10/25,"Olivia Chen, Bob Santos, Uma Lee",30 min,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,No
+MTG-0092,2023/5/19,"Tina Scott, Henry Wilson, Carol Williams, Tina Kim, Henry Miller, Paul Dubois",1.5 hours,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0093,2024/12/7,"Ivan Scott, Laura Anderson, Ahmed Miller, Fatima Scott, Rachel Williams",1 hour,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0094,2024/4/10,"Chen Harris, Xiang Miller, Xiang Dubois, Wendy Brown, Zara Lewis, Maria Davis",30 min,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0095,2023/3/12,"Marco Johnson, David Young, Paul Wilson, Kevin Jackson",2 hours,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0096,2023/5/15,"Nathan Lee, Victor Anderson, Marco Smith, Rachel Anderson, Irene Dubois, Quinn Thomas, Henry Johnson",30 min,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0097,2024/6/22,"Laura Hall, Bob Thomas, Quinn Brown, Irene Scott",30 min,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0098,2024/4/7,"Eric Patel, Xiang M_ler, Laura Miller",2 hours,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0099,2023/11/26,"Carol Rossi, Tina Nguyen, Bob Brown, Eric Hill, Brigitte Miller, Fatima Patel, Emma Garcia",2 hours,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0100,2024/1/26,"Irene Lewis, Nina Okafor, Julia Hall",2 hours,Status check on enterprise pipeline. Tom will follow up with the three pending accounts by Friday EOD.,Yes
+MTG-0101,2023/8/22,"Diana M_ler, Marco Green, Grace Davis, Julia Jackson, Brigitte Patel",1.5 hours,Product demo for the leadership team. Positive reception. No outstanding action items.,No
+MTG-0102,2023/3/29,"Zara Scott, Grace Hall, Brigitte Hall, Quinn Wright, James Chen, Emma Garcia",30 min,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0103,2024/7/29,"Xiang Wilson, Julia Brown, Laura Santos",1 hour,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0104,2023/12/27,"Ahmed King, Brigitte Brown, Steve Walker",30 min,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0105,2024/9/28,"Nathan Anderson, Eric Lee, Grace King, Julia Wright, Henry Lewis, Kevin Lee, Brigitte Santos",2 hours,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0106,2023/5/26,"Bob Lewis, Bob Thomas, Rachel Walker, Victor King, Alice Thomas, James Kowalski, Zara Jones",90 min,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0107,2023/12/16,"Frank Rossi, Nathan Lopez, Ahmed Nguyen",45 min,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0108,2024/3/29,"Uma Kowalski, Marco Garcia, David Anderson, Karen Brown, Frank Lewis",90 min,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0109,2024/5/13,"Marco Patel, Ahmed Lewis, Nathan M_ler, Henry King, Brigitte Davis, Steve Okafor",2 hours,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,No
+MTG-0110,2023/10/24,"Carol Lee, Zara Brown, Alice Jackson, Tina Jackson, Irene Clark",1 hour,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0111,2024/12/21,"Fatima Green, Leo Wilson, Yuki Dubois",45 min,Discussed vendor contract renewal. Legal team should revisit the SLA terms and report back next sprint.,Yes
+MTG-0112,2023/10/24,"Wendy Jones, Zara Williams, Brigitte Johnson, Diana Jones, Uma Kowalski, Brigitte Kowalski, Zara Scott",30 min,Product demo for the leadership team. Positive reception. No outstanding action items.,No
+MTG-0113,2024/3/23,"Uma Taylor, Nina Nguyen, Xiang Garcia",30 min,Reviewed accessibility audit findings. UX team to address critical items  follow-up meeting scheduled.,Yes
+MTG-0114,2024/10/10,"Laura Hill, Hannah Garcia, Zara Walker, Victor Lee, Victor Taylor, Emma M_ler",30 min,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0115,2024/10/5,"Maria King, Wendy Anderson, Paul Miller, James Clark, Maria Thomas, Marco Anderson, Emma Thomas",1.5 hours,Product demo for the leadership team. Positive reception. No outstanding action items.,No
+MTG-0116,2023/12/27,"Laura Patel, Kevin Hall, Uma Anderson, Chen Jones, Eric Patel, Tina Lewis, Laura Brown",2 hours,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0117,2024/1/29,"Diana Patel, Carol Brown, Xiang Robinson, Emma Garcia, Nina M_ler",1.5 hours,Alignment meeting on OKRs. Sarah to circle back with engineering on the capacity estimate. Follow-up needed.,Yes
+MTG-0118,2024/10/23,"Carol Patel, Kevin Moore, Uma Chen, George Anderson, David Patel, Grace Young, Frank M_ler",45 min,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0119,2023/10/17,"Chen Patel, Hannah Rossi, Nina Taylor, Xiang Wright",1.5 hours,Reviewed launch timeline for Phase 2. Marketing needs to send revised schedule  action required before Thursday.,Yes
+MTG-0120,2024/11/3,"Marco Brown, Victor Jones, Victor Miller, Julia Lopez, Steve Clark",2 hours,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0121,2024/9/1,"Victor Garcia, Laura Anderson, Wendy Walker, Zara Wilson",90 min,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0122,2024/1/7,"Julia Lopez, Victor Wilson, Hannah Garcia, Brigitte M_ler, Xiang Johnson",1 hour,Alignment meeting on OKRs. Sarah to circle back with engineering on the capacity estimate. Follow-up needed.,Yes
+MTG-0123,2023/4/14,"Victor Kim, Maria Lee, Irene Anderson, Emma Robinson",2 hours,Reviewed support backlog. Engineering committed to investigating the P1 issue  needs follow-up in 48 hours.,Yes
+MTG-0124,2024/11/23,"Hannah Williams, Victor Wilson, Marco Lopez, James Taylor, Leo Taylor, Chen Williams, Ahmed Wright",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0125,2024/4/17,"Nina Robinson, Chen Lee, Ivan Harris, Tina Chen, Maria Wright, Kevin Patel",1 hour,Planning session for product roadmap. PM team needs to revisit prioritization after customer advisory call.,Yes
+MTG-0126,2024/12/29,"George Rossi, Ahmed Taylor, Maria Wilson, Quinn Brown, Eric Wright, Julia Miller",2 hours,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0127,2023/5/31,"Steve Garcia, Karen Lewis, Chen M_ler",1.5 hours,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0128,2023/8/30,"Chen King, Bob Scott, David Hill, George Wright",1.5 hours,Alignment meeting on OKRs. Sarah to circle back with engineering on the capacity estimate. Follow-up needed.,Yes
+MTG-0129,2024/12/13,"Olivia Johnson, Uma Miller, Victor Anderson, Irene Williams, Steve Chen",45 min,Alignment meeting on OKRs. Sarah to circle back with engineering on the capacity estimate. Follow-up needed.,Yes
+MTG-0130,2023/10/23,"Chen Smith, Frank Johnson, Quinn Jackson, James Santos, Marco Rossi, Brigitte Davis",45 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0131,2024/5/26,"David Harris, Ahmed Nguyen, Emma Davis",2 hours,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0132,2023/1/2,"George Kowalski, Paul Anderson, Steve Green",2 hours,Retrospective session for Q2. Team discussed wins and lessons learned. Documented in confluence.,No
+MTG-0133,2024/7/11,"Kevin Scott, Leo Garcia, Hannah Wright, Emma Rossi",2 hours,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0134,2024/8/18,"Julia Johnson, Yuki Chen, Carol Lopez, Xiang Clark, Bob King, Emma King, Paul Miller",90 min,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0135,2023/3/6,"Irene Williams, Wendy Dubois, Victor Thomas, Diana Chen, Leo Wilson",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0136,2023/9/17,"Carol Robinson, Maria Williams, Maria Williams, Uma Walker, George Hill, Ivan Chen",30 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0137,2024/2/14,"Steve King, David Young, Rachel Davis, Xiang Green",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0138,2024/7/12,"Victor Thomas, Fatima Kim, Xiang Rossi, Rachel Garcia, Brigitte Garcia, Brigitte Thomas",1 hour,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0139,2023/6/20,"Frank Hall, Steve Walker, Chen Green",90 min,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0140,2024/11/26,"Chen Williams, Wendy Green, Rachel Brown, Emma Hill, Xiang M_ler",45 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0141,2024/1/28,"Marco Patel, Carol Wilson, Emma Harris, Xiang Wright",2 hours,Discussed Q3 budget allocation. Finance team will need to follow up with department heads by end of week.,Yes
+MTG-0142,2023/4/27,"James Patel, Xiang Wright, Chen Jones, Kevin Wilson, Hannah Wright, Zara Hall, Rachel Harris",30 min,Reviewed launch timeline for Phase 2. Marketing needs to send revised schedule  action required before Thursday.,Yes
+MTG-0143,2023/8/8,"Fatima Rossi, Yuki Santos, Henry Clark, Quinn Patel",2 hours,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0144,2024/7/9,"Maria Davis, Irene Jones, Chen Thomas, Chen Garcia, Uma King, Emma Santos",1 hour,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0145,2023/1/27,"Karen Thomas, Xiang M_ler, Olivia Davis, Maria Wilson, Paul Kim",1 hour,Social team event planning session. Activities confirmed for the offsite.,No
+MTG-0146,2023/3/17,"Xiang Nguyen, Julia Wilson, Nina Garcia, Emma Walker, Zara Chen, Hannah Scott, Ahmed Kowalski",45 min,Retrospective session for Q2. Team discussed wins and lessons learned. Documented in confluence.,No
+MTG-0147,2024/10/17,"Chen Nguyen, Hannah King, Irene Santos",2 hours,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0148,2023/6/15,"Brigitte M_ler, David Davis, Hannah Anderson, Tina Taylor",1 hour,Reviewed support backlog. Engineering committed to investigating the P1 issue  needs follow-up in 48 hours.,Yes
+MTG-0149,2023/5/9,"Wendy Rossi, Steve Garcia, Quinn Moore, Julia Lewis",90 min,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0150,2023/2/16,"Ivan Garcia, George Taylor, Laura Okafor, James Taylor, Nina Young, Kevin Williams, Bob Garcia",90 min,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0151,2024/4/9,"Quinn Jackson, Kevin Scott, Nina Johnson, Fatima Dubois, Steve Walker, Eric Harris, Zara Walker",30 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0152,2023/12/15,"Karen Patel, Ahmed Chen, Diana Jackson",2 hours,Quarterly all-hands meeting. Leadership presented company strategy and financial highlights.,No
+MTG-0153,2024/4/22,"Uma King, Zara Wilson, Xiang M_ler, Julia Miller, Uma Harris",30 min,Status check on enterprise pipeline. Tom will follow up with the three pending accounts by Friday EOD.,Yes
+MTG-0154,2023/11/17,"Paul Anderson, Grace Brown, Steve Lopez, Nina Scott, Paul Taylor, Uma Kowalski",45 min,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0155,2024/2/7,"Fatima M_ler, Diana Kim, Tina Kim, Bob Garcia",2 hours,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0156,2023/10/20,"Nathan Okafor, Wendy Brown, David Robinson, Fatima Chen",2 hours,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,No
+MTG-0157,2023/2/16,"Brigitte Wilson, Quinn Wright, Zara Wright",1.5 hours,Discussed Q3 budget allocation. Finance team will need to follow up with department heads by end of week.,Yes
+MTG-0158,2024/2/8,"Julia Moore, Xiang Santos, Steve Jones, Yuki M_ler, Chen Santos, Rachel Davis, Irene Miller",1 hour,Reviewed launch timeline for Phase 2. Marketing needs to send revised schedule  action required before Thursday.,Yes
+MTG-0159,2023/2/9,"Julia Wright, James Moore, Marco M_ler, Zara M_ler, Carol Williams",45 min,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0160,2023/6/16,"Eric Rossi, Diana Anderson, Marco M_ler, Irene Hall, Nina Hall",1.5 hours,Quarterly all-hands meeting. Leadership presented company strategy and financial highlights.,No
+MTG-0161,2024/1/13,"Laura Young, George M_ler, Ivan Kim, Kevin Walker, Eric Johnson",1 hour,Knowledge transfer session from outgoing engineer. Notes shared with the team.,No
+MTG-0162,2023/9/29,"Ahmed Okafor, Tina Johnson, Marco Chen",90 min,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0163,2023/1/20,"Kevin Lee, David Okafor, Eric Taylor, Hannah Lopez, James Harris, Carol Kowalski, Henry Moore",1.5 hours,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0164,2024/11/9,"James Scott, Nathan Scott, George Chen, David Wilson, Hannah Jackson, Julia Hall",1.5 hours,Discussed integration with third-party APIs. Developer needs to assess feasibility and report by sprint end.,Yes
+MTG-0165,2023/10/13,"Uma Thomas, Diana Dubois, Victor Dubois, Wendy Clark, Nina Chen, Maria Harris",2 hours,Product demo for the leadership team. Positive reception. No outstanding action items.,No
+MTG-0166,2023/10/8,"Tina Robinson, Nathan Kim, Uma Chen, Wendy Santos",1 hour,Revenue review meeting. CFO requested a breakdown by region  finance to follow up with updated model.,Yes
+MTG-0167,2023/7/26,"Ivan Lopez, Zara King, James Robinson, Carol Robinson, Frank King, Chen Clark, Eric Jackson",2 hours,Discussed vendor contract renewal. Legal team should revisit the SLA terms and report back next sprint.,Yes
+MTG-0168,2024/4/28,"Rachel Wilson, Grace Okafor, Paul Harris, David Rossi, Olivia Lee, David Miller, Ahmed Young",30 min,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0169,2023/11/25,"Alice Santos, Karen Scott, Eric Chen, Maria Robinson",1 hour,Training session on new internal security protocols. All attendees confirmed understanding.,No
+MTG-0170,2024/3/3,"Frank Kowalski, Olivia Dubois, Carol Thomas",45 min,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0171,2023/11/2,"Zara Kim, Leo Robinson, Carol Smith",2 hours,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0172,2023/5/18,"Victor Robinson, Diana Dubois, Hannah Kim",2 hours,Knowledge transfer session from outgoing engineer. Notes shared with the team.,No
+MTG-0173,2024/8/4,"Maria Davis, Victor Taylor, Diana Clark, Leo Smith, Victor Robinson",90 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,No
+MTG-0174,2023/7/9,"Leo Hill, Brigitte M_ler, Uma Garcia, Zara Miller",45 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0175,2024/8/9,"Paul Smith, Quinn Lopez, Paul Patel, Rachel Young, Tina Okafor",30 min,Team shared updates on current sprint progress. All items on track for delivery.,No
+MTG-0176,2024/10/16,"Paul Brown, Henry Nguyen, Tina Taylor, Zara M_ler, Tina Davis",1 hour,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
+MTG-0177,2024/11/27,"Olivia Lee, Irene Chen, James Nguyen, Marco Wright, Ahmed Santos, Eric Dubois, Nathan Harris",2 hours,Account review for key enterprise client. Customer success to schedule follow-up call within two weeks.,Yes
+MTG-0178,2023/4/25,"Hannah Patel, Hannah Wright, Emma Kowalski",30 min,Reviewed latest NPS scores. Team noted improvement over last quarter. No escalations.,No
+MTG-0179,2024/6/6,"George Moore, Kevin Dubois, James Taylor, Uma Rossi, Chen Davis, Nathan Okafor, Fatima Garcia",1.5 hours,"Discussed industry trends in AI tooling. Informational session, no decisions required.",No
+MTG-0180,2023/3/1,"Diana Wilson, George Scott, Diana Kowalski",2 hours,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0181,2024/12/18,"Bob Hill, Quinn Smith, Nathan Okafor, Emma Williams, Brigitte King",30 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0182,2023/5/19,"Emma Chen, Carol Robinson, Ahmed Thomas",90 min,Retrospective session for Q2. Team discussed wins and lessons learned. Documented in confluence.,No
+MTG-0183,2024/2/7,"Xiang Lopez, Chen Lopez, Yuki Garcia, Ivan Wilson, Wendy Davis, Leo Dubois",2 hours,Design review for the new onboarding flow. Team approved the mockups with minor tweaks.,No
+MTG-0184,2023/8/24,"Alice Johnson, Tina Nguyen, Ivan Green, Ivan Lopez",45 min,Status check on enterprise pipeline. Tom will follow up with the three pending accounts by Friday EOD.,Yes
+MTG-0185,2023/3/10,"James Lewis, Maria Davis, Carol Scott, Nina Johnson, Paul Jackson",30 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0186,2023/8/28,"Chen Brown, Paul Williams, Zara Patel",2 hours,Knowledge transfer session from outgoing engineer. Notes shared with the team.,No
+MTG-0187,2024/8/14,"Irene M_ler, Steve Lee, Kevin Hall",2 hours,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0188,2024/8/28,"Paul Walker, James Rossi, Olivia Scott, Tina Lewis, David Santos",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0189,2024/12/14,"Brigitte Santos, Fatima Brown, Wendy Lopez, Hannah Hall",1.5 hours,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0190,2024/12/25,"Tina Lopez, Leo Dubois, Eric Harris, Olivia Walker",45 min,Discussed data retention policy update. Compliance officer to draft revised policy for legal review.,Yes
+MTG-0191,2024/10/24,"David Santos, Ahmed Scott, Julia Rossi, Irene Lopez, Paul Clark, Nathan Young",30 min,"Post-mortem review of last month's outage. Root cause confirmed, mitigation already deployed.",No
+MTG-0192,2023/8/11,"Xiang Garcia, Ivan Moore, David Lewis, Yuki Williams, Emma Moore, Laura Santos",1.5 hours,"Reviewed engineering interview process. Current process deemed effective, no changes needed.",No
+MTG-0193,2024/7/19,"Tina Smith, Nathan Moore, Henry Chen, Paul Jackson, Zara Harris",1 hour,Discussed new hiring plan. HR to confirm headcount approvals with finance and loop back by next Monday.,Yes
+MTG-0194,2023/4/11,"Yuki Nguyen, Ivan King, Tina Clark, Xiang M_ler, Fatima Nguyen",90 min,Welcome meeting for three new team members. Introductions and team norms covered.,No
+MTG-0195,2024/7/20,"Nathan Wright, Uma Scott, Carol Kowalski, Olivia Anderson, Bob Clark",2 hours,Team shared updates on current sprint progress. All items on track for delivery.,No
+MTG-0196,2024/5/15,"Steve Anderson, Maria Young, Olivia Lopez, Kevin Harris, Fatima Santos, Victor Clark",90 min,Brief sync to align on upcoming company-wide presentation. Slides finalized.,No
+MTG-0197,2023/3/18,"Diana Taylor, Wendy Taylor, Irene Dubois, Fatima Thomas, Ivan Brown, Hannah Williams",90 min,Weekly stand-up. Everyone is unblocked. Sprint velocity looking good.,No
+MTG-0198,2023/8/12,"Ahmed Wilson, Olivia Jones, James Smith",2 hours,Reviewed launch timeline for Phase 2. Marketing needs to send revised schedule  action required before Thursday.,Yes
+MTG-0199,2024/6/26,"David Chen, Fatima Johnson, Alice Dubois, Julia Scott, Alice Johnson",90 min,Monthly ops review. Infrastructure team to investigate latency spikes and provide root-cause analysis.,Yes
+MTG-0200,2023/10/1,"Steve Johnson, George Green, Leo Miller, Grace Rossi, James Harris, Maria Rossi, Quinn King",1.5 hours,Discussed escalation process for Tier 1 incidents. Team agreed to update the runbook  pending action.,Yes
