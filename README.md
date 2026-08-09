@@ -41,9 +41,9 @@ See [`TADAAgent/README.md`](TADAAgent/README.md) for the planner/runtime entry p
 
 ## TABench
 
-`TABench/Query.md` contains the original 26-query release. `TABench/queries_snapshot_v2.json` is the frozen query snapshot used by the expanded controlled study. The later source/gold additions and their checksums are under `TABench/expansion/`.
+`TABench/Query.md` contains the original 26-query release. `TABench/queries_snapshot_v2.json` is the frozen 43-query snapshot used by the controlled study (Q01--Q40, Q42, Q44, Q45). The later source/gold additions and their checksums are under `TABench/expansion/`.
 
-The paper's controlled analysis reports 40 scored cases. Three expansion cases (Q41, Q43, and the corresponding cross-table/schema cases) are distributed for transparency but excluded from the final two-atom score because their required output contracts fall outside the interface's stated scope. See the manuscript and `evaluation/results/matrix_v2_config_note.json` for the frozen exclusions.
+The paper's controlled analysis reports 40 scored cases: the frozen snapshot minus Q11, Q12, and Q18, whose required output contracts fall outside the two-atom interface's stated scope and are discussed as boundary evidence instead. Q41 and Q43 are not part of the frozen snapshot; their inputs and gold labels are distributed under `TABench/expansion/` for transparency only. See the manuscript and `evaluation/results/matrix_v2_config_note.json` for the frozen exclusions.
 
 ## Reproducing the human calibration analysis
 
