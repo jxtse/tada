@@ -1,0 +1,10 @@
+task,task_name,system,n,n_usage,accuracy,macro_f1,norm_accuracy,norm_macro_f1,calls_observed,prompt_tokens,completion_tokens,total_tokens,wall_min,coverage,n_scored,reference_pairwise_acc,reference_pairwise_macro_f1
+sentiment_ps,Sentiment tagging (32K),TADA-Agent,3,2,0.973±0.000,0.928±0.003,1.017±0.001,1.048±0.003,57.0±41.6,891682.0±0.0,304540.5±63102.9,1196222.5±63102.9,64.0±87.1,1.000±0.000,32130,0.9567,0.8856
+sentiment_ps,Sentiment tagging (32K),Claude Code,3,0,0.817±0.047,0.577±0.015,0.854±0.049,0.652±0.018,—,—,—,—,16.2±11.5,—,32130,0.9567,0.8856
+sentiment_ps,Sentiment tagging (32K),LOTUS,0,0,—,—,—,—,—,—,—,—,—,—,—,0.9567,0.8856
+joint_ps_fixed,Topic assignment (32K),TADA-Agent,3,3,0.942±0.002,0.838±0.041,1.038±0.002,1.051±0.051,33.0±0.0,894718.0±0.0,651357.3±25829.8,1546075.3±25829.8,32.6±3.9,1.000±0.000,31972,0.9081,0.7979
+joint_ps_fixed,Topic assignment (32K),Claude Code,2,0,0.820±0.138,0.665±0.271,0.903±0.151,0.833±0.339,—,—,—,—,37.9±42.4,—,31972,0.9081,0.7979
+joint_ps_fixed,Topic assignment (32K),LOTUS,0,0,—,—,—,—,—,—,—,—,—,—,—,0.9081,0.7979
+cat_tm_fixed,Feedback categorization (7K),TADA-Agent,3,3,0.837±0.015,0.829±0.007,1.098±0.020,1.091±0.009,7.0±0.0,242503.0±0.0,67152.7±24730.1,309655.7±24730.1,5.7±3.7,1.000±0.000,6430,0.7624,0.7593
+cat_tm_fixed,Feedback categorization (7K),Claude Code,3,0,0.658±0.013,0.605±0.023,0.863±0.017,0.797±0.030,—,—,—,—,2.8±1.0,—,6430,0.7624,0.7593
+cat_tm_fixed,Feedback categorization (7K),LOTUS,0,0,—,—,—,—,—,—,—,—,—,—,—,0.7624,0.7593

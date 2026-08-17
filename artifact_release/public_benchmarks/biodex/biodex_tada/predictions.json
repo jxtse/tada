@@ -1,0 +1,2675 @@
+[
+  {
+    "id": "34456717",
+    "free_text_phrases": [
+      "Stevens-Johnson syndrome",
+      "hepatotoxicity",
+      "hypertransaminasemia",
+      "fever",
+      "mucositis",
+      "cutaneous erythema",
+      "pruritus",
+      "oral blisters",
+      "nasal ulcers",
+      "conjunctivitis"
+    ],
+    "ranked_reaction_labels": [
+      "Stevens-Johnson syndrome",
+      "Hepatotoxicity",
+      "Hypertransaminasaemia",
+      "Febrile infection",
+      "Mucositis management",
+      "Erythema",
+      "Pruritus",
+      "Oral blood blister",
+      "Nasal ulcer",
+      "Conjunctivitis"
+    ],
+    "ground_truth_reactions": [
+      "egfr gene mutation",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34433719",
+    "free_text_phrases": [
+      "myoclonic epilepsy",
+      "optic atrophy",
+      "peripheral neuropathy",
+      "slurred speech",
+      "hypotonia",
+      "myoclonus",
+      "mild muscle weakness",
+      "atrophy in distal limbs",
+      "decreased tendon reflexes",
+      "sensory disturbances",
+      "limb ataxia",
+      "constipation"
+    ],
+    "ranked_reaction_labels": [
+      "Myoclonic epilepsy",
+      "Optic atrophy",
+      "Peripheral sensory neuropathy",
+      "Slow speech",
+      "Hypotonia",
+      "Myoclonus",
+      "Muscular weakness",
+      "Post transplant distal limb syndrome",
+      "Tendon laxity",
+      "Sensory disturbance",
+      "Ataxia",
+      "Constipation"
+    ],
+    "ground_truth_reactions": [
+      "myoclonic epilepsy and ragged-red fibres"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.4
+  },
+  {
+    "id": "34790421",
+    "free_text_phrases": [
+      "acute-onset autonomic instability"
+    ],
+    "ranked_reaction_labels": [
+      "Paroxysmal autonomic instability with dystonia"
+    ],
+    "ground_truth_reactions": [
+      "drug dependence",
+      "drug ineffective",
+      "drug withdrawal syndrome",
+      "fall",
+      "gait disturbance",
+      "intentional product misuse",
+      "off label use",
+      "respiratory failure",
+      "substance use disorder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34188921",
+    "free_text_phrases": [
+      "thrombocytopenia",
+      "ecchymoses"
+    ],
+    "ranked_reaction_labels": [
+      "Thrombocytopenia",
+      "Ecchymosis"
+    ],
+    "ground_truth_reactions": [
+      "ecchymosis",
+      "thrombocytopenia"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34073672",
+    "free_text_phrases": [
+      "Fanconi syndrome",
+      "hypophosphatemia",
+      "osteomalacia",
+      "acute kidney injury"
+    ],
+    "ranked_reaction_labels": [
+      "Fanconi syndrome",
+      "Hypophosphataemia",
+      "Osteomalacia",
+      "Acute kidney injury"
+    ],
+    "ground_truth_reactions": [
+      "fanconi syndrome",
+      "fanconi syndrome acquired",
+      "foot fracture",
+      "hypophosphataemic osteomalacia",
+      "renal tubular acidosis"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.3
+  },
+  {
+    "id": "33054123",
+    "free_text_phrases": [
+      "elevated transaminases",
+      "thrombocytosis",
+      "non occlusive deep venous thrombosis",
+      "myocardial infarction"
+    ],
+    "ranked_reaction_labels": [
+      "Transaminases increased",
+      "Thrombocytosis",
+      "Venous occlusion",
+      "Myocardial infarction"
+    ],
+    "ground_truth_reactions": [
+      "ascites",
+      "gastrointestinal haemorrhage",
+      "hepatosplenomegaly",
+      "thrombocytopenia",
+      "urogenital haemorrhage"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34055543",
+    "free_text_phrases": [
+      "hyperthermia",
+      "heatstroke",
+      "hyponatremia",
+      "hypokalemia",
+      "stupor",
+      "dry skin",
+      "urinary retention"
+    ],
+    "ranked_reaction_labels": [
+      "Hyperthermia",
+      "Heat stroke",
+      "Hyponatraemia",
+      "Hypokalaemia",
+      "Stupor",
+      "Dry skin",
+      "Urinary retention"
+    ],
+    "ground_truth_reactions": [
+      "heat stroke",
+      "hyperthermia",
+      "medication error"
+    ],
+    "rp_at_5": 0.6666666666666666,
+    "rp_at_10": 0.6666666666666666,
+    "term_recall": 0.6
+  },
+  {
+    "id": "34107924",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "encephalopathy",
+      "edema",
+      "hemoglobin level drop",
+      "fever",
+      "decubitus ulcer infection"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Encephalopathy",
+      "Oedema",
+      "Haemoglobin decreased",
+      "Febrile infection",
+      "Decubitus ulcer"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "product use in unapproved indication",
+      "renal haemorrhage"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34201591",
+    "free_text_phrases": [
+      "fever",
+      "cough",
+      "shortness of breath",
+      "high-flow oxygen",
+      "severe consolidated pneumonia",
+      "dyspnea",
+      "hypothyroidism",
+      "obesity",
+      "hypertension"
+    ],
+    "ranked_reaction_labels": [
+      "Febrile infection",
+      "Cough",
+      "Dyspnoea",
+      "Oxygen therapy",
+      "Lung consolidation",
+      "Hypothyroidism",
+      "Obesity",
+      "Hypertension"
+    ],
+    "ground_truth_reactions": [
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33732653",
+    "free_text_phrases": [
+      "liver metastases",
+      "lymph node metastases",
+      "soft tissue metastases",
+      "bone metastases",
+      "lung metastases",
+      "multiple liver metastases",
+      "progressive disease",
+      "ulcerated nodular melanoma",
+      "progression-free survival"
+    ],
+    "ranked_reaction_labels": [
+      "Metastases to liver",
+      "Metastases to lymph nodes",
+      "Metastases to soft tissue",
+      "Bone cancer metastatic",
+      "Disease progression",
+      "Nodular melanoma",
+      "Neoplasm progression"
+    ],
+    "ground_truth_reactions": [
+      "blood lactate dehydrogenase increased",
+      "dermatitis acneiform",
+      "dyspnoea",
+      "ejection fraction decreased",
+      "general physical health deterioration",
+      "malignant melanoma",
+      "malignant neoplasm progression",
+      "off label use",
+      "pneumonitis",
+      "product use in unapproved indication",
+      "product use issue",
+      "protein s increased"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.10344827586206896
+  },
+  {
+    "id": "33883542",
+    "free_text_phrases": [
+      "breakthrough bleeding",
+      "hematuria",
+      "hemarthrosis",
+      "hematoma",
+      "otorrhagia",
+      "suppurative otitis"
+    ],
+    "ranked_reaction_labels": [
+      "Breakthrough pain",
+      "Haematuria",
+      "Haemarthrosis",
+      "Haematoma",
+      "Metrorrhagia",
+      "Otitis externa"
+    ],
+    "ground_truth_reactions": [
+      "haemarthrosis",
+      "haematoma",
+      "haematuria",
+      "off label use",
+      "therapeutic product effect variable"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.6,
+    "term_recall": 0.3
+  },
+  {
+    "id": "34541338",
+    "free_text_phrases": [
+      "loss of appetite",
+      "loss of weight",
+      "fever",
+      "cough",
+      "shortness of breath"
+    ],
+    "ranked_reaction_labels": [
+      "Decreased appetite",
+      "Abnormal loss of weight",
+      "Febrile infection",
+      "Cough",
+      "Dyspnoea"
+    ],
+    "ground_truth_reactions": [
+      "atypical mycobacterial infection",
+      "drug resistance",
+      "lung disorder",
+      "nausea",
+      "therapy cessation",
+      "thrombophlebitis",
+      "vomiting"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.08333333333333333
+  },
+  {
+    "id": "34485017",
+    "free_text_phrases": [
+      "dystonic posturing",
+      "drug-resistant epilepsy",
+      "spastic tetraparesis",
+      "facial sweating",
+      "facial redness"
+    ],
+    "ranked_reaction_labels": [
+      "Tonic posturing",
+      "Acute encephalitis with refractory repetitive partial seizures",
+      "Tropical spastic paresis",
+      "Hyperhidrosis",
+      "Facial discomfort"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "dystonia",
+      "overdose",
+      "posturing"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.2
+  },
+  {
+    "id": "34635150",
+    "free_text_phrases": [
+      "intracranial hemorrhage",
+      "hematoma",
+      "convulsions"
+    ],
+    "ranked_reaction_labels": [
+      "Haemorrhage intracranial",
+      "Haematoma",
+      "Convulsions local"
+    ],
+    "ground_truth_reactions": [
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "32773727",
+    "free_text_phrases": [
+      "thrombosis",
+      "hypercoagulability",
+      "dyspnea",
+      "cardiomegaly",
+      "ground-glass opacities"
+    ],
+    "ranked_reaction_labels": [
+      "Thrombosis",
+      "Hypercoagulation",
+      "Dyspnoea",
+      "Cardiomegaly",
+      "Lenticular opacities"
+    ],
+    "ground_truth_reactions": [
+      "bacterial sepsis",
+      "condition aggravated",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33557784",
+    "free_text_phrases": [
+      "lethargy",
+      "tachycardia",
+      "seizures",
+      "intraventricular hemorrhage",
+      "ventriculomegaly",
+      "hemorrhagic venous infarct",
+      "generalized clinical seizures"
+    ],
+    "ranked_reaction_labels": [
+      "Lethargy",
+      "Tachycardia",
+      "Seizure",
+      "Intraventricular haemorrhage",
+      "Cardiomegaly",
+      "Haemorrhagic infarction",
+      "Generalised tonic-clonic seizure"
+    ],
+    "ground_truth_reactions": [
+      "cerebral ventricle dilatation",
+      "haemorrhagic cerebral infarction",
+      "intraventricular haemorrhage neonatal",
+      "lethargy",
+      "neonatal tachycardia",
+      "off label use",
+      "seizure"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.2857142857142857,
+    "term_recall": 0.5
+  },
+  {
+    "id": "33482449",
+    "free_text_phrases": [
+      "febrile neutropenia",
+      "hemorrhagic cystitis",
+      "anemia",
+      "systemic edema",
+      "numbness"
+    ],
+    "ranked_reaction_labels": [
+      "Febrile neutropenia",
+      "Cystitis haemorrhagic",
+      "Anaemia",
+      "Generalised oedema",
+      "Numb chin syndrome"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "breast cancer recurrent",
+      "carbohydrate antigen 15-3 increased",
+      "cystitis haemorrhagic",
+      "febrile neutropenia",
+      "hypoaesthesia",
+      "metastases to liver",
+      "oedema",
+      "off label use",
+      "therapy non-responder",
+      "therapy partial responder",
+      "thrombosis"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.3,
+    "term_recall": 0.24
+  },
+  {
+    "id": "33888146",
+    "free_text_phrases": [
+      "nausea",
+      "headache",
+      "bone marrow suppression",
+      "visual field defect"
+    ],
+    "ranked_reaction_labels": [
+      "Nausea",
+      "Headache",
+      "Bone marrow toxicity",
+      "Visual field defect"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "drug ineffective",
+      "myelosuppression",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "32526071",
+    "free_text_phrases": [
+      "null"
+    ],
+    "ranked_reaction_labels": [
+      "Nulli gravida"
+    ],
+    "ground_truth_reactions": [
+      "blood disorder",
+      "cardiovascular insufficiency",
+      "foetal distress syndrome",
+      "foetal exposure during pregnancy",
+      "metabolic disorder",
+      "neonatal gastrointestinal disorder",
+      "neonatal infection",
+      "nervous system disorder",
+      "respiratory disorder neonatal"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34633074",
+    "free_text_phrases": [
+      "somnolence",
+      "dizziness",
+      "unsteady gait",
+      "fatigue"
+    ],
+    "ranked_reaction_labels": [
+      "Somnolence",
+      "Dizziness",
+      "Gait disturbance",
+      "Fatigue"
+    ],
+    "ground_truth_reactions": [
+      "cognitive disorder",
+      "somnolence"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33995989",
+    "free_text_phrases": [
+      "hemolytic anemia",
+      "immune thrombocytopenia",
+      "dyspnea",
+      "diffuse mucocutaneous bleeding",
+      "easy bruising",
+      "epistaxis",
+      "gum bleeding",
+      "bloody urine",
+      "bloody stools",
+      "thrombocytopenia"
+    ],
+    "ranked_reaction_labels": [
+      "Haemolytic anaemia",
+      "Immune thrombocytopenia",
+      "Dyspnoea",
+      "Mucocutaneous haemorrhage",
+      "Increased tendency to bruise",
+      "Epistaxis",
+      "Gingival bleeding",
+      "Blood urine",
+      "Mucous stools",
+      "Thrombocytopenia"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "leukocytosis",
+      "lymphopenia",
+      "product use issue",
+      "thrombocytopenia"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.2,
+    "term_recall": 0.2857142857142857
+  },
+  {
+    "id": "34707681",
+    "free_text_phrases": [
+      "cutaneous rash",
+      "angioedema",
+      "agitation",
+      "irritability",
+      "hypotension",
+      "sinus tachycardia",
+      "bronchoconstriction"
+    ],
+    "ranked_reaction_labels": [
+      "Mucocutaneous rash",
+      "Angioedema",
+      "Agitation",
+      "Irritability",
+      "Hypotension",
+      "Sinus tachycardia",
+      "Bronchospasm"
+    ],
+    "ground_truth_reactions": [
+      "angioedema",
+      "hypotension",
+      "rash"
+    ],
+    "rp_at_5": 0.6666666666666666,
+    "rp_at_10": 0.6666666666666666,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34664862",
+    "free_text_phrases": [
+      "adverse effect-induced abandonment"
+    ],
+    "ranked_reaction_labels": [
+      "Adverse reaction"
+    ],
+    "ground_truth_reactions": [
+      "alanine aminotransferase abnormal"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33889835",
+    "free_text_phrases": [
+      "facial pain",
+      "burning pain",
+      "seizures"
+    ],
+    "ranked_reaction_labels": [
+      "Facial pain",
+      "Burning sensation",
+      "Seizure"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "multiple-drug resistance",
+      "seizure"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.2
+  },
+  {
+    "id": "34809625",
+    "free_text_phrases": [
+      "pleuropericarditis",
+      "fever",
+      "shortness of breath",
+      "pleuritic chest pain",
+      "maculo-papular rash",
+      "allergic reaction to ibuprofen"
+    ],
+    "ranked_reaction_labels": [
+      "Pleuropericarditis",
+      "Febrile infection",
+      "Dyspnoea",
+      "Pleuritic pain",
+      "Rash maculo-papular",
+      "Allergic reaction to excipient"
+    ],
+    "ground_truth_reactions": [
+      "drug hypersensitivity",
+      "false positive investigation result",
+      "off label use",
+      "rash maculo-papular",
+      "therapy non-responder"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.15384615384615385
+  },
+  {
+    "id": "34249743",
+    "free_text_phrases": [
+      "immune-related encephalitis",
+      "headache",
+      "fever",
+      "anorexia",
+      "general weakness",
+      "disorientation",
+      "memory impairment",
+      "eating difficulty"
+    ],
+    "ranked_reaction_labels": [
+      "Immune-mediated encephalitis",
+      "Headache",
+      "Febrile infection",
+      "Anorexia nervosa",
+      "Muscular weakness",
+      "Disorientation",
+      "Memory impairment",
+      "Food refusal"
+    ],
+    "ground_truth_reactions": [
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34055491",
+    "free_text_phrases": [
+      "upper gastrointestinal bleeding",
+      "renal impairment",
+      "hypertension",
+      "obesity",
+      "hyperlipidemia",
+      "diabetes mellitus",
+      "coronary artery disease",
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Upper gastrointestinal haemorrhage",
+      "Renal impairment",
+      "Hypertension",
+      "Obesity",
+      "Hyperlipidaemia",
+      "Diabetes mellitus",
+      "Coronary artery disease",
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "upper gastrointestinal haemorrhage"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34877251",
+    "free_text_phrases": [
+      "anxiety",
+      "depression",
+      "asthma exacerbations",
+      "diffuse wheezing",
+      "refractory uncontrolled severe eosinophilic asthma",
+      "hospital admissions",
+      "reduced steroid treatment",
+      "impaired quality of life"
+    ],
+    "ranked_reaction_labels": [
+      "Anxiety",
+      "Depression",
+      "Asthma exercise induced",
+      "Wheezing",
+      "Chronic eosinophilic rhinosinusitis",
+      "Hospitalisation",
+      "Steroid therapy",
+      "Impaired quality of life"
+    ],
+    "ground_truth_reactions": [
+      "asthma",
+      "condition aggravated",
+      "rebound effect"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.2
+  },
+  {
+    "id": "34431691",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "covid-19",
+      "covid-19 pneumonia",
+      "enterococcal bacteraemia",
+      "enterococcal sepsis",
+      "focal segmental glomerulosclerosis",
+      "lymphopenia",
+      "pneumonia proteus",
+      "respiratory failure",
+      "sepsis",
+      "septic shock",
+      "transplant rejection",
+      "viral mutation identified"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33485376",
+    "free_text_phrases": [
+      "nausea",
+      "abdominal pain",
+      "peripheral edema",
+      "laryngeal angioedema",
+      "swelling of eyelids and lips",
+      "edema of epiglottis"
+    ],
+    "ranked_reaction_labels": [
+      "Nausea",
+      "Abdominal pain",
+      "Oedema peripheral",
+      "Laryngeal oedema",
+      "Swelling of eyelid",
+      "Epiglottic oedema"
+    ],
+    "ground_truth_reactions": [
+      "hypotonia neonatal",
+      "maternal exposure during pregnancy",
+      "transient tachypnoea of the newborn"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.09090909090909091
+  },
+  {
+    "id": "33763319",
+    "free_text_phrases": [
+      "neuroleptic malignant syndrome",
+      "altered mental status",
+      "restlessness",
+      "autonomic instability",
+      "fever",
+      "hypertension",
+      "tachycardia",
+      "palpitations",
+      "rigidity",
+      "delirium",
+      "seizures",
+      "anosmia",
+      "headaches",
+      "agitation"
+    ],
+    "ranked_reaction_labels": [
+      "Neuroleptic malignant syndrome",
+      "Mental status changes",
+      "Restlessness",
+      "Autonomic nervous system imbalance",
+      "Febrile infection",
+      "Hypertension",
+      "Tachycardia",
+      "Palpitations",
+      "Muscle rigidity",
+      "Delirium",
+      "Seizure",
+      "Anosmia",
+      "Headache",
+      "Agitation"
+    ],
+    "ground_truth_reactions": [
+      "neuroleptic malignant syndrome"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "33953631",
+    "free_text_phrases": [
+      "aphasia",
+      "confusion",
+      "seizure activity",
+      "high blood glucose level",
+      "high serum osmolality"
+    ],
+    "ranked_reaction_labels": [
+      "Aphasia",
+      "Product confusion",
+      "Seizure",
+      "Blood glucose increased",
+      "Urine osmolarity"
+    ],
+    "ground_truth_reactions": [
+      "aphasia",
+      "confusional state",
+      "seizure",
+      "somnolence",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.4,
+    "term_recall": 0.2222222222222222
+  },
+  {
+    "id": "33614197",
+    "free_text_phrases": [
+      "fever",
+      "nausea",
+      "vomiting",
+      "increased vaginal bleeding",
+      "anemia",
+      "leukocytosis",
+      "sepsis",
+      "tachycardia",
+      "pulmonary edema",
+      "hydronephrosis"
+    ],
+    "ranked_reaction_labels": [
+      "Febrile infection",
+      "Nausea",
+      "Vomiting",
+      "Vaginal haemorrhage",
+      "Anaemia",
+      "Leukocytosis",
+      "Sepsis",
+      "Tachycardia",
+      "Pulmonary oedema",
+      "Hydronephrosis"
+    ],
+    "ground_truth_reactions": [
+      "condition aggravated",
+      "sepsis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.5,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34593488",
+    "free_text_phrases": [
+      "preterm delivery",
+      "small-for-gestational age",
+      "low birthweight",
+      "viral infections",
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Premature delivery",
+      "Foetal growth restriction",
+      "Low birth weight baby",
+      "Viral infection",
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "foetal death",
+      "maternal exposure during pregnancy"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "34871273",
+    "free_text_phrases": [
+      "cytokine release syndrome",
+      "fever",
+      "grade 4 neutropenia",
+      "grade 4 thrombocytopenia"
+    ],
+    "ranked_reaction_labels": [
+      "Cytokine release syndrome",
+      "Febrile infection",
+      "Neutropenia",
+      "Thrombocytopenia"
+    ],
+    "ground_truth_reactions": [
+      "disease recurrence",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33941104",
+    "free_text_phrases": [
+      "null"
+    ],
+    "ranked_reaction_labels": [
+      "Nulli gravida"
+    ],
+    "ground_truth_reactions": [
+      "adverse drug reaction",
+      "colorectal cancer recurrent",
+      "death",
+      "metastases to liver"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33138347",
+    "free_text_phrases": [
+      "treatment-related toxicity"
+    ],
+    "ranked_reaction_labels": [
+      "Device toxicity"
+    ],
+    "ground_truth_reactions": [
+      "myelosuppression",
+      "product use in unapproved indication",
+      "sepsis",
+      "venoocclusive liver disease"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34039375",
+    "free_text_phrases": [
+      "grade 3-4 adverse events",
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Adverse event",
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "oesophageal fistula",
+      "pneumonia aspiration"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34646694",
+    "free_text_phrases": [
+      "Raynaud's phenomenon",
+      "skin discoloration",
+      "numbness"
+    ],
+    "ranked_reaction_labels": [
+      "Raynaud's phenomenon",
+      "Skin discolouration",
+      "Numb chin syndrome"
+    ],
+    "ground_truth_reactions": [
+      "overdose",
+      "suicide attempt"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34567798",
+    "free_text_phrases": [
+      "seizures",
+      "psychotic symptoms",
+      "cognitive impairment",
+      "status epilepticus",
+      "hallucinations",
+      "suicidal thoughts"
+    ],
+    "ranked_reaction_labels": [
+      "Seizure",
+      "Psychotic symptom",
+      "Memory impairment",
+      "Status epilepticus",
+      "Hallucination",
+      "Suicidal ideation"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33996609",
+    "free_text_phrases": [
+      "immune-related encephalitis",
+      "rapid clinical deterioration",
+      "extensive necrosis",
+      "lymphohistiocytic infiltration"
+    ],
+    "ranked_reaction_labels": [
+      "Immune-mediated encephalitis",
+      "Parkinsonian crisis",
+      "Extremity necrosis",
+      "Lymphocytic infiltration"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "metastases to adrenals",
+      "metastases to liver",
+      "metastases to lymph nodes",
+      "metastasis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33860147",
+    "free_text_phrases": [
+      "drug allergy",
+      "acute kidney injury",
+      "edema",
+      "postoperative complications"
+    ],
+    "ranked_reaction_labels": [
+      "Device allergy",
+      "Acute kidney injury",
+      "Oedema",
+      "Postoperative wound complication"
+    ],
+    "ground_truth_reactions": [
+      "drug hypersensitivity",
+      "liver injury"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.25
+  },
+  {
+    "id": "34820246",
+    "free_text_phrases": [
+      "anemia",
+      "elevated C-reactive protein",
+      "weight loss",
+      "shortness of breath",
+      "elevated liver enzymes",
+      "hyperbilirubinemia",
+      "skin lesions"
+    ],
+    "ranked_reaction_labels": [
+      "Anaemia",
+      "C-reactive protein",
+      "Weight loss diet",
+      "Dyspnoea",
+      "Hepatic enzyme increased",
+      "Hyperbilirubinaemia",
+      "Skin lesion"
+    ],
+    "ground_truth_reactions": [
+      "disseminated paracoccidioidomycosis",
+      "iga nephropathy"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34479480",
+    "free_text_phrases": [
+      "nausea",
+      "weight loss",
+      "anxiety-like symptoms",
+      "tachycardia",
+      "tachypnea"
+    ],
+    "ranked_reaction_labels": [
+      "Nausea",
+      "Weight loss diet",
+      "Anxiety disorder",
+      "Tachycardia",
+      "Tachypnoea"
+    ],
+    "ground_truth_reactions": [
+      "cachexia",
+      "drug tolerance decreased",
+      "fatigue",
+      "nausea",
+      "off label use"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.1111111111111111
+  },
+  {
+    "id": "34887925",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "hematuria",
+      "epistaxis",
+      "thrombocytopenia",
+      "hemolytic anemia",
+      "bruising",
+      "melena",
+      "transient hematuria"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Haematuria",
+      "Epistaxis",
+      "Thrombocytopenia",
+      "Haemolytic anaemia",
+      "Vascular access site bruising",
+      "Melaena"
+    ],
+    "ground_truth_reactions": [
+      "immune thrombocytopenia"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.5
+  },
+  {
+    "id": "34306782",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34345762",
+    "free_text_phrases": [
+      "coronary vasospasm",
+      "myocardial ischaemia",
+      "anginal chest pain",
+      "dyspnoea",
+      "facial flushing",
+      "ankle oedema"
+    ],
+    "ranked_reaction_labels": [
+      "Vasospasm",
+      "Myocardial ischaemia",
+      "Angina pectoris",
+      "Dyspnoea",
+      "Facial discomfort",
+      "Oedema"
+    ],
+    "ground_truth_reactions": [
+      "arteriospasm coronary",
+      "coronary artery disease",
+      "dyspnoea exertional",
+      "myocardial ischaemia",
+      "plasma cell myeloma",
+      "prinzmetal angina"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.16666666666666666,
+    "term_recall": 0.3076923076923077
+  },
+  {
+    "id": "33281154",
+    "free_text_phrases": [
+      "diarrhea",
+      "melena",
+      "abdominal pain",
+      "mucosal edema",
+      "erosion of the entire colon",
+      "ulcerative colitis",
+      "fever",
+      "polyarthralgia",
+      "saddle nose",
+      "bilateral auricular redness"
+    ],
+    "ranked_reaction_labels": [
+      "Diarrhoea",
+      "Melaena",
+      "Abdominal pain",
+      "Oedema mucosal",
+      "Large intestine erosion",
+      "Colitis ulcerative",
+      "Febrile infection",
+      "Arthralgia",
+      "Nose deformity",
+      "Auricular swelling"
+    ],
+    "ground_truth_reactions": [
+      "colitis ulcerative"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34408682",
+    "free_text_phrases": [
+      "severe pain",
+      "irritability",
+      "distress",
+      "low mood",
+      "obsessive thinking",
+      "compulsive behaviors"
+    ],
+    "ranked_reaction_labels": [
+      "Pain",
+      "Irritability",
+      "Emotional distress",
+      "Depressed mood",
+      "Obsessive thoughts",
+      "Compulsions"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "drug ineffective for unapproved indication",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34234701",
+    "free_text_phrases": [
+      "agranulocytosis",
+      "seizures",
+      "myocarditis",
+      "cardiometabolic adverse events",
+      "weight gain"
+    ],
+    "ranked_reaction_labels": [
+      "Agranulocytosis",
+      "Seizure",
+      "Myocarditis",
+      "Adverse event",
+      "Weight gain poor"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "drug intolerance",
+      "electrocardiogram qt prolonged",
+      "overdose",
+      "product use in unapproved indication",
+      "sedation"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34436497",
+    "free_text_phrases": [
+      "sweating"
+    ],
+    "ranked_reaction_labels": [
+      "Cold sweat"
+    ],
+    "ground_truth_reactions": [
+      "asthenia",
+      "cerebrovascular accident",
+      "coma",
+      "drug abuse",
+      "drug screen positive",
+      "hyperhidrosis",
+      "overdose",
+      "product administration error",
+      "respiratory depression",
+      "respiratory rate decreased",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34622867",
+    "free_text_phrases": [
+      "hyponatremia",
+      "anorexia",
+      "severe hyponatremia",
+      "edema",
+      "deep venous thrombosis"
+    ],
+    "ranked_reaction_labels": [
+      "Hyponatraemia",
+      "Anorexia nervosa",
+      "Oedema",
+      "Deep vein thrombosis"
+    ],
+    "ground_truth_reactions": [
+      "blood aldosterone decreased",
+      "cardiac failure",
+      "disease recurrence",
+      "hyponatraemia",
+      "hypopituitarism",
+      "pancreatic neuroendocrine tumour",
+      "renin decreased"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.14285714285714285,
+    "term_recall": 0.07692307692307693
+  },
+  {
+    "id": "34083820",
+    "free_text_phrases": [
+      "constipation",
+      "sedation",
+      "developmental delay"
+    ],
+    "ranked_reaction_labels": [
+      "Constipation",
+      "Sedation",
+      "Developmental delay"
+    ],
+    "ground_truth_reactions": [
+      "developmental delay",
+      "exposure via breast milk",
+      "growth retardation",
+      "infant sedation",
+      "maternal exposure during pregnancy",
+      "motor developmental delay",
+      "neurodevelopmental disorder",
+      "weight gain poor"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.125,
+    "term_recall": 0.15789473684210525
+  },
+  {
+    "id": "34447684",
+    "free_text_phrases": [
+      "hypertension",
+      "diabetes mellitus",
+      "fever",
+      "cough"
+    ],
+    "ranked_reaction_labels": [
+      "Hypertension",
+      "Diabetes mellitus",
+      "Febrile infection",
+      "Cough"
+    ],
+    "ground_truth_reactions": [
+      "covid-19",
+      "covid-19 pneumonia"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34093674",
+    "free_text_phrases": [
+      "phlegmasia cerulea dolens",
+      "massive venous thrombosis",
+      "metabolic acidosis",
+      "renal impairment",
+      "leukocytosis",
+      "deep vein thrombosis",
+      "respiratory failure"
+    ],
+    "ranked_reaction_labels": [
+      "Meralgia paraesthetica",
+      "Venous thrombosis",
+      "Metabolic acidosis",
+      "Renal impairment",
+      "Leukocytosis",
+      "Deep vein thrombosis",
+      "Respiratory failure"
+    ],
+    "ground_truth_reactions": [
+      "deep vein thrombosis",
+      "off label use",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33528846",
+    "free_text_phrases": [
+      "grade 2 rash"
+    ],
+    "ranked_reaction_labels": [
+      "Rash pruritic"
+    ],
+    "ground_truth_reactions": [
+      "malignant neoplasm progression",
+      "ovarian cancer",
+      "product use in unapproved indication",
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33552335",
+    "free_text_phrases": [
+      "intracranial vessel dissection"
+    ],
+    "ranked_reaction_labels": [
+      "Intracranial artery dissection"
+    ],
+    "ground_truth_reactions": [
+      "cerebral artery occlusion"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33653851",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "nephrotic-range proteinuria",
+      "thrombotic microangiopathy",
+      "podocytopathy"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Proteinuria",
+      "Thrombotic microangiopathy",
+      "Mitochondrial cytopathy"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "drug interaction",
+      "proteinuria",
+      "thrombotic microangiopathy"
+    ],
+    "rp_at_5": 0.75,
+    "rp_at_10": 0.75,
+    "term_recall": 0.75
+  },
+  {
+    "id": "34721009",
+    "free_text_phrases": [
+      "interstitial pneumonia",
+      "shortness of breath",
+      "fever"
+    ],
+    "ranked_reaction_labels": [
+      "Acute interstitial pneumonitis",
+      "Dyspnoea",
+      "Febrile infection"
+    ],
+    "ground_truth_reactions": [
+      "diarrhoea",
+      "drug ineffective",
+      "interstitial lung disease",
+      "malignant neoplasm progression",
+      "respiratory failure",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.07142857142857142
+  },
+  {
+    "id": "34821704",
+    "free_text_phrases": [
+      "ventricular fibrillation",
+      "premature ventricular contractions",
+      "mitral valve prolapse",
+      "myocarditis",
+      "QT prolongation"
+    ],
+    "ranked_reaction_labels": [
+      "Ventricular fibrillation",
+      "Ventricular pre-excitation",
+      "Mitral valve prolapse",
+      "Myocarditis",
+      "Electrocardiogram QT prolonged"
+    ],
+    "ground_truth_reactions": [
+      "electrocardiogram qt prolonged"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34479520",
+    "free_text_phrases": [
+      "adrenal insufficiency",
+      "uncontrolled blood pressure",
+      "pneumonia",
+      "acute respiratory distress syndrome",
+      "shortness of breath",
+      "pleural effusion",
+      "pericardial fluid accumulation",
+      "avascular necrosis of femoral head",
+      "numbness",
+      "tingling sensation",
+      "C3–C4 cervical spinal canal stenosis",
+      "spinal cord compression"
+    ],
+    "ranked_reaction_labels": [
+      "Adrenal insufficiency",
+      "Blood pressure inadequately controlled",
+      "Pneumonia",
+      "Acute respiratory distress syndrome",
+      "Dyspnoea",
+      "Pleural effusion",
+      "Pericardial effusion",
+      "Femoral neck fracture",
+      "Numb chin syndrome",
+      "Burning sensation",
+      "Cervical spinal stenosis",
+      "Spinal cord compression"
+    ],
+    "ground_truth_reactions": [
+      "acute respiratory distress syndrome",
+      "adrenal insufficiency",
+      "blood pressure abnormal",
+      "cytomegalovirus infection",
+      "depressed level of consciousness",
+      "drug ineffective",
+      "hypogammaglobulinaemia",
+      "orthostatic hypotension",
+      "osteonecrosis",
+      "pneumonia",
+      "pseudomonas infection"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.3,
+    "term_recall": 0.391304347826087
+  },
+  {
+    "id": "34178120",
+    "free_text_phrases": [
+      "pneumonitis",
+      "dyspnea",
+      "hypoxemia",
+      "ground-glass opacities",
+      "lymphocytosis"
+    ],
+    "ranked_reaction_labels": [
+      "Pneumonitis",
+      "Dyspnoea",
+      "Hypoxia",
+      "Lenticular opacities",
+      "Lymphocytosis"
+    ],
+    "ground_truth_reactions": [
+      "disease progression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34804436",
+    "free_text_phrases": [
+      "anemia",
+      "splenomegaly",
+      "leucocytosis",
+      "thrombocytosis",
+      "weight loss",
+      "fatigue",
+      "peripheral edema"
+    ],
+    "ranked_reaction_labels": [
+      "Anaemia",
+      "Splenomegaly",
+      "Leukocytosis",
+      "Thrombocytosis",
+      "Weight loss diet",
+      "Fatigue",
+      "Oedema peripheral"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "product use in unapproved indication"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "33912470",
+    "free_text_phrases": [
+      "grade 3 toxicity"
+    ],
+    "ranked_reaction_labels": [
+      "Device toxicity"
+    ],
+    "ground_truth_reactions": [
+      "adverse event"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34250484",
+    "free_text_phrases": [
+      "hypotension",
+      "bradycardia",
+      "elevation in liver function tests"
+    ],
+    "ranked_reaction_labels": [
+      "Hypotension",
+      "Bradycardia",
+      "Liver function test increased"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "electrocardiogram pr prolongation",
+      "hypotension",
+      "treatment failure"
+    ],
+    "rp_at_5": 0.25,
+    "rp_at_10": 0.25,
+    "term_recall": 0.125
+  },
+  {
+    "id": "34595213",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "nausea"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Nausea"
+    ],
+    "ground_truth_reactions": [
+      "drug resistance",
+      "off label use",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34007372",
+    "free_text_phrases": [
+      "acute renal injury"
+    ],
+    "ranked_reaction_labels": [
+      "Renal injury"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "hyperkalaemia",
+      "muscle necrosis",
+      "myalgia",
+      "myopathy",
+      "myositis",
+      "renal tubular injury",
+      "rhabdomyolysis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "34400601",
+    "free_text_phrases": [
+      "facial rash",
+      "muscle weakness",
+      "appetite loss",
+      "weight loss",
+      "anemia"
+    ],
+    "ranked_reaction_labels": [
+      "Mucocutaneous rash",
+      "Muscular weakness",
+      "Appetite disorder",
+      "Weight loss diet",
+      "Anaemia"
+    ],
+    "ground_truth_reactions": [
+      "abnormal loss of weight",
+      "anaemia",
+      "decreased appetite"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.5714285714285714
+  },
+  {
+    "id": "34377045",
+    "free_text_phrases": [
+      "fever",
+      "cold symptoms",
+      "skin eruption",
+      "muscle weakness",
+      "ground glass opacity",
+      "reticular shadows",
+      "pseudomonas aeruginosa pneumonia"
+    ],
+    "ranked_reaction_labels": [
+      "Febrile infection",
+      "Peripheral coldness",
+      "Skin disorder",
+      "Muscular weakness",
+      "Lung opacity",
+      "Retinal pallor",
+      "Pseudomonas aeruginosa meningitis"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "immunosuppression",
+      "off label use",
+      "pneumonia pseudomonal"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33113098",
+    "free_text_phrases": [
+      "extreme drowsiness",
+      "weight loss",
+      "agitation"
+    ],
+    "ranked_reaction_labels": [
+      "Somnolence",
+      "Weight loss diet",
+      "Agitation"
+    ],
+    "ground_truth_reactions": [
+      "atonic seizures",
+      "epilepsy",
+      "generalised tonic-clonic seizure",
+      "multiple-drug resistance",
+      "petit mal epilepsy",
+      "product use issue",
+      "sedation",
+      "tonic convulsion"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34633155",
+    "free_text_phrases": [
+      "hematoma",
+      "pain",
+      "swelling",
+      "bleeding"
+    ],
+    "ranked_reaction_labels": [
+      "Haematoma",
+      "Pain",
+      "Swelling",
+      "Haemorrhage"
+    ],
+    "ground_truth_reactions": [
+      "condition aggravated",
+      "drug ineffective",
+      "haematoma",
+      "haematoma muscle",
+      "haemorrhage",
+      "intentional product misuse",
+      "muscle haemorrhage",
+      "therapy non-responder"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.25,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "33936120",
+    "free_text_phrases": [
+      "recurrent infections",
+      "cytopenia",
+      "vasculitis",
+      "eczema",
+      "asthma",
+      "food allergy",
+      "thrombocytopenia",
+      "vulvovaginal candidiasis",
+      "cellulitis",
+      "parotitis",
+      "hypereosinophilia",
+      "lymphadenopathy",
+      "lymphopenia",
+      "sclerosing cholangitis"
+    ],
+    "ranked_reaction_labels": [
+      "Recurrent cancer",
+      "Cytopenia",
+      "Vasculitis",
+      "Eczema",
+      "Asthma",
+      "Food allergy",
+      "Thrombocytopenia",
+      "Vulvovaginal candidiasis",
+      "Cellulitis",
+      "Parotitis",
+      "Hypereosinophilic syndrome",
+      "Lymphadenopathy",
+      "Lymphopenia",
+      "Cholangitis sclerosing"
+    ],
+    "ground_truth_reactions": [
+      "cytomegalovirus infection reactivation"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34568441",
+    "free_text_phrases": [
+      "bradycardia",
+      "left ventricular failure",
+      "hypotension",
+      "acute coronary syndrome",
+      "myocardial bridge",
+      "global left ventricular hypokinesia",
+      "dilated left ventricle",
+      "increased troponin",
+      "increased CK-MB",
+      "increased NT-proBNP"
+    ],
+    "ranked_reaction_labels": [
+      "Bradycardia",
+      "Left ventricular failure",
+      "Hypotension",
+      "Acute coronary syndrome",
+      "Myocardial bridging",
+      "Ventricular hypokinesia",
+      "Left ventricular dilatation",
+      "Troponin increased",
+      "Blood creatine phosphokinase MB increased",
+      "Brain natriuretic peptide increased"
+    ],
+    "ground_truth_reactions": [
+      "hypersensitivity",
+      "kounis syndrome"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33237657",
+    "free_text_phrases": [
+      "acceptable hematological and nonhematological toxicity"
+    ],
+    "ranked_reaction_labels": [
+      "Haematotoxicity"
+    ],
+    "ground_truth_reactions": [
+      "drug resistance",
+      "febrile neutropenia",
+      "infection",
+      "mucosal inflammation",
+      "nephropathy toxic",
+      "neutropenia",
+      "off label use",
+      "ototoxicity",
+      "platelet count decreased"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33542643",
+    "free_text_phrases": [
+      "dizziness",
+      "severe diffuse headache",
+      "photophobia",
+      "multiple vomiting",
+      "intracerebral hemorrhage",
+      "subarachnoid hemorrhage"
+    ],
+    "ranked_reaction_labels": [
+      "Dizziness",
+      "Cluster headache",
+      "Photophobia",
+      "Vomiting",
+      "Haemorrhage intracranial",
+      "Subarachnoid haemorrhage"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "international normalised ratio increased"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33681590",
+    "free_text_phrases": [
+      "null"
+    ],
+    "ranked_reaction_labels": [
+      "Nulli gravida"
+    ],
+    "ground_truth_reactions": [
+      "no adverse event"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33796234",
+    "free_text_phrases": [
+      "hyperleukocytosis",
+      "disseminated intravascular coagulation",
+      "petechiae",
+      "ecchymosis",
+      "neutropenia",
+      "intermittent fever",
+      "hepatic dysfunction"
+    ],
+    "ranked_reaction_labels": [
+      "Hyperleukocytosis",
+      "Disseminated intravascular coagulation",
+      "Petechiae",
+      "Ecchymosis",
+      "Neutropenia",
+      "Relapsing fever",
+      "Hepatic failure"
+    ],
+    "ground_truth_reactions": [
+      "plasma cell myeloma recurrent"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34140335",
+    "free_text_phrases": [
+      "slurred speech",
+      "difficulty recalling names",
+      "vasogenic edema",
+      "extensive necrosis"
+    ],
+    "ranked_reaction_labels": [
+      "Slow speech",
+      "Recall phenomenon",
+      "Vasogenic cerebral oedema",
+      "Extremity necrosis"
+    ],
+    "ground_truth_reactions": [
+      "disease progression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34759667",
+    "free_text_phrases": [
+      "null"
+    ],
+    "ranked_reaction_labels": [
+      "Nulli gravida"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34267798",
+    "free_text_phrases": [
+      "toxicities",
+      "weight loss",
+      "fever"
+    ],
+    "ranked_reaction_labels": [
+      "Toxicity to various agents",
+      "Weight loss diet",
+      "Febrile infection"
+    ],
+    "ground_truth_reactions": [
+      "acute myocardial infarction",
+      "cardiac failure congestive",
+      "cholecystitis acute",
+      "cytomegalovirus infection",
+      "febrile neutropenia",
+      "gastrointestinal infection",
+      "haemorrhage",
+      "hepatitis",
+      "herpes zoster",
+      "hyponatraemia",
+      "infection",
+      "intestinal obstruction",
+      "myocardial ischaemia",
+      "neuropathy peripheral",
+      "perforation",
+      "respiratory tract infection",
+      "tumour lysis syndrome",
+      "urinary tract infection"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.06896551724137931
+  },
+  {
+    "id": "33747646",
+    "free_text_phrases": [
+      "Hypercalcemia",
+      "Retinoic Acid Syndrome",
+      "Pseudotumor-Cerebri"
+    ],
+    "ranked_reaction_labels": [
+      "Hypercalcaemia",
+      "Foetal retinoid syndrome",
+      "Pseudosarcoma"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "hypercalcaemia"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34485080",
+    "free_text_phrases": [
+      "meningitis",
+      "bacteremia",
+      "neutropenic fever",
+      "lethargy",
+      "musculoskeletal pains",
+      "fevers",
+      "photophobia",
+      "sluggish pupils",
+      "acute kidney injury"
+    ],
+    "ranked_reaction_labels": [
+      "Meningitis",
+      "Bacteraemia",
+      "Neutropenic infection",
+      "Lethargy",
+      "Musculoskeletal pain",
+      "Febrile infection",
+      "Photophobia",
+      "Sluggishness",
+      "Acute kidney injury"
+    ],
+    "ground_truth_reactions": [
+      "bacteraemia",
+      "febrile neutropenia",
+      "meningitis staphylococcal"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.6
+  },
+  {
+    "id": "34667538",
+    "free_text_phrases": [
+      "acute coronary syndrome",
+      "hypertensive ischemic heart disease",
+      "arrhythmia",
+      "epistaxis",
+      "hematuria",
+      "lowgrade transitional cell carcinoma",
+      "basal cell carcinoma",
+      "severe anemia",
+      "polyglobulia"
+    ],
+    "ranked_reaction_labels": [
+      "Acute coronary syndrome",
+      "Hypertensive heart disease",
+      "Arrhythmia",
+      "Epistaxis",
+      "Haematuria",
+      "Transitional cell carcinoma",
+      "Basal cell carcinoma",
+      "Anaemia",
+      "Hyperglobulinaemia"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "basal cell carcinoma",
+      "epistaxis",
+      "haematuria",
+      "haemorrhage",
+      "hyperhomocysteinaemia",
+      "hypertensive heart disease",
+      "melaena",
+      "myocardial ischaemia",
+      "transitional cell carcinoma"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.6,
+    "term_recall": 0.6666666666666666
+  },
+  {
+    "id": "34114997",
+    "free_text_phrases": [
+      "acute myocardial infarction",
+      "thrombus in left atrial appendage",
+      "severe left ventricle systolic dysfunction",
+      "third degree atrio-ventricular block",
+      "anemia"
+    ],
+    "ranked_reaction_labels": [
+      "Myocardial infarction",
+      "Atrial thrombosis",
+      "Left ventricular dysfunction",
+      "Atrioventricular block",
+      "Anaemia"
+    ],
+    "ground_truth_reactions": [
+      "acute myocardial infarction",
+      "anaemia",
+      "ejection fraction",
+      "electrocardiogram qt prolonged",
+      "embolism",
+      "systolic dysfunction"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.16666666666666666,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33997204",
+    "free_text_phrases": [
+      "null"
+    ],
+    "ranked_reaction_labels": [
+      "Nulli gravida"
+    ],
+    "ground_truth_reactions": [
+      "mental status changes"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34126959",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "asymptomatic cerebral infarction"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Cerebral infarction"
+    ],
+    "ground_truth_reactions": [
+      "cerebral infarction",
+      "drug ineffective",
+      "heparin-induced thrombocytopenia"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33580193",
+    "free_text_phrases": [
+      "BRAF V600E",
+      "EGFR T790M",
+      "PIK3CA E545K",
+      "oligo-PD",
+      "disease progression"
+    ],
+    "ranked_reaction_labels": [
+      "BRAF V600E mutation positive",
+      "EGFR gene mutation",
+      "PIK3CA-activated mutation",
+      "Pogosta disease",
+      "Disease progression"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "drug ineffective",
+      "dysgeusia",
+      "fatigue",
+      "lung adenocarcinoma",
+      "malignant neoplasm progression",
+      "nausea",
+      "product use issue",
+      "pyrexia"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.1111111111111111,
+    "term_recall": 0.13333333333333333
+  },
+  {
+    "id": "33851013",
+    "free_text_phrases": [
+      "diabetic ketoacidosis",
+      "acute kidney injury",
+      "genital infections",
+      "urinary tract infections",
+      "volume depletion",
+      "lower extremity amputations",
+      "Fournier’s gangrene"
+    ],
+    "ranked_reaction_labels": [
+      "Diabetic ketoacidosis",
+      "Acute kidney injury",
+      "Genital infection",
+      "Urinary tract infection",
+      "Electrolyte depletion",
+      "Limb amputation",
+      "Fournier's gangrene"
+    ],
+    "ground_truth_reactions": [
+      "euglycaemic diabetic ketoacidosis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.6666666666666666
+  },
+  {
+    "id": "34222286",
+    "free_text_phrases": [
+      "thrombocytopenia",
+      "purpuric lesions",
+      "epistaxis"
+    ],
+    "ranked_reaction_labels": [
+      "Thrombocytopenia",
+      "Purpura",
+      "Epistaxis"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33622999",
+    "free_text_phrases": [
+      "fever",
+      "rash",
+      "lymphadenopathy",
+      "pruritus",
+      "visual changes",
+      "periorbital edema",
+      "erythematous rash",
+      "acute kidney injury",
+      "nausea"
+    ],
+    "ranked_reaction_labels": [
+      "Febrile infection",
+      "Rash",
+      "Lymphadenopathy",
+      "Pruritus",
+      "Visual field tests",
+      "Periorbital oedema",
+      "Rash erythematous",
+      "Acute kidney injury",
+      "Nausea"
+    ],
+    "ground_truth_reactions": [
+      "alanine aminotransferase increased",
+      "aspartate aminotransferase increased",
+      "drug reaction with eosinophilia and systemic symptoms",
+      "epstein-barr virus infection reactivation",
+      "eye haemorrhage",
+      "haemorrhage",
+      "hepatomegaly",
+      "hepatotoxicity",
+      "inappropriate schedule of product administration",
+      "intentional product misuse",
+      "nephropathy toxic",
+      "papilloedema",
+      "renal impairment",
+      "self-medication"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.03125
+  },
+  {
+    "id": "33997647",
+    "free_text_phrases": [
+      "seizures",
+      "coma",
+      "convulsive movements",
+      "electrographic seizures",
+      "thrombus",
+      "infarcts",
+      "brain stem injury"
+    ],
+    "ranked_reaction_labels": [
+      "Seizure",
+      "Coma",
+      "Tonic clonic movements",
+      "Partial seizures",
+      "Thrombosis",
+      "Infarction",
+      "Brain stem stroke"
+    ],
+    "ground_truth_reactions": [
+      "product use in unapproved indication"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33585092",
+    "free_text_phrases": [
+      "Neuroleptic malignant syndrome",
+      "acute renal failure",
+      "hyperkalemia",
+      "metabolic acidosis",
+      "leukocytosis",
+      "elevated creatinine",
+      "elevated lactate",
+      "muscle rigidity",
+      "altered mental status",
+      "tachycardia"
+    ],
+    "ranked_reaction_labels": [
+      "Neuroleptic malignant syndrome",
+      "Renal failure",
+      "Hyperkalaemia",
+      "Metabolic acidosis",
+      "Leukocytosis",
+      "Creatinine urine increased",
+      "Blood lactate dehydrogenase increased",
+      "Muscle rigidity",
+      "Mental status changes",
+      "Tachycardia"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "hyperkalaemia",
+      "metabolic acidosis",
+      "neuroleptic malignant syndrome",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.6,
+    "term_recall": 0.46153846153846156
+  },
+  {
+    "id": "34035966",
+    "free_text_phrases": [
+      "pancytopenia",
+      "acute hyperbilirubinemia",
+      "hemolytic anemia",
+      "acute encephalopathy",
+      "stercoral colitis"
+    ],
+    "ranked_reaction_labels": [
+      "Pancytopenia",
+      "Hyperbilirubinaemia",
+      "Haemolytic anaemia",
+      "Encephalopathy",
+      "Clostridium colitis"
+    ],
+    "ground_truth_reactions": [
+      "clostridial infection",
+      "gas gangrene",
+      "septic shock",
+      "splenic abscess",
+      "splenic necrosis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34248548",
+    "free_text_phrases": [
+      "posterior reversible encephalopathy syndrome",
+      "hypertension",
+      "nausea",
+      "headache",
+      "visual loss",
+      "seizures",
+      "lethargy",
+      "disorientation"
+    ],
+    "ranked_reaction_labels": [
+      "Posterior reversible encephalopathy syndrome",
+      "Hypertension",
+      "Nausea",
+      "Headache",
+      "Central vision loss",
+      "Seizure",
+      "Lethargy",
+      "Disorientation"
+    ],
+    "ground_truth_reactions": [
+      "off label use",
+      "posterior reversible encephalopathy syndrome"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.5714285714285714
+  },
+  {
+    "id": "33055478",
+    "free_text_phrases": [
+      "orthostatic hypotension",
+      "amnesia",
+      "dizziness",
+      "diarrhea",
+      "constipation",
+      "nausea"
+    ],
+    "ranked_reaction_labels": [
+      "Orthostatic hypotension",
+      "Amnesia",
+      "Dizziness",
+      "Diarrhoea",
+      "Constipation",
+      "Nausea"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "off label use",
+      "orthostatic hypotension"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.2
+  },
+  {
+    "id": "33791385",
+    "free_text_phrases": [
+      "transient amaurosis",
+      "periorbital hemorrhage",
+      "swelling",
+      "sunken eyes"
+    ],
+    "ranked_reaction_labels": [
+      "Amaurosis",
+      "Periorbital haemorrhage",
+      "Swelling",
+      "Monolid eyes"
+    ],
+    "ground_truth_reactions": [
+      "amaurosis",
+      "amaurosis fugax",
+      "intentional product use issue"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "33708966",
+    "free_text_phrases": [
+      "severe adverse events",
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Adverse event",
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "myelosuppression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33613847",
+    "free_text_phrases": [
+      "fatigue",
+      "low testosterone",
+      "hypophysitis",
+      "hypopituitarism",
+      "sexual dysfunction",
+      "decreased libido",
+      "erectile dysfunction"
+    ],
+    "ranked_reaction_labels": [
+      "Fatigue",
+      "Blood testosterone decreased",
+      "Hypophysitis",
+      "Hypopituitarism",
+      "Sexual dysfunction",
+      "Loss of libido",
+      "Erectile dysfunction"
+    ],
+    "ground_truth_reactions": [
+      "blood testosterone decreased",
+      "hypophysitis",
+      "hypothalamo-pituitary disorder",
+      "thyroid disorder"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.5714285714285714
+  },
+  {
+    "id": "34743690",
+    "free_text_phrases": [
+      "acute respiratory distress syndrome",
+      "severe respiratory acidosis",
+      "refractory hypercapnia",
+      "anisocoria",
+      "severe global hypokinesia",
+      "severe cardiogenic shock",
+      "spontaneous bleeding",
+      "orbital compartment syndrome"
+    ],
+    "ranked_reaction_labels": [
+      "Acute respiratory distress syndrome",
+      "Respiratory acidosis",
+      "Hypercapnia",
+      "Anisometropia",
+      "Hypokinesia",
+      "Cardiogenic shock",
+      "Spontaneous haemorrhage",
+      "Orbital compartment syndrome"
+    ],
+    "ground_truth_reactions": [
+      "amaurosis",
+      "condition aggravated",
+      "drug ineffective",
+      "mucosal haemorrhage",
+      "ocular retrobulbar haemorrhage",
+      "orbital compartment syndrome",
+      "puncture site haemorrhage",
+      "retinal artery occlusion"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.125,
+    "term_recall": 0.23529411764705882
+  },
+  {
+    "id": "33987101",
+    "free_text_phrases": [
+      "acute kidney injury",
+      "nausea",
+      "rash"
+    ],
+    "ranked_reaction_labels": [
+      "Acute kidney injury",
+      "Nausea",
+      "Rash"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "central nervous system lymphoma",
+      "disease progression",
+      "drug intolerance",
+      "neoplasm recurrence",
+      "off label use",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.14285714285714285,
+    "term_recall": 0.15789473684210525
+  }
+]

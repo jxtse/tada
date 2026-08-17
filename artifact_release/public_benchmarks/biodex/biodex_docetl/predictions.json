@@ -1,0 +1,2314 @@
+[
+  {
+    "id": "34456717",
+    "ranked_reaction_labels": [
+      "Stevens-Johnson syndrome",
+      "Systemic toxicity",
+      "Mucosal toxicity",
+      "Oral mucosal blistering",
+      "Toxic skin eruption",
+      "Ocular toxicity",
+      "Immune-mediated adverse reaction",
+      "Lung adenocarcinoma stage IV",
+      "Concomitant disease progression"
+    ],
+    "ground_truth_reactions": [
+      "egfr gene mutation",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34433719",
+    "ranked_reaction_labels": [
+      "Myoclonic epilepsy and ragged-red fibres",
+      "Mitochondrial DNA mutation",
+      "Myoclonic epilepsy",
+      "Mitochondrial myopathy",
+      "Mitochondrial enzyme deficiency",
+      "Mitochondrial cytopathy",
+      "Mitochondrial encephalomyopathy",
+      "Neuromyopathy",
+      "Cerebellar atrophy",
+      "Electromyogram abnormal"
+    ],
+    "ground_truth_reactions": [
+      "myoclonic epilepsy and ragged-red fibres"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34790421",
+    "ranked_reaction_labels": [
+      "Drug withdrawal syndrome",
+      "Drug withdrawal convulsions",
+      "Substance-induced psychotic disorder",
+      "Drug use disorder",
+      "Drug dependence",
+      "Drug abuse",
+      "Mental status changes",
+      "Haemodynamic instability",
+      "Withdrawal hypertension",
+      "Sedation complication",
+      "Initial insomnia",
+      "Drug tolerance increased"
+    ],
+    "ground_truth_reactions": [
+      "drug dependence",
+      "drug ineffective",
+      "drug withdrawal syndrome",
+      "fall",
+      "gait disturbance",
+      "intentional product misuse",
+      "off label use",
+      "respiratory failure",
+      "substance use disorder"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.2222222222222222,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34188921",
+    "ranked_reaction_labels": [
+      "Immune thrombocytopenia",
+      "Thrombocytopenia",
+      "Immune-mediated adverse reaction"
+    ],
+    "ground_truth_reactions": [
+      "ecchymosis",
+      "thrombocytopenia"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.5
+  },
+  {
+    "id": "34073672",
+    "ranked_reaction_labels": [
+      "Fanconi syndrome acquired",
+      "Hypophosphataemic osteomalacia",
+      "Hypophosphataemia",
+      "Renal tubular acidosis",
+      "Hyperphosphaturia",
+      "Blood alkaline phosphatase increased",
+      "Hyperparathyroidism secondary",
+      "Renal tubular injury",
+      "Nephropathy toxic",
+      "Chronic kidney disease",
+      "Bone loss"
+    ],
+    "ground_truth_reactions": [
+      "fanconi syndrome",
+      "fanconi syndrome acquired",
+      "foot fracture",
+      "hypophosphataemic osteomalacia",
+      "renal tubular acidosis"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.6,
+    "term_recall": 0.8
+  },
+  {
+    "id": "33054123",
+    "ranked_reaction_labels": [
+      "Thrombocytopenia",
+      "Chronic myeloid leukaemia",
+      "Primary myelofibrosis",
+      "Thrombocytosis",
+      "Bone marrow toxicity"
+    ],
+    "ground_truth_reactions": [
+      "ascites",
+      "gastrointestinal haemorrhage",
+      "hepatosplenomegaly",
+      "thrombocytopenia",
+      "urogenital haemorrhage"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "34055543",
+    "ranked_reaction_labels": [
+      "Heat stroke",
+      "Hyperthermia",
+      "Hyperpyrexia",
+      "Anticholinergic syndrome",
+      "Anhidrosis",
+      "Temperature regulation disorder",
+      "Urinary retention",
+      "Neurogenic bladder",
+      "Bladder dysfunction",
+      "Parkinson's disease",
+      "Hyponatraemic syndrome",
+      "Hypohidrosis",
+      "Hyperhidrosis"
+    ],
+    "ground_truth_reactions": [
+      "heat stroke",
+      "hyperthermia",
+      "medication error"
+    ],
+    "rp_at_5": 0.6666666666666666,
+    "rp_at_10": 0.6666666666666666,
+    "term_recall": 0.6
+  },
+  {
+    "id": "34107924",
+    "ranked_reaction_labels": [
+      "Subcapsular renal haematoma",
+      "Renal haemorrhage",
+      "Systemic lupus erythematosus",
+      "Lupus nephritis",
+      "Acute kidney injury",
+      "Central nervous system lupus",
+      "Nephrotic syndrome",
+      "Retroperitoneal haematoma",
+      "Kidney rupture",
+      "Uraemic encephalopathy",
+      "Oedema due to renal disease",
+      "Intravascular haemolysis"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "product use in unapproved indication",
+      "renal haemorrhage"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.2222222222222222
+  },
+  {
+    "id": "34201591",
+    "ranked_reaction_labels": [
+      "COVID-19",
+      "SARS-CoV-2 carrier",
+      "COVID-19 pneumonia",
+      "B-cell depletion therapy",
+      "SARS-CoV-2 test positive",
+      "Serology negative",
+      "Virologic failure",
+      "SARS-CoV-2 test false negative",
+      "Viral load decreased",
+      "Viral load undetectable",
+      "SARS-CoV-2 test negative",
+      "COVID-19 immunisation"
+    ],
+    "ground_truth_reactions": [
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.5
+  },
+  {
+    "id": "33732653",
+    "ranked_reaction_labels": [
+      "Metastatic malignant melanoma",
+      "Malignant neoplasm progression",
+      "Nodular melanoma",
+      "Melanoma recurrent",
+      "Tumour marker increased"
+    ],
+    "ground_truth_reactions": [
+      "blood lactate dehydrogenase increased",
+      "dermatitis acneiform",
+      "dyspnoea",
+      "ejection fraction decreased",
+      "general physical health deterioration",
+      "malignant melanoma",
+      "malignant neoplasm progression",
+      "off label use",
+      "pneumonitis",
+      "product use in unapproved indication",
+      "product use issue",
+      "protein s increased"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.1,
+    "term_recall": 0.1724137931034483
+  },
+  {
+    "id": "33883542",
+    "ranked_reaction_labels": [
+      "Haemophilia A with anti factor VIII",
+      "Anti factor VIII antibody increased",
+      "Coagulation factor VIII level decreased",
+      "Joint microhaemorrhage",
+      "Post procedural haematuria",
+      "Remission not achieved",
+      "Therapeutic response changed"
+    ],
+    "ground_truth_reactions": [
+      "haemarthrosis",
+      "haematoma",
+      "haematuria",
+      "off label use",
+      "therapeutic product effect variable"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.2
+  },
+  {
+    "id": "34541338",
+    "ranked_reaction_labels": [
+      "Atypical mycobacterial lower respiratory tract infection",
+      "Mycobacterium abscessus infection",
+      "Mycobacterium avium complex infection",
+      "Atypical mycobacterium test positive",
+      "Sputum culture positive",
+      "Mycobacterium test positive",
+      "Mycobacterium tuberculosis complex test negative",
+      "Pulmonary tuberculosis",
+      "Bronchiectasis",
+      "Chronic respiratory disease",
+      "Sputum purulent",
+      "Computerised tomogram thorax abnormal"
+    ],
+    "ground_truth_reactions": [
+      "atypical mycobacterial infection",
+      "drug resistance",
+      "lung disorder",
+      "nausea",
+      "therapy cessation",
+      "thrombophlebitis",
+      "vomiting"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.25
+  },
+  {
+    "id": "34485017",
+    "ranked_reaction_labels": [
+      "Hyperprolactinaemia",
+      "Prolactin-producing pituitary tumour",
+      "Tetrahydrobiopterin deficiency",
+      "Hyperphenylalaninaemia",
+      "Extrapyramidal disorder"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "dystonia",
+      "overdose",
+      "posturing"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34635150",
+    "ranked_reaction_labels": [
+      "Haemophilia A without inhibitors",
+      "Coagulation factor VIII level decreased",
+      "Factor XII deficiency",
+      "Coagulation factor XII level decreased",
+      "Cerebral haemorrhage neonatal",
+      "Haemorrhage neonatal",
+      "Activated partial thromboplastin time prolonged",
+      "Factor VIII inhibition",
+      "Coagulation factor IX level decreased",
+      "Coagulation factor XI level decreased"
+    ],
+    "ground_truth_reactions": [
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "32773727",
+    "ranked_reaction_labels": [
+      "COVID-19 pneumonia",
+      "Hypercoagulation",
+      "Hypocoagulable state",
+      "Fibrinolysis decreased",
+      "Fibrin D dimer increased",
+      "Blood fibrinogen increased",
+      "C-reactive protein increased",
+      "Coagulation time prolonged",
+      "Activated partial thromboplastin time ratio increased",
+      "Prothrombin time ratio increased",
+      "Haemodynamic instability",
+      "Critical illness"
+    ],
+    "ground_truth_reactions": [
+      "bacterial sepsis",
+      "condition aggravated",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33557784",
+    "ranked_reaction_labels": [
+      "Meningitis neonatal",
+      "Mycoplasma infection",
+      "Neonatal seizure",
+      "Somnolence neonatal",
+      "Arrhythmia neonatal",
+      "Intraventricular haemorrhage neonatal",
+      "Perinatal stroke",
+      "Congenital hydrocephalus",
+      "Premature baby",
+      "Neonatal respiratory distress",
+      "Fever neonatal",
+      "Respiratory disorder neonatal",
+      "Periventricular haemorrhage neonatal",
+      "Death neonatal",
+      "Agitation neonatal",
+      "Perinatal brain damage"
+    ],
+    "ground_truth_reactions": [
+      "cerebral ventricle dilatation",
+      "haemorrhagic cerebral infarction",
+      "intraventricular haemorrhage neonatal",
+      "lethargy",
+      "neonatal tachycardia",
+      "off label use",
+      "seizure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.14285714285714285,
+    "term_recall": 0.2857142857142857
+  },
+  {
+    "id": "33482449",
+    "ranked_reaction_labels": [
+      "Breast cancer metastatic",
+      "Metastases to liver",
+      "Breast cancer recurrent",
+      "HER2 positive breast cancer",
+      "Hormone receptor positive breast cancer",
+      "Breast cancer stage III",
+      "Haemodialysis",
+      "End stage renal disease",
+      "Haemodialysis complication",
+      "Chemotherapy urothelial toxicity attenuation",
+      "Chemotherapy neurotoxicity attenuation",
+      "Chemotherapy toxicity attenuation"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "breast cancer recurrent",
+      "carbohydrate antigen 15-3 increased",
+      "cystitis haemorrhagic",
+      "febrile neutropenia",
+      "hypoaesthesia",
+      "metastases to liver",
+      "oedema",
+      "off label use",
+      "therapy non-responder",
+      "therapy partial responder",
+      "thrombosis"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.2,
+    "term_recall": 0.24
+  },
+  {
+    "id": "33888146",
+    "ranked_reaction_labels": [
+      "Ovarian germ cell choriocarcinoma stage IV",
+      "Metastatic choriocarcinoma",
+      "Brain cancer metastatic",
+      "Malignant neoplasm progression",
+      "Ovarian necrosis"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "drug ineffective",
+      "myelosuppression",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.1111111111111111
+  },
+  {
+    "id": "32526071",
+    "ranked_reaction_labels": [
+      "Maternal exposure during pregnancy",
+      "Foetal exposure during pregnancy",
+      "Maternal exposure during delivery",
+      "Foetal exposure during delivery",
+      "Maternal drugs affecting foetus",
+      "Neonatal toxicity",
+      "Neonatal disorder",
+      "Hyperbilirubinaemia neonatal",
+      "Neonatal respiratory depression",
+      "Neonatal cholestasis",
+      "Neonatal bradyarrhythmia",
+      "Neonatal behavioural syndrome",
+      "Agitation neonatal",
+      "Transient hypothyroxinaemia of prematurity",
+      "Premature delivery",
+      "Postpartum haemorrhage",
+      "Foetal monitoring abnormal",
+      "Abnormal labour affecting foetus",
+      "Placental disorder",
+      "Antemortem blood drug level",
+      "Bipolar disorder relapse prophylaxis",
+      "Perinatal depression"
+    ],
+    "ground_truth_reactions": [
+      "blood disorder",
+      "cardiovascular insufficiency",
+      "foetal distress syndrome",
+      "foetal exposure during pregnancy",
+      "metabolic disorder",
+      "neonatal gastrointestinal disorder",
+      "neonatal infection",
+      "nervous system disorder",
+      "respiratory disorder neonatal"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.1111111111111111,
+    "term_recall": 0.5294117647058824
+  },
+  {
+    "id": "34633074",
+    "ranked_reaction_labels": [
+      "Drug tolerance decreased",
+      "Somnolence neonatal",
+      "Potentiating drug interaction",
+      "Anticonvulsant drug level increased",
+      "Benzodiazepine drug level increased",
+      "Drug effect less than expected",
+      "Therapeutic response increased"
+    ],
+    "ground_truth_reactions": [
+      "cognitive disorder",
+      "somnolence"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33995989",
+    "ranked_reaction_labels": [
+      "COVID-19 pneumonia",
+      "Immune thrombocytopenia",
+      "Autoimmune haemolytic anaemia",
+      "Anti-platelet antibody positive",
+      "Refractoriness to platelet transfusion",
+      "SARS-CoV-2 test positive"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "leukocytosis",
+      "lymphopenia",
+      "product use issue",
+      "thrombocytopenia"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.2857142857142857
+  },
+  {
+    "id": "34707681",
+    "ranked_reaction_labels": [
+      "Mucocutaneous rash",
+      "Post vaccination syndrome",
+      "COVID-19 pneumonia",
+      "COVID-19",
+      "SARS-CoV-2 test positive",
+      "Varicella post vaccine",
+      "C-reactive protein increased"
+    ],
+    "ground_truth_reactions": [
+      "angioedema",
+      "hypotension",
+      "rash"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34664862",
+    "ranked_reaction_labels": [
+      "COVID-19 pneumonia",
+      "Respiratory failure",
+      "Oxygen saturation decreased",
+      "Respiratory rate increased",
+      "SARS-CoV-2 test positive",
+      "Adverse drug reaction"
+    ],
+    "ground_truth_reactions": [
+      "alanine aminotransferase abnormal"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33889835",
+    "ranked_reaction_labels": [
+      "Trigeminal neuralgia",
+      "Temporal lobe epilepsy",
+      "Encephalocele",
+      "Partial seizures",
+      "Partial seizures with secondary generalisation",
+      "Neurological eyelid disorder",
+      "Trigeminal nerve disorder"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "multiple-drug resistance",
+      "seizure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34809625",
+    "ranked_reaction_labels": [
+      "Pleuropericarditis",
+      "Pneumonia chlamydial",
+      "Pericarditis infective",
+      "Pericardial effusion",
+      "Infectious pleural effusion",
+      "Respiratory tract chlamydial infection",
+      "Myocarditis infectious",
+      "Chlamydia test positive",
+      "Endocarditis bacterial",
+      "Atypical pneumonia"
+    ],
+    "ground_truth_reactions": [
+      "drug hypersensitivity",
+      "false positive investigation result",
+      "off label use",
+      "rash maculo-papular",
+      "therapy non-responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.07692307692307693
+  },
+  {
+    "id": "34249743",
+    "ranked_reaction_labels": [
+      "Immune-mediated encephalitis",
+      "Small cell lung cancer extensive stage",
+      "CSF protein increased"
+    ],
+    "ground_truth_reactions": [
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34055491",
+    "ranked_reaction_labels": [
+      "Upper gastrointestinal haemorrhage",
+      "Gouty arthritis",
+      "Hyperuricaemia",
+      "Blood creatinine increased",
+      "Gastrointestinal haemorrhage",
+      "Urate nephropathy"
+    ],
+    "ground_truth_reactions": [
+      "upper gastrointestinal haemorrhage"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34877251",
+    "ranked_reaction_labels": [
+      "Asthmatic crisis",
+      "Asthma late onset",
+      "Eosinophil count increased",
+      "Fractional exhaled nitric oxide increased",
+      "Allergic respiratory disease",
+      "Lower respiratory tract inflammation",
+      "Therapeutic response decreased",
+      "Eosinophil count decreased"
+    ],
+    "ground_truth_reactions": [
+      "asthma",
+      "condition aggravated",
+      "rebound effect"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.2
+  },
+  {
+    "id": "34431691",
+    "ranked_reaction_labels": [
+      "Viral mutation identified",
+      "COVID-19",
+      "Infection in an immunocompromised host",
+      "SARS-CoV-2 test positive",
+      "Neutralising antibodies positive",
+      "Serology positive",
+      "Viral load abnormal"
+    ],
+    "ground_truth_reactions": [
+      "covid-19",
+      "covid-19 pneumonia",
+      "enterococcal bacteraemia",
+      "enterococcal sepsis",
+      "focal segmental glomerulosclerosis",
+      "lymphopenia",
+      "pneumonia proteus",
+      "respiratory failure",
+      "sepsis",
+      "septic shock",
+      "transplant rejection",
+      "viral mutation identified"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.2,
+    "term_recall": 0.21052631578947367
+  },
+  {
+    "id": "33485376",
+    "ranked_reaction_labels": [
+      "Hereditary angioedema with C1 esterase inhibitor deficiency",
+      "Intestinal angioedema",
+      "Angioedema",
+      "C1 esterase inhibitor decreased",
+      "Pregnancy",
+      "Maternal exposure during pregnancy",
+      "Complication of pregnancy",
+      "No adverse event"
+    ],
+    "ground_truth_reactions": [
+      "hypotonia neonatal",
+      "maternal exposure during pregnancy",
+      "transient tachypnoea of the newborn"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.45454545454545453
+  },
+  {
+    "id": "33763319",
+    "ranked_reaction_labels": [
+      "Neuroleptic malignant syndrome",
+      "COVID-19",
+      "Mental status changes",
+      "Neuropsychiatric symptoms",
+      "Psychiatric decompensation",
+      "Myopathy toxic"
+    ],
+    "ground_truth_reactions": [
+      "neuroleptic malignant syndrome"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "33953631",
+    "ranked_reaction_labels": [
+      "Status epilepticus",
+      "Aphasia",
+      "Transient aphasia",
+      "Hyperglycaemic seizure",
+      "Electroencephalogram abnormal",
+      "Mental status changes",
+      "Dementia of the Alzheimer's type uncomplicated",
+      "Cerebral atrophy",
+      "Brain scan abnormal",
+      "Cerebral haematoma",
+      "Post-traumatic epilepsy",
+      "Toxic encephalopathy",
+      "Mini mental status examination abnormal"
+    ],
+    "ground_truth_reactions": [
+      "aphasia",
+      "confusional state",
+      "seizure",
+      "somnolence",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.2222222222222222
+  },
+  {
+    "id": "33614197",
+    "ranked_reaction_labels": [
+      "Broad ligament haematoma",
+      "Postpartum sepsis",
+      "Uterine necrosis",
+      "Uterine infection",
+      "Pelvic haematoma obstetric",
+      "Retroperitoneal haematoma",
+      "Postpartum haemorrhage",
+      "Broad ligament tear",
+      "Uterine inflammation",
+      "Pelvic sepsis"
+    ],
+    "ground_truth_reactions": [
+      "condition aggravated",
+      "sepsis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34593488",
+    "ranked_reaction_labels": [
+      "Premature delivery",
+      "Foetal malnutrition",
+      "Maternal hypertension affecting foetus",
+      "HIV infection",
+      "Maternal drugs affecting foetus",
+      "Foetal exposure during pregnancy",
+      "Maternal exposure during pregnancy",
+      "Maternal exposure before pregnancy",
+      "Premature baby",
+      "Infection susceptibility increased",
+      "Premature labour",
+      "Human immunodeficiency virus transmission",
+      "Maternal exposure during breast feeding",
+      "Exposure via breast milk",
+      "Postnatal growth restriction",
+      "Perinatal brain damage",
+      "Maternal condition affecting foetus"
+    ],
+    "ground_truth_reactions": [
+      "foetal death",
+      "maternal exposure during pregnancy"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.5,
+    "term_recall": 0.8333333333333334
+  },
+  {
+    "id": "34871273",
+    "ranked_reaction_labels": [
+      "Central nervous system lymphoma",
+      "B-cell lymphoma recurrent",
+      "B-cell lymphoma refractory",
+      "Lymphoproliferative disorder in remission"
+    ],
+    "ground_truth_reactions": [
+      "disease recurrence",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33941104",
+    "ranked_reaction_labels": [
+      "Metastases to liver",
+      "Colorectal cancer metastatic",
+      "Colon cancer metastatic",
+      "Rectal cancer metastatic",
+      "Colorectal cancer recurrent",
+      "Tumour marker increased"
+    ],
+    "ground_truth_reactions": [
+      "adverse drug reaction",
+      "colorectal cancer recurrent",
+      "death",
+      "metastases to liver"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.6
+  },
+  {
+    "id": "33138347",
+    "ranked_reaction_labels": [
+      "Atypical teratoid/rhabdoid tumour of CNS",
+      "Malignant neoplasm progression",
+      "Metastases to central nervous system",
+      "Rhabdoid tumour of the kidney",
+      "Oncologic complication"
+    ],
+    "ground_truth_reactions": [
+      "myelosuppression",
+      "product use in unapproved indication",
+      "sepsis",
+      "venoocclusive liver disease"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34039375",
+    "ranked_reaction_labels": [
+      "Oesophageal squamous cell carcinoma",
+      "Radiation oesophagitis",
+      "Gastrointestinal toxicity"
+    ],
+    "ground_truth_reactions": [
+      "oesophageal fistula",
+      "pneumonia aspiration"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.25
+  },
+  {
+    "id": "34646694",
+    "ranked_reaction_labels": [
+      "Raynaud's phenomenon",
+      "Attention deficit hyperactivity disorder",
+      "Mixed anxiety and depressive disorder",
+      "Psychiatric decompensation",
+      "Therapy non-responder"
+    ],
+    "ground_truth_reactions": [
+      "overdose",
+      "suicide attempt"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34567798",
+    "ranked_reaction_labels": [
+      "Frontal lobe epilepsy",
+      "Status epilepticus",
+      "Seizure cluster",
+      "Partial seizures",
+      "Partial seizures with secondary generalisation",
+      "Generalised tonic-clonic seizure",
+      "Focal dyscognitive seizures",
+      "Neuropsychiatric symptoms",
+      "Psychiatric symptom",
+      "Epileptic psychosis",
+      "Epilepsy",
+      "Electroencephalogram abnormal",
+      "Change in seizure presentation",
+      "Automatism epileptic",
+      "Simple partial seizures"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33996609",
+    "ranked_reaction_labels": [
+      "Tumour hyperprogression",
+      "Tumour inflammation",
+      "Tumour necrosis",
+      "Eastern Cooperative Oncology Group performance status worsened",
+      "Immune-mediated adverse reaction",
+      "Metastatic renal cell carcinoma",
+      "Malignant neoplasm progression",
+      "Clear cell renal cell carcinoma",
+      "Renal cell carcinoma recurrent",
+      "Renal cell carcinoma stage III",
+      "Metastatic neoplasm",
+      "Metastases to muscle",
+      "Brain cancer metastatic",
+      "Bone cancer metastatic",
+      "Adrenal neoplasm"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "metastases to adrenals",
+      "metastases to liver",
+      "metastases to lymph nodes",
+      "metastasis"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33860147",
+    "ranked_reaction_labels": [
+      "Metastases to liver",
+      "Colorectal cancer recurrent",
+      "Colorectal cancer stage IV",
+      "Portal vein embolisation",
+      "Hepatectomy",
+      "Venous reconstruction",
+      "Vessel harvesting",
+      "Vascular procedure complication"
+    ],
+    "ground_truth_reactions": [
+      "drug hypersensitivity",
+      "liver injury"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.25
+  },
+  {
+    "id": "34820246",
+    "ranked_reaction_labels": [
+      "Disseminated paracoccidioidomycosis",
+      "Pulmonary paracoccidioidomycosis",
+      "Complications of transplanted kidney",
+      "Acute allograft nephropathy",
+      "Kidney transplant rejection",
+      "Renal transplant failure",
+      "Immune-mediated renal disorder"
+    ],
+    "ground_truth_reactions": [
+      "disseminated paracoccidioidomycosis",
+      "iga nephropathy"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.75
+  },
+  {
+    "id": "34479480",
+    "ranked_reaction_labels": [
+      "Neuroendocrine carcinoma",
+      "Pancreatic carcinoma",
+      "Small cell carcinoma",
+      "Pancreatic mass",
+      "Pancreatic carcinoma stage III",
+      "Neuroendocrine carcinoma metastatic",
+      "Computerised tomogram pancreas abnormal",
+      "Eastern Cooperative Oncology Group performance status worsened",
+      "Eastern Cooperative Oncology Group performance status improved"
+    ],
+    "ground_truth_reactions": [
+      "cachexia",
+      "drug tolerance decreased",
+      "fatigue",
+      "nausea",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34887925",
+    "ranked_reaction_labels": [
+      "Immune thrombocytopenia",
+      "Thrombotic thrombocytopenic purpura",
+      "Thrombocytopenia",
+      "Platelet count decreased",
+      "Thrombotic microangiopathy"
+    ],
+    "ground_truth_reactions": [
+      "immune thrombocytopenia"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34306782",
+    "ranked_reaction_labels": [
+      "Skin angiosarcoma",
+      "Angiosarcoma metastatic",
+      "Angiosarcoma recurrent",
+      "Metastases to neck",
+      "Malignant neoplasm progression",
+      "Malignant neoplasm of thorax",
+      "Maxillofacial sinus neoplasm",
+      "Skin neoplasm bleeding",
+      "Tumour ulceration",
+      "Oncologic complication"
+    ],
+    "ground_truth_reactions": [
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34345762",
+    "ranked_reaction_labels": [
+      "Arteriospasm coronary",
+      "Myocardial ischaemia",
+      "Angina unstable",
+      "Coronary artery disease",
+      "Coronary artery occlusion",
+      "Plasma cell myeloma refractory"
+    ],
+    "ground_truth_reactions": [
+      "arteriospasm coronary",
+      "coronary artery disease",
+      "dyspnoea exertional",
+      "myocardial ischaemia",
+      "plasma cell myeloma",
+      "prinzmetal angina"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 0.5,
+    "term_recall": 0.7692307692307693
+  },
+  {
+    "id": "33281154",
+    "ranked_reaction_labels": [
+      "Colitis ulcerative",
+      "Concomitant disease aggravated",
+      "Takayasu's arteritis",
+      "Polychondritis",
+      "Rheumatoid arthritis",
+      "Polyarthritis"
+    ],
+    "ground_truth_reactions": [
+      "colitis ulcerative"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34408682",
+    "ranked_reaction_labels": [
+      "Obsessive-compulsive disorder",
+      "Delusional disorder somatic type",
+      "Obsessive-compulsive symptom",
+      "Mixed anxiety and depressive disorder",
+      "Psychiatric symptom"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "drug ineffective for unapproved indication",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34234701",
+    "ranked_reaction_labels": [
+      "Antipsychotic drug level below therapeutic",
+      "Antipsychotic drug level increased",
+      "Antipsychotic drug level therapeutic",
+      "Drug therapy enhancement",
+      "CYP1A2 polymorphism",
+      "Potentiating drug interaction",
+      "Drug intolerance",
+      "Therapeutic response increased",
+      "CYP2C19 polymorphism",
+      "CYP2D6 polymorphism",
+      "CYP3A4 polymorphism",
+      "CYP3A5 polymorphism",
+      "Off label use",
+      "Drug effective for unapproved indication",
+      "Neuropsychiatric symptoms"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "drug intolerance",
+      "electrocardiogram qt prolonged",
+      "overdose",
+      "product use in unapproved indication",
+      "sedation"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.16666666666666666,
+    "term_recall": 0.46153846153846156
+  },
+  {
+    "id": "34436497",
+    "ranked_reaction_labels": [
+      "Toxicity to various agents",
+      "Accidental overdose",
+      "Postmortem blood drug level increased",
+      "Antemortem blood drug level increased",
+      "Opiates positive",
+      "Drug screen positive",
+      "Reversal of opiate activity",
+      "Drug dependence",
+      "Drug tolerance",
+      "Substance use",
+      "Prescribed overdose",
+      "Analgesic drug level increased"
+    ],
+    "ground_truth_reactions": [
+      "asthenia",
+      "cerebrovascular accident",
+      "coma",
+      "drug abuse",
+      "drug screen positive",
+      "hyperhidrosis",
+      "overdose",
+      "product administration error",
+      "respiratory depression",
+      "respiratory rate decreased",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.38095238095238093
+  },
+  {
+    "id": "34622867",
+    "ranked_reaction_labels": [
+      "Pancreatic neuroendocrine tumour",
+      "Ectopic antidiuretic hormone secretion",
+      "Inappropriate antidiuretic hormone secretion",
+      "Blood sodium abnormal",
+      "Somatostatin receptor scan abnormal",
+      "Secondary adrenocortical insufficiency",
+      "Adrenocorticotropic hormone deficiency",
+      "Urine sodium increased",
+      "Blood aldosterone decreased",
+      "Paraneoplastic thrombosis"
+    ],
+    "ground_truth_reactions": [
+      "blood aldosterone decreased",
+      "cardiac failure",
+      "disease recurrence",
+      "hyponatraemia",
+      "hypopituitarism",
+      "pancreatic neuroendocrine tumour",
+      "renin decreased"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2857142857142857,
+    "term_recall": 0.46153846153846156
+  },
+  {
+    "id": "34083820",
+    "ranked_reaction_labels": [
+      "Infant sedation",
+      "Constipation neonatal",
+      "Neurodevelopment test",
+      "Low birth weight baby",
+      "Exposure via breast milk",
+      "Maternal exposure during pregnancy"
+    ],
+    "ground_truth_reactions": [
+      "developmental delay",
+      "exposure via breast milk",
+      "growth retardation",
+      "infant sedation",
+      "maternal exposure during pregnancy",
+      "motor developmental delay",
+      "neurodevelopmental disorder",
+      "weight gain poor"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.375,
+    "term_recall": 0.5263157894736842
+  },
+  {
+    "id": "34447684",
+    "ranked_reaction_labels": [
+      "COVID-19",
+      "Liver transplant",
+      "Infection in an immunocompromised host",
+      "COVID-19 pneumonia",
+      "Critical illness",
+      "Asymptomatic COVID-19",
+      "Hepatitis C",
+      "Alcoholic liver disease",
+      "Liver disorder"
+    ],
+    "ground_truth_reactions": [
+      "covid-19",
+      "covid-19 pneumonia"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34093674",
+    "ranked_reaction_labels": [
+      "Deep vein thrombosis",
+      "Venous thrombosis limb",
+      "Cerebral venous sinus thrombosis",
+      "Transverse sinus thrombosis",
+      "Superior sagittal sinus thrombosis",
+      "Circulating anticoagulant positive",
+      "Hypercoagulation",
+      "Venous thrombosis",
+      "Coagulation time prolonged"
+    ],
+    "ground_truth_reactions": [
+      "deep vein thrombosis",
+      "off label use",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33528846",
+    "ranked_reaction_labels": [
+      "Therapeutic response unexpected",
+      "Therapeutic response prolonged",
+      "Ovarian epithelial cancer metastatic",
+      "Serous cystadenocarcinoma ovary",
+      "K-ras gene mutation",
+      "Oestrogen receptor assay positive",
+      "Refractory cancer",
+      "Malignant neoplasm progression",
+      "Ovarian epithelial cancer recurrent",
+      "Ovarian low malignant potential tumour",
+      "Therapeutic response decreased",
+      "Ovarian mass"
+    ],
+    "ground_truth_reactions": [
+      "malignant neoplasm progression",
+      "ovarian cancer",
+      "product use in unapproved indication",
+      "treatment failure"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.25,
+    "term_recall": 0.4166666666666667
+  },
+  {
+    "id": "33552335",
+    "ranked_reaction_labels": [
+      "Intracranial artery dissection",
+      "Cerebral vascular occlusion",
+      "Cerebrovascular stenosis",
+      "Post angioplasty restenosis",
+      "Embolic stroke",
+      "Vascular complication associated with device",
+      "Vascular injury",
+      "Procedural complication"
+    ],
+    "ground_truth_reactions": [
+      "cerebral artery occlusion"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "33653851",
+    "ranked_reaction_labels": [
+      "Renal failure",
+      "Urine protein/creatinine ratio increased",
+      "Blood creatinine increased",
+      "Nephropathy toxic",
+      "Microangiopathy",
+      "Glomerulonephropathy",
+      "Oedema due to renal disease",
+      "Renal impairment",
+      "Renal tubular atrophy",
+      "Kidney fibrosis"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "drug interaction",
+      "proteinuria",
+      "thrombotic microangiopathy"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.25
+  },
+  {
+    "id": "34721009",
+    "ranked_reaction_labels": [
+      "Acute interstitial pneumonitis",
+      "Lung adenocarcinoma stage IV",
+      "EGFR gene mutation",
+      "Metastases to lung",
+      "Pulmonary oedema",
+      "Lung consolidation",
+      "Lung opacity"
+    ],
+    "ground_truth_reactions": [
+      "diarrhoea",
+      "drug ineffective",
+      "interstitial lung disease",
+      "malignant neoplasm progression",
+      "respiratory failure",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.14285714285714285
+  },
+  {
+    "id": "34821704",
+    "ranked_reaction_labels": [
+      "Autoimmune myocarditis",
+      "Mitral valve prolapse",
+      "Ventricular fibrillation",
+      "Ventricular arrhythmia",
+      "Ventricular tachyarrhythmia",
+      "Myxomatous mitral valve degeneration",
+      "Mitral valve incompetence",
+      "Antimyocardial antibody positive",
+      "Left ventricular dysfunction",
+      "Right ventricular dysfunction",
+      "Electrocardiogram QT prolonged",
+      "Mitral valve thickening",
+      "Myocardial fibrosis",
+      "Myocardial oedema",
+      "Myocardial necrosis"
+    ],
+    "ground_truth_reactions": [
+      "electrocardiogram qt prolonged"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34479520",
+    "ranked_reaction_labels": [
+      "Tertiary syphilis",
+      "Syphilis genital",
+      "Aortitis syphilitic",
+      "Cardiovascular syphilis",
+      "Idiopathic orbital inflammation",
+      "Eye infection syphilitic"
+    ],
+    "ground_truth_reactions": [
+      "acute respiratory distress syndrome",
+      "adrenal insufficiency",
+      "blood pressure abnormal",
+      "cytomegalovirus infection",
+      "depressed level of consciousness",
+      "drug ineffective",
+      "hypogammaglobulinaemia",
+      "orthostatic hypotension",
+      "osteonecrosis",
+      "pneumonia",
+      "pseudomonas infection"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.043478260869565216
+  },
+  {
+    "id": "34178120",
+    "ranked_reaction_labels": [
+      "Immune-mediated pneumonitis",
+      "Pulmonary eosinophilia",
+      "Lung adenocarcinoma stage IV",
+      "Non-small cell lung cancer metastatic",
+      "Concomitant disease progression",
+      "Lung adenocarcinoma recurrent",
+      "Metastases to lung"
+    ],
+    "ground_truth_reactions": [
+      "disease progression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34804436",
+    "ranked_reaction_labels": [
+      "Chronic myeloid leukaemia",
+      "Myelofibrosis",
+      "Primary myelofibrosis",
+      "Myeloproliferative neoplasm",
+      "Bone marrow reticulin fibrosis",
+      "Chronic myeloid leukaemia (in remission)",
+      "Transformation to acute myeloid leukaemia",
+      "Blood product transfusion dependent",
+      "Bone marrow toxicity",
+      "Complications of bone marrow transplant"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "product use in unapproved indication"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.16666666666666666
+  },
+  {
+    "id": "33912470",
+    "ranked_reaction_labels": [
+      "Non-small cell lung cancer stage IV",
+      "Non-small cell lung cancer metastatic",
+      "Lung adenocarcinoma stage IV",
+      "Neoplasm progression",
+      "Lung squamous cell carcinoma stage IV",
+      "Eastern Cooperative Oncology Group performance status"
+    ],
+    "ground_truth_reactions": [
+      "adverse event"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34250484",
+    "ranked_reaction_labels": [
+      "Treatment failure",
+      "Epilepsy",
+      "Status epilepticus",
+      "Anticonvulsant drug level above therapeutic",
+      "Anticonvulsant drug level below therapeutic"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective",
+      "electrocardiogram pr prolongation",
+      "hypotension",
+      "treatment failure"
+    ],
+    "rp_at_5": 0.25,
+    "rp_at_10": 0.25,
+    "term_recall": 0.375
+  },
+  {
+    "id": "34595213",
+    "ranked_reaction_labels": [
+      "Cardiorenal syndrome",
+      "Fluid overload",
+      "Renal impairment",
+      "Urine output decreased",
+      "Fluid retention",
+      "Oedema due to renal disease",
+      "Cardiac failure chronic",
+      "Urine sodium decreased",
+      "Hyponatriuria",
+      "Kidney congestion",
+      "Glomerular filtration rate decreased",
+      "Hepatorenal syndrome"
+    ],
+    "ground_truth_reactions": [
+      "drug resistance",
+      "off label use",
+      "therapeutic product effect incomplete"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34007372",
+    "ranked_reaction_labels": [
+      "Viral myositis",
+      "Blood creatine phosphokinase increased",
+      "Muscle necrosis",
+      "Renal tubular necrosis",
+      "Blood creatinine increased",
+      "Bone scan abnormal",
+      "Myoglobin urine present",
+      "Biopsy muscle abnormal",
+      "Biopsy kidney abnormal",
+      "Muscle strength abnormal",
+      "Transaminases increased",
+      "C-reactive protein increased",
+      "COVID-19 pneumonia"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "hyperkalaemia",
+      "muscle necrosis",
+      "myalgia",
+      "myopathy",
+      "myositis",
+      "renal tubular injury",
+      "rhabdomyolysis"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.125,
+    "term_recall": 0.5
+  },
+  {
+    "id": "34400601",
+    "ranked_reaction_labels": [
+      "Gastric cancer stage IV",
+      "Metastatic gastric cancer",
+      "Adenocarcinoma gastric",
+      "Gastric cancer",
+      "Gastrointestinal cancer metastatic",
+      "Vagal nerve stimulator implantation",
+      "Refractory cancer"
+    ],
+    "ground_truth_reactions": [
+      "abnormal loss of weight",
+      "anaemia",
+      "decreased appetite"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34377045",
+    "ranked_reaction_labels": [
+      "Dermatomyositis",
+      "Acute interstitial pneumonitis",
+      "Immune-mediated myositis",
+      "Immune-mediated dermatitis",
+      "Blood creatine phosphokinase MM increased"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "immunosuppression",
+      "off label use",
+      "pneumonia pseudomonal"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33113098",
+    "ranked_reaction_labels": [
+      "Lennox-Gastaut syndrome",
+      "Epileptic encephalopathy",
+      "Seizure",
+      "Generalised tonic-clonic seizure",
+      "Seizure cluster",
+      "Generalised onset non-motor seizure",
+      "Status epilepticus",
+      "Encephalopathy",
+      "Behaviour disorder due to a general medical condition",
+      "Remission not achieved"
+    ],
+    "ground_truth_reactions": [
+      "atonic seizures",
+      "epilepsy",
+      "generalised tonic-clonic seizure",
+      "multiple-drug resistance",
+      "petit mal epilepsy",
+      "product use issue",
+      "sedation",
+      "tonic convulsion"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.125,
+    "term_recall": 0.1875
+  },
+  {
+    "id": "34633155",
+    "ranked_reaction_labels": [
+      "Haematoma muscle",
+      "Muscle haemorrhage",
+      "Lower limb artery perforation",
+      "Puncture site haemorrhage",
+      "Puncture site swelling",
+      "Vessel puncture site pain",
+      "Post procedural inflammation",
+      "Muscle discomfort"
+    ],
+    "ground_truth_reactions": [
+      "condition aggravated",
+      "drug ineffective",
+      "haematoma",
+      "haematoma muscle",
+      "haemorrhage",
+      "intentional product misuse",
+      "muscle haemorrhage",
+      "therapy non-responder"
+    ],
+    "rp_at_5": 0.4,
+    "rp_at_10": 0.25,
+    "term_recall": 0.25
+  },
+  {
+    "id": "33936120",
+    "ranked_reaction_labels": [
+      "Combined immunodeficiency",
+      "Cholangitis sclerosing",
+      "Chronic active Epstein-Barr virus infection",
+      "Blood immunoglobulin E increased",
+      "Blood immunoglobulin M decreased",
+      "Lymphocyte count abnormal",
+      "CD8 lymphocytes decreased",
+      "Persistent generalised lymphadenopathy",
+      "Cholangiectasis acquired",
+      "Immune-mediated dermatitis",
+      "B-lymphocyte abnormalities",
+      "Blood immunoglobulin A decreased",
+      "Differential white blood cell count abnormal",
+      "Immune-mediated enterocolitis",
+      "Immunology test abnormal"
+    ],
+    "ground_truth_reactions": [
+      "cytomegalovirus infection reactivation"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "34568441",
+    "ranked_reaction_labels": [
+      "Kounis syndrome",
+      "Anaesthetic complication cardiac",
+      "Acute coronary syndrome",
+      "Acute left ventricular failure",
+      "Sinus bradycardia",
+      "Post procedural hypotension",
+      "Myocardial oedema",
+      "Myocardial necrosis marker increased",
+      "Blood creatine phosphokinase MB increased",
+      "Cardiac function disturbance postoperative",
+      "Cardiomyopathy acute",
+      "Cardiac monitoring abnormal",
+      "Haemodynamic instability",
+      "Congenital cardiovascular anomaly"
+    ],
+    "ground_truth_reactions": [
+      "hypersensitivity",
+      "kounis syndrome"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.6666666666666666
+  },
+  {
+    "id": "33237657",
+    "ranked_reaction_labels": [
+      "Blood stem cell harvest failure",
+      "Bone marrow toxicity",
+      "Hodgkin's disease refractory",
+      "Non-Hodgkin's lymphoma refractory",
+      "Non-Hodgkin's lymphoma recurrent",
+      "Diffuse large B-cell lymphoma refractory",
+      "T-cell lymphoma refractory",
+      "Mantle cell lymphoma refractory",
+      "Follicle centre lymphoma follicular grade I II III refractory",
+      "Marginal zone lymphoma refractory",
+      "Non-Hodgkin's lymphoma stage IV",
+      "Non-Hodgkin's lymphoma stage III",
+      "Non-Hodgkin's lymphoma stage II"
+    ],
+    "ground_truth_reactions": [
+      "drug resistance",
+      "febrile neutropenia",
+      "infection",
+      "mucosal inflammation",
+      "nephropathy toxic",
+      "neutropenia",
+      "off label use",
+      "ototoxicity",
+      "platelet count decreased"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33542643",
+    "ranked_reaction_labels": [
+      "Prothrombin time ratio decreased",
+      "Prothrombin time ratio increased",
+      "Drug metabolising enzyme test abnormal",
+      "Anticoagulation drug level below therapeutic",
+      "Anticoagulation drug level above therapeutic"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "international normalised ratio increased"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.5
+  },
+  {
+    "id": "33681590",
+    "ranked_reaction_labels": [
+      "Drug level decreased",
+      "Drug clearance increased",
+      "Drug metabolising enzyme increased",
+      "Maternal drugs affecting foetus",
+      "Maternal exposure during pregnancy",
+      "Foetal exposure during pregnancy",
+      "Antemortem blood drug level decreased",
+      "Genetic polymorphism",
+      "Disease susceptibility",
+      "Teratogenicity",
+      "Reproductive toxicity",
+      "Drug effect less than expected",
+      "Toxicity to various agents"
+    ],
+    "ground_truth_reactions": [
+      "no adverse event"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33796234",
+    "ranked_reaction_labels": [
+      "Plasma cell leukaemia",
+      "Plasma cell myeloma refractory",
+      "Plasma cell myeloma recurrent",
+      "Plasma cell leukaemia in remission",
+      "Plasma cell myeloma in remission",
+      "Bone marrow plasmacyte count increased",
+      "Plasma cells increased",
+      "Monoclonal immunoglobulin increased",
+      "Leukaemic infiltration extramedullary"
+    ],
+    "ground_truth_reactions": [
+      "plasma cell myeloma recurrent"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34140335",
+    "ranked_reaction_labels": [
+      "Brain cancer metastatic",
+      "Hormone-refractory prostate cancer",
+      "Prostate cancer metastatic",
+      "Bone cancer metastatic",
+      "Malignant neoplasm progression",
+      "Tumour marker increased",
+      "Prostate cancer"
+    ],
+    "ground_truth_reactions": [
+      "disease progression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.5
+  },
+  {
+    "id": "34759667",
+    "ranked_reaction_labels": [
+      "Macular oedema",
+      "Immune-mediated uveitis",
+      "Cystoid macular oedema",
+      "Subretinal fluid",
+      "Visual acuity reduced",
+      "Eye inflammation",
+      "Ocular sarcoidosis",
+      "No adverse event"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "off label use"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34267798",
+    "ranked_reaction_labels": [
+      "Diffuse large B-cell lymphoma",
+      "Diffuse large B-cell lymphoma stage IV",
+      "Diffuse large B-cell lymphoma stage III",
+      "Diffuse large B-cell lymphoma stage II",
+      "Diffuse large B-cell lymphoma stage I",
+      "Disease progression",
+      "Eastern Cooperative Oncology Group performance status",
+      "Elderly",
+      "Diffuse large B-cell lymphoma refractory",
+      "Diffuse large B-cell lymphoma recurrent",
+      "High grade B-cell lymphoma Burkitt-like lymphoma"
+    ],
+    "ground_truth_reactions": [
+      "acute myocardial infarction",
+      "cardiac failure congestive",
+      "cholecystitis acute",
+      "cytomegalovirus infection",
+      "febrile neutropenia",
+      "gastrointestinal infection",
+      "haemorrhage",
+      "hepatitis",
+      "herpes zoster",
+      "hyponatraemia",
+      "infection",
+      "intestinal obstruction",
+      "myocardial ischaemia",
+      "neuropathy peripheral",
+      "perforation",
+      "respiratory tract infection",
+      "tumour lysis syndrome",
+      "urinary tract infection"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33747646",
+    "ranked_reaction_labels": [
+      "Adjusted calcium increased",
+      "Acute promyelocytic leukaemia",
+      "Disseminated aspergillosis",
+      "Blood 25-hydroxycholecalciferol decreased",
+      "Acute myeloid leukaemia (in remission)",
+      "Blast cell count increased"
+    ],
+    "ground_truth_reactions": [
+      "drug interaction",
+      "hypercalcaemia"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34485080",
+    "ranked_reaction_labels": [
+      "Meningitis staphylococcal",
+      "Staphylococcal bacteraemia",
+      "Catheter bacteraemia",
+      "CSF culture positive",
+      "Blood culture positive",
+      "CSF white blood cell count increased",
+      "CSF polymorphonuclear cell count increased",
+      "Infection in an immunocompromised host",
+      "Neutropenic infection",
+      "Myeloid leukaemia in remission",
+      "Allogenic stem cell transplantation"
+    ],
+    "ground_truth_reactions": [
+      "bacteraemia",
+      "febrile neutropenia",
+      "meningitis staphylococcal"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.6
+  },
+  {
+    "id": "34667538",
+    "ranked_reaction_labels": [
+      "Haemophilia B without inhibitors",
+      "Atrial fibrillation",
+      "Coagulation factor IX level decreased",
+      "CHA2DS2-VASc annual stroke risk high",
+      "Hypercoagulation",
+      "Anticoagulant therapy",
+      "Antiplatelet therapy",
+      "Haemorrhage prophylaxis",
+      "Atrial appendage closure"
+    ],
+    "ground_truth_reactions": [
+      "anaemia",
+      "basal cell carcinoma",
+      "epistaxis",
+      "haematuria",
+      "haemorrhage",
+      "hyperhomocysteinaemia",
+      "hypertensive heart disease",
+      "melaena",
+      "myocardial ischaemia",
+      "transitional cell carcinoma"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.06666666666666667
+  },
+  {
+    "id": "34114997",
+    "ranked_reaction_labels": [
+      "Intracardiac thrombus",
+      "Atrial thrombosis",
+      "Atrial fibrillation",
+      "Coronary artery embolism",
+      "Thrombotic stroke",
+      "Cardiac valve prosthesis user",
+      "Mitral valve replacement",
+      "CHA2DS2-VASc annual stroke risk high",
+      "Anticoagulant therapy",
+      "Implantable defibrillator insertion"
+    ],
+    "ground_truth_reactions": [
+      "acute myocardial infarction",
+      "anaemia",
+      "ejection fraction",
+      "electrocardiogram qt prolonged",
+      "embolism",
+      "systolic dysfunction"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.08333333333333333
+  },
+  {
+    "id": "33997204",
+    "ranked_reaction_labels": [
+      "Post procedural discomfort",
+      "Breakthrough pain",
+      "Inadequate analgesia",
+      "Perioperative analgesia",
+      "Postoperative analgesia",
+      "Pain management",
+      "Knee arthroplasty",
+      "Spinal anaesthesia",
+      "Nerve block",
+      "Peripheral nerve injection",
+      "Joint injection",
+      "Musculoskeletal procedural complication",
+      "Deep vein thrombosis postoperative",
+      "Postoperative respiratory distress",
+      "Post procedural complication"
+    ],
+    "ground_truth_reactions": [
+      "mental status changes"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "34126959",
+    "ranked_reaction_labels": [
+      "Heparin-induced thrombocytopenia",
+      "Heparin-induced thrombocytopenia test positive",
+      "Microscopic polyangiitis",
+      "Glomerulonephritis rapidly progressive",
+      "Acute kidney injury",
+      "Anti-neutrophil cytoplasmic antibody positive vasculitis",
+      "Antineutrophil cytoplasmic antibody increased",
+      "Blood creatinine increased",
+      "Haemodialysis complication",
+      "Platelet count abnormal"
+    ],
+    "ground_truth_reactions": [
+      "cerebral infarction",
+      "drug ineffective",
+      "heparin-induced thrombocytopenia"
+    ],
+    "rp_at_5": 0.3333333333333333,
+    "rp_at_10": 0.3333333333333333,
+    "term_recall": 0.3333333333333333
+  },
+  {
+    "id": "33580193",
+    "ranked_reaction_labels": [
+      "Lung adenocarcinoma stage IV",
+      "Malignant neoplasm progression",
+      "BRAF V600E mutation positive",
+      "EGFR gene mutation",
+      "Genotype drug resistance test positive",
+      "EGFR gene overexpression",
+      "Gene mutation identification test positive"
+    ],
+    "ground_truth_reactions": [
+      "disease progression",
+      "drug ineffective",
+      "dysgeusia",
+      "fatigue",
+      "lung adenocarcinoma",
+      "malignant neoplasm progression",
+      "nausea",
+      "product use issue",
+      "pyrexia"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.1111111111111111,
+    "term_recall": 0.4
+  },
+  {
+    "id": "33851013",
+    "ranked_reaction_labels": [
+      "Euglycaemic diabetic ketoacidosis",
+      "Type 2 diabetes mellitus",
+      "Metabolic acidosis",
+      "Blood ketone body increased",
+      "Ketosis",
+      "Blood glucose increased",
+      "Diabetes mellitus inadequate control"
+    ],
+    "ground_truth_reactions": [
+      "euglycaemic diabetic ketoacidosis"
+    ],
+    "rp_at_5": 1.0,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34222286",
+    "ranked_reaction_labels": [
+      "Immune thrombocytopenia",
+      "Rosai-Dorfman syndrome",
+      "Erdheim-Chester disease",
+      "Immunoglobulin G4 related disease",
+      "Langerhans' cell histiocytosis"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33622999",
+    "ranked_reaction_labels": [
+      "Drug reaction with eosinophilia and systemic symptoms",
+      "Rash maculo-papular",
+      "Eosinophilia",
+      "Allergic oedema",
+      "Rash pruritic",
+      "Rash erythematous",
+      "Drug eruption"
+    ],
+    "ground_truth_reactions": [
+      "alanine aminotransferase increased",
+      "aspartate aminotransferase increased",
+      "drug reaction with eosinophilia and systemic symptoms",
+      "epstein-barr virus infection reactivation",
+      "eye haemorrhage",
+      "haemorrhage",
+      "hepatomegaly",
+      "hepatotoxicity",
+      "inappropriate schedule of product administration",
+      "intentional product misuse",
+      "nephropathy toxic",
+      "papilloedema",
+      "renal impairment",
+      "self-medication"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.1,
+    "term_recall": 0.21875
+  },
+  {
+    "id": "33997647",
+    "ranked_reaction_labels": [
+      "Basilar artery thrombosis",
+      "Status epilepticus",
+      "Basilar artery occlusion",
+      "Vertebrobasilar stroke",
+      "Brain stem infarction",
+      "Thalamic infarction",
+      "Cerebral infarction",
+      "Partial seizures",
+      "Post stroke seizure",
+      "Brain stem ischaemia",
+      "Cerebral ischaemia"
+    ],
+    "ground_truth_reactions": [
+      "product use in unapproved indication"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33585092",
+    "ranked_reaction_labels": [
+      "Neuroleptic malignant syndrome",
+      "Overdose",
+      "Metabolic encephalopathy",
+      "Myopathy toxic",
+      "Nephropathy toxic",
+      "Alcohol poisoning",
+      "Neuropsychiatric symptoms",
+      "Suspected suicide attempt"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "hyperkalaemia",
+      "metabolic acidosis",
+      "neuroleptic malignant syndrome",
+      "toxicity to various agents"
+    ],
+    "rp_at_5": 0.2,
+    "rp_at_10": 0.2,
+    "term_recall": 0.3076923076923077
+  },
+  {
+    "id": "34035966",
+    "ranked_reaction_labels": [
+      "Septic shock",
+      "Clostridial sepsis",
+      "Splenic abscess",
+      "Splenic necrosis",
+      "Clostridium bacteraemia",
+      "Splenic infarction",
+      "Splenic infection bacterial",
+      "Gas gangrene",
+      "Clostridial infection"
+    ],
+    "ground_truth_reactions": [
+      "clostridial infection",
+      "gas gangrene",
+      "septic shock",
+      "splenic abscess",
+      "splenic necrosis"
+    ],
+    "rp_at_5": 0.6,
+    "rp_at_10": 1.0,
+    "term_recall": 1.0
+  },
+  {
+    "id": "34248548",
+    "ranked_reaction_labels": [
+      "Posterior reversible encephalopathy syndrome",
+      "Vasogenic cerebral oedema",
+      "Hypertensive encephalopathy",
+      "Pancreatic carcinoma stage III"
+    ],
+    "ground_truth_reactions": [
+      "off label use",
+      "posterior reversible encephalopathy syndrome"
+    ],
+    "rp_at_5": 0.5,
+    "rp_at_10": 0.5,
+    "term_recall": 0.5714285714285714
+  },
+  {
+    "id": "33055478",
+    "ranked_reaction_labels": [
+      "Encephalitis autoimmune",
+      "Anti-VGKC antibody positive",
+      "Immune-mediated adverse reaction"
+    ],
+    "ground_truth_reactions": [
+      "drug ineffective for unapproved indication",
+      "off label use",
+      "orthostatic hypotension"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33791385",
+    "ranked_reaction_labels": [
+      "Eyelid retraction",
+      "Endocrine ophthalmopathy",
+      "Periorbital haemorrhage",
+      "Periorbital swelling",
+      "Periorbital fat atrophy",
+      "Enophthalmos",
+      "Periorbital discomfort",
+      "Eyelid ptosis",
+      "Ocular surface disease",
+      "Exophthalmos"
+    ],
+    "ground_truth_reactions": [
+      "amaurosis",
+      "amaurosis fugax",
+      "intentional product use issue"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33708966",
+    "ranked_reaction_labels": [
+      "Soft tissue sarcoma",
+      "Sarcoma metastatic",
+      "Eastern Cooperative Oncology Group performance status",
+      "Malignant neoplasm progression",
+      "Leiomyosarcoma metastatic",
+      "Alveolar soft part sarcoma metastatic",
+      "Malignant fibrous histiocytoma metastatic",
+      "Clear cell sarcoma of soft tissue",
+      "Dedifferentiated liposarcoma",
+      "Synovial sarcoma metastatic",
+      "Epithelioid sarcoma metastatic",
+      "Angiosarcoma metastatic",
+      "Extraskeletal chondrosarcoma metastatic",
+      "Neurofibrosarcoma metastatic",
+      "Therapeutic response prolonged",
+      "Cancer in remission"
+    ],
+    "ground_truth_reactions": [
+      "myelosuppression"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.0
+  },
+  {
+    "id": "33613847",
+    "ranked_reaction_labels": [
+      "Blood testosterone decreased",
+      "Immune-mediated endocrinopathy",
+      "Secondary hypogonadism",
+      "Metastatic malignant melanoma",
+      "Malignant melanoma stage IV",
+      "Malignant melanoma stage III"
+    ],
+    "ground_truth_reactions": [
+      "blood testosterone decreased",
+      "hypophysitis",
+      "hypothalamo-pituitary disorder",
+      "thyroid disorder"
+    ],
+    "rp_at_5": 0.25,
+    "rp_at_10": 0.25,
+    "term_recall": 0.42857142857142855
+  },
+  {
+    "id": "34743690",
+    "ranked_reaction_labels": [
+      "Cardiogenic shock",
+      "Cardiomyopathy acute",
+      "Myocarditis post infection",
+      "Viral cardiomyopathy",
+      "Acute left ventricular failure",
+      "Left ventricular dysfunction",
+      "Ejection fraction decreased",
+      "Haemodynamic instability",
+      "Cardiac failure acute",
+      "Post procedural haemorrhage",
+      "Vascular complication associated with device",
+      "Peripheral artery haematoma",
+      "Cardiopulmonary failure",
+      "Cerebral oedema management",
+      "Critical illness"
+    ],
+    "ground_truth_reactions": [
+      "amaurosis",
+      "condition aggravated",
+      "drug ineffective",
+      "mucosal haemorrhage",
+      "ocular retrobulbar haemorrhage",
+      "orbital compartment syndrome",
+      "puncture site haemorrhage",
+      "retinal artery occlusion"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.11764705882352941
+  },
+  {
+    "id": "33987101",
+    "ranked_reaction_labels": [
+      "Primary cardiac lymphoma",
+      "Diffuse large B-cell lymphoma",
+      "Diffuse large B-cell lymphoma recurrent",
+      "Marginal zone lymphoma",
+      "Metastatic lymphoma"
+    ],
+    "ground_truth_reactions": [
+      "acute kidney injury",
+      "central nervous system lymphoma",
+      "disease progression",
+      "drug intolerance",
+      "neoplasm recurrence",
+      "off label use",
+      "therapy partial responder"
+    ],
+    "rp_at_5": 0.0,
+    "rp_at_10": 0.0,
+    "term_recall": 0.05263157894736842
+  }
+]

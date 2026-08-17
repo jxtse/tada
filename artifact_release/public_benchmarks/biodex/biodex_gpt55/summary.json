@@ -1,0 +1,8 @@
+{
+  "method": "tada_tag_embed_align",
+  "total_documents": 100,
+  "avg_rp_at_5": 0.233,
+  "avg_rp_at_10": 0.2486031746031746,
+  "avg_term_recall": 0.3946083112650085,
+  "elapsed_s": 2054.71
+}

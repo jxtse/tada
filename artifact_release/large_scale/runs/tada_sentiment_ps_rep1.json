@@ -1,0 +1,16 @@
+{
+  "arm": "tada",
+  "task": "sentiment_ps",
+  "rep": 1,
+  "status": "ok",
+  "wall_s": 9876.5,
+  "calls": 105,
+  "failed_calls": 36,
+  "model": "dev-anthropic-claude-sonnet-5",
+  "batch": "1000",
+  "rows": 32179,
+  "acc": 0.9730469965764084,
+  "gold_rows": 32130,
+  "unknown": 0,
+  "labels_out": "<LOCAL_ARTIFACT_PATH>"
+}

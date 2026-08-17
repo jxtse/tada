@@ -10,7 +10,7 @@ from typing import Any
 
 
 def _resolve_ta_path() -> Path:
-    """Locate the paper-facing TADASkill implementation."""
+    """Locate the released TADASkill implementation."""
     configured = os.environ.get("TADA_SKILL_ROOT", "").strip()
     candidates = []
     if configured:

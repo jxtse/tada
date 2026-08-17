@@ -1,0 +1,48 @@
+{
+  "protocol": "final_submission",
+  "updated": "2026-08-17",
+  "tabench": {
+    "frozen_snapshot": "TABench/queries_snapshot_v2.json",
+    "snapshot_cases": 43,
+    "scored_cases": 40,
+    "excluded_boundary_cases": ["Q11", "Q12", "Q18"],
+    "configurations": {
+      "tada_agent": "TADA-Agent with the released TADA skill and atom APIs",
+      "semantic_operators": "LOTUS semantic-operator baseline",
+      "claude_code": "same coding-agent harness without the TADA skill or atom APIs",
+      "code_only": "code-generation baseline without the TADA atoms",
+      "direct": "direct model baseline"
+    },
+    "runs_per_configuration": 3,
+    "evaluation_tracks": {
+      "row_aligned": "Reference-based pairwise comparison for cases without a rule-based answer; differing cells are judgment units.",
+      "complete_artifact": "Reference-based pairwise comparison of complete deliverables for non-row-aligned cases without a rule-based answer.",
+      "rule_based": {
+        "cases": ["Q37", "Q38", "Q39", "Q40", "Q42", "Q44", "Q45"],
+        "metric": "absolute accuracy",
+        "judge_used": false
+      }
+    },
+    "reference_role": "One held-out TADA run provides a common relative comparison scale for cases without a unique answer; it is not ground truth.",
+    "judge": {
+      "protocol": "anonymized A/B, position swapping, three votes per direction",
+      "direction_disagreement": "tie",
+      "integer_rating_tie_band": "one scale step",
+      "human_calibration": "calibration_release/"
+    },
+    "results": "evaluation/results/"
+  },
+  "large_scale": {
+    "end_to_end_tagging": "artifact_release/large_scale/",
+    "categorization_scope": "Controlled candidate-retention study under fixed canonical assignments",
+    "retention_artifacts": "Not present in the original handoff; the supplementary material provides the complete protocol and aggregate outcomes."
+  },
+  "public_benchmarks": {
+    "artifacts": "artifact_release/public_benchmarks/",
+    "scope": "Sanitized manifests, predictions, summaries, and experiment logic available in the local handoff."
+  },
+  "boundary_diagnostic": {
+    "artifacts": "artifact_release/boundary_diagnostic/",
+    "scope": "Single-run neural-symbolic diagnostic; mechanism evidence, not a comparative system benchmark."
+  }
+}

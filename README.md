@@ -4,8 +4,8 @@ Official artifact repository for **TADA: Semantic Atoms for Scalable Text Analys
 
 TADA exposes two reusable semantic operations for analytical agents:
 
-- **Tagging**: materializes one row-aligned semantic value per input row (`N -> N`).
-- **Categorization**: discovers and materializes a reusable category table (`N -> M`).
+- **Tagging** materializes one row-aligned semantic value per input row (`N -> N`).
+- **Categorization** discovers and materializes a reusable category table (`N -> M`).
 
 The agent composes these operations with ordinary Python/dataframe code. For large inputs, the public API remains unchanged while the runtime uses chunked execution, category consolidation, and discover-then-assign processing internally.
 
@@ -15,9 +15,12 @@ The agent composes these operations with ordinary Python/dataframe code. For lar
 |---|---|
 | `TADASkill/` | Reusable skill, semantic prompts, and the `ta.tag` / `ta.categorize` implementation |
 | `TADAAgent/` | Planner, execution, payload, and repair pipeline |
-| `TABench/` | Original benchmark inputs, frozen query snapshot, and the later controlled-matrix expansion |
+| `TABench/` | Benchmark inputs, frozen query snapshot, rule-based answers, and checksums |
 | `calibration_release/` | Blinded 39-unit human calibration set, six rater files, judge verdicts, and analysis code |
-| `evaluation/` | Sanitized controlled-matrix, judging, aggregation scripts, and aggregate result tables |
+| `evaluation/` | Sanitized controlled-matrix, judging, aggregation scripts, protocol, and aggregate tables |
+| `artifact_release/public_benchmarks/` | Recovered CUAD and BioDEX experiment materials, with scope notes |
+| `artifact_release/large_scale/` | Final end-to-end large-scale run records, reference labels, and scoring scripts |
+| `artifact_release/boundary_diagnostic/` | Availability note for the neural–symbolic diagnostic |
 
 ## Quick start
 
@@ -33,46 +36,48 @@ Configure a model endpoint. Do not commit real credentials.
 
 ```bash
 export OPENAI_BASE_URL="https://your-provider.example/v1"
-export OPENAI_API_KEY="your-key"
+export OPENAI_API_KEY="dummy"
 export OPENAI_MODEL="your-model"
 ```
 
-See [`TADAAgent/README.md`](TADAAgent/README.md) for the planner/runtime entry point and [`TADASkill/SKILL.md`](TADASkill/SKILL.md) for the two semantic APIs and their environment variables.
+See [`TADAAgent/README.md`](TADAAgent/README.md) for the planner/runtime entry point and [`TADASkill/SKILL.md`](TADASkill/SKILL.md) for the semantic APIs and environment variables.
 
-## TABench
-
-`TABench/Query.md` contains the original 26-query release. `TABench/queries_snapshot_v2.json` is the frozen 43-query snapshot used by the controlled study (Q01--Q40, Q42, Q44, Q45). The later source/gold additions and their checksums are under `TABench/expansion/`.
-
-The paper's controlled analysis reports 40 scored cases: the frozen snapshot minus Q11, Q12, and Q18, whose required output contracts fall outside the two-atom interface's stated scope and are discussed as boundary evidence instead. Q41 and Q43 are not part of the frozen snapshot; their inputs and gold labels are distributed under `TABench/expansion/` for transparency only. See the manuscript and `evaluation/results/matrix_v2_config_note.json` for the frozen exclusions.
-
-## Reproducing the human calibration analysis
-
-The calibration analysis uses only the Python standard library:
+A credential-free deterministic check reproduces the human-calibration statistics:
 
 ```bash
 python calibration_release/analyze_calibration.py
 ```
 
-The directory includes the blank form, blinded HTML interface, six completed rater files, the released answer key, and the LLM-judge verdicts used in the paper.
+## TABench and evaluation protocol
 
-## Evaluation materials
+`TABench/Query.md` contains the original 26-query release. `TABench/queries_snapshot_v2.json` is the frozen 43-query snapshot (Q01–Q40, Q42, Q44, Q45). The paper scores 40 cases after excluding Q11, Q12, and Q18, whose output contracts fall outside the stated two-atom interface. Q41 and Q43 are distributed only as later source/gold additions under `TABench/expansion/`.
 
-The `evaluation/` directory includes the code path used to:
+The final controlled study compares TADA-Agent, semantic operators, Claude Code without the TADA APIs, code-only execution, and a direct-model baseline. It routes cases to three separate metrics:
 
-1. run the five controlled configurations;
-2. construct cell-level judgment units;
-3. collect three position-swapped votes in each direction;
-4. aggregate verdicts and apply the deterministic adjacent-level tie rule; and
-5. aggregate the historical commercial-product snapshot.
+- reference-based row judgments for row-aligned cases without rule-based answers;
+- reference-based complete-artifact judgments for non-row-aligned cases without rule-based answers;
+- absolute accuracy for Q37–Q40, Q42, Q44, and Q45.
 
-Private serving addresses were replaced by environment variables. These scripts expect the benchmark inputs, skills, and model endpoints described in their headers; they are released as experiment logic and provenance rather than a one-command cloud reproduction. Aggregate tables and configuration notes are in `evaluation/results/`.
+The common reference output provides a relative comparison scale and is not ground truth. See [`evaluation/results/final_protocol.json`](evaluation/results/final_protocol.json) and [`evaluation/README.md`](evaluation/README.md).
+
+## Artifact scope
+
+The repository contains the implementation, prompts, benchmark inputs, rule-based answers, human-calibration package, aggregate TABench results, recovered public-benchmark materials, and final end-to-end large-scale run records.
+
+Some provider-backed evidence is intentionally or unavoidably absent:
+
+- raw TABench provider traces and 107,694 judge calls contain large generated intermediates and provider-specific telemetry;
+- the recovered CUAD handoff contains the implementation and smoke evidence but not the final three full prediction files;
+- the later six-population candidate-retention trial bundle and the trial-level neural–symbolic diagnostic outputs were not present in the frozen local handoff.
+
+The per-directory README files state these limits explicitly. No missing artifact has been reconstructed or represented as an original run.
 
 ## Data and model access
 
 - No API keys or model credentials are included.
-- The benchmark CSV files are included for research reproducibility.
+- Benchmark CSV files are included for research use under `DATA_LICENSE`.
 - Reproducing model-backed runs requires provider access and may incur cost.
-- Commercial-product results are dated snapshots; their backing model versions could not be pinned.
+- Commercial-product outputs are retained only as a dated historical snapshot; their backing model versions could not be pinned.
 
 ## Citation
 

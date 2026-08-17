@@ -16,7 +16,7 @@ from collections import defaultdict
 
 HERE = Path(__file__).parent
 RUN = HERE / "full26_runs" / "full26_20260722"
-OUT = Path.home() / ".hermes/workspace/out/tabench26_report.html"
+OUT = Path(__file__).resolve().parent / "results" / "tabench_report.html"
 
 matrix = list(csv.DictReader(open(HERE / "matrix_result.csv")))
 w3 = {r["qid"]: r for r in csv.DictReader(open(RUN / "winrate_3vote.csv"))}
@@ -36,7 +36,7 @@ for r in matrix:
     scores[m].append((rep, 100.0 * good / total, total))
 
 ORDER = [("skill_on", "TADA（自身重复轮，即指标天花板）", "#0f766e"),
-         ("skill_off", "Skill-off：同 agent，无 TADA 原语", "#1d4ed8"),
+         ("skill_off", "Claude Code：同一 coding-agent harness，无 TADA skill/API", "#1d4ed8"),
          ("code_only", "Code-only：只许确定性代码", "#b45309"),
          ("direct", "Direct：单次调用，无工具", "#b91c1c")]
 
@@ -206,9 +206,9 @@ ul {{ padding-left:20px; }} li {{ margin:4px 0; }}
 {sum_rows}
 </table>
 
-<div class="note"><b>怎么读：</b>TADA 自身重跑也只能得 93–94 分（同义改写造成的良性差异），所以 <b>94 分就是满分线</b>。Skill-off 均值低 7 分且三轮波动 ±5.4（最好一轮 92.4、最差 81.7）——没有固定原语时质量靠运气。Code-only 低 16 分，Direct 低 34 分且波动小——它是稳定地差（每轮固定丢约 500 行）。</div>
+<div class="note"><b>怎么读：</b>TADA 自身重跑得分约为 93–94（同义改写会造成少量差异）。Claude Code 均值低约 7 分且三轮波动 ±5.4（最好一轮 92.4、最差 81.7）；Code-only 低约 16 分，Direct 低约 34 分。</div>
 
-<h2>TADA（skill ON）vs 同 agent 无 skill（OFF）· 逐任务<span class="anno">绿 = TADA 赢的行 · 灰 = 两侧相同或判平 · 红 = OFF 赢的行</span></h2>
+<h2>TADA vs Claude Code· 逐任务<span class="anno">绿 = TADA 赢的行 · 灰 = 两侧相同或判平 · 红 = Claude Code 赢的行</span></h2>
 <table>
 <tr><th>Case</th><th>任务</th><th>行级对比</th><th>ON 胜</th><th>平</th><th>OFF 胜</th><th>结论</th></tr>
 {onoff_rows}
@@ -223,8 +223,8 @@ ul {{ padding-left:20px; }} li {{ margin:4px 0; }}
 
 <h2>三句话总结</h2>
 <ul>
-<li><b>性能排序</b>：TADA 94（天花板）＞ Skill-off 86.5 ± 5.4 ＞ Code-only 77.8 ± 3.9 ＞ Direct 60.1 ± 1.7。</li>
-<li><b>方差含义</b>：TADA 是唯一可复现的方法（±0.5）；Skill-off 的 ±5.4 意味着单轮结果不可信，必须多轮验证。</li>
+<li><b>性能排序</b>：TADA 94 ＞ Claude Code 86.5 ± 5.4 ＞ Code-only 77.8 ± 3.9 ＞ Direct 60.1 ± 1.7。</li>
+<li><b>方差含义</b>：TADA 是唯一可复现的方法（±0.5）；Claude Code 的三轮标准差为 5.4。</li>
 <li><b>边界条件</b>：26 题中 3 题（摘要 Q24、翻译 Q25、相关性打分 Q20）OFF 略优——自由文本生成上强模型不受接口约束时措辞更自然；结构化推断任务（Q10、Q26）TADA 大幅领先。</li>
 </ul>
 

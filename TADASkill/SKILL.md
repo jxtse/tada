@@ -57,7 +57,7 @@ Do **not** invoke for purely numeric/statistical questions over tables (use plai
 ## Environment
 
 - Backend selection is controlled by `TA_BACKEND` (`auto` / `openai` / `claude`) plus `TA_OPENAI_BASE_URL` or `OPENAI_BASE_URL` for OpenAI-compatible HTTP runs.
-- The paper-facing OpenAI-compatible default is `gpt-4.1` with local fallback disabled. Set `TA_BACKEND=openai`, `TA_OPENAI_MODEL=gpt-4.1`, and `TA_ENABLE_LOCAL_FALLBACK=0` for measured TADASkill atom runs. Set `TA_OPENAI_MODEL=gpt-5.5` explicitly only for oracle_silver/reference generation.
+- The reported OpenAI-compatible default is `gpt-4.1` with local fallback disabled. Set `TA_BACKEND=openai`, `TA_OPENAI_MODEL=gpt-4.1`, and `TA_ENABLE_LOCAL_FALLBACK=0` for measured TADASkill atom runs. Set `TA_OPENAI_MODEL=gpt-5.5` explicitly only for reference-output generation.
 - With `TA_BACKEND=openai`, OpenAI-compatible HTTP failures fail closed and do not fall back to the Claude CLI path. Only `TA_BACKEND=auto` may fall back to the historical CLI path after an HTTP backend failure.
 - The Claude CLI path is retained for historical smoke tests and local debugging. `TA_MODEL` (default `haiku`) picks the Claude model used by that backend, and `TA_FALLBACK_MODEL` (optional) is used automatically when the primary model fails after retries.
 - `TA_MAX_CONCURRENCY` (default 8) caps parallel batch subprocesses.
@@ -71,4 +71,4 @@ Do **not** invoke for purely numeric/statistical questions over tables (use plai
 - `TA_DEDUP_MIN_ROWS` (default 2000) is the threshold to activate dedup.
 - `TA_ENABLE_CACHE` (default 0) enables local JSON caching of sub-call results in `workspace/ta_cache.json`.
 
-Large-scale behavior now includes retry, adaptive split-on-failure, and optional dedup/cache. For paper-facing benchmark runs, keep `TA_BACKEND=openai`, `TA_OPENAI_MODEL=gpt-4.1`, and `TA_ENABLE_LOCAL_FALLBACK=0`; do not use `TA_FALLBACK_MODEL` as a measured-run downgrade path. `TA_FALLBACK_MODEL` is only for the historical/local Claude CLI path. Tune only one variable at a time when profiling.
+Large-scale behavior now includes retry, adaptive split-on-failure, and optional dedup/cache. For reported benchmark runs, keep `TA_BACKEND=openai`, `TA_OPENAI_MODEL=gpt-4.1`, and `TA_ENABLE_LOCAL_FALLBACK=0`; do not use `TA_FALLBACK_MODEL` as a measured-run downgrade path. `TA_FALLBACK_MODEL` is only for the optional local Claude CLI path. Tune only one variable at a time when profiling.

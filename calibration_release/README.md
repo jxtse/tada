@@ -16,7 +16,7 @@ appendix table.
 | `calibration39.html` | The exact self-contained annotation form shown to annotators (open in any browser; Chinese task guides, blind A/B presentation, one-click export). |
 | `calibration39_blank_form.csv` | Spreadsheet rendition of the same 39 units (blank verdict column), for annotators preferring a tabular workflow. |
 | `raters/rater1.csv` … `raters/rater6.csv` | Raw verdicts from the six annotators (`idx, verdict` with `verdict` in `A`/`B`/`tie`). Filenames are anonymized; the name-to-ID mapping is retained privately by the authors. |
-| `judge_verdicts.csv` | Per-unit LLM-judge verdict (`A`/`B`/`tie`), aggregated from the raw judge logs under the paper's protocol (anonymized A/B, position swapping, three votes per direction; direction disagreement scores as a tie; adjacent-level differences on anchored rating scales tie by deterministic rule). |
+| `judge_verdicts.csv` | Per-unit LLM-judge verdict (`A`/`B`/`tie`), aggregated from the raw judge logs under the paper's protocol (anonymized A/B, position swapping, three votes per direction; direction disagreement scores as a tie; adjacent-level differences on fixed integer-rating scales tie by deterministic rule). |
 | `analyze_calibration.py` | Reproduces all reported statistics from the files above. |
 
 ## Sample design
@@ -25,7 +25,7 @@ appendix table.
 per-direction judge verdicts conflicted), 12 *low-confidence*, 6
 *high-confidence*. Eight task types are covered (translation,
 summarization, document revision, typed-field extraction, urgency
-triage, and three anchored rating tasks). Candidate sides were
+triage, and three fixed integer-rating tasks). Candidate sides were
 randomized: the full-system output is candidate A in 21 of 39 units.
 
 ## Annotation protocol
@@ -55,7 +55,7 @@ Expected headline output (paper values):
 - Judge vs. individual annotators: mean raw agreement 0.60
   (annotator range 0.36–0.77).
 - Per-stratum: contested 17/19, low-confidence 4/8, high-confidence 5/6.
-- All 6 majority-free units fall on anchored rating tasks with a
+- All 6 majority-free units fall on fixed integer-rating tasks with a
   one-step scale difference.
 
 The script has no dependencies beyond the Python 3 standard library.

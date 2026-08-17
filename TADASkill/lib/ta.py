@@ -13,7 +13,7 @@ materialize_tag(data, column_name, query, output_column, ...) -> SemanticState
     validation/provenance rows and a manifest.
 
 Each call may trigger multiple backend subcalls (intent detection, per-batch
-tagging / categorization, cross-batch consolidation). Paper-facing measured
+tagging / categorization, cross-batch consolidation). Reported
 runs use the OpenAI-compatible backend with `gpt-4.1` and local fallback
 disabled; the Claude CLI backend remains a supported historical/local path.
 The orchestrator sees only the public API; the underlying prompts live in

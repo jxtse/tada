@@ -1,0 +1,25 @@
+{
+  "arm": "claudecode",
+  "task": "cat_tm",
+  "rep": 2,
+  "status": "ok",
+  "wall_s": 60.2,
+  "acc": 0.011508553654743391,
+  "gold_rows": 6430,
+  "coverage_rows": 6628,
+  "timed_out": false,
+  "workspace_files_at_start": [
+    "data.csv",
+    "query.txt"
+  ],
+  "cmd": [
+    "claude",
+    "--bare",
+    "--print",
+    "--dangerously-skip-permissions",
+    "--disable-slash-commands",
+    "--mcp-config",
+    "<LOCAL_ARTIFACT_PATH>",
+    "--strict-mcp-config"
+  ]
+}

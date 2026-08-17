@@ -1,0 +1,10 @@
+{
+  "method": "baseline_docetl_retrieval_rank",
+  "model": "gpt-5.5",
+  "topk_candidates": 200,
+  "total_documents": 100,
+  "avg_rp_at_5": 0.19,
+  "avg_rp_at_10": 0.19498015873015873,
+  "avg_term_recall": 0.33155936743975134,
+  "elapsed_s": 3443.075557947159
+}

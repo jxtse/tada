@@ -1,0 +1,21 @@
+{
+  "arm": "tada",
+  "task": "joint_ps",
+  "rep": 2,
+  "status": "ok",
+  "wall_s": 1908.2,
+  "calls": 33,
+  "failed_calls": 0,
+  "usage": {
+    "calls": 33,
+    "prompt_tokens": 894718,
+    "completion_tokens": 674521
+  },
+  "model": "dev-anthropic-claude-sonnet-5",
+  "batch": "1000",
+  "concurrency": "3",
+  "rows": 32179,
+  "acc": 0.9443888402352058,
+  "gold_rows": 31972,
+  "unknown": 0
+}
