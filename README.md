@@ -59,19 +59,6 @@ The final controlled study compares TADA-Agent, semantic operators, Claude Code 
 - absolute accuracy for Q37–Q40, Q42, Q44, and Q45.
 
 The common reference output provides a relative comparison scale and is not ground truth. See [`evaluation/results/final_protocol.json`](evaluation/results/final_protocol.json) and [`evaluation/README.md`](evaluation/README.md).
-
-## Artifact scope
-
-The repository contains the implementation, prompts, benchmark inputs, rule-based answers, human-calibration package, aggregate TABench results, recovered public-benchmark materials, and final end-to-end large-scale run records.
-
-Some provider-backed evidence is intentionally or unavoidably absent:
-
-- raw TABench provider traces and 107,694 judge calls contain large generated intermediates and provider-specific telemetry;
-- the recovered CUAD handoff contains the implementation and smoke evidence but not the final three full prediction files;
-- the later six-population candidate-retention trial bundle and the trial-level neural–symbolic diagnostic outputs were not present in the frozen local handoff.
-
-The per-directory README files state these limits explicitly. No missing artifact has been reconstructed or represented as an original run.
-
 ## Data and model access
 
 - No API keys or model credentials are included.
