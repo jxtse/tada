@@ -21,6 +21,11 @@ The agent composes these operations with ordinary Python/dataframe code. For lar
 | `artifact_release/public_benchmarks/` | Recovered CUAD and BioDEX experiment materials, with scope notes |
 | `artifact_release/large_scale/` | Final end-to-end large-scale run records, reference labels, and scoring scripts |
 | `artifact_release/boundary_diagnostic/` | Availability note for the neural–symbolic diagnostic |
+| `supplemental_material/` | The submission's supplementary-material PDF and its SHA-256 checksum |
+
+## Supplementary material
+
+The supplementary material submitted with the paper is available at [`supplemental_material/TADA_supplementary_material.pdf`](supplemental_material/TADA_supplementary_material.pdf). Its checksum is recorded in [`supplemental_material/SHA256SUMS.txt`](supplemental_material/SHA256SUMS.txt).
 
 ## Quick start
 
