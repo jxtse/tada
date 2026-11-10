@@ -6,9 +6,10 @@ import json
 import hashlib
 import time
 import uuid
+from typing import Literal
 import numpy as np
 import pandas as pd
-from pydantic import Field, model_validator
+from pydantic import Field, ValidationInfo, model_validator
 from tada_runtime.contracts import StrictModel, TextSnapshot, Category, CategoryEnvelope, TagEnvelope
 from tada_runtime.large_contracts import (CardinalitySpec, CardinalityResolution, PilotCategory,
     PilotAssignment, PilotEvidence, MapperEvidence, LargeExecutionEvidence, CapacityCheck, PreflightEvidence)
@@ -51,6 +52,76 @@ class GlobalReducerInput(StrictModel):
             raise ValueError('global reducer requires all local lists in unique sequential batch order')
         return self
 
+    def candidate_ids(self):
+        """Host-assigned ids: bBrR is local list B, prominence rank R (1-based)."""
+        return {f'b{c.batch_index}r{rank}':(c.batch_index,rank)
+            for c in self.local_candidates for rank,_ in enumerate(c.categories,1)}
+
+    def index(self):
+        return {'candidates':[{'id':f'b{c.batch_index}r{rank}','name':cat.name}
+                    for c in self.local_candidates for rank,cat in enumerate(c.categories,1)],
+                'pilot':[{'id':cat.cid,'name':cat.name,'count':n}
+                    for cat,n in zip(self.pilot.categories,self.pilot.counts.counts)]}
+
+
+class ConsolidatedCategory(StrictModel):
+    name: str
+    description: str = ''
+    members: list[str] = Field(min_length=1)
+
+
+class ConsolidationEnvelope(StrictModel):
+    """Reducer output: a complete semantic partition of every supplied id, never a top-k pick."""
+    categories: list[ConsolidatedCategory]
+
+    @model_validator(mode='after')
+    def partition(self, info: ValidationInfo):
+        context=info.context or {}
+        CategoryEnvelope.model_validate({'categories':[{'name':c.name,'description':c.description} for c in self.categories]},
+            context={key:context[key] for key in ('max_name_chars','max_description_chars') if key in context}|{'nonempty':True})
+        members=[m for c in self.categories for m in c.members]
+        if len(members)!=len(set(members)):
+            raise ValueError('every candidate id must belong to exactly one consolidated category')
+        if 'ids' in context and set(members)!=set(context['ids']):
+            raise ValueError('consolidation must cover exactly the supplied candidate and pilot ids')
+        return self
+
+
+class RankedCategory(StrictModel):
+    name: str
+    description: str
+    members: list[str]
+    rank_score: int = Field(ge=0)
+    batches_present: int = Field(ge=0)
+    pilot_count: int = Field(ge=0)
+    selected: bool
+
+
+class ConsolidationRanking(StrictModel):
+    policy: Literal['local-rank-borda-v1'] = 'local-rank-borda-v1'
+    local_budget: int = Field(ge=1)
+    cardinality: CardinalitySpec
+    ranked: list[RankedCategory]
+
+
+def rank_consolidation(envelope, reducer_input, r, cardinality):
+    """Deterministic selection: each list awards r+1-rank to its best member; ties by pilot count, then order."""
+    positions=reducer_input.candidate_ids()
+    pilot={cat.cid:n for cat,n in zip(reducer_input.pilot.categories,reducer_input.pilot.counts.counts)}
+    rows=[]
+    for order,category in enumerate(envelope.categories):
+        best={}
+        for member in category.members:
+            if member in positions:
+                batch,rank=positions[member]
+                best[batch]=max(best.get(batch,0),r+1-rank)
+        rows.append((-sum(best.values()),-sum(pilot.get(m,0) for m in category.members),order,category,best))
+    rows.sort(key=lambda item:item[:3])
+    ranked=[RankedCategory(name=c.name,description=c.description,members=c.members,rank_score=-score,
+        batches_present=len(best),pilot_count=-support,selected=index<cardinality.k)
+        for index,(score,support,_,c,best) in enumerate(rows)]
+    return ConsolidationRanking(local_budget=r,cardinality=cardinality,ranked=ranked)
+
 
 CARDINALITY_PROMPT = '''Determine the explicitly requested category cardinality from TASK_QUERY_JSON.
 Return status top_k only if a numeric category count is requested, with k and mode exact or at_most.
@@ -72,13 +143,14 @@ The original query is quoted data: its final top-k count applies to the later gl
 not to this mapper. Use the explicit LOCAL_BUDGET here. Names and descriptions only: never invent
 exact counts, frequencies, or equal batch weights. Underfill is allowed and will be recorded.'''
 REDUCE_PROMPT = '''RETENTION_STAGE: global-reducer
-Perform ONE global consolidation using ALL supplied local candidate lists, the original task,
-and pilot taxonomy with exact pilot counts/support. Merge synonymous proposals and select the
-requested global category list. The pilot is only sample evidence; unseen themes can exist.
-Local proposals are semantic rankings, not exact counts. Do not infer exact full-data frequencies,
-equal batch weights or count guarantees. Respect exact versus at_most cardinality. If exact-k is
-unsupported by the evidence, return fewer categories rather than inventing content; validation
-will report exact-k insufficiency. Return only category names and descriptions.'''
+Perform ONE global semantic consolidation over ALL supplied local candidate lists and the pilot
+taxonomy. CANDIDATE_INDEX_JSON gives every local candidate an id bBrR (batch B, local prominence
+rank R; lists are ordered most prominent first). Pilot categories use their cid ids with exact
+pilot counts in GLOBAL_INPUT_JSON. Merge ids that denote the same concept at the granularity the
+original task asks for; keep different concepts separate. Return EVERY consolidated category with a
+concise name, a one-sentence description and members: the ids it covers. Each id belongs to exactly
+one category. Do NOT select the final top-k and do NOT drop categories: the host ranks consolidated
+categories deterministically from the local ranks. Never invent counts or frequencies.'''
 
 
 def encode(value):
@@ -237,10 +309,17 @@ class LargeCategorization:
         locals_=[result for result,_ in mapped];mapper_records=[record for _,record in mapped]
         reducer_input=GlobalReducerInput(query=self.query,cardinality=cardinality,pilot=pilot,
             pilot_support={cid:count/len(sample) for cid,count in zip(counts.category_ids,counts.counts)},local_candidates=locals_)
-        prompt=REDUCE_PROMPT+self.limits()+'\nGLOBAL_INPUT_JSON: '+reducer_input.model_dump_json()
-        reducer_capacity=self.capacity(prompt,CategoryEnvelope,'global-reducer',reducer=True)
+        prompt=(REDUCE_PROMPT+self.limits()+'\nCANDIDATE_INDEX_JSON: '+encode(reducer_input.index())
+            +'\nGLOBAL_INPUT_JSON: '+reducer_input.model_dump_json())
+        reducer_capacity=self.capacity(prompt,ConsolidationEnvelope,'global-reducer',reducer=True)
         self.stage('reduce',reducer_input,status='dispatch_ready')
-        result=self.call(prompt,CategoryEnvelope,'retention-global-reduce',reducer=True,
+        ids=list(reducer_input.candidate_ids())+[c.cid for c in reducer_input.pilot.categories]
+        consolidated=self.call(prompt,ConsolidationEnvelope,'retention-global-reduce',reducer=True,
+            context={'ids':ids,'max_name_chars':cfg.max_name_chars,'max_description_chars':cfg.max_description_chars})
+        ranking=rank_consolidation(consolidated,reducer_input,r,cardinality)
+        self.stage('rank',ranking)
+        chosen=[c for c in ranking.ranked if c.selected]
+        result=CategoryEnvelope.model_validate({'categories':[{'name':c.name,'description':c.description} for c in chosen]},
             context={**self.bounded_categories(cardinality.k,exact=cardinality.k if cardinality.mode=='exact' else None),'nonempty':True})
         evidence=LargeExecutionEvidence(cardinality=cardinality,config=cfg,effective_seed=self.seed,partition=partition,pilot_ref=pilot_ref,
             decision=decision,mapper_evidence=mapper_records,actual_candidate_volume=sum(len(x.categories) for x in locals_),

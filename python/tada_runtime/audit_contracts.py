@@ -229,7 +229,7 @@ class ArtifactPayload(AuditModel):
 
 
 class RetentionPayload(AuditModel):
-    phase: Literal['cardinality','preflight','pilot','plan','mapper','reduce','complete','failure']
+    phase: Literal['cardinality','preflight','pilot','plan','mapper','reduce','rank','complete','failure']
     status: str
     evidence_ref: BlobRef | None = None
     detail: str = ''

@@ -173,3 +173,20 @@ def test_export_symlink_cannot_escape_derived_views(tmp_path):
     (tmp_path/'views').symlink_to(tmp_path/'states',target_is_directory=True)
     with pytest.raises(ValueError,match='authoritative session data'):
         export_jsonl(tmp_path,tmp_path/'views'/'overwrite.jsonl')
+
+
+
+def test_html_view_is_bounded_but_complete_record_stays_authoritative(tmp_path):
+    """Thousands of raw transport chunks must not balloon the readable view; nothing is lost on disk."""
+    with AuditLog(tmp_path) as log:
+        log.append('model/request',{'role':'agent','requested_model':'m','protocol':'anthropic-messages','request_ref':log.blob({'messages':[]})},request_id='q1')
+        for i in range(3000):
+            log.append('model/stream',{'channel':'provider_raw','text':'','provider_sequence':i,'availability':'opaque','raw_ref':log.blob_bytes(b'x'*4000,media_type='application/octet-stream')},request_id='q1')
+        for i,piece in enumerate(['Hello',' world']):
+            log.append('model/stream',{'channel':'text','text':piece,'provider_sequence':3000+i},request_id='q1')
+    small=tmp_path/'views'/'small.html';full=tmp_path/'views'/'full.html'
+    export_html(tmp_path,small);export_html(tmp_path,full,include_transport=True)
+    text=small.read_text()
+    assert small.stat().st_size<200_000<full.stat().st_size
+    assert '3000 raw chunks' in text and 'Hello world' in text
+    assert sum(1 for _ in open(tmp_path/'events.jsonl'))>=3003

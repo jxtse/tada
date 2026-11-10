@@ -66,7 +66,7 @@ def main(argv=None):
     doctor=sub.add_parser('doctor');doctor.add_argument('--config',required=True);doctor.add_argument('--probe-models',action='store_true')
     logs=sub.add_parser('log').add_subparsers(dest='action',required=True)
     for name in ('validate','view','export'):
-        item=logs.add_parser(name);item.add_argument('session');item.add_argument('--output');item.add_argument('--format',choices=['html','jsonl'],default='html')
+        item=logs.add_parser(name);item.add_argument('session');item.add_argument('--output');item.add_argument('--format',choices=['html','jsonl'],default='html');item.add_argument('--include-transport',action='store_true',help='inline every raw provider transport chunk (large)')
     args=parser.parse_args(argv)
     try:
         if args.command=='doctor':
@@ -94,7 +94,7 @@ def main(argv=None):
         if args.action=='validate':print(validate_session(path).model_dump_json())
         else:
             output=Path(args.output) if args.output else path/'views'/'session.html'
-            if args.format=='html':export_html(path,output)
+            if args.format=='html':export_html(path,output,include_transport=args.include_transport)
             else:export_jsonl(path,output)
             print(output)
     except Exception as error:

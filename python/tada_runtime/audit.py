@@ -121,10 +121,10 @@ def _retention_evidence_validator(root: Path):
         MapperEvidence, LargeExecutionEvidence, CapacityCheck)
     from .retention import RetentionDecision
     from .contracts import TextSnapshot, CategoryEnvelope
-    from tada_operators.large import GlobalReducerInput
+    from tada_operators.large import GlobalReducerInput, ConsolidationRanking
     phases = {'cardinality':CardinalityResolution, 'preflight':PreflightEvidence,
         'pilot':PilotEvidence, 'plan':RetentionDecision, 'mapper':MapperEvidence,
-        'reduce':GlobalReducerInput, 'complete':LargeExecutionEvidence, 'failure':CapacityCheck}
+        'reduce':GlobalReducerInput, 'rank':ConsolidationRanking, 'complete':LargeExecutionEvidence, 'failure':CapacityCheck}
     cache = {}
 
     def decode(ref, model=None):
@@ -514,21 +514,77 @@ def _export_destination(session_dir: Path | str, output: Path | str) -> Path:
     return destination
 
 
-def export_html(session_dir: Path | str, output: Path | str) -> None:
+HTML_INLINE_BLOB_BYTES = 16_384
+HTML_INLINE_TOTAL_BYTES = 8_000_000
+
+
+def export_html(session_dir: Path | str, output: Path | str, *, include_transport: bool = False) -> None:
+    """Readable offline view. Raw provider transport chunks are summarized per request unless
+    include_transport=True; blobs are inlined only up to a size cap and otherwise referenced by
+    path + SHA-256. events.jsonl and blobs/ remain the complete authoritative record."""
     output = _export_destination(session_dir, output)
     root = Path(session_dir)
     report = validate_session(root)
     events, _ = read_events(root)
     request_roles = {event.request_id:event.payload.role for event in events if event.type=='model/request'}
+    transport = {}
+    deltas = {}
+    for event in events:
+        if event.type=='model/stream' and event.payload.channel=='provider_raw':
+            item = transport.setdefault(event.request_id, [0, 0])
+            item[0] += 1
+            item[1] += sum(ref.size for ref in _refs(event))
+        elif event.type=='model/stream':
+            key = (event.request_id, event.payload.channel, event.payload.block_index)
+            deltas.setdefault(key, []).append(event)
+    inline_budget = [HTML_INLINE_TOTAL_BYTES]
+    summarized = set()
     cards = []
     options = {key:set() for key in ('session','turn','step','role','state','type')}
     groups = {}
     for event in events:
+        if event.type=='model/stream' and event.payload.channel!='provider_raw' and not include_transport:
+            key = (event.request_id, event.payload.channel, event.payload.block_index)
+            if key in summarized:
+                continue
+            summarized.add(key)
+            parts = deltas[key]
+            channel = event.payload.channel
+            label = f'{parts[0].seq}–{parts[-1].seq} · model/stream {channel} · request_id={event.request_id} · {len(parts)} deltas assembled'
+            reasoning = channel=='reasoning'
+            role = request_roles.get(event.request_id, event.source)
+            attached = []
+            for part in parts:
+                for ref in _refs(part):
+                    verify_blob(root, ref)
+                    if ref.size <= HTML_INLINE_BLOB_BYTES and ref.size <= inline_budget[0]:
+                        inline_budget[0] -= ref.size
+                        attached.append('<details><summary>'+html.escape(ref.path)+'</summary><pre>'+html.escape(verify_blob(root, ref).decode('utf-8', errors='replace'))+'</pre></details>')
+                    else:
+                        attached.append('<p><small>'+html.escape(f'{ref.path} · {ref.size} bytes · sha256 {ref.sha256} (verified, not inlined)')+'</small></p>')
+            cards.append(f'<details class="event" data-type="model/stream" data-role="{html.escape(role,quote=True)}" data-error="no"'
+                + ('' if reasoning else ' open') + '><summary>' + html.escape(label) + '</summary><pre>'
+                + html.escape(''.join(p.payload.text for p in parts)) + '</pre>' + ''.join(attached) + '</details>')
+            continue
+        if not include_transport and event.type=='model/stream' and event.payload.channel=='provider_raw':
+            if event.request_id in summarized:
+                continue
+            summarized.add(event.request_id)
+            count, size = transport[event.request_id]
+            cards.append(f'<details class="event transport" data-type="model/stream"><summary>'
+                + html.escape(f'{event.seq} · provider transport · request_id={event.request_id} · {count} raw chunks, {size} bytes in blobs/ (omitted; export with --include-transport)')
+                + '</summary></details>')
+            continue
         body = html.escape(event.model_dump_json(indent=2))
         attachments = []
         for ref in _refs(event):
-            raw = verify_blob(root, ref).decode('utf-8', errors='replace')
-            attachments.append('<details><summary>'+html.escape(ref.path)+'</summary><pre>'+html.escape(raw)+'</pre></details>')
+            verify_blob(root, ref)
+            if ref.size <= HTML_INLINE_BLOB_BYTES and ref.size <= inline_budget[0]:
+                inline_budget[0] -= ref.size
+                raw = verify_blob(root, ref).decode('utf-8', errors='replace')
+                attachments.append('<details><summary>'+html.escape(ref.path)+'</summary><pre>'+html.escape(raw)+'</pre></details>')
+            else:
+                attachments.append('<p><small>'+html.escape(f'{ref.path} · {ref.size} bytes · sha256 {ref.sha256} (verified, not inlined)')+'</small></p>')
         role = request_roles.get(event.request_id, 'operator' if event.source=='operator' else event.source)
         state_id = event.state_id or getattr(event.payload,'state_id',None) or ''
         metadata = {'session':event.session_id,'turn':event.turn_id or '', 'step':event.step_id or '',

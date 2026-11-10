@@ -96,6 +96,8 @@ uv run tada log export SESSION_ID --format html --output review.html
 uv run tada log export SESSION_ID --format jsonl --output review.jsonl
 ```
 
+The HTML view assembles streamed deltas per request and summarizes raw provider transport chunks; add `--include-transport` to inline every raw chunk (large). Blobs over 16 KiB are referenced by path and verified SHA-256 instead of inlined. `events.jsonl` and `blobs/` remain the complete record.
+
 `resume` explicitly acquires the session write lock, validates the Pi checkpoint against the audit prefix, restores committed registered objects, and reports transient namespace loss. It does not restore arbitrary functions, connections, generators, or unregistered variables. Supported snapshots are typed JSON and common flat-index pandas Series/DataFrames, including dtype and category metadata. No pickle or dill is used. CategoricalIndex categories that cannot retain their scalar types through typed JSON are rejected before registration; normalize their dtype explicitly rather than relying on silent conversion. MultiIndex objects must be explicitly flattened before registration. Missing tabular values use JSON null in the portable representation.
 
 The authoritative log is `.tada/sessions/<session-id>/events.jsonl`. Inputs, states, provider payloads, tool output, and checkpoints live beside it. Events distinguish reasoning, text, tool calls, observations, failed attempts, child semantic calls, compaction, and uncertain outcomes. Reported model identity is recorded separately from the requested ID. A gateway alias is not proof of the upstream model identity.

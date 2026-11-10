@@ -50,7 +50,18 @@ class FixtureHTTP:
             phase='map';r=int(prompt.split('\nLOCAL_BUDGET: ',1)[1].split('\n',1)[0]);size=r+1 if self.overfill else (1 if self.underfill else min(r,3))
             data={'categories':[{'name':'T'+str(i)} for i in range(size)]}
         elif 'RETENTION_STAGE: global-reducer' in prompt:
-            phase='reduce';self.global_inputs.append(decode_field(prompt,'\nGLOBAL_INPUT_JSON: '));data={'categories':[{'name':'T'+str(i)} for i in range(self.final_count)]}
+            phase='reduce';self.global_inputs.append(decode_field(prompt,'\nGLOBAL_INPUT_JSON: '))
+            index=json.loads(prompt.split('\nCANDIDATE_INDEX_JSON: ',1)[1].split('\n',1)[0])
+            groups={}
+            if self.final_count==0:
+                data={'categories':[]}
+            else:
+                for item in index['candidates']+index['pilot']:groups.setdefault(item['name'],[]).append(item['id'])
+                names=list(groups)[:self.final_count] if self.final_count<len(groups) else list(groups)
+                if self.final_count<len(groups):
+                    rest=[i for n in list(groups)[self.final_count:] for i in groups[n]]
+                    groups={n:groups[n] for n in names};groups[names[-1]]=groups[names[-1]]+rest
+                data={'categories':[{'name':n,'members':m} for n,m in groups.items()]}
         elif 'Determine the explicitly requested' in prompt:
             phase='cardinality';data={'status':'top_k','cardinality':{'k':2,'mode':'exact'},'reason':'fixture numeric request'}
         elif 'intent-classification' in prompt:
@@ -385,3 +396,39 @@ def test_default_capacity_admits_realistic_pilot(tmp_path):
         owner.kernel_call(req)
         assert not any(e.type=='retention/stage' and e.payload.status=='capacity_refused' for e in owner.audit.events)
     finally:owner.audit.close()
+
+
+
+def test_rank_consolidation_recovers_concept_underweighted_by_pilot():
+    """Replays the DBpedia E2E failure: 'Books' is rank 5-7 in every mapper but rare in the pilot.
+    Selection must follow consistent local prominence, not pilot support or reducer whim."""
+    from tada_operators.large import GlobalReducerInput,ConsolidationEnvelope,rank_consolidation,LocalCandidates
+    from tada_runtime.contracts import Category
+    from tada_runtime.large_contracts import PilotCategory,PilotAssignment
+    from tada_runtime.retention import PilotCounts
+    concepts=['Village','Album','People','Ship','Books','Building','Aircraft','River','School','Film']
+    # mapper orders observed in the run: Books at ranks 5..7, Building at 5..13
+    orders=[[0,1,2,3,4,6,8,7,9,5],[1,0,2,3,5,7,4,8,6,9],[0,1,2,3,4,7,8,6,9,5],[1,0,3,2,6,4,7,8,9,5]]
+    locals_=[LocalCandidates(batch_index=b,categories=[Category(name=concepts[i]) for i in o]) for b,o in enumerate(orders)]
+    pilot_names=['Village','Album','People','Ship','Books','Building']
+    counts=[12,24,16,20,5,7]
+    cats=[PilotCategory(cid=f'p{i:04d}',name=n) for i,n in enumerate(pilot_names)]
+    rids=[f'r{i}' for i in range(sum(counts))];cids=[c.cid for c,n in zip(cats,counts) for _ in range(n)]
+    pilot=PilotEvidence(sample_rids=rids,categories=cats,assignments=[PilotAssignment(rid=r,cid=c) for r,c in zip(rids,cids)],
+        counts=PilotCounts(category_ids=[c.cid for c in cats],counts=counts,taxonomy_scope='observed'),sample_seed=0,taxonomy_state_id='t',assignment_state_id='a')
+    reducer=GlobalReducerInput(query='q',cardinality=CardinalitySpec(k=5,mode='exact'),pilot=pilot,
+        pilot_support={c.cid:n/len(rids) for c,n in zip(cats,counts)},local_candidates=locals_)
+    by_concept={}
+    for b,o in enumerate(orders):
+        for rank,i in enumerate(o,1):by_concept.setdefault(concepts[i],[]).append(f'b{b}r{rank}')
+    for c,n in zip(cats,pilot_names):by_concept[n].append(c.cid)
+    ids=list(reducer.candidate_ids())+[c.cid for c in cats]
+    env=ConsolidationEnvelope.model_validate({'categories':[{'name':n,'members':m} for n,m in by_concept.items()]},context={'ids':ids})
+    ranking=rank_consolidation(env,reducer,10,reducer.cardinality)
+    assert {c.name for c in ranking.ranked if c.selected}=={'Village','Album','People','Ship','Books'}
+    assert 'Building' not in {c.name for c in ranking.ranked if c.selected}
+    # incomplete or duplicated partitions are contract errors, never silently ranked
+    with pytest.raises(ValidationError):
+        ConsolidationEnvelope.model_validate({'categories':[{'name':n,'members':m} for n,m in list(by_concept.items())[:-1]]},context={'ids':ids})
+    with pytest.raises(ValidationError):
+        ConsolidationEnvelope.model_validate({'categories':[{'name':'A','members':ids},{'name':'B','members':ids[:1]}]},context={'ids':ids})
