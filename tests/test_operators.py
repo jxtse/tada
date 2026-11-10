@@ -1,3 +1,5 @@
+import json
+import re
 import pandas as pd
 import pytest
 from pydantic import ValidationError
@@ -111,3 +113,35 @@ def test_categorization_hierarchical_reduce_and_restore(setup):
     assert sum(role=='categorize-reduce' for role,_ in provider.calls)==4
     restored=store.get(result.attrs['state_id'])
     pd.testing.assert_frame_equal(result,restored)
+
+
+class PromptRecordingProvider(FixtureProvider):
+    """Overfills unless the prompt carries the typed cardinality, like a real model would."""
+    def __init__(self):
+        super().__init__();self.prompts=[]
+    def call(self,prompt,schema,*,role,parent_id,context=None):
+        import json,re
+        self.prompts.append((role,prompt));self.calls.append((role,parent_id))
+        match=re.search(r'CARDINALITY_JSON: (\{[^\n]*\})',prompt)
+        n=json.loads(match.group(1))['k'] if match else 9
+        return schema.model_validate({'categories':[{'name':f'C{i}'} for i in range(n)]},context=context)
+
+
+@pytest.mark.parametrize('mode',['exact','at_most'])
+def test_generic_categorize_states_cardinality_in_every_prompt(setup,mode):
+    """Typed cardinality must reach map and reduce prompts, not only post-hoc validation."""
+    cfg,audit,store=setup
+    provider=PromptRecordingProvider()
+    result=Engine(cfg,provider,store,audit).categorize(pd.Series(['x']*6,index=list(range(6))),'themes',cardinality={'k':3,'mode':mode})
+    assert len(result)==3
+    assert {role for role,_ in provider.prompts}=={'categorize-map','categorize-reduce'}
+    for role,prompt in provider.prompts:
+        field=json.loads(re.search(r'CARDINALITY_JSON: (\{[^\n]*\})',prompt).group(1))
+        assert field=={'k':3,'mode':mode}, role
+
+
+def test_generic_categorize_without_cardinality_has_no_cardinality_field(setup):
+    cfg,audit,store=setup
+    provider=PromptRecordingProvider()
+    Engine(cfg,provider,store,audit).categorize(pd.Series(['x']*4,index=list(range(4))),'themes')
+    assert all('CARDINALITY_JSON: ' not in prompt for _,prompt in provider.prompts)

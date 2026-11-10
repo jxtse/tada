@@ -10,6 +10,7 @@ from tada_runtime.audit import AuditLog,read_events,verify_blob
 from tada_runtime.budget import BudgetLedger
 from tada_runtime.config import Config
 from tada_runtime.cancellation import ExecutionCancellation,ExecutionCancelled
+from tada_runtime.contracts import TextSnapshot
 from tada_runtime.providers import Provider
 from tada_runtime.state import Store,snapshot,restore
 from tada_runtime.supervisor import Supervisor
@@ -337,4 +338,50 @@ def test_correctly_hashed_relational_evidence_rejects_forgery(tmp_path):
             elif change=='rid':forged['mapper_evidence'][0]['rids'][0]='unknown-rid'
             else:forged['mapper_evidence'].pop()
             with pytest.raises(ValidationError):LargeExecutionEvidence.model_validate(forged)
+    finally:owner.audit.close()
+
+
+
+def test_category_text_rejects_controls_and_lone_surrogates():
+    from tada_runtime.contracts import CategoryEnvelope
+    for bad in ['a\x00b','a\x1fb','a\ud800b']:
+        with pytest.raises(ValidationError):CategoryEnvelope.model_validate({'categories':[{'name':bad}]})
+        with pytest.raises(ValidationError):CategoryEnvelope.model_validate({'categories':[{'name':'ok','description':bad}]})
+    CategoryEnvelope.model_validate({'categories':[{'name':'tab\tnew\nline \U0001F600 \"q\" \\\\','description':'x\ry'}]})
+
+
+def test_worst_case_taxonomy_bounds_every_valid_taxonomy(tmp_path):
+    """The preflight filler must be at least as large as any taxonomy the contract admits."""
+    from tada_runtime.large_contracts import PilotCategory
+    from tada_operators.large import LargeCategorization,worst_case_taxonomy
+    from tada_runtime.contracts import TagEnvelope
+    owner=owner_for(tmp_path,FixtureHTTP())
+    try:
+        cfg=owner.config.runtime.large_scale
+        large=LargeCategorization(owner.engine,None,'q',{'atom_call_id':'a'},{'retention_seed':0},None)
+        rows=TextSnapshot.model_validate({'name':None,'index_name':'rid','rows':[{'rid':f'r{i}','text':'t'} for i in range(3)]}).rows
+        def size(taxonomy):
+            from tada_runtime.providers import prepare_request
+            from tada_operators.large import encode
+            body,_=prepare_request(owner.config.models.operators,large.assignment_prompt(rows,taxonomy),TagEnvelope)
+            return len(encode(body).encode('utf-8'))
+        bound=size(worst_case_taxonomy(cfg))
+        for ch in ['"','\\','\U0001F600','\u4e2d','\t','\n','a']:
+            valid=[PilotCategory(cid=f'p{i:04d}',name=ch*cfg.max_name_chars,description=ch*cfg.max_description_chars) for i in range(cfg.pilot_max_categories)]
+            assert size(valid)<=bound, repr(ch)
+    finally:owner.audit.close()
+
+
+def test_default_capacity_admits_realistic_pilot(tmp_path):
+    """Defaults must admit the default 128-row pilot over ordinary ~300-character rows."""
+    from tada_runtime.large_contracts import LargeScaleConfig
+    d=LargeScaleConfig()
+    owner=owner_for(tmp_path,FixtureHTTP(),pilot_rows=d.pilot_rows,pilot_max_categories=d.pilot_max_categories,
+        max_name_chars=d.max_name_chars,max_description_chars=d.max_description_chars,output_reserve_bytes=d.output_reserve_bytes,
+        context_budget_bytes=d.context_budget_bytes,reducer_budget_bytes=d.reducer_budget_bytes,threshold_rows=4,target_chunk_rows=200)
+    try:
+        req=KernelRequest(op='categorize',snapshot=snapshot(pd.Series(['x'*300]*400,index=[f'r{i}' for i in range(400)])).model_dump(mode='json'),
+            query='Discover exactly 2 topics',cardinality={'k':2,'mode':'exact'})
+        owner.kernel_call(req)
+        assert not any(e.type=='retention/stage' and e.payload.status=='capacity_refused' for e in owner.audit.events)
     finally:owner.audit.close()

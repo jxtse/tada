@@ -85,6 +85,18 @@ def encode(value):
     return json.dumps(value,ensure_ascii=False,separators=(',',':'),allow_nan=False)
 
 
+# Largest single JSON-serialized character the Category contract admits after
+# controls/surrogates are rejected: any 4-byte UTF-8 code point (escapes are at
+# most 2 bytes, controls and lone surrogates are contract-invalid).
+_WORST_CASE_CHAR = '\U0001F600'
+
+
+def worst_case_taxonomy(cfg):
+    """A taxonomy whose serialized form is at least as large as any valid taxonomy."""
+    return [PilotCategory(cid=f'p{i:04d}',name=_WORST_CASE_CHAR*cfg.max_name_chars,
+        description=_WORST_CASE_CHAR*cfg.max_description_chars) for i in range(cfg.pilot_max_categories)]
+
+
 def partition_batches(snapshot, n, seed):
     partition=balanced_partition([row.rid for row in snapshot.rows],n,seed)
     by_rid={row.rid:row for row in snapshot.rows}
@@ -183,8 +195,7 @@ class LargeCategorization:
         self.sample_ref=sample_ref
         self.sample_rids=[row.rid for row in sample]
         capacity=[self.capacity(self.pilot_prompt(sample),CategoryEnvelope,'pilot-discovery')]
-        worst_taxonomy=[PilotCategory(cid=f'p{i:04d}',name='\x00'*cfg.max_name_chars,description='\x00'*cfg.max_description_chars) for i in range(cfg.pilot_max_categories)]
-        capacity.append(self.capacity(self.assignment_prompt(sample,worst_taxonomy),TagEnvelope,'pilot-assignment-worst-case'))
+        capacity.append(self.capacity(self.assignment_prompt(sample,worst_case_taxonomy(cfg)),TagEnvelope,'pilot-assignment-worst-case'))
         conservative_r=max(cfg.planner.r_max,cfg.planner.no_tail_budget)
         capacity.extend(self.capacity(self.map_prompt(batch,conservative_r),CategoryEnvelope,'mapper-preflight') for batch in batches)
         self.stage('preflight',PreflightEvidence(partition=partition,pilot_sample_ref=sample_ref,

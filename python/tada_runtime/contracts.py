@@ -1,7 +1,7 @@
 """Strict shared contracts. Pydantic is the authority at every domain boundary."""
 from __future__ import annotations
 from typing import Annotated, Literal
-from pydantic import BaseModel, ConfigDict, Field, JsonValue, StrictInt, StrictStr, TypeAdapter, ValidationInfo, model_validator
+from pydantic import BaseModel, ConfigDict, Field, JsonValue, StrictInt, StrictStr, TypeAdapter, ValidationInfo, field_validator, model_validator
 
 SCHEMA_VERSION = '1.0'
 
@@ -61,6 +61,17 @@ class TagEnvelope(StrictModel):
 class Category(StrictModel):
     name: Annotated[StrictStr, Field(min_length=1)]
     description: StrictStr = ''
+
+    @field_validator('name', 'description')
+    @classmethod
+    def no_control_or_surrogate(cls, value):
+        for char in value:
+            code = ord(char)
+            if code < 0x20 and char not in '\t\n\r':
+                raise ValueError('category text contains a control character')
+            if 0xD800 <= code <= 0xDFFF:
+                raise ValueError('category text contains a lone surrogate')
+        return value
 
 class CategoryEnvelope(StrictModel):
     categories: list[Category]

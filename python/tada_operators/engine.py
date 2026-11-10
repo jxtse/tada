@@ -39,7 +39,10 @@ the supplied query. Do not discover a new vocabulary per batch.'''
 PROMPT_REDUCE = '''Consolidate the supplied category sets into one globally coherent vocabulary.
 Preserve the original query constraints and language. Merge semantically redundant categories
 explicitly in this consolidation step. Return categories only, with unique names; do not invent
-counts or claim exact prevalence. This is ordinary hierarchical consolidation, not top-k selection.'''
+counts or claim exact prevalence. This is ordinary hierarchical consolidation, not top-k selection.
+A CARDINALITY_JSON field, when present, is a binding constraint from the caller: never return more
+categories than its k, and for mode "exact" return exactly k.'''
+CARDINALITY_FIELD = '\nCARDINALITY_JSON: '
 
 
 def snapshot_series(texts: pd.Series) -> TextSnapshot:
@@ -222,8 +225,9 @@ class Engine:
                 result=LargeCategorization(self,snapshot,query,ids,metadata,cancellation).run(cardinality)
                 return self._commit(result,metadata,ids,name,cancellation=cancellation)
             self._plan('categorize', batches, ids, 'generic-hierarchy-not-paper-retention', [])
+            cardinality_field = CARDINALITY_FIELD + json.dumps(cardinality.model_dump(mode='json'), ensure_ascii=False) if cardinality else ''
             def discover(batch):
-                return self._call_provider(PROMPT_CATEGORIES + '\nQuery: ' + query + '\nRows: ' + json.dumps([r.model_dump() for r in batch], ensure_ascii=False),
+                return self._call_provider(PROMPT_CATEGORIES + cardinality_field + '\nQuery: ' + query + '\nRows: ' + json.dumps([r.model_dump() for r in batch], ensure_ascii=False),
                     CategoryEnvelope, role='categorize-map', parent_id=ids['atom_call_id'], context={'nonempty': True}, cancellation=cancellation)
             with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
                 current = list(pool.map(discover, batches))
@@ -236,7 +240,7 @@ class Engine:
                         cancellation.check()
                     if len(group) == 1:
                         return group[0]
-                    return self._call_provider(PROMPT_REDUCE + '\nQuery: ' + query + '\nCategory sets: ' + json.dumps([part.model_dump() for part in group], ensure_ascii=False),
+                    return self._call_provider(PROMPT_REDUCE + cardinality_field + '\nQuery: ' + query + '\nCategory sets: ' + json.dumps([part.model_dump() for part in group], ensure_ascii=False),
                         CategoryEnvelope, role='categorize-reduce', parent_id=ids['atom_call_id'], context={'nonempty': True}, cancellation=cancellation)
                 with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
                     current = list(pool.map(reduce, groups))
