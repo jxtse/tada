@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"status":{"const":"recorded","default":"recorded","title":"Status","type":"string"}},"title":"Recorded","type":"object"}

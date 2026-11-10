@@ -1,0 +1,1 @@
+{"$defs":{"JsonValue":{}},"additionalProperties":false,"properties":{"id":{"anyOf":[{"type":"string"},{"type":"integer"}],"title":"Id"},"result":{"$ref":"#/$defs/JsonValue"}},"required":["id","result"],"title":"RpcSuccess","type":"object"}

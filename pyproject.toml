@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tada-harness"
+version = "0.1.0"
+description = "Persistent Python semantic analysis harness powered by Pi"
+requires-python = ">=3.11"
+dependencies = ["pydantic==2.14.2", "httpx>=0.28,<1", "pandas>=2.2,<3", "numpy>=2,<3", "jupyter-client==8.10.0", "ipykernel==7.4.0"]
+
+[project.scripts]
+tada = "tada_runtime.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/tada_runtime", "python/tada_operators"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

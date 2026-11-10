@@ -1,0 +1,1 @@
+{"$defs":{"JsonValue":{}},"additionalProperties":false,"properties":{"is_error":{"title":"Is Error","type":"boolean"},"name":{"title":"Name","type":"string"},"provider_raw":{"$ref":"#/$defs/JsonValue"},"tool_call_id":{"title":"Tool Call Id","type":"string"}},"required":["tool_call_id","name","is_error","provider_raw"],"title":"ToolObserved","type":"object"}

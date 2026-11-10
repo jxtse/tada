@@ -1,0 +1,1 @@
+{"$defs":{"JsonValue":{}},"additionalProperties":false,"properties":{"messages":{"$ref":"#/$defs/JsonValue"},"pi_entries":{"items":{"$ref":"#/$defs/JsonValue"},"title":"Pi Entries","type":"array"}},"required":["messages"],"title":"CheckpointParams","type":"object"}

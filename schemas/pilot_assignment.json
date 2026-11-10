@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"cid":{"title":"Cid","type":"string"},"rid":{"anyOf":[{"type":"string"},{"type":"integer"}],"title":"Rid"}},"required":["rid","cid"],"title":"PilotAssignment","type":"object"}

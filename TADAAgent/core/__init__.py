@@ -1,1 +1,0 @@
-# Ensure core is a valid module.

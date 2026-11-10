@@ -1,0 +1,7 @@
+rid,text,region,month,product
+r1,The delivery arrived quickly.,East,2026-01,Alpha
+r2,The package arrived broken.,West,2026-01,Alpha
+r3,Support solved my issue kindly.,East,2026-02,Beta
+r4,Customer support never replied.,West,2026-02,Beta
+r5,Delivery was late by three days.,East,2026-02,Alpha
+r6,The product works perfectly.,West,2026-01,Beta

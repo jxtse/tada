@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"tool_call_id":{"minLength":1,"title":"Tool Call Id","type":"string"}},"required":["tool_call_id"],"title":"ExecuteTool","type":"object"}

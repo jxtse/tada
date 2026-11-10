@@ -1,0 +1,21 @@
+name: Runtime contracts
+on: [push, pull_request]
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: uv sync
+      - run: npm ci
+      - run: uv run python -m tada_runtime.schemas --check
+      - run: npm run schemas:check
+      - run: npm run build
+      - run: npm test
+      - run: uv run pytest -q

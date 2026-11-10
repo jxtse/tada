@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"buffered":{"title":"Buffered","type":"boolean"},"emitted_parts":{"minimum":0,"title":"Emitted Parts","type":"integer"}},"required":["buffered","emitted_parts"],"title":"StreamResult","type":"object"}

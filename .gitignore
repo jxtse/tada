@@ -9,3 +9,9 @@ venv/
 *.log
 TADASkill/workspace/*
 !TADASkill/workspace/.gitkeep
+node_modules/
+.cache/
+.tada/
+.tada-control/
+packages/agent/dist/
+.pytest_cache/

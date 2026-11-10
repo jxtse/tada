@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"hashes":{"additionalProperties":{"pattern":"^[a-f0-9]{64}$","type":"string"},"title":"Hashes","type":"object"},"schema_version":{"const":"1.0","default":"1.0","title":"Schema Version","type":"string"}},"required":["hashes"],"title":"SchemaManifest","type":"object"}

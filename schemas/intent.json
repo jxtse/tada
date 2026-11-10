@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"domain_query":{"anyOf":[{"type":"string"},{"type":"null"}],"default":null,"title":"Domain Query"},"mode":{"enum":["independent","joint","invalid"],"title":"Mode","type":"string"}},"required":["mode"],"title":"IntentEnvelope","type":"object"}

@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"category_ids":{"items":{"type":"string"},"title":"Category Ids","type":"array"},"counts":{"items":{"type":"integer"},"title":"Counts","type":"array"},"taxonomy_scope":{"default":"observed","enum":["observed","fixed"],"title":"Taxonomy Scope","type":"string"}},"required":["category_ids","counts"],"title":"PilotCounts","type":"object"}

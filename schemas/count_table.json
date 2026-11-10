@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"candidates":{"items":{"type":"integer"},"title":"Candidates","type":"array"},"k":{"minimum":1,"title":"K","type":"integer"},"rows":{"items":{"items":{"type":"integer"},"type":"array"},"title":"Rows","type":"array"}},"required":["rows","k","candidates"],"title":"CountTable","type":"object"}

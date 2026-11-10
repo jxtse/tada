@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"status":{"enum":["cancelling","closed","success","failed","cancelled","unknown","empty","schema_error"],"title":"Status","type":"string"}},"required":["status"],"title":"StatusResult","type":"object"}

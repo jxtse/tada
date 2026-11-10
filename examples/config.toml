@@ -1,0 +1,64 @@
+schema_version = "1.0"
+[models.agent]
+base_url = "https://api.anthropic.com/v1"
+model = "YOUR_EXACT_AGENT_MODEL"
+protocol = "anthropic-messages"
+api_key_env = "TADA_AGENT_API_KEY"
+auth_mode = "required"
+max_output_tokens = 8192
+timeout_seconds = 120.0
+[models.operators]
+base_url = "https://api.openai.com/v1"
+model = "YOUR_EXACT_OPERATOR_MODEL"
+protocol = "openai-responses"
+api_key_env = "TADA_OPERATOR_API_KEY"
+auth_mode = "required"
+max_output_tokens = 4096
+timeout_seconds = 90.0
+[runtime]
+mode = "trusted-local"
+operator_concurrency = 2
+reuse = "exact"
+batch_rows = 32
+batch_chars = 16000
+reduce_fan_in = 4
+cell_timeout_seconds = 180.0
+output_view_chars = 8000
+[logging]
+level = "full"
+format = "jsonl"
+record_provider_exposed_reasoning = true
+max_unflushed_events = 0
+[budget]
+ledger_path = ".tada/request-ledger.json"
+max_requests = 30
+deadline_seconds = 3600.0
+
+# Open semantic execution defaults: conservative engineering capacities.
+# Small calls keep the generic path; large requests require a requested k.
+[runtime.large_scale]
+enabled = true
+threshold_rows = 1000
+target_chunk_rows = 1000
+pilot_rows = 128
+pilot_max_categories = 32
+context_budget_bytes = 200000
+reducer_budget_bytes = 200000
+output_reserve_bytes = 32768
+max_name_chars = 128
+max_description_chars = 512
+
+[runtime.large_scale.planner]
+# U/V, alpha and target match the paper-controlled protocol. Capacities and
+# generic fallback budgets below are engineering settings, not paper constants.
+outer_draws = 100
+inner_draws = 20
+alpha = 0.05
+target = 0.95
+r_max = 32
+no_tail_budget = 32
+seed = 0
+max_seconds = 30.0
+max_table_cells = 1000000
+max_simulation_cells = 50000000
+max_work_units = 1000000000

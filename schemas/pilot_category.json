@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"cid":{"title":"Cid","type":"string"},"description":{"default":"","title":"Description","type":"string"},"name":{"title":"Name","type":"string"}},"required":["cid","name"],"title":"PilotCategory","type":"object"}

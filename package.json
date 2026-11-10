@@ -1,0 +1,22 @@
+{
+  "name": "tada-harness",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "node packages/agent/generate-types.mjs && tsc -p packages/agent/tsconfig.json",
+    "test": "node --test packages/agent/test/*.test.mjs",
+    "schemas:check": "node packages/agent/generate-types.mjs --check"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "1.5.0",
+    "@earendil-works/pi-ai": "1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "typescript": "7.0.2"
+  }
+}

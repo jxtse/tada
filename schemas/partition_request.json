@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"counts":{"items":{"type":"integer"},"minItems":1,"title":"Counts","type":"array"},"sizes":{"items":{"type":"integer"},"minItems":1,"title":"Sizes","type":"array"}},"required":["counts","sizes"],"title":"PartitionRequest","type":"object"}

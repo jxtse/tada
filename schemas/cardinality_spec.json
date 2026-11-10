@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"k":{"maximum":1000,"minimum":1,"title":"K","type":"integer"},"mode":{"enum":["exact","at_most"],"title":"Mode","type":"string"}},"required":["k","mode"],"title":"CardinalitySpec","type":"object"}

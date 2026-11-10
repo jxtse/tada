@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"code":{"title":"Code","type":"string"},"tool_call_id":{"anyOf":[{"type":"string"},{"type":"null"}],"default":null,"title":"Tool Call Id"}},"required":["code"],"title":"Execute","type":"object"}
