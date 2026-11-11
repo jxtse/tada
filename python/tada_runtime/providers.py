@@ -185,9 +185,17 @@ class Provider:
         concurrency = TypeAdapter(Annotated[StrictInt, Field(ge=1, le=2)]).validate_python(concurrency)
         self._slots = threading.BoundedSemaphore(concurrency)
         self.last_response: NormalizedResponse | None = None
+        self._local = threading.local()
+
+    @property
+    def last_request_id(self) -> str | None:
+        """Request id of the most recent call made from the current thread (for retry linkage)."""
+        local = getattr(self, '_local', None)
+        return getattr(local, 'request_id', None) if local is not None else None
 
     def call(self, prompt: str, schema: type[T], *, role: str, parent_id: str | None = None,
-             context: dict | None = None, cancellation: ExecutionCancellation | None = None) -> T:
+             context: dict | None = None, cancellation: ExecutionCancellation | None = None,
+             retry_of: str | None = None) -> T:
         cancellation = cancellation_token(cancellation)
         # Poll only while queued; an already-dispatched request is drained and
         # settled once rather than discarded or silently retried.
@@ -200,12 +208,13 @@ class Provider:
             if cancellation:
                 cancellation.check()
             return self._call_impl(prompt, schema, role=role, parent_id=parent_id,
-                context=context, cancellation=cancellation)
+                context=context, cancellation=cancellation, retry_of=retry_of)
         finally:
             self._slots.release()
 
     def _call_impl(self, prompt: str, schema: type[T], *, role: str, parent_id: str | None = None,
-                   context: dict | None = None, cancellation: ExecutionCancellation | None = None) -> T:
+                   context: dict | None = None, cancellation: ExecutionCancellation | None = None,
+                   retry_of: str | None = None) -> T:
         cfg = self.config
         body, path = prepare_request(cfg, prompt, schema)
         key = cfg.api_key()
@@ -213,6 +222,8 @@ class Provider:
         if key:
             headers['Authorization'] = 'Bearer ' + key
         rid = uuid.uuid4().hex
+        if getattr(self, '_local', None) is not None:
+            self._local.request_id = rid
         ids = {'request_id': rid, 'attempt_id': rid + ':1', 'parent_id': parent_id, 'source': 'operator'}
         if cancellation:
             cancellation.check()
@@ -263,7 +274,7 @@ class Provider:
             text = structured_answer_text(normalized.content)
             result = schema.model_validate_json(text, context=context)
             status = 'success'
-            self.collector.emit('model/attempt_end', {'status': status, 'elapsed_seconds': time.monotonic() - started}, **ids)
+            self.collector.emit('model/attempt_end', {'status': status, 'elapsed_seconds': time.monotonic() - started, 'retry_of': retry_of}, **ids)
             return result
         except Exception as exc:
             if isinstance(exc, ExecutionCancelled):
@@ -271,7 +282,7 @@ class Provider:
             details = [f'{e["loc"]}: {e["type"]}' for e in exc.errors(include_input=False, include_url=False)] if isinstance(exc, ValidationError) else []
             error = ErrorInfo(kind=type(exc).__name__, message='provider or response contract failure; inspect retained payload' if isinstance(exc, ValidationError) else str(exc), details=details, raw_ref=raw_ref)
             self.collector.emit('model/attempt_end', {'status': 'schema_error' if isinstance(exc, ValidationError) else status,
-                'error': error.model_dump(), 'elapsed_seconds': time.monotonic() - started}, **ids)
+                'error': error.model_dump(), 'elapsed_seconds': time.monotonic() - started, 'retry_of': retry_of}, **ids)
             raise
         finally:
             if reserved:

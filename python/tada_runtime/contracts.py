@@ -216,6 +216,7 @@ class OperatorIdentity(StrictModel):
     multi: bool = False
     long_rows: LongRowsConfig | None = None
     long_rows_aggregate: Literal['union', 'reduce', 'collect'] | None = None
+    batch_retries: int = 0
     batch_plan: list[list[RID]]
     batch_rows: int
     batch_chars: int

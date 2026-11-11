@@ -1,7 +1,7 @@
 // Generated from Pydantic schemas. Do not edit.
-// config sha256: 8f8b3354a0996f3dc2fb0729de89cc58cc1dac9300ac4795881aa7e8e397a7d6
+// config sha256: 7882702a7666af5906fc4c8548035d30d6084f328f8ec610e03f5b0f837a726f
 // execute_python sha256: 6fcd63ffb6b179829d8578ec4cf7589f95782530e89a7ccae9b5589ba1964c6c
-// rpc_initialize_result sha256: b504b69a956f0640790f0f9d75275ebe245f040e39b539784be6ff3a80701533
+// rpc_initialize_result sha256: fc206c1a990aec74df906dafbd60ab992ca377555aa0075b91b26d274eaf590d
 // rpc_prepare_tool_result sha256: d3c87fa8b5f1272fd47ecd19920e4f3831cafe8e0a626eb455c6dc066ab685bc
 export type BudgetConfig = {"deadline_seconds": number;"ledger_path": string;"max_requests": number};
 export type LargeScaleConfig = {"capacity_policy"?: "serialized-utf8-plus-output-reserve-v1";"context_budget_bytes"?: number;"enabled"?: boolean;"engine_version"?: "open-retention-v1";"general_discovery_policy"?: "refuse-unbounded-large-v1";"max_description_chars"?: number;"max_name_chars"?: number;"output_reserve_bytes"?: number;"pilot_max_categories"?: number;"pilot_policy"?: "explore-without-final-k-v1";"pilot_rows"?: number;"planner"?: RetentionConfig;"reducer_budget_bytes"?: number;"reducer_policy"?: "one-global-call-or-refuse-v1";"target_chunk_rows"?: number;"threshold_rows"?: number};
@@ -10,7 +10,7 @@ export type LongRowsConfig = {"boundary"?: "paragraph" | "line" | "chars";"enabl
 export type ModelsConfig = {"agent": ProviderConfig;"operators": ProviderConfig};
 export type ProviderConfig = {"api_key_env"?: string | null;"auth_mode"?: "required" | "optional";"auth_placeholder"?: string | null;"base_url": string;"max_output_tokens"?: number;"model": string;"protocol": "anthropic-messages" | "openai-responses" | "openai-chat";"reasoning_effort"?: "minimal" | "low" | "medium" | "high" | "xhigh" | null;"temperature"?: number | null;"timeout_seconds"?: number};
 export type RetentionConfig = {"alpha"?: number;"candidates"?: Array<number> | null;"inner_draws"?: number;"max_seconds"?: number;"max_simulation_cells"?: number;"max_table_cells"?: number;"max_work_units"?: number;"no_tail_budget"?: number;"outer_draws"?: number;"prior_half_count"?: 0.5;"quantile_method"?: "inverse_ecdf";"r_max"?: number;"rng"?: "numpy-PCG64-seedsequence-v1";"sampler"?: "per-inner-iid-multinomial-balanced-v1";"seed"?: number;"target"?: number;"tie_policy"?: "canonical-domain-order-v1";"version"?: "paired-jeffreys-retention-v1"};
-export type RuntimeConfig = {"batch_chars"?: number;"batch_rows"?: number;"cell_timeout_seconds"?: number;"large_scale"?: LargeScaleConfig;"long_rows"?: LongRowsConfig;"mode"?: "trusted-local";"operator_concurrency"?: number;"output_view_chars"?: number;"reduce_fan_in"?: number;"reuse"?: "exact" | "off"};
+export type RuntimeConfig = {"batch_chars"?: number;"batch_retries"?: number;"batch_rows"?: number;"cell_timeout_seconds"?: number;"large_scale"?: LargeScaleConfig;"long_rows"?: LongRowsConfig;"mode"?: "trusted-local";"operator_concurrency"?: number;"output_view_chars"?: number;"reduce_fan_in"?: number;"reuse"?: "exact" | "off"};
 export type Config = {"budget"?: BudgetConfig | null;"logging"?: LoggingConfig;"models": ModelsConfig;"runtime"?: RuntimeConfig;"schema_version"?: "1.0"};
 export type ExecuteArgs = {"code": string};
 export type JsonValue = unknown;

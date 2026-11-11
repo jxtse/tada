@@ -192,7 +192,8 @@ class Engine:
             batch_chars=self.config.runtime.batch_chars, reduce_fan_in=self.config.runtime.reduce_fan_in, replicate=replicate,
             large_scale=large,cardinality=cardinality,effective_seed=seed,operator_concurrency=self.config.runtime.operator_concurrency,
             labels=labels.labels if labels is not None else None, multi=multi,
-            long_rows=long_plan['config'] if long_plan else None, long_rows_aggregate=long_plan['aggregate'] if long_plan else None)
+            long_rows=long_plan['config'] if long_plan else None, long_rows_aggregate=long_plan['aggregate'] if long_plan else None,
+            batch_retries=self.config.runtime.batch_retries if op == 'tag' else 0)
         identity_hash = hashlib.sha256(identity.model_dump_json().encode()).hexdigest()
         hit = self.store.find(identity_hash) if replicate == 'exact' else None
         atom_id = uuid.uuid4().hex
@@ -242,6 +243,28 @@ class Engine:
         if cancellation:
             cancellation.check()
         return result
+
+    def _call_batch(self, prompt, schema, *, role, ids, context, cancellation):
+        """One tag batch request, retried up to runtime.batch_retries times on an output-contract failure.
+
+        Only response validation failures (wrong/extra/duplicate rids, labels outside the domain,
+        invalid JSON) are retried; transport, provider, budget and cancellation errors propagate.
+        Each retry is a separate budget-counted request whose audit record names the rejected one.
+        """
+        retries = self.config.runtime.batch_retries
+        attempt_prompt, retry_of = prompt, None
+        for attempt in range(retries + 1):
+            extra = {'retry_of': retry_of} if retry_of is not None else {}
+            try:
+                return self._call_provider(attempt_prompt, schema, role=role if attempt == 0 else role + '-retry',
+                    parent_id=ids['atom_call_id'], context=context, cancellation=cancellation, **extra)
+            except ValidationError as exc:
+                if attempt >= retries:
+                    raise
+                retry_of = getattr(self.provider, 'last_request_id', None)
+                reasons = '; '.join(dict.fromkeys(e['msg'] for e in exc.errors(include_input=False, include_url=False)))
+                attempt_prompt = (prompt + '\nA previous answer to this exact request was rejected by the output contract ('
+                    + reasons + '). Return every listed rid exactly once and no other rid.')
 
     def _commit(self, result, metadata, ids, name, no_op=False, cancellation=None):
         # Cancellation and commit admission share a gate. A cancelled execution
@@ -339,8 +362,8 @@ class Engine:
                 if segment:
                     prompt += '\n' + PROMPT_SEGMENTS + '\n' + (SEGMENT_EMPTY_MULTI if multi else SEGMENT_EMPTY_OTHER)
                 prompt += '\nRows: ' + json.dumps([r.model_dump() for r in batch], ensure_ascii=False)
-                return self._call_provider(prompt, TagEnvelope, role='tag-segment-batch' if segment else 'tag-batch',
-                    parent_id=ids['atom_call_id'], context=context_for(batch, segment), cancellation=cancellation)
+                return self._call_batch(prompt, TagEnvelope, role='tag-segment-batch' if segment else 'tag-batch',
+                    ids=ids, context=context_for(batch, segment), cancellation=cancellation)
             with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
                 outputs = list(pool.map(assign, enumerate(batches)))
             unit_ids = [r.rid for batch in batches for r in batch]
@@ -396,7 +419,7 @@ class Engine:
                 context['label_sets' if multi else 'allowed_values'] = label_names
             prompt = (PROMPT_TAG + '\n' + PROMPT_SEGMENT_REDUCE + '\nQuery: ' + query + labels_block
                 + '\nRows: ' + json.dumps([r.model_dump() for r in batch], ensure_ascii=False))
-            return self._call_provider(prompt, TagEnvelope, role='tag-segment-reduce', parent_id=ids['atom_call_id'],
+            return self._call_batch(prompt, TagEnvelope, role='tag-segment-reduce', ids=ids,
                 context=context, cancellation=cancellation)
         with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
             reduced = list(pool.map(reduce, batches))
