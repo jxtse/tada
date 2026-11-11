@@ -122,7 +122,7 @@ class Supervisor:
             atomic_write(path/'session.json',canonical(header))
             self.audit.append('session/start',{'status':'open','revision':revision,'versions':versions,'producer_redaction_tail_chars':max((len(s)-1 for s in secrets),default=0),'producer_timeout_seconds':max(config.models.agent.timeout_seconds,config.models.operators.timeout_seconds),'config_ref':self.audit.blob(config.model_dump(mode='json')).model_dump()})
             for spec in params.inputs:
-                if spec.name in {'pd','np','json','tag','categorize','state','preview','validate_category_references'}: raise ValueError('reserved input name')
+                if spec.name in {'pd','np','json','tag','categorize','state','preview','validate_category_references','labels_frame'}: raise ValueError('reserved input name')
                 source=Path(spec.path)
                 if source.suffix.lower()!='.csv': raise ValueError('input currently requires CSV; other tables may be explicitly loaded in Python')
                 frame=pd.read_csv(source)
@@ -186,8 +186,12 @@ class Supervisor:
             if cancellation:
                 cancellation.check()
             value=restore(SNAPSHOT_ADAPTER.validate_python(request.snapshot))
+            options={}
+            if request.op=='tag':
+                options={'labels':[c.model_dump() for c in request.labels] if request.labels is not None else None,'multi':request.multi,
+                    'long_rows':request.long_rows.model_dump(mode='json') if request.long_rows is not None else None}
             result=getattr(self.engine,request.op)(value,request.query,name=request.name,fresh=request.fresh,
-                parent_id=execution_id,cancellation=cancellation,cardinality=request.cardinality)
+                parent_id=execution_id,cancellation=cancellation,cardinality=request.cardinality,**options)
             return snapshot(result).model_dump(mode='json')
 
     def error(self,error):

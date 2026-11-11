@@ -61,7 +61,7 @@ Both interactive use and evaluation drivers use this same entry point. The CLI e
 
 ## Python namespace
 
-The model sees one execution tool, `execute_python`. The kernel exposes `pd`, `np`, `json`, the named input tables, `tag`, `categorize`, `state`, `preview`, `validate_category_references`, and `outputs_dir`. Generated Python executes sequentially. CSV inputs use their unique `rid` column as the index; inputs without a `rid` column receive frozen IDs at load time.
+The model sees one execution tool, `execute_python`. The kernel exposes `pd`, `np`, `json`, the named input tables, `tag`, `categorize`, `state`, `preview`, `validate_category_references`, `labels_frame`, and `outputs_dir`. Generated Python executes sequentially. CSV inputs use their unique `rid` column as the index; inputs without a `rid` column receive frozen IDs at load time.
 
 ```python
 categories = categorize(reviews.text, "Discover service issue categories", name="issues")
@@ -82,7 +82,17 @@ Semantic inputs must be a Series of strings with unique, non-empty, consistently
 
 Large category requests accept an explicit `cardinality={"k": 5, "mode": "exact"}` (or `"at_most"`) contract. Without it, the runtime resolves the requested count in one internal structured call; it never silently defaults arbitrary queries to five categories. The enabled `runtime.large_scale` settings and conservative capacities are exposed in [the example config](examples/config.toml).
 
-Tagging first detects whether the query has a fixed output domain or requires joint discovery. Joint discovery materializes a child category state before assignments use that frozen table. Batches retain explicit row IDs; incomplete, duplicate, or unknown IDs fail the atom. A failed batch never becomes a partially successful public result.
+When the allowed answers are known, pass them as `labels=` (a list of names, a list of `{"name", "description"}` records, or a `categorize()` table). With the default `multi=False` each value must be exactly one label name. With `multi=True` each value is a JSON-encoded array string of every applicable label, possibly `"[]"`, so several yes/no or topic checks share one pass over each text; `labels_frame(series, labels)` expands it into a boolean table. Supplied labels make the task independent by construction, so no intent request is made. Validated label sets are re-serialized in the caller's label order.
+
+```python
+clauses = tag(contracts.text, "Which of these provisions does the agreement contain?",
+              labels=["Exclusivity", "Termination for convenience", "Change of control"], multi=True)
+flags = labels_frame(clauses, ["Exclusivity", "Termination for convenience", "Change of control"])
+```
+
+Rows too long for one request are handled inside `tag` (`runtime.long_rows`). By default only rows longer than `batch_chars`, which previously failed, are cut into overlapping segments that prefer paragraph boundaries; later segments carry the document's opening characters. Segment answers are committed as a child state and aggregated by a fixed rule: with `labels` and `multi=True` the row value is the union of segment label sets; otherwise one extra reduce request per long row combines the ordered segment answers. `long_rows={"aggregate": "collect"}` instead returns a JSON array of the non-empty segment results for free-text extraction. The plan event records the rule, effective configuration, and segments per row. Rows needing more than `max_segments_per_row` segments, segment capacity above `batch_chars`, and joint discovery over long rows are refused before any request.
+
+Tagging without `labels` first detects whether the query has a fixed output domain or requires joint discovery. Joint discovery materializes a child category state before assignments use that frozen table. Batches retain explicit row IDs; incomplete, duplicate, or unknown IDs fail the atom. A failed batch never becomes a partially successful public result.
 
 Successful semantic operations commit immutable artifacts before returning. A later error in the same cell does not undo that commit. Exact reuse checks the input content and order, query, model parameters, prompt and engine versions, batching plan, cardinality, retention configuration and effective RNG seed. `fresh=True` or `runtime.reuse = "off"` creates a new replicate. An alias only names a state; rebinding an alias preserves its older artifacts.
 

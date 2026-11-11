@@ -56,7 +56,36 @@ class TagEnvelope(StrictModel):
             raise ValueError('output rid coverage mismatch')
         if 'allowed_values' in context and any(x.value not in context['allowed_values'] for x in self.items):
             raise ValueError('invalid category reference')
+        if 'label_sets' in context:
+            for item in self.items:
+                parse_label_set(item.value, context['label_sets'])
         return self
+
+
+def parse_label_set(value: str, allowed: list[str]) -> list[str]:
+    """Strictly decode one multi-label value: a JSON array of unique allowed label names."""
+    import json
+    try:
+        decoded = json.loads(value)
+    except ValueError:
+        raise ValueError('multi-label value must be a JSON-encoded array string') from None
+    if not isinstance(decoded, list) or any(not isinstance(name, str) for name in decoded):
+        raise ValueError('multi-label value must be a JSON array of label-name strings')
+    if len(set(decoded)) != len(decoded):
+        raise ValueError('multi-label value repeats a label')
+    if any(name not in allowed for name in decoded):
+        raise ValueError('multi-label value references a label outside the supplied labels')
+    return decoded
+
+
+def canonical_label_set(names, order: list[str]) -> str:
+    """Host serialization of a validated label set in the caller's label order.
+
+    This reorders already-validated names only; it never adds, drops or renames a label.
+    """
+    import json
+    chosen = set(names)
+    return json.dumps([name for name in order if name in chosen], ensure_ascii=False)
 
 class Category(StrictModel):
     name: Annotated[StrictStr, Field(min_length=1)]
@@ -127,6 +156,54 @@ class ProviderIdentity(StrictModel):
     temperature: float | None = None
     reasoning_effort: str | None = None
 
+class LongRowsConfig(StrictModel):
+    """Scale-transparent handling of rows longer than one request can carry.
+
+    Rows are segmented inside tag; the row-level result is aggregated by a fixed
+    rule (labels+multi -> union, otherwise reduce) unless a caller override asks
+    for another supported aggregate. The default trigger only segments rows that
+    previously failed with "one row exceeds batch_chars", so short-text behavior
+    and requests are unchanged.
+    """
+    enabled: bool = True
+    trigger: Literal['over_batch_chars', 'over_segment_chars'] = 'over_batch_chars'
+    segment_chars: Annotated[int, Field(ge=200, le=500000)] = 8000
+    overlap_chars: Annotated[int, Field(ge=0, le=100000)] = 600
+    head_chars: Annotated[int, Field(ge=0, le=100000)] = 1500
+    boundary: Literal['paragraph', 'line', 'chars'] = 'paragraph'
+    max_segments_per_row: Annotated[int, Field(ge=1, le=10000)] = 64
+    policy: Literal['segment-aggregate-v1'] = 'segment-aggregate-v1'
+
+    @model_validator(mode='after')
+    def geometry(self):
+        if self.overlap_chars * 2 >= self.segment_chars:
+            raise ValueError('overlap_chars must be less than half of segment_chars')
+        if self.head_chars >= self.segment_chars:
+            raise ValueError('head_chars must be smaller than segment_chars')
+        return self
+
+class LongRowsOverride(StrictModel):
+    """Optional per-call override; unset fields keep the runtime configuration."""
+    aggregate: Literal['union', 'reduce', 'collect'] | None = None
+    trigger: Literal['over_batch_chars', 'over_segment_chars'] | None = None
+    segment_chars: Annotated[int, Field(ge=200, le=500000)] | None = None
+    overlap_chars: Annotated[int, Field(ge=0, le=100000)] | None = None
+    head_chars: Annotated[int, Field(ge=0, le=100000)] | None = None
+    boundary: Literal['paragraph', 'line', 'chars'] | None = None
+
+class LabelSpec(StrictModel):
+    """Caller-supplied closed label set for tag(labels=...)."""
+    labels: list[Category] = Field(min_length=1)
+    multi: bool = False
+
+    @model_validator(mode='after')
+    def unique(self):
+        CategoryEnvelope.model_validate({'categories': [c.model_dump() for c in self.labels]}, context={'nonempty': True})
+        return self
+
+    def names(self) -> list[str]:
+        return [c.name for c in self.labels]
+
 class OperatorIdentity(StrictModel):
     op: Literal['tag', 'categorize']
     query: str
@@ -134,7 +211,11 @@ class OperatorIdentity(StrictModel):
     mode: Literal['query-driven', 'categorize']
     provider: ProviderIdentity
     prompt_version: str = 'tada-strict-v2'
-    engine_version: str = '1.0'
+    engine_version: str = '1.1'
+    labels: list[Category] | None = None
+    multi: bool = False
+    long_rows: LongRowsConfig | None = None
+    long_rows_aggregate: Literal['union', 'reduce', 'collect'] | None = None
     batch_plan: list[list[RID]]
     batch_rows: int
     batch_chars: int

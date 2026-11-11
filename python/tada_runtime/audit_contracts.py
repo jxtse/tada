@@ -185,6 +185,8 @@ class AtomPayload(AuditModel):
     child_state_ids: list[str] = Field(default_factory=list)
     replicate: str = ''
     retry_of: str | None = None
+    # Long-row segmentation plan (aggregate rule, effective config, segments per row); absent when no row was segmented.
+    long_rows: dict[str, JsonValue] | None = None
 
 
 class StatePayload(AuditModel):

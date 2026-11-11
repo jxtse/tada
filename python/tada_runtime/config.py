@@ -6,7 +6,7 @@ import tomllib
 from typing import Annotated, Literal
 from urllib.parse import urlparse
 from pydantic import Field, model_validator
-from .contracts import StrictModel
+from .contracts import StrictModel, LongRowsConfig
 from .large_contracts import LargeScaleConfig
 
 class ProviderConfig(StrictModel):
@@ -61,6 +61,8 @@ class RuntimeConfig(StrictModel):
     batch_rows: Annotated[int, Field(ge=1, le=1000)] = 32
     batch_chars: Annotated[int, Field(ge=100, le=1000000)] = 16000
     reduce_fan_in: Annotated[int, Field(ge=2, le=20)] = 4
+    # Long rows are segmented inside tag; capacity against batch_chars is checked when segmentation is used.
+    long_rows: LongRowsConfig = Field(default_factory=LongRowsConfig)
 
 class LoggingConfig(StrictModel):
     level: Literal['full'] = 'full'

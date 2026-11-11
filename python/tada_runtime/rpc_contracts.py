@@ -1,7 +1,7 @@
 """Validated process and kernel boundaries; vendor projections remain explicitly raw."""
 from typing import Annotated, Literal
 from pydantic import Field, JsonValue, TypeAdapter, model_validator
-from .contracts import StrictModel, ExecuteArgs
+from .contracts import StrictModel, ExecuteArgs, Category, LongRowsOverride
 from .audit_contracts import BlobRef, ErrorInfo, Usage
 
 class InputSpec(StrictModel):
@@ -107,8 +107,17 @@ class KernelRequest(StrictModel):
     name: str | None = None
     fresh: bool = False
     cardinality: CardinalitySpec | None = None
+    labels: list[Category] | None = None
+    multi: bool = False
+    long_rows: LongRowsOverride | None = None
     key: str | None = None
     namespace: list[str] = Field(default_factory=list)
+
+    @model_validator(mode='after')
+    def tag_only_options(self):
+        if self.op != 'tag' and (self.labels is not None or self.multi or self.long_rows is not None):
+            raise ValueError('labels, multi and long_rows apply to tag only')
+        return self
 
 class KernelResult(StrictModel):
     value: JsonValue

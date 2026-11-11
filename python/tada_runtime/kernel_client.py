@@ -19,8 +19,10 @@ class KernelBridge:
             result = RpcFailure.model_validate_json(error.read())
             raise RuntimeError(f'{result.error.kind}: {result.error.message}') from None
 
-    def tag(self, texts, query, *, name=None, fresh=False, cardinality=None):
-        return restore(self.call(op='tag', snapshot=snapshot(texts).model_dump(mode='json'), query=query, name=name, fresh=fresh, cardinality=cardinality))
+    def tag(self, texts, query, *, name=None, fresh=False, cardinality=None, labels=None, multi=False, long_rows=None):
+        from tada_operators.engine import normalize_labels
+        return restore(self.call(op='tag', snapshot=snapshot(texts).model_dump(mode='json'), query=query, name=name, fresh=fresh,
+            cardinality=cardinality, labels=normalize_labels(labels) if labels is not None else None, multi=multi, long_rows=long_rows))
 
     def categorize(self, texts, query, *, name=None, fresh=False, cardinality=None):
         return restore(self.call(op='categorize', snapshot=snapshot(texts).model_dump(mode='json'), query=query, name=name, fresh=fresh, cardinality=cardinality))
@@ -51,8 +53,9 @@ def install(namespace, url, token, aliases):
     from pathlib import Path
     namespace['outputs_dir'] = Path.cwd()
     namespace.update(pd=pd, np=np, json=json, tag=bridge.tag, categorize=bridge.categorize, state=bridge)
-    from tada_operators.engine import validate_category_references
+    from tada_operators.engine import validate_category_references, labels_frame
     namespace['validate_category_references'] = validate_category_references
+    namespace['labels_frame'] = labels_frame
     namespace['preview'] = lambda table, n=5: table.head(n)
     namespace['_tada_inventory'] = lambda: bridge.inventory(namespace)
     for alias in aliases:
