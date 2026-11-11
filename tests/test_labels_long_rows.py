@@ -280,3 +280,27 @@ def test_segment_trigger_override_segments_mid_length_rows(setup):
     Engine(cfg, provider, store, audit).tag(pd.Series([mid], index=['m']), 'q', labels=LABELS, multi=True,
         long_rows={'trigger': 'over_segment_chars', 'segment_chars': 2000, 'overlap_chars': 100, 'head_chars': 0})
     assert provider.calls[-1] == 'tag-segment-batch'
+
+
+def test_collect_uses_one_encoding_for_short_and_long_rows(setup):
+    cfg, audit, store = setup(long_runtime())
+    def answer(role, prompt, rid):
+        if role == 'tag-segment-batch':
+            return 'EXCLUSIVE' if 'EXCLUSIVE' in prompt.split(str(rid))[1][:5000] else ''
+        return {'short': 'net 30', 'empty': ''}[rid]
+    provider = ScriptedProvider(answer)
+    texts = pd.Series([LONG, 'pay net 30', 'nothing here'], index=['long', 'short', 'empty'])
+    result = Engine(cfg, provider, store, audit).tag(texts, 'extract terms', long_rows={'aggregate': 'collect'})
+    decoded = {rid: json.loads(value) for rid, value in result.items()}
+    assert decoded == {'long': ['EXCLUSIVE'], 'short': ['net 30'], 'empty': []}
+
+
+def test_oversized_reduce_input_is_refused_before_reduce_request(setup):
+    cfg, audit, store = setup(long_runtime())
+    provider = ScriptedProvider(lambda role, prompt, rid: 'x' * 900 if role == 'tag-segment-batch' else 'final')
+    with pytest.raises(ValueError, match='reduce input .* above batch_chars.*no reduce request was sent'):
+        Engine(cfg, provider, store, audit).tag(pd.Series([LONG], index=['d']), 'summarize obligations')
+    assert 'tag-segment-reduce' not in provider.calls and provider.calls.count('tag-segment-batch') >= 1
+    events = read_events(audit.root)[0]
+    end = next(e for e in events if e.type == 'atom/end' and e.payload.op == 'tag')
+    assert end.payload.status == 'failed'

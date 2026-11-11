@@ -373,6 +373,12 @@ class Engine:
             if long_plan:
                 by_id.update(self._aggregate_long_rows(long_plan, by_id, query=effective_query, labels_block=labels_block,
                     label_names=label_names, multi=multi, aggregate=aggregate, metadata=metadata, ids=ids, cancellation=cancellation))
+                if aggregate == 'collect':
+                    # One output contract per call: whole rows use the same JSON-array encoding as collected long rows.
+                    for row in snapshot.rows:
+                        if row.rid not in long_plan['segments']:
+                            value = by_id[row.rid]
+                            by_id[row.rid] = json.dumps([value] if value != '' else [], ensure_ascii=False)
             values = [by_id[r.rid] for r in snapshot.rows]
             if multi:
                 # Assumption pending review: validated label sets are re-serialized in the caller's label order.
@@ -412,6 +418,15 @@ class Engine:
         # reduce: one more model judgment per long row over its ordered segment answers.
         units = [TextRow(rid=rid, text=json.dumps([{'segment': index + 1, 'answer': by_id[seg.rid]} for index, seg in enumerate(segs)], ensure_ascii=False))
                  for rid, segs in segments.items()]
+        # The reduce input depends on segment answers, so its size is only known now. Refuse before any reduce
+        # request, name the stage, and point at the committed segment answers instead of failing inside _pack.
+        limit = self.config.runtime.batch_chars
+        oversized = [(unit.rid, len(unit.text)) for unit in units if len(unit.text) > limit]
+        if oversized:
+            rid, size = oversized[0]
+            raise ValueError(f'long-row reduce input for row {rid!r} is {size} chars, above batch_chars={limit}; '
+                f'no reduce request was sent and segment answers are kept in state {child}. '
+                'Use long_rows={"aggregate": "collect"}, larger segments, or a larger batch_chars.')
         batches = self._pack(units)
         def reduce(batch):
             context = {'rids': [r.rid for r in batch]}
