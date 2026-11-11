@@ -135,6 +135,37 @@ def test_split_bodies_cover_overlap_and_prefer_paragraphs():
         split_bodies('abc', segment_chars=10, overlap_chars=5, boundary='paragraph')
 
 
+def test_segment_id_suffix_matches_rendered_header_number():
+    """Regression (Harbor merger-review on d7da821): 0-based ::segK next to a 1-based
+    [SEGMENT K+1/n] header made the model answer with header-numbered rids (48 schema errors)."""
+    import re
+    from tada_operators.segment import segment_id
+    text = 'Intro. ' + ('clause text. ' * 3000)
+    rendered = render_segments(text, segment_chars=4000, overlap_chars=200, head_chars=300, boundary='paragraph')
+    for index, body in enumerate(rendered):
+        number = re.search(r'\[SEGMENT (\d+)/(\d+)\]', body).group(1)
+        assert segment_id('DR-479', index) == f'DR-479::seg{number}'
+    assert segment_id('DR-479', 0) == 'DR-479::seg1'
+
+
+def test_header_numbered_answers_now_match_requested_rids(setup):
+    """A provider that keys answers by the visible [SEGMENT k/n] number must satisfy coverage."""
+    import re
+    cfg, audit, store = setup(long_runtime())
+    class HeaderProvider(ScriptedProvider):
+        def call(self, prompt, schema, *, role, parent_id, context=None):
+            if role == 'tag-segment-batch':
+                rows = json.loads(prompt.split('\nRows: ', 1)[1])
+                items = [{'rid': row['rid'].rsplit('::seg', 1)[0] + '::seg' + re.search(r'\[SEGMENT (\d+)/', row['text']).group(1),
+                          'value': '[]'} for row in rows]
+                self.calls.append(role)
+                return schema.model_validate({'items': items}, context=context)
+            return super().call(prompt, schema, role=role, parent_id=parent_id, context=context)
+    provider = HeaderProvider()
+    result = Engine(cfg, provider, store, audit).tag(pd.Series([LONG], index=['DR-479']), 'q', labels=LABELS, multi=True)
+    assert result.tolist() == ['[]'] and provider.calls.count('tag-segment-batch') >= 2
+
+
 def test_rendered_segments_are_bounded_and_carry_head():
     text = 'HEADER parties and definitions. ' + 'clause text. ' * 2000
     rendered = render_segments(text, segment_chars=2000, overlap_chars=200, head_chars=300, boundary='paragraph')

@@ -52,8 +52,9 @@ Return each value as a JSON-encoded array STRING containing every label name fro
 applies to that row, for example "[\\"A\\", \\"C\\"]", or "[]" when none applies. Use names verbatim,
 never repeat a label and never add a name that is not in LABELS_JSON.'''
 PROMPT_SEGMENTS = '''Every row in this request is one SEGMENT of a longer document; its rid ends with
-::seg followed by the segment number. A segment may begin with a [DOCUMENT START EXCERPT] that is
-context only. Answer for the segment using the evidence it contains.'''
+::seg followed by the segment number shown in that row's [SEGMENT k/n] header. Return exactly the rids
+listed in Rows, each once: never add a rid for a neighbouring segment that is not listed. A segment may
+begin with a [DOCUMENT START EXCERPT] that is context only. Answer for the segment using the evidence it contains.'''
 SEGMENT_EMPTY_MULTI = 'If no label is evidenced in the segment, return "[]".'
 SEGMENT_EMPTY_OTHER = 'If the segment contains no relevant evidence, return the empty string "".'
 PROMPT_SEGMENT_REDUCE = '''Each row is a long document that was processed in segments. Its text is

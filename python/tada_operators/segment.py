@@ -15,9 +15,19 @@ HEAD_OPEN = '[DOCUMENT START EXCERPT]\n'
 HEAD_CLOSE = '\n[END EXCERPT]\n'
 
 
+def segment_number(index: int) -> int:
+    """1-based segment number shared by the segment id and the rendered header."""
+    return index + 1
+
+
 def segment_id(rid, index: int) -> str:
-    """Host-assigned segment identifier; always a string, never model supplied."""
-    return f'{rid}{SEGMENT_MARKER}{index}'
+    """Host-assigned segment identifier; always a string, never model supplied.
+
+    The suffix uses the same 1-based number as the ``[SEGMENT k/n]`` header inside the
+    segment text. A 0-based suffix next to a 1-based header made models answer with the
+    header number (``::seg4`` for the row ``::seg3``), which failed rid coverage.
+    """
+    return f'{rid}{SEGMENT_MARKER}{segment_number(index)}'
 
 
 def _cut(text: str, start: int, limit: int, boundary: str) -> int:
@@ -59,5 +69,5 @@ def render_segments(text: str, *, segment_chars: int, overlap_chars: int, head_c
     rendered = []
     for index, (start, end) in enumerate(spans):
         prefix = HEAD_OPEN + head + HEAD_CLOSE if head and start > 0 else ''
-        rendered.append(f'{prefix}[SEGMENT {index + 1}/{total}]\n{text[start:end]}')
+        rendered.append(f'{prefix}[SEGMENT {segment_number(index)}/{total}]\n{text[start:end]}')
     return rendered

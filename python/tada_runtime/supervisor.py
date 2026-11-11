@@ -198,7 +198,12 @@ class Supervisor:
         text=str(error)
         if self.audit:text=self.audit._redact(text)[0]
         if isinstance(error,ValidationError):
-            return ErrorInfo(kind='ValidationError',message='Contract validation failed',details=[str(e['loc'])+': '+e['type'] for e in error.errors(include_input=False,include_url=False)])
+            errors=error.errors(include_input=False,include_url=False)
+            # The kernel only surfaces the message, so name the failed contract rules (never the input values).
+            reasons=list(dict.fromkeys(e['msg'] for e in errors))[:3]
+            message='Contract validation failed'+(': '+'; '.join(reasons) if reasons else '')
+            if self.audit:message=self.audit._redact(message)[0]
+            return ErrorInfo(kind='ValidationError',message=message,details=[str(e['loc'])+': '+e['type'] for e in errors])
         return ErrorInfo(kind=type(error).__name__,message=text)
 
     def _emit_stream_parts(self, request_id, parts):
