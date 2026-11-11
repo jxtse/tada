@@ -46,7 +46,12 @@ def make(tmp_path, retries, provider):
 TEXTS = pd.Series(['a', 'b'], index=['r1', 'r2'])
 
 
-def test_default_keeps_one_dispatch_per_batch(tmp_path):
+def test_default_is_one_retry():
+    assert Config.model_validate({'models': {role: {'base_url': 'http://localhost:9999/v1', 'model': 'exact',
+        'protocol': 'openai-responses', 'auth_mode': 'optional'} for role in ['agent', 'operators']}}).runtime.batch_retries == 1
+
+
+def test_zero_keeps_one_dispatch_per_batch(tmp_path):
     provider = FlakyProvider(bad=1)
     engine, audit = make(tmp_path, 0, provider)
     with pytest.raises(ValidationError):

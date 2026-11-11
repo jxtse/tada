@@ -1,7 +1,7 @@
 // Generated from Pydantic schemas. Do not edit.
-// config sha256: 7882702a7666af5906fc4c8548035d30d6084f328f8ec610e03f5b0f837a726f
+// config sha256: fcacc983bd05775d508f6c1a06cc83919f83fac61571c0b218e4e73bdd5ecaa0
 // execute_python sha256: 6fcd63ffb6b179829d8578ec4cf7589f95782530e89a7ccae9b5589ba1964c6c
-// rpc_initialize_result sha256: fc206c1a990aec74df906dafbd60ab992ca377555aa0075b91b26d274eaf590d
+// rpc_initialize_result sha256: 6ff2a9e06995f71fe5a054527eb54295b151a5311f458bfac81e3478d9b5a028
 // rpc_prepare_tool_result sha256: d3c87fa8b5f1272fd47ecd19920e4f3831cafe8e0a626eb455c6dc066ab685bc
 export type BudgetConfig = {"deadline_seconds": number;"ledger_path": string;"max_requests": number};
 export type LargeScaleConfig = {"capacity_policy"?: "serialized-utf8-plus-output-reserve-v1";"context_budget_bytes"?: number;"enabled"?: boolean;"engine_version"?: "open-retention-v1";"general_discovery_policy"?: "refuse-unbounded-large-v1";"max_description_chars"?: number;"max_name_chars"?: number;"output_reserve_bytes"?: number;"pilot_max_categories"?: number;"pilot_policy"?: "explore-without-final-k-v1";"pilot_rows"?: number;"planner"?: RetentionConfig;"reducer_budget_bytes"?: number;"reducer_policy"?: "one-global-call-or-refuse-v1";"target_chunk_rows"?: number;"threshold_rows"?: number};

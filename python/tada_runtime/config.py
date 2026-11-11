@@ -63,8 +63,9 @@ class RuntimeConfig(StrictModel):
     reduce_fan_in: Annotated[int, Field(ge=2, le=20)] = 4
     # Extra attempts for one tag batch whose response failed the output contract (rid coverage,
     # labels, JSON). Each retry is a new budget-counted, audited request linked by retry_of.
-    # Default 0 keeps "one dispatch per batch"; transport/provider failures are never retried here.
-    batch_retries: Annotated[int, Field(ge=0, le=2)] = 0
+    # Default 1: one corrective retry per batch; set 0 for strictly one dispatch per batch.
+    # Transport/provider failures, budget exhaustion and cancellation are never retried here.
+    batch_retries: Annotated[int, Field(ge=0, le=2)] = 1
     # Long rows are segmented inside tag; capacity against batch_chars is checked when segmentation is used.
     long_rows: LongRowsConfig = Field(default_factory=LongRowsConfig)
 
