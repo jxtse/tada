@@ -70,7 +70,7 @@ class LoggingConfig(StrictModel):
 
 class BudgetConfig(StrictModel):
     ledger_path: str
-    max_requests: Annotated[int, Field(ge=1, le=60)]
+    max_requests: Annotated[int, Field(ge=1, le=2000)]
     deadline_seconds: Annotated[float, Field(gt=0, le=86400)]
 
 class Config(StrictModel):

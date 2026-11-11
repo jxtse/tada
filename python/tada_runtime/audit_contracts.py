@@ -235,6 +235,16 @@ class RetentionPayload(AuditModel):
     detail: str = ''
 
 
+class RetryPayload(AuditModel):
+    """Pi automatic retry of a transient main-agent provider failure. Each attempt is a separate model/request."""
+    phase: Literal['start', 'end']
+    attempt: int = Field(ge=0)
+    max_attempts: int | None = Field(default=None, ge=0)
+    delay_ms: int | None = Field(default=None, ge=0)
+    success: bool | None = None
+    error: str | None = None
+
+
 class EventBase(AuditModel):
     schema_version: Literal['1.0'] = '1.0'
     session_id: str
@@ -268,7 +278,7 @@ PAYLOAD_TYPES = {
     **{k: CompactionPayload for k in ['compaction/start','compaction/summary','compaction/end']},
     'budget/reserve': BudgetPayload, 'budget/settle': BudgetPayload,
     'recovery/interrupted': RecoveryPayload, 'artifact/register': ArtifactPayload,
-    'retention/stage': RetentionPayload,
+    'retention/stage': RetentionPayload, 'agent/retry': RetryPayload,
 }
 EVENT_TYPES = {
     name: create_model(''.join(part.title() for part in name.split('/'))+'Event', __base__=EventBase,

@@ -33,7 +33,7 @@ export async function createController(rpc:Supervisor, initial:InitializeResult)
   const model:Model<Api> = {
     id:profile.model,name:profile.model,api,provider:'tada-explicit',
     baseUrl:providerBaseUrl(profile.base_url,profile.protocol),reasoning:!!profile.reasoning_effort,
-    input:['text'],contextWindow:200000,maxTokens:profile.max_output_tokens ?? 4096,
+    input:['text'],contextWindow:Number(process.env.TADA_AGENT_CONTEXT_WINDOW ?? 200000),maxTokens:profile.max_output_tokens ?? 4096,
     cost:{input:0,output:0,cacheRead:0,cacheWrite:0},
   };
   const credentials:CredentialStore = {read:async()=>undefined,list:async()=>[],modify:async(_,fn)=>fn(undefined),delete:async()=>{}};
@@ -80,7 +80,12 @@ Use ordinary pandas to count/group/join. Store outputs under outputs_dir and rep
 Do not run subprocess model clients or make direct inference/network calls. All model calls go through supervised tag/categorize.
 If a cell errors, use its actual error and existing namespace to repair through the same loop. A budget failure is a hard stop for new semantic work.
 Namespace: ${initial.namespace_summary}`;
-  const settings=SettingsManager.inMemory({compaction:{enabled:false,reserveTokens:4096,keepRecentTokens:512},retry:{enabled:false,maxRetries:0},cacheWarming:'off'});
+  // Automatic threshold/overflow compaction keeps long tasks inside the context window.
+  // Compaction requests go through the same audited stream (role='compaction') and the
+  // kernel/state are untouched; the summary and before/after messages are logged.
+  // Transient upstream failures (429/5xx/timeouts, Pi's classifier) are retried with backoff by Pi.
+  // Each attempt is a separately reserved, audited and budget-counted request; failed attempts stay in the log.
+  const settings=SettingsManager.inMemory({compaction:{enabled:true,reserveTokens:16384,keepRecentTokens:Number(process.env.TADA_AGENT_KEEP_RECENT_TOKENS ?? 20000)},retry:{enabled:true,maxRetries:4,baseDelayMs:5000,maxAgentDelayMs:60000},cacheWarming:'off'});
   const {session,modelFallbackMessage}=await createAgentSession({cwd:process.cwd(),agentDir,model,modelRuntime:runtime,resourceLoader:strippedLoader(prompt),tools:['execute_python'],customTools:[tool],settingsManager:settings,sessionManager:manager,thinkingLevel:(profile.reasoning_effort ?? 'off') as any});
   if(modelFallbackMessage) throw new Error(`Forbidden model fallback: ${modelFallbackMessage}`);
   session.agent.toolExecution='sequential';
@@ -92,7 +97,29 @@ Namespace: ${initial.namespace_summary}`;
   });
   let role:'agent'|'compaction'='agent';
   let turnId:string|undefined;
+  let manualCompaction=false;
   const emit=(type:string,payload:unknown,ids:unknown={})=>rpc.call('event',{type,payload,ids});
+  // Pi awaits nothing here, so serialize audit RPCs for automatic compaction explicitly.
+  let autoAudit:Promise<unknown>=Promise.resolve();
+  const unsubscribeCompaction=session.subscribe(event=>{
+    if(manualCompaction) return;
+    if(event.type==='auto_retry_start'||event.type==='auto_retry_end'){
+      autoAudit=autoAudit.then(()=>emit('agent/retry',{phase:event.type==='auto_retry_start'?'start':'end',attempt:event.attempt,
+        ...(event.type==='auto_retry_start'?{max_attempts:event.maxAttempts,delay_ms:event.delayMs,error:event.errorMessage}:{success:event.success,error:event.finalError ?? null})},
+        turnId?{turn_id:turnId}:{}));
+      return;
+    }
+    if(event.type==='compaction_start'){
+      role='compaction';
+      autoAudit=autoAudit.then(()=>rpc.call('compaction',{phase:'start',messages:session.messages}));
+    } else if(event.type==='compaction_end'){
+      const ok=!!event.result && !event.aborted;
+      autoAudit=autoAudit.then(()=>rpc.call('compaction',{phase:'end',messages:session.messages,
+        summary:ok?`[auto:${event.reason}] ${event.result!.summary}`:`[auto:${event.reason}] ${event.errorMessage ?? (event.aborted?'aborted':'no result')}`,
+        status:ok?'success':'failed'}));
+      role='agent';
+    }
+  });
   session.agent.streamFunction=(requested,context,options)=>auditedStream({
     rpc,runtime,profile,apiKey:initial.agent_api_key,role,turnId,requested,context,options,emit,createStream:createAssistantMessageEventStream,
   });
@@ -105,18 +132,21 @@ Namespace: ${initial.namespace_summary}`;
       await emit('user/message',{text,origin:'human'},{turn_id:turnId});
       try {
         await session.prompt(text);
+        await autoAudit;
         const last=session.messages.at(-1);
         if(last?.role==='assistant' && (last.stopReason==='error'||last.stopReason==='aborted')) throw new Error(last.errorMessage??last.stopReason);
         await emit('turn/end',{status:'completed'},{turn_id:turnId});
         await checkpoint();
         return last;
       } catch(error) {
+        await autoAudit.catch(()=>{});
         await emit('turn/end',{status:'failed',reason:String(error)},{turn_id:turnId});
         await checkpoint();
         throw error;
       }
     },
     async compact() {
+      manualCompaction=true;
       await rpc.call('compaction',{phase:'start',messages:session.messages});
       role='compaction';
       try {
@@ -127,9 +157,9 @@ Namespace: ${initial.namespace_summary}`;
       } catch(error) {
         await rpc.call('compaction',{phase:'end',messages:session.messages,status:'failed',summary:String(error)});
         throw error;
-      } finally { role='agent'; }
+      } finally { role='agent'; manualCompaction=false; }
     },
     async abort(){await rpc.call('cancel');await session.abort();},
-    async close(){unsubscribeToolResults();session.dispose();},
+    async close(){unsubscribeToolResults();unsubscribeCompaction();session.dispose();},
   };
 }

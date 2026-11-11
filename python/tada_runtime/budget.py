@@ -21,7 +21,7 @@ class Reservation(StrictModel):
 
 class LedgerState(StrictModel):
     schema_version: Literal['1.0'] = '1.0'
-    max_requests: int = Field(ge=1, le=60)
+    max_requests: int = Field(ge=1, le=2000)
     deadline_at: float
     reservations: list[Reservation] = Field(default_factory=list)
 
