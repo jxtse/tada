@@ -39,6 +39,7 @@ class WireContent(WireModel):
 
 class WireOutput(WireModel):
     type: str
+    phase: str | None = None
     content: list[WireContent] = Field(default_factory=list)
     summary: list[WireContent] = Field(default_factory=list)
     call_id: str | None = None
@@ -129,6 +130,38 @@ def prepare_request(cfg: ProviderConfig, prompt: str, schema: type[BaseModel]):
 
 class ProviderFailure(RuntimeError):
     pass
+
+def structured_answer_text(content) -> str:
+    """Return the one answer text that strict schema validation receives.
+
+    The Responses API may return several assistant messages labelled with a phase:
+    'commentary' is narration and is never part of the answer. When any phase is
+    reported, the answer comes from the remaining (non-commentary) messages; parts
+    inside one message are joined. Several answer messages are accepted only when
+    they decode to the same JSON value (or are textually identical); otherwise the
+    response is refused instead of silently choosing one. Without phase metadata the
+    text blocks are joined exactly as before.
+    """
+    import json
+    blocks = [block for block in content if block.type == 'text']
+    if not any(block.phase for block in blocks):
+        return ''.join(block.text for block in blocks)
+    messages: dict = {}
+    for block in blocks:
+        if block.phase != 'commentary':
+            messages.setdefault(block.message_index, []).append(block.text)
+    answers = [''.join(parts) for parts in messages.values()]
+    if not answers:
+        raise ProviderFailure('response contains only commentary messages and no final answer')
+    if len(answers) > 1:
+        try:
+            decoded = [json.loads(answer) for answer in answers]
+            same = all(value == decoded[0] for value in decoded[1:])
+        except ValueError:
+            same = len(set(answers)) == 1
+        if not same:
+            raise ProviderFailure(f'response contains {len(answers)} differing answer messages; refusing to choose one')
+    return answers[0]
 
 class _CancellationTransport(httpx.BaseTransport):
     """Check again at transport entry, after httpx has prepared the request."""
@@ -226,8 +259,8 @@ class Provider:
             if normalized.finish_reason not in ('completed', 'stop'):
                 status = 'failed'
                 raise ProviderFailure('provider did not complete: ' + normalized.finish_reason)
-            text = ''.join(block.text for block in normalized.content if block.type == 'text')
             status = 'failed'
+            text = structured_answer_text(normalized.content)
             result = schema.model_validate_json(text, context=context)
             status = 'success'
             self.collector.emit('model/attempt_end', {'status': status, 'elapsed_seconds': time.monotonic() - started}, **ids)
@@ -365,9 +398,10 @@ class Provider:
         wire = WireResponse.model_validate(raw)
         content = []
         availability = 'not_provided'
-        for item in wire.output:
+        for index, item in enumerate(wire.output):
             if item.type == 'message':
-                content.extend(TextBlock(text=part.text) for part in item.content if part.type == 'output_text' and part.text is not None)
+                content.extend(TextBlock(text=part.text, phase=item.phase, message_index=index)
+                               for part in item.content if part.type == 'output_text' and part.text is not None)
             elif item.type == 'reasoning':
                 availability = 'summary_only' if item.summary else 'opaque'
                 content.extend(ReasoningBlock(text=part.text or '', availability=availability) for part in item.summary)

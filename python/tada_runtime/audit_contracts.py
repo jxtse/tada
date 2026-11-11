@@ -92,6 +92,10 @@ class StreamPayload(AuditModel):
 class TextBlock(AuditModel):
     type: Literal['text'] = 'text'
     text: str
+    # Responses API message phase (e.g. 'commentary', 'final_answer') and the index of the
+    # message that carried this part; absent for protocols that do not report them.
+    phase: str | None = None
+    message_index: int | None = Field(default=None, ge=0)
 
 
 class ReasoningBlock(AuditModel):
