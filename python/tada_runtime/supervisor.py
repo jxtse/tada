@@ -104,14 +104,18 @@ class Supervisor:
         else:
             config=load_config(params.config_path,overrides=parse_overrides(params.overrides))
         config.require_budget()
-        secrets=[key for provider in (config.models.agent,config.models.operators) if (key:=provider.api_key()) and key!=provider.auth_placeholder]
+        secrets=[key for provider in (config.models.agent,config.models.operators,config.models.decision) if provider is not None and (key:=provider.api_key()) and key!=provider.auth_placeholder]
         self.config=config
         self.audit=AuditLog(path,secrets=secrets,resume=params.resume)
         for folder in ('inputs','outputs','blobs','states','pi-checkpoints'): (path/folder).mkdir(exist_ok=True,mode=0o700)
         self.store=Store(self.audit)
         self.budget=BudgetLedger(config.require_budget(),self.audit)
         self.provider=Provider(config.models.operators,self.budget,self.audit)
-        self.engine=Engine(config,self.provider,self.store,self.audit)
+        self.decision=None
+        if config.models.decision is not None:
+            from .decision import DecisionClient
+            self.decision=DecisionClient(config.models.decision,self.budget,self.audit,concurrency=config.runtime.operator_concurrency)
+        self.engine=Engine(config,self.provider,self.store,self.audit,decision=self.decision)
         checkpoint=self.audit.load_checkpoint() if params.resume else None
         projection=checkpoint.provider_raw if checkpoint else {}
         projection=TypeAdapter(dict[str,JsonValue]).validate_python(projection)

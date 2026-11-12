@@ -15,6 +15,16 @@ api_key_env = "TADA_OPERATOR_API_KEY"
 auth_mode = "required"
 max_output_tokens = 4096
 timeout_seconds = 90.0
+# Optional native decision backend for closed-label tag calls (Jev via TypeSafe SystemOne).
+# Uncomment to route tag(labels=...) and joint assignment to it; the key is read only from api_key_env.
+# [models.decision]
+# model = "jev-1.13.0"
+# api_key_env = "TYPESAFE_API_KEY"
+# routes = ["labels-single", "labels-multi", "joint-assign"]
+# multi_mode = "binary-choice"      # or "noul" with an explicit, calibrated noul_threshold
+# batch_items = 16
+# batch_chars = 60000
+# max_questions = 256
 [runtime]
 mode = "trusted-local"
 operator_concurrency = 2

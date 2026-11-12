@@ -39,9 +39,58 @@ class ProviderConfig(StrictModel):
             raise ValueError(f'required credential unavailable: {self.api_key_env or "api_key_env not configured"}')
         return key
 
+class DecisionConfig(StrictModel):
+    """Optional native decision backend (Jev via TypeSafe SystemOne) for closed-label tag requests.
+
+    Only requests whose answers come from a supplied label set are routed here; discovery,
+    reduction, free-text extraction and the agent always use the generative providers.
+    """
+    protocol: Literal['jev-systemone'] = 'jev-systemone'
+    base_url: str = 'https://api.typesafe.ai/v1'
+    model: Annotated[str, Field(pattern=r'^jev-\d+\.\d+\.\d+$')] = 'jev-1.13.0'
+    api_key_env: str | None = 'TYPESAFE_API_KEY'
+    auth_mode: Literal['required', 'optional'] = 'required'
+    auth_placeholder: str | None = None
+    timeout_seconds: Annotated[float, Field(gt=0, le=600)] = 120.0
+    # Which tag paths use the decision backend: tag(labels=..., multi=False), tag(labels=..., multi=True),
+    # and the assignment step of joint tagging after its vocabulary has been frozen.
+    routes: list[Literal['labels-single', 'labels-multi', 'joint-assign']] = Field(
+        default_factory=lambda: ['labels-single', 'labels-multi', 'joint-assign'])
+    # Multi-label questions: one Yes/No choice per (item, label), or one Noul probability per pair
+    # compared with an explicit, separately calibrated threshold.
+    multi_mode: Literal['binary-choice', 'noul'] = 'binary-choice'
+    noul_threshold: Annotated[float, Field(ge=0, le=1)] | None = None
+    # Packing: items per request, total item characters per request, questions per request and a
+    # serialized request guard. Jev documents 64k total context and 32k state plus longest question.
+    batch_items: Annotated[int, Field(ge=1, le=512)] = 16
+    batch_chars: Annotated[int, Field(ge=100, le=400000)] = 60000
+    max_questions: Annotated[int, Field(ge=1, le=4096)] = 256
+    max_request_chars: Annotated[int, Field(ge=1000, le=2000000)] = 200000
+
+    @model_validator(mode='after')
+    def checks(self):
+        parsed = urlparse(self.base_url)
+        if parsed.scheme not in ('http', 'https') or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment:
+            raise ValueError('decision base_url must be an HTTP API prefix without credentials/query/fragment')
+        if self.auth_mode == 'optional' and parsed.hostname not in ('localhost', '127.0.0.1', '::1'):
+            raise ValueError('optional authentication is only allowed for local endpoints')
+        if self.multi_mode == 'noul' and self.noul_threshold is None:
+            raise ValueError('multi_mode = "noul" requires an explicit, calibrated noul_threshold')
+        if len(set(self.routes)) != len(self.routes):
+            raise ValueError('decision routes must be unique')
+        return self
+
+    def api_key(self) -> str | None:
+        key = os.environ.get(self.api_key_env) if self.api_key_env else None
+        key = key or self.auth_placeholder
+        if not key and self.auth_mode == 'required':
+            raise ValueError(f'required credential unavailable: {self.api_key_env or "api_key_env not configured"}')
+        return key
+
 class ModelsConfig(StrictModel):
     agent: ProviderConfig
     operators: ProviderConfig
+    decision: DecisionConfig | None = None
 
     @model_validator(mode='after')
     def operator_limits(self):

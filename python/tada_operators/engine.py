@@ -55,6 +55,12 @@ PROMPT_SEGMENTS = '''Every row in this request is one SEGMENT of a longer docume
 ::seg followed by the segment number shown in that row's [SEGMENT k/n] header. Return exactly the rids
 listed in Rows, each once: never add a rid for a neighbouring segment that is not listed. A segment may
 begin with a [DOCUMENT START EXCERPT] that is context only. Answer for the segment using the evidence it contains.'''
+DECISION_TASK = ("Apply the query to each referenced item in items. labels maps every allowed label name to its "
+    "definition. Answer every question only from the text of the item it references.")
+DECISION_SEGMENT_RULE = ("Each item is one segment of a longer document and may begin with a [DOCUMENT START EXCERPT] "
+    "that is context only. Judge only from evidence in the segment itself. When a single-choice question offers "
+    "NOT_ADDRESSED_IN_SEGMENT, choose it if the segment does not address the query.")
+SEGMENT_NONE = 'NOT_ADDRESSED_IN_SEGMENT'
 SEGMENT_EMPTY_MULTI = 'If no label is evidenced in the segment, return "[]".'
 SEGMENT_EMPTY_OTHER = 'If the segment contains no relevant evidence, return the empty string "".'
 PROMPT_SEGMENT_REDUCE = '''Each row is a long document that was processed in segments. Its text is
@@ -97,20 +103,45 @@ def labels_frame(tags: pd.Series, labels) -> pd.DataFrame:
 
 
 class Engine:
-    def __init__(self, config, provider, store, collector):
+    def __init__(self, config, provider, store, collector, decision=None):
         self.config, self.provider, self.store, self.collector = config, provider, store, collector
+        # Optional native decision backend (tada_runtime.decision.DecisionClient) for closed-label tag paths.
+        self.decision = decision
         # Session-local memo of intent classifications: the intent depends only on the query text and the
         # operator model, so an identical query (e.g. the same question looped over documents) is classified once.
         self._intent_memo = {}
 
-    def _pack(self, rows):
-        """Pack rows in order under batch_rows/batch_chars; a single oversize row is refused."""
+    def _limits(self, decision_kind=None, labels=None):
+        """(rows per request, characters per request, setting name) for the generative or decision path."""
+        if decision_kind is None:
+            return self.config.runtime.batch_rows, self.config.runtime.batch_chars, 'batch_chars'
+        cfg = self.config.models.decision
+        per_item = len(labels) if decision_kind in ('labels-multi', 'joint-multi') else 1
+        if per_item > cfg.max_questions:
+            raise ValueError('labels x 1 item exceeds decision.max_questions; no request was sent')
+        return max(1, min(cfg.batch_items, cfg.max_questions // per_item)), cfg.batch_chars, 'decision.batch_chars'
+
+    def _decision_kind(self, labels, multi, *, joint=False):
+        """Decision route for this tag call, or None when the generative provider is used."""
+        if self.decision is None or self.config.models.decision is None:
+            return None
+        routes = self.config.models.decision.routes
+        if joint:
+            return ('joint-multi' if multi else 'joint-single') if 'joint-assign' in routes else None
+        if labels is None:
+            return None
+        kind = 'labels-multi' if multi else 'labels-single'
+        return kind if kind in routes else None
+
+    def _pack(self, rows, limits=None):
+        """Pack rows in order under the row/character limits; a single oversize row is refused."""
+        row_limit, char_limit, setting = limits or self._limits()
         batches, current, chars = [], [], 0
         for row in rows:
             size = len(row.text)
-            if size > self.config.runtime.batch_chars:
-                raise ValueError('one row exceeds batch_chars; explicitly preprocess it before inference')
-            if current and (len(current) >= self.config.runtime.batch_rows or chars + size > self.config.runtime.batch_chars):
+            if size > char_limit:
+                raise ValueError(f'one row exceeds {setting}; explicitly preprocess it before inference')
+            if current and (len(current) >= row_limit or chars + size > char_limit):
                 batches.append(current)
                 current, chars = [], 0
             current.append(row)
@@ -122,7 +153,7 @@ class Engine:
     def _batches(self, snapshot):
         return self._pack(snapshot.rows)
 
-    def _long_plan(self, snapshot, *, labels, multi, override):
+    def _long_plan(self, snapshot, *, labels, multi, override, limits=None, decision=False):
         """Segment rows that one request cannot carry; None when no row needs segmentation.
 
         Deterministic and dispatch-free: capacity problems are refused before any request.
@@ -137,13 +168,16 @@ class Engine:
             effective = configured
         if not effective.enabled:
             return None
-        threshold = self.config.runtime.batch_chars if effective.trigger == 'over_batch_chars' else effective.segment_chars
+        limits = limits or self._limits()
+        _, char_limit, setting = limits
+        threshold = char_limit if effective.trigger == 'over_batch_chars' else effective.segment_chars
         long_rows = [row for row in snapshot.rows if len(row.text) > threshold]
         if not long_rows:
             return None
-        if effective.head_chars + effective.segment_chars + SEGMENT_OVERHEAD > self.config.runtime.batch_chars:
-            raise ValueError('long-row segment (head_chars + segment_chars + overhead) exceeds batch_chars; no request was sent')
-        aggregate = override.aggregate if override is not None and override.aggregate else ('union' if labels is not None and multi else 'reduce')
+        if effective.head_chars + effective.segment_chars + SEGMENT_OVERHEAD > char_limit:
+            raise ValueError(f'long-row segment (head_chars + segment_chars + overhead) exceeds {setting}; no request was sent')
+        default = 'union' if labels is not None and multi else ('decision-max-probability' if decision and labels is not None else 'reduce')
+        aggregate = override.aggregate if override is not None and override.aggregate else default
         if aggregate == 'union' and not (labels is not None and multi):
             raise ValueError('union aggregation of long rows requires labels with multi=True')
         if aggregate == 'collect' and labels is not None:
@@ -160,8 +194,8 @@ class Engine:
                 raise ValueError('a host segment id collides with an input rid; rename the input index')
             segments[row.rid] = [TextRow(rid=sid, text=text) for sid, text in zip(ids, texts)]
         short = [row for row in snapshot.rows if row.rid not in segments]
-        whole_batches = self._pack(short)
-        segment_batches = self._pack([seg for segs in segments.values() for seg in segs])
+        whole_batches = self._pack(short, limits)
+        segment_batches = self._pack([seg for segs in segments.values() for seg in segs], limits)
         return {'config': effective, 'aggregate': aggregate, 'segments': segments,
                 'batches': whole_batches + segment_batches, 'segment_batch_start': len(whole_batches),
                 'evidence': {'aggregate': aggregate, 'trigger_chars': threshold, 'config': effective.model_dump(mode='json'),
@@ -185,8 +219,10 @@ class Engine:
             from .large import partition_batches
             _, batches = partition_batches(snapshot, large.target_chunk_rows, seed)
         elif op == 'tag':
-            long_plan = self._long_plan(snapshot, labels=labels, multi=multi, override=override)
-            batches = long_plan['batches'] if long_plan else self._batches(snapshot)
+            decision_kind = self._decision_kind(labels, multi)
+            limits = self._limits(decision_kind, labels.labels if labels is not None else None)
+            long_plan = self._long_plan(snapshot, labels=labels, multi=multi, override=override, limits=limits, decision=decision_kind is not None)
+            batches = long_plan['batches'] if long_plan else self._pack(snapshot.rows, limits)
         else:
             batches = self._batches(snapshot)
         identity = OperatorIdentity(op=op, query=query, snapshot=snapshot, mode='query-driven' if op == 'tag' else 'categorize',
@@ -196,7 +232,8 @@ class Engine:
             large_scale=large,cardinality=cardinality,effective_seed=seed,operator_concurrency=self.config.runtime.operator_concurrency,
             labels=labels.labels if labels is not None else None, multi=multi,
             long_rows=long_plan['config'] if long_plan else None, long_rows_aggregate=long_plan['aggregate'] if long_plan else None,
-            batch_retries=self.config.runtime.batch_retries if op == 'tag' else 0)
+            batch_retries=self.config.runtime.batch_retries if op == 'tag' else 0,
+            decision_backend=self._decision_identity() if op == 'tag' and self.decision is not None else None)
         identity_hash = hashlib.sha256(identity.model_dump_json().encode()).hexdigest()
         hit = self.store.find(identity_hash) if replicate == 'exact' else None
         atom_id = uuid.uuid4().hex
@@ -276,6 +313,82 @@ class Engine:
                 retry_of = getattr(self.provider, 'last_request_id', None)
                 attempt_prompt = prompt
 
+    def _decision_identity(self):
+        cfg = self.config.models.decision
+        return None if cfg is None else cfg.model_dump(mode='json', exclude={'api_key_env', 'auth_placeholder', 'auth_mode', 'timeout_seconds'})
+
+    def _decide_batch(self, batch, *, segment, query, records, multi, ids, cancellation):
+        """One native decision request for a batch of rows or segments; returns (values by rid, probabilities by rid)."""
+        cfg = self.config.models.decision
+        names = [record['name'] for record in records]
+        if segment and not multi and SEGMENT_NONE in names:
+            raise ValueError(f'label name {SEGMENT_NONE} is reserved by the decision backend for segments')
+        keys = {f'i{index}': row for index, row in enumerate(batch)}
+        state = {'task': DECISION_TASK, 'query': query,
+                 'labels': {record['name']: record.get('description') or '' for record in records},
+                 'items': {key: row.text for key, row in keys.items()}}
+        if segment:
+            state['segment_rule'] = DECISION_SEGMENT_RULE
+        questions = {}
+        for key in keys:
+            if not multi:
+                options = names + ([SEGMENT_NONE] if segment else [])
+                questions[key] = {'type': 'choice', 'instructions': {'item': f'items.{key}',
+                    'question': 'Under the query, which one label from labels applies to this item?'},
+                    'criteria': {option: None for option in options}}
+                continue
+            for index, label in enumerate(names):
+                ask = f'Under the query, does the label {json.dumps(label, ensure_ascii=False)} (defined in labels) apply to this item?'
+                if cfg.multi_mode == 'noul':
+                    questions[f'{key}.L{index}'] = {'type': 'noul', 'instructions': {'item': f'items.{key}', 'question': ask,
+                        'predicate': f'The label {json.dumps(label, ensure_ascii=False)} applies to items.{key} under the query.'}}
+                else:
+                    questions[f'{key}.L{index}'] = {'type': 'choice', 'instructions': {'item': f'items.{key}', 'question': ask},
+                        'criteria': {'Yes': None, 'No': None}}
+        role = 'decision-tag-segment-batch' if segment else 'decision-tag-batch'
+        retries, retry_of = self.config.runtime.batch_retries, None
+        for attempt in range(retries + 1):
+            extra = {'retry_of': retry_of} if retry_of is not None else {}
+            try:
+                answers = self.decision.decide(state, questions, role=role if attempt == 0 else role + '-retry',
+                    parent_id=ids['atom_call_id'], cancellation=cancellation, **extra)
+                break
+            except Exception as exc:
+                if attempt >= retries or getattr(exc, 'retryable', False) is not True:
+                    raise
+                retry_of = getattr(self.decision, 'last_request_id', None)
+        values, probabilities = {}, {}
+        for key, row in keys.items():
+            if not multi:
+                answer = answers[key]
+                values[row.rid] = '' if answer.choice == SEGMENT_NONE else answer.choice
+                probabilities[row.rid] = answer.probabilities or {}
+                continue
+            chosen, probs = [], {}
+            for index, label in enumerate(names):
+                answer = answers[f'{key}.L{index}']
+                if cfg.multi_mode == 'noul':
+                    probs[label] = answer.noul
+                    if answer.noul >= cfg.noul_threshold:
+                        chosen.append(label)
+                else:
+                    probs[label] = (answer.probabilities or {}).get('Yes')
+                    if answer.choice == 'Yes':
+                        chosen.append(label)
+            values[row.rid] = canonical_label_set(chosen, names)
+            probabilities[row.rid] = probs
+        return values, probabilities
+
+    def _commit_decision_evidence(self, probabilities, metadata, ids, cancellation):
+        """Commit native option probabilities as a child state; they are diagnostics, not calibrated correctness."""
+        with cancellation.guard() if cancellation else nullcontext():
+            child = self.store.commit({str(rid): probs for rid, probs in probabilities.items()}, {'op': 'tag',
+                'query': metadata['query'], 'mode': 'decision-probabilities',
+                'request_identity': hashlib.sha256((metadata['request_identity'] + ':decision-probabilities').encode()).hexdigest(),
+                'model': self.config.models.decision.model, 'protocol': self.config.models.decision.protocol,
+                'parameters': self._decision_identity(), 'atom_call_id': ids['atom_call_id'], 'replicate': metadata['replicate']})
+        metadata['child_state_ids'].append(child)
+
     def _commit(self, result, metadata, ids, name, no_op=False, cancellation=None):
         # Cancellation and commit admission share a gate. A cancelled execution
         # cannot publish a result assembled from requests that finished later.
@@ -320,6 +433,8 @@ class Engine:
             allowed = None
             label_names = None
             labels_block = ''
+            decision_kind = self._decision_kind(spec, multi)
+            decision_records = [c.model_dump() for c in spec.labels] if spec is not None else None
             if spec is not None:
                 # The output domain is supplied, so the task is independent by construction; no intent request.
                 mode = 'labels-multi' if multi else 'labels-single'
@@ -347,7 +462,15 @@ class Engine:
                     frozen.index.name = snapshot.index_name
                     categories = self.categorize(frozen, intent.domain_query, fresh=fresh, parent_id=ids['atom_call_id'], cancellation=cancellation, cardinality=cardinality)
                     metadata['child_state_ids'] = [categories.attrs['state_id']]
-                    if multi:
+                    joint_kind = self._decision_kind(None, multi, joint=True)
+                    if joint_kind is not None:
+                        decision_kind = joint_kind
+                        decision_records = [{'name': row['name'], 'description': row.get('description', '') or ''}
+                                            for row in categories.reset_index().to_dict('records')]
+                        label_names = [r['name'] for r in decision_records]
+                        units = [r for batch in batches for r in batch]
+                        batches = self._pack(units, self._limits(joint_kind, decision_records))
+                    elif multi:
                         label_names = categories['name'].tolist()
                         labels_block = ('\nLABELS_JSON: ' + json.dumps(categories.reset_index().to_dict('records'), ensure_ascii=False)
                             + '\n' + PROMPT_LABELS_MULTI + '\nThis vocabulary is frozen: do not invent or rename labels.')
@@ -356,6 +479,7 @@ class Engine:
                         effective_query += '\nFrozen vocabulary: ' + json.dumps(categories.reset_index().to_dict('records'), ensure_ascii=False)
                         effective_query += '\nUse exactly one name from this frozen vocabulary as value. Do not invent/rename categories.'
             metadata['mode'] = mode
+            metadata['parameters']['decision_route'] = decision_kind
             self._plan('tag', batches, ids, mode, metadata['child_state_ids'], long_plan['evidence'] if long_plan else None)
             segment_start = long_plan['segment_batch_start'] if long_plan else len(batches)
             aggregate = long_plan['aggregate'] if long_plan else None
@@ -380,15 +504,30 @@ class Engine:
                 prompt += '\nRows: ' + json.dumps([r.model_dump() for r in batch], ensure_ascii=False)
                 return self._call_batch(prompt, TagEnvelope, role='tag-segment-batch' if segment else 'tag-batch',
                     ids=ids, context=context_for(batch, segment), cancellation=cancellation)
-            with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
-                outputs = list(pool.map(assign, enumerate(batches)))
+            probabilities = None
+            if decision_kind is not None:
+                def decide(indexed):
+                    index, batch = indexed
+                    return self._decide_batch(batch, segment=index >= segment_start, query=query, records=decision_records,
+                        multi=multi, ids=ids, cancellation=cancellation)
+                with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
+                    decided = list(pool.map(decide, enumerate(batches)))
+                outputs = [TagEnvelope.model_validate({'items': [{'rid': rid, 'value': value} for rid, value in values.items()]})
+                           for values, _ in decided]
+                probabilities = {rid: probs for _, batch_probs in decided for rid, probs in batch_probs.items()}
+            else:
+                with ThreadPoolExecutor(max_workers=self.config.runtime.operator_concurrency) as pool:
+                    outputs = list(pool.map(assign, enumerate(batches)))
             unit_ids = [r.rid for batch in batches for r in batch]
             merged = TagEnvelope.model_validate({'items': [item.model_dump() for batch in outputs for item in batch.items]},
                 context={'rids': unit_ids})
             by_id = {item.rid: item.value for item in merged.items}
+            if probabilities is not None:
+                self._commit_decision_evidence(probabilities, metadata, ids, cancellation)
             if long_plan:
                 by_id.update(self._aggregate_long_rows(long_plan, by_id, query=effective_query, labels_block=labels_block,
-                    label_names=label_names, multi=multi, aggregate=aggregate, metadata=metadata, ids=ids, cancellation=cancellation))
+                    label_names=label_names, multi=multi, aggregate=aggregate, metadata=metadata, ids=ids, cancellation=cancellation,
+                    probabilities=probabilities))
             values = [by_id[r.rid] for r in snapshot.rows]
             if multi:
                 # Assumption pending review: validated label sets are re-serialized in the caller's label order.
@@ -399,7 +538,8 @@ class Engine:
             self._failed('tag', ids, exc)
             raise
 
-    def _aggregate_long_rows(self, plan, by_id, *, query, labels_block, label_names, multi, aggregate, metadata, ids, cancellation):
+    def _aggregate_long_rows(self, plan, by_id, *, query, labels_block, label_names, multi, aggregate, metadata, ids, cancellation,
+                             probabilities=None):
         """Persist segment answers as a child state, then aggregate them into one value per long row."""
         segments = plan['segments']
         segment_rows = [seg for segs in segments.values() for seg in segs]
@@ -415,6 +555,24 @@ class Engine:
         if aggregate == 'union':
             return {rid: canonical_label_set({name for seg in segs for name in parse_label_set(by_id[seg.rid], label_names)}, label_names)
                     for rid, segs in segments.items()}
+        if aggregate == 'decision-max-probability':
+            # Deterministic, request-free: each label scores its highest probability over the row's segments
+            # (a chosen label without probabilities scores 1.0); ties follow the caller's label order.
+            chosen = {}
+            for rid, segs in segments.items():
+                scores = {}
+                for seg in segs:
+                    probs = (probabilities or {}).get(seg.rid) or {}
+                    for name in label_names:
+                        if isinstance(probs.get(name), (int, float)):
+                            scores[name] = max(scores.get(name, 0.0), float(probs[name]))
+                    if by_id[seg.rid] and not probs:
+                        scores[by_id[seg.rid]] = max(scores.get(by_id[seg.rid], 0.0), 1.0)
+                if not scores:
+                    raise ValueError(f'decision backend selected no label in any segment of row {rid!r} and returned no probabilities')
+                best = max(scores.values())
+                chosen[rid] = next(name for name in label_names if scores.get(name) == best)
+            return chosen
         if aggregate == 'collect':
             collected = {}
             for rid, segs in segments.items():

@@ -215,8 +215,10 @@ class OperatorIdentity(StrictModel):
     labels: list[Category] | None = None
     multi: bool = False
     long_rows: LongRowsConfig | None = None
-    long_rows_aggregate: Literal['union', 'reduce', 'collect'] | None = None
+    long_rows_aggregate: Literal['union', 'reduce', 'collect', 'decision-max-probability'] | None = None
     batch_retries: int = 0
+    # Native decision backend configuration (protocol, model, routes, multi mode, packing); None without one.
+    decision_backend: dict[str, JsonValue] | None = None
     batch_plan: list[list[RID]]
     batch_rows: int
     batch_chars: int
