@@ -78,12 +78,21 @@ def test_retries_are_bounded(tmp_path):
     audit.close()
 
 
-def test_provider_failures_are_not_retried(tmp_path):
-    provider = FlakyProvider(failure=ProviderFailure('provider HTTP 500'))
+def test_non_retryable_provider_failures_are_not_retried(tmp_path):
+    provider = FlakyProvider(failure=ProviderFailure('stream disconnected without terminal response; result unknown'))
     engine, audit = make(tmp_path, 2, provider)
     with pytest.raises(ProviderFailure):
         engine.tag(TEXTS, 'q', labels=LABELS)
     assert provider.roles == ['tag-batch']
+    audit.close()
+
+
+def test_retryable_provider_failures_are_retried_within_the_bound(tmp_path):
+    provider = FlakyProvider(failure=ProviderFailure('provider did not complete: failed', retryable=True))
+    engine, audit = make(tmp_path, 2, provider)
+    with pytest.raises(ProviderFailure):
+        engine.tag(TEXTS, 'q', labels=LABELS)
+    assert provider.roles == ['tag-batch', 'tag-batch-retry', 'tag-batch-retry']
     audit.close()
 
 

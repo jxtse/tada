@@ -194,6 +194,13 @@ class Supervisor:
                 parent_id=execution_id,cancellation=cancellation,cardinality=request.cardinality,**options)
             return snapshot(result).model_dump(mode='json')
 
+    def budget_status(self):
+        """Requests used/remaining and seconds left in the cumulative budget (agent and operator calls)."""
+        state=self.budget.snapshot()
+        used=len(state.reservations)
+        return {'requests_used':used,'requests_limit':state.max_requests,'requests_remaining':max(0,state.max_requests-used),
+                'seconds_remaining':max(0,int(state.deadline_at-time.time()))}
+
     def error(self,error):
         text=str(error)
         if self.audit:text=self.audit._redact(text)[0]
@@ -264,6 +271,7 @@ class Supervisor:
         if request.method=='execute':
             with self.atom_lock: pass
             observation=self.kernel.execute(params.code)
+            observation=observation.model_copy(update={'budget':self.budget_status()})
             ref=self.audit.blob(observation.model_dump(mode='json'))
             self.audit.append('tool/result',{'status':observation.status,'observation_ref':ref.model_dump(),'full_output_ref':observation.full_output_ref.model_dump(),'truncated':observation.truncated},execution_id=observation.execution_id,tool_call_id=params.tool_call_id,source='kernel')
             return observation.model_dump(mode='json')

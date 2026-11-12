@@ -22,7 +22,7 @@ reuse = "exact"
 batch_rows = 32
 batch_chars = 16000
 reduce_fan_in = 4
-# Extra attempts (0-2) for a tag batch whose response breaks the output contract; each is a new budgeted request.
+# Extra attempts (0-2) for a tag operator request that breaks the output contract or ends failed/incomplete; each is a new budgeted request.
 batch_retries = 1
 cell_timeout_seconds = 180.0
 output_view_chars = 8000

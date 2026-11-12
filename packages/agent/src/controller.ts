@@ -73,6 +73,11 @@ When the allowed answers are known, pass labels= (a list of names, a list of {"n
 with multi=True each row gets a JSON array string of every applicable label (possibly "[]"), so several yes/no clause or topic checks share one pass over the text. labels_frame(series, labels) expands it to a boolean table.
 Long texts are handled inside tag: rows too long for one request are segmented and aggregated (labels+multi: union of segment labels; otherwise one extra reduce judgment per long row). Do not split long texts yourself.
 long_rows={"aggregate": "collect"} returns a JSON array of non-empty segment results for free-text extraction; other long_rows fields are optional overrides.
+Every execute_python result includes budget: requests_used, requests_remaining and seconds_remaining, shared by you and all operator calls. Plan semantic work against it.
+A tag call costs at least one request per batch; a long document costs one request per batch of its segments plus one reduce request, so re-reading long documents is expensive.
+Ask for every field you need from a document set in one tag call (a JSON-encoded string with several keys) and pass many rows per call instead of looping one field or one row at a time.
+Write a structurally valid deliverable as soon as you have enough results, then refine it while budget remains; never let the budget run out before the required file exists.
+If an operator call fails, read the reason in the error message; the runtime already retries contract violations and transient provider failures up to runtime.batch_retries times, so repeating the identical call rarely helps.
 Large discovery runs its pilot, retention planner and one global reducer internally. Do not implement bootstrap in a cell or bypass a capacity refusal with hidden hierarchical pruning.
 Inputs have immutable rid indices. Do not replace row identities with current positions. Prepare missing/nontext input explicitly.
 Tag outputs are always strings, including structured JSON encoded inside strings. Use json.loads explicitly when needed.

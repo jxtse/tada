@@ -97,6 +97,8 @@ class Observation(StrictModel):
     committed_state_refs: list[str] = Field(default_factory=list)
     truncated: bool = False
     full_output_ref: BlobRef
+    # Remaining model-request budget after this cell, so the agent can plan semantic work and deliver in time.
+    budget: dict[str, JsonValue] | None = None
 
 from .large_contracts import CardinalitySpec
 

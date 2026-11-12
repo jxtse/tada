@@ -99,6 +99,9 @@ def labels_frame(tags: pd.Series, labels) -> pd.DataFrame:
 class Engine:
     def __init__(self, config, provider, store, collector):
         self.config, self.provider, self.store, self.collector = config, provider, store, collector
+        # Session-local memo of intent classifications: the intent depends only on the query text and the
+        # operator model, so an identical query (e.g. the same question looped over documents) is classified once.
+        self._intent_memo = {}
 
     def _pack(self, rows):
         """Pack rows in order under batch_rows/batch_chars; a single oversize row is refused."""
@@ -245,10 +248,11 @@ class Engine:
         return result
 
     def _call_batch(self, prompt, schema, *, role, ids, context, cancellation):
-        """One tag batch request, retried up to runtime.batch_retries times on an output-contract failure.
+        """One operator request, retried up to runtime.batch_retries times when resending can help.
 
-        Only response validation failures (wrong/extra/duplicate rids, labels outside the domain,
-        invalid JSON) are retried; transport, provider, budget and cancellation errors propagate.
+        Retried: response validation failures (wrong/extra/duplicate rids, labels outside the domain,
+        invalid JSON) and provider failures marked retryable (a response that ended failed/incomplete,
+        HTTP 408/429/5xx). Not retried: unknown outcomes, budget exhaustion and cancellation.
         Each retry is a separate budget-counted request whose audit record names the rejected one.
         """
         retries = self.config.runtime.batch_retries
@@ -265,6 +269,12 @@ class Engine:
                 reasons = '; '.join(dict.fromkeys(e['msg'] for e in exc.errors(include_input=False, include_url=False)))
                 attempt_prompt = (prompt + '\nA previous answer to this exact request was rejected by the output contract ('
                     + reasons + '). Return every listed rid exactly once and no other rid.')
+            except Exception as exc:
+                # Provider failures carry a retryable flag (tada_runtime.providers.ProviderFailure).
+                if attempt >= retries or getattr(exc, 'retryable', False) is not True:
+                    raise
+                retry_of = getattr(self.provider, 'last_request_id', None)
+                attempt_prompt = prompt
 
     def _commit(self, result, metadata, ids, name, no_op=False, cancellation=None):
         # Cancellation and commit admission share a gate. A cancelled execution
@@ -317,8 +327,14 @@ class Engine:
                 labels_block = ('\nLABELS_JSON: ' + json.dumps([c.model_dump() for c in spec.labels], ensure_ascii=False)
                     + '\n' + (PROMPT_LABELS_MULTI if multi else PROMPT_LABELS_SINGLE))
             else:
-                intent = self._call_provider(PROMPT_INTENT + '\nTASK_QUERY_JSON: ' + json.dumps(query, ensure_ascii=False) + '\nReturn only the intent envelope, not the tagging result.', IntentEnvelope,
-                    role='intent', parent_id=ids['atom_call_id'], cancellation=cancellation)
+                memo_key = hashlib.sha256(json.dumps([query, self.config.models.operators.model_dump(mode='json', exclude={'api_key_env', 'auth_placeholder'})],
+                    sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+                intent = None if fresh else self._intent_memo.get(memo_key)
+                metadata['parameters']['intent_source'] = 'session-memo' if intent is not None else 'request'
+                if intent is None:
+                    intent = self._call_batch(PROMPT_INTENT + '\nTASK_QUERY_JSON: ' + json.dumps(query, ensure_ascii=False) + '\nReturn only the intent envelope, not the tagging result.', IntentEnvelope,
+                        role='intent', ids=ids, context=None, cancellation=cancellation)
+                    self._intent_memo[memo_key] = intent
                 if intent.mode == 'invalid':
                     raise ValueError('intent model classified query as invalid')
                 mode = intent.mode

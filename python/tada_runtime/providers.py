@@ -52,6 +52,7 @@ class WireResponse(WireModel):
     output: list[WireOutput] = Field(default_factory=list)
     usage: WireUsage | None = None
     error: JsonValue = None
+    incomplete_details: JsonValue = None
 
 class ResponseEvent(WireModel):
     type: str
@@ -129,7 +130,27 @@ def prepare_request(cfg: ProviderConfig, prompt: str, schema: type[BaseModel]):
 
 
 class ProviderFailure(RuntimeError):
-    pass
+    """Provider-side failure. ``retryable`` marks failures where resending the same request can succeed
+    (a response that ended failed/incomplete, HTTP 408/429/5xx); it never applies to an unknown outcome."""
+    def __init__(self, message, *, retryable=False):
+        super().__init__(message)
+        self.retryable = retryable
+
+
+def terminal_reason(provider_raw) -> str:
+    """Short upstream reason for a response that did not complete (error code/message or incomplete reason)."""
+    candidates = provider_raw if isinstance(provider_raw, list) else [provider_raw]
+    for item in reversed(candidates):
+        if not isinstance(item, dict):
+            continue
+        response = item.get('response') if isinstance(item.get('response'), dict) else item
+        error = response.get('error') or item.get('error')
+        if isinstance(error, dict) and (error.get('code') or error.get('message')):
+            return ': '.join(str(part) for part in (error.get('code'), error.get('message')) if part)[:240]
+        details = response.get('incomplete_details')
+        if isinstance(details, dict) and details.get('reason'):
+            return 'incomplete reason: ' + str(details['reason'])[:200]
+    return ''
 
 def structured_answer_text(content) -> str:
     """Return the one answer text that strict schema validation receives.
@@ -251,7 +272,8 @@ class Provider:
                     if response.is_error:
                         raw_ref = self.collector.blob(response.read().decode('utf-8', errors='replace'))
                         status = 'failed'
-                        raise ProviderFailure(f'provider HTTP {response.status_code}; see raw response artifact')
+                        raise ProviderFailure(f'provider HTTP {response.status_code}; see raw response artifact',
+                            retryable=response.status_code in (408, 429) or response.status_code >= 500)
                     if 'text/event-stream' in response.headers.get('content-type', ''):
                         normalized, raw_ref = self._stream(response, ids)
                     else:
@@ -269,7 +291,9 @@ class Provider:
             self.collector.emit('model/response', response_payload, **ids)
             if normalized.finish_reason not in ('completed', 'stop'):
                 status = 'failed'
-                raise ProviderFailure('provider did not complete: ' + normalized.finish_reason)
+                reason = terminal_reason(normalized.provider_raw)
+                raise ProviderFailure('provider did not complete: ' + normalized.finish_reason + (f' ({reason})' if reason else ''),
+                    retryable=normalized.finish_reason in ('failed', 'incomplete'))
             status = 'failed'
             text = structured_answer_text(normalized.content)
             result = schema.model_validate_json(text, context=context)
