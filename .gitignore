@@ -7,11 +7,15 @@ __pycache__/
 .venv/
 venv/
 *.log
-TADASkill/workspace/*
-!TADASkill/workspace/.gitkeep
+archive/TADASkill/workspace/*
+!archive/TADASkill/workspace/.gitkeep
 node_modules/
 .cache/
 .tada/
 .tada-control/
-packages/agent/dist/
+agent/packages/agent/dist/
 .pytest_cache/
+# Task-generation working state (machine-local; never published)
+benchmark/taskgen/local_paths.toml
+benchmark/taskgen/v5_runs/
+benchmark/taskgen/v5/.uv-cache/

@@ -1,6 +1,6 @@
 # Third-party notices
 
-TADA's new harness uses the published Pi SDK and standard Python packages. Their license files remain in the installed distributions. The lockfiles identify the versions used.
+TADA's agent harness (`agent/`) uses the published Pi SDK and standard Python packages. Their license files remain in the installed distributions. The lockfiles identify the versions used.
 
 ## Pi
 
@@ -27,4 +27,4 @@ TADA's new harness uses the published Pi SDK and standard Python packages. Their
 
 ## TADA skill assets
 
-The existing TADA skill prompts and batching approach were reviewed at revision `8df9cc2d4ed3e134f353b569cd322ec2ce511498`. The new harness preserves the two semantic operations while imposing stricter row identities, output types, validation, and explicit failure handling. Existing experiment and paper artifacts retain their original licensing.
+The original TADA skill prompts and batching approach (now in `archive/TADASkill/`) were reviewed at revision `8df9cc2d4ed3e134f353b569cd322ec2ce511498`. The new harness preserves the two semantic operations while imposing stricter row identities, output types, validation, and explicit failure handling. Existing experiment and paper artifacts retain their original licensing.

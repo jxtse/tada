@@ -1,8 +1,11 @@
-name: Runtime contracts
+name: Agent runtime contracts
 on: [push, pull_request]
 jobs:
-  offline:
+  agent:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agent
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -12,6 +15,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+          cache-dependency-path: agent/package-lock.json
       - run: uv sync
       - run: npm ci
       - run: uv run python -m tada_runtime.schemas --check

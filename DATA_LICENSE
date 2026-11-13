@@ -1,7 +1,7 @@
 # Data license
 
 Unless a source file states otherwise, the benchmark tables and released
-annotation/calibration files in `TABench/` and `calibration_release/` are
+annotation/calibration files in `archive/TABench/` and `archive/calibration_release/` are
 licensed under the Creative Commons Attribution 4.0 International License
 (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
 
