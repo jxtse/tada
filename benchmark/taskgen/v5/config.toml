@@ -1,0 +1,57 @@
+# Frozen before measurements, 2026-11-11. No credentials belong in this file.
+[canary]
+guid = "8e59c45c-b938-4e2e-a993-1fd67a563d28"
+
+[gates]
+seeds = [7, 11, 19, 23, 31]
+minimum_numeric_passes = 4
+keyword_max = 0.30
+keyword_worst_max = 0.35
+work_item_keyword_max = 0.30
+single_label_max = 0.20
+single_label_median = 0.10
+worst_multiplier = 1.1666666666666667
+consistency_weight_max = 0.05
+wrong_answer_scope_max = 0.90
+
+[models.writer]
+model = "claude-opus-5-5"
+base_url = "http://127.0.0.1:3000/v1"
+key_env = "TADA_LOCAL_ROUTE_KEY"
+api = "chat_completions"
+max_retries = 4
+supported_parameters = []
+
+[models.extractor]
+model = "gpt-6-astra"
+base_url = "http://127.0.0.1:18142/v1"
+key_env = "TADA_ASTRA_API_KEY"
+api = "responses"
+max_retries = 4
+supported_parameters = []
+
+[scheduler]
+combination_max_size = 3
+max_combination_size = 3
+quota_per_combination = 2
+combination_seed = 7
+max_parallel_candidates = 2
+opus_concurrency = 1
+deepseek_concurrency = 3
+pilot_final_verdicts = 10
+pilot_trial_sets = 15
+common_error_rebuilds = 1
+repair_rounds = 3
+
+[compiler]
+workspace_max_bytes = 2147483648
+
+# Repair R3: formula and weights approved before instance measurements.
+[scoring]
+label_aggregation = "per_question_chance_corrected_balanced_accuracy"
+labels = 0.70
+scope = 0.15
+facts = 0.10
+consistency = 0.05
+instance_min_classes = 2
+instance_min_class_cells = 2

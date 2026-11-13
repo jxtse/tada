@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TADA v5 scenario",
+  "type": "object",
+  "required": [
+    "version",
+    "id",
+    "category",
+    "questions",
+    "sample_size",
+    "work_items",
+    "documents",
+    "dependency_graph",
+    "instruction",
+    "design",
+    "thresholds"
+  ],
+  "properties": {
+    "version": {
+      "const": 5
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "enum": [
+        "MAUD",
+        "CUAD",
+        "C2",
+        "CUADX",
+        "NDA",
+        "B",
+        "PREC"
+      ]
+    },
+    "category": {
+      "enum": [
+        "parallel_coding",
+        "sequential_dependency"
+      ]
+    },
+    "questions": {
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 3,
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "sample_size": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "work_items": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "order",
+          "depends_on"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scope_from": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "kind",
+          "facts"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "email",
+              "notice",
+              "minutes",
+              "SOP",
+              "source"
+            ]
+          },
+          "facts": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "dependency_graph": {
+      "$ref": "dependency_graph.schema.json"
+    },
+    "instruction": {
+      "type": "string"
+    },
+    "design": {
+      "type": "string"
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "include_all",
+        "ignore_revisions"
+      ],
+      "properties": {
+        "include_all": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Reported-only declared scope F1 bound for include-all; hard total-reward limit is fixed independently"
+        },
+        "ignore_revisions": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Reported-only declared scope F1 bound for ignore-revisions"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "MAUD",
+          "CUAD",
+          "CUADX",
+          "NDA",
+          "B",
+          "PREC"
+        ]
+      }
+    },
+    "sample_sizes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 2
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "source"
+      ]
+    },
+    {
+      "required": [
+        "sources"
+      ]
+    }
+  ]
+}

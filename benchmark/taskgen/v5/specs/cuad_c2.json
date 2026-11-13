@@ -1,0 +1,299 @@
+{
+  "version": 5,
+  "id": "divestiture-review-v5",
+  "source": "CUAD",
+  "category": "parallel_coding",
+  "questions": [
+    "change_of_control",
+    "exclusivity",
+    "termination_for_convenience"
+  ],
+  "sample_size": 8,
+  "work_items": [
+    {
+      "id": "scope",
+      "order": 1,
+      "title": "Reconcile the current review population",
+      "depends_on": []
+    },
+    {
+      "id": "coding",
+      "order": 2,
+      "title": "Prepare the clause review register",
+      "depends_on": [
+        "scope"
+      ],
+      "scope_from": "scope_facts"
+    },
+    {
+      "id": "summary",
+      "order": 3,
+      "title": "Prepare the review summary",
+      "depends_on": [
+        "coding"
+      ]
+    }
+  ],
+  "documents": [],
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "scope_facts",
+        "type": "construction_fact",
+        "provision": "in-document",
+        "scoring": "prerequisite",
+        "carrier": "scope_revision",
+        "work_item": "scope",
+        "template": "record_scope"
+      },
+      {
+        "id": "source_labels",
+        "type": "original_label",
+        "provision": "in-document",
+        "scoring": "label",
+        "carrier": "agreements/{record}.txt",
+        "work_item": "coding",
+        "template": "record_question"
+      },
+      {
+        "id": "summary_counts",
+        "type": "derived_quantity",
+        "provision": "solver-derived",
+        "scoring": "consistency-only",
+        "work_item": "summary",
+        "template": "question_count"
+      }
+    ],
+    "edges": [
+      {
+        "from": "scope_facts",
+        "to": "source_labels"
+      },
+      {
+        "from": "source_labels",
+        "to": "summary_counts"
+      }
+    ]
+  },
+  "parameters": {
+    "scope_exclude_every": 4
+  },
+  "sheets": {
+    "scope": "Review_Scope",
+    "coding": "Clause_Coding",
+    "summary": "Relationship_Summary"
+  },
+  "thresholds": {
+    "include_all": 0.9,
+    "ignore_revisions": 0.9
+  },
+  "instruction": "Please prepare the transaction team's review workbook for the upcoming divestiture meeting.\n\n1. Reconcile the current review population.\n2. Prepare the agreement coding register and identify the review population.\n3. Prepare a summary of the coded terms for the team.\n",
+  "design": "This regression retains every question used by the frozen CUAD package. The original labelled source text remains intact. Repeated historical source/term labels are consolidated into one reversible coding register; derived term counts receive conditional consistency credit only. The parallel_coding category is explicit because complete independent source coding remains useful. The generated current and prior review notices carry independent scope facts. The original reference package has richer negotiation/group selection motifs; this normalized spec preserves the three work stages without copying its many-to-one gold rules.\n\nO*NET 31.0, occupation 23-2011.00 (Paralegals and Legal Assistants), Task 23994: \"Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements.\" (local Task Statements.txt, line 5837).",
+  "regression_origin": "runs/C2-20261106T213701Z/controller/task",
+  "original_scenario": {
+    "annual_value_k_range": [
+      25,
+      2400
+    ],
+    "client_group": "Verdane Holdings",
+    "dates": {
+      "collected_to": "2024-10-18",
+      "cutoff": "2024-09-30",
+      "draft": "2023-11-14",
+      "memo": "2024-09-02",
+      "profile": "2021-03-31",
+      "request": "2024-10-21",
+      "revision": "2024-10-01"
+    },
+    "draft_groups": [
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5",
+      "G6"
+    ],
+    "groups": [
+      {
+        "coc": "active",
+        "code": "G1",
+        "disposal": true,
+        "name": "Aldermoor Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Aldermoor Holdings plc",
+        "slots": {
+          "CH2": 1,
+          "CH3": 2,
+          "DEC": 2,
+          "LIT": 2,
+          "LIT_U": 0,
+          "NC": 1,
+          "POST": 0
+        }
+      },
+      {
+        "coc": "post_cutoff",
+        "code": "G2",
+        "disposal": false,
+        "name": "Brackenridge Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Brackenridge Holdings plc",
+        "slots": {
+          "CH2": 2,
+          "CH3": 1,
+          "DEC": 0,
+          "LIT": 2,
+          "LIT_U": 1,
+          "NC": 1,
+          "POST": 1
+        }
+      },
+      {
+        "coc": "none",
+        "code": "G3",
+        "disposal": true,
+        "name": "Corran Vale Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Corran Vale Holdings plc",
+        "slots": {
+          "CH2": 0,
+          "CH3": 3,
+          "DEC": 1,
+          "LIT": 2,
+          "LIT_U": 0,
+          "NC": 1,
+          "POST": 0
+        }
+      },
+      {
+        "coc": "active",
+        "code": "G4",
+        "disposal": false,
+        "name": "Dunmore Kestle Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Dunmore Kestle Holdings plc",
+        "slots": {
+          "CH2": 2,
+          "CH3": 1,
+          "DEC": 0,
+          "LIT": 2,
+          "LIT_U": 1,
+          "NC": 0,
+          "POST": 1
+        }
+      },
+      {
+        "coc": "active",
+        "code": "G5",
+        "disposal": true,
+        "name": "Elverston Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Elverston Holdings plc",
+        "slots": {
+          "CH2": 2,
+          "CH3": 2,
+          "DEC": 2,
+          "LIT": 2,
+          "LIT_U": 0,
+          "NC": 0,
+          "POST": 0
+        }
+      },
+      {
+        "coc": "terminated",
+        "code": "G6",
+        "disposal": false,
+        "name": "Farrowdene Group",
+        "on_final_list": true,
+        "on_initial_list": true,
+        "parent": "Farrowdene Holdings plc",
+        "slots": {
+          "CH2": 1,
+          "CH3": 2,
+          "DEC": 0,
+          "LIT": 2,
+          "LIT_U": 0,
+          "NC": 1,
+          "POST": 0
+        }
+      },
+      {
+        "coc": "none",
+        "code": "G7",
+        "disposal": false,
+        "name": "Glassmoor Group",
+        "on_final_list": false,
+        "on_initial_list": true,
+        "parent": "Glassmoor Holdings plc",
+        "slots": {
+          "CH2": 1,
+          "CH3": 0,
+          "DEC": 0,
+          "LIT": 3,
+          "LIT_U": 0,
+          "NC": 0,
+          "POST": 0
+        }
+      },
+      {
+        "coc": "none",
+        "code": "G8",
+        "disposal": true,
+        "name": "Harrowgate Lyle Group",
+        "on_final_list": true,
+        "on_initial_list": false,
+        "parent": "Harrowgate Lyle Holdings plc",
+        "slots": {
+          "CH2": 1,
+          "CH3": 2,
+          "DEC": 2,
+          "LIT": 2,
+          "LIT_U": 0,
+          "NC": 0,
+          "POST": 1
+        }
+      }
+    ],
+    "mention_groups": [
+      "G2",
+      "G5"
+    ],
+    "other_slots": 6,
+    "rules": {
+      "agreed_counts": false,
+      "anchor_value": "annual",
+      "apply_acquisitions": true,
+      "apply_coc_events": true,
+      "apply_coc_terminations": true,
+      "apply_cutoff": true,
+      "apply_disposals": true,
+      "apply_name_changes": true,
+      "disposal_moves_subsidiaries": true,
+      "include_mentions": false,
+      "list_mode": "final"
+    },
+    "seed": 7,
+    "term_years_range": [
+      1,
+      6
+    ],
+    "weights": {
+      "Negotiation List": 0.45,
+      "Relationship Summary": 0.55
+    }
+  },
+  "onet_tasks": [
+    {
+      "occupation": "23-2011.00",
+      "id": "23994",
+      "text": "Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements.",
+      "source": "config:onet_root/Task Statements.txt",
+      "line": 5837
+    }
+  ]
+}

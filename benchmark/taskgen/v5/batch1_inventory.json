@@ -1,0 +1,984 @@
+{
+  "version": "R7",
+  "shortlist_sha256": "3303d7f17d78479cf97445cfb6d3844a7f51cffe1810e3d7ab1fe5807a43445f",
+  "audit_evidence": {
+    "legacy-inventory.json": "c05b025f60d4ba7798c50bd7777007c0e77e4435e0e8b228cc1fc8b63751d685",
+    "text-post-reboot-audit.json": "98d7b77c18b60cd66913925a0023868f38159da0603328cf5bfdea3f4b9068cf",
+    "benchmark-audit.json": "ab8e78269a366ed68e5185b10be940400db9b594663e924afa6ae6b59b760559"
+  },
+  "dataset_count": 29,
+  "available_dataset_count": 26,
+  "available_sources": [
+    "B",
+    "CUAD",
+    "MAUD",
+    "NDA",
+    "PREC",
+    "asap-chinese-restaurant-absa",
+    "biodex",
+    "bird",
+    "blade",
+    "dabstep",
+    "infiagent-dabench",
+    "kramabench",
+    "loft",
+    "lrobench",
+    "ntsb_aviation_avall",
+    "oolong-real",
+    "oolong-synth",
+    "palimpzest",
+    "semantic-query-engines-experiments",
+    "sembench",
+    "semtpch",
+    "spider2",
+    "tablebench",
+    "tag-bench",
+    "uda-bench-vldb"
+  ],
+  "combination_max_size": 3,
+  "quota_per_combination": 2,
+  "combination_count": 2625,
+  "enumeration_sha256": "de3a5e3ef6c089a121d0cfc49adb6b2d5a9b9061d2018fe34ebae440e8f5c3db",
+  "scdb_cap_pair": "Both IDs count as one linked adapter; paired counts must not be added together.",
+  "workspace_max_bytes": 2147483648,
+  "datasets": [
+    {
+      "dataset_id": "cuad",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Lawyer-annotated contract provisions; grounded original categorical labels.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 198,
+      "scorable_cell_count": 1584,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/cuad.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-4.0; CUAD_v1/CUAD v1 ReadMe _ Datasheet/CUAD_v1_README.txt line 345: 'CUAD is licensed under the Creative Commons Attribution 4.0 (CC BY 4.0) license and free to the public for commercial and non-commercial use.'",
+      "limitations": [],
+      "source": "CUAD",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "contract_nli",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Contract hypotheses with original entailment, contradiction and not-mentioned labels.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 607,
+      "scorable_cell_count": 10319,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/nda.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-4.0; contract-nli.zip:contract-nli/TERMS: 'you will have the rights to access ... in accordance with the terms and conditions of the Creative Commons Attribution 4.0 International Public License.'; contract-nli/LICENSE = 'Attribution 4.0 International'",
+      "limitations": [
+        "Public template party names are retained exactly; only record identifiers are pseudonymised."
+      ],
+      "source": "NDA",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "maud",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Merger agreement provisions with original expert deal-point codes and conventions.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 77,
+      "scorable_cell_count": 5651,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/maud.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-4.0; maud/MAUD v1 README (1).pdf, LICENSE section: 'MAUD is licensed under the Creative Commons Attribution 4.0 (CC BY 4.0) license and free to the public for commercial and non-commercial use.'",
+      "limitations": [],
+      "source": "MAUD",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "scdb_supreme_court_database",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Original SCDB precedent-alteration codes joined to CAP opinion text by case identity.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 8547,
+      "scorable_cell_count": 8547,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/prec.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-NC-3.0-US; http://scdb.wustl.edu/data.php footer: 'The Supreme Court Database is licensed under a Creative Commons License.' linking http://creativecommons.org/licenses/by-nc/3.0/us/",
+      "limitations": [
+        "Uses the original SCDB precedent-alteration variable only (CC BY-NC 3.0 US); not a current-law determination.",
+        "LoC overruling pairs are not scored; absence from their incomplete table is never a negative label.",
+        "Public case names and citations are retained to preserve legal reference meaning."
+      ],
+      "paired_dataset_ids": [
+        "scdb_supreme_court_database",
+        "cap_us_reports_scdb"
+      ],
+      "source": "PREC",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "cap_us_reports_scdb",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "CAP opinion text paired with SCDB original precedent-alteration codes; one linked source.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 8547,
+      "scorable_cell_count": 8547,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/prec.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-NC-3.0-US; http://scdb.wustl.edu/data.php footer: 'The Supreme Court Database is licensed under a Creative Commons License.' linking http://creativecommons.org/licenses/by-nc/3.0/us/",
+      "limitations": [
+        "Uses the original SCDB precedent-alteration variable only (CC BY-NC 3.0 US); not a current-law determination.",
+        "LoC overruling pairs are not scored; absence from their incomplete table is never a negative label.",
+        "Public case names and citations are retained to preserve legal reference meaning."
+      ],
+      "paired_dataset_ids": [
+        "scdb_supreme_court_database",
+        "cap_us_reports_scdb"
+      ],
+      "source": "PREC",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "uda-bench-vldb",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Text-grounded original categorical attributes from UDA scenarios with published code meanings.",
+      "visible_fields": [
+        "text"
+      ],
+      "hidden_fields": [
+        "gold",
+        "id",
+        "scenario",
+        "source_locator"
+      ],
+      "scorable_unit_count": 1885,
+      "scorable_cell_count": 12455,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/batch1_text.py: original categorical codes documented in unified/output/cards/uda-bench-vldb/label_card.md",
+      "dropped_counts": {},
+      "licensing_notes": "MIT (repo, \"Copyright (c) 2025 DB-121\"); source documents (court judgments, annual reports, Wikipedia-like pages, papers) under own terms",
+      "limitations": [
+        "Categorical text-grounded fields only; image-specific and numeric attributes are not scored.",
+        "Original source errors, unknown codes and multi-value strings are retained without relabeling.",
+        "nba_player:is_dead is excluded because the delivered original attributes do not define its code semantics."
+      ],
+      "source": "uda-bench-vldb",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "sembench",
+      "group": "A",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original movie-workload query answers and deterministic movie evaluator; platform ratings are not labels.",
+      "visible_fields": [
+        "original query",
+        "Movies.id/title",
+        "Reviews.id/reviewId/reviewText"
+      ],
+      "hidden_fields": [
+        "gold SQL/result",
+        "scoreSentiment",
+        "originalScore",
+        "reviewState",
+        "audienceScore",
+        "tomatoMeter"
+      ],
+      "scorable_unit_count": 4,
+      "scorable_cell_count": 4,
+      "checker": [
+        "sembench_movie"
+      ],
+      "checker_source": "sembench/repo/src/scenario/movie/evaluation/evaluate.py; sembench/repo/src/evaluator/generic_evaluator.py; sembench/repo/src/aggregate_table_generator.py:extract_metrics",
+      "dropped_counts": {
+        "answer_exceeds_2000_cell_chars": 6
+      },
+      "licensing_notes": "Apache-2.0 OR MIT (code); scenario data from Kaggle/Rotten Tomatoes/MMQA etc. under upstream terms (Rotten Tomatoes Kaggle dataset CC0 per prior audit)",
+      "limitations": [],
+      "source": "sembench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "biodex",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Original ICSR seriousness and patient-sex codes inferred from article text; derived aggregates excluded.",
+      "visible_fields": [
+        "title",
+        "abstract",
+        "fulltext"
+      ],
+      "hidden_fields": [
+        "target",
+        "serious",
+        "patientsex",
+        "drugs",
+        "reactions",
+        "split"
+      ],
+      "scorable_unit_count": 15659,
+      "scorable_cell_count": 31318,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/batch1_text.py: original categorical codes documented in unified/output/cards/biodex/label_card.md",
+      "dropped_counts": {},
+      "licensing_notes": "mixed: FAERS report fields CC0; Medline metadata (NLM terms); fulltext per-article CC licence (fulltext_license field, incl. NC/ND); code MIT",
+      "limitations": [
+        "Only original ICSR serious and patientsex target fields are scored; L0 report aggregates are excluded.",
+        "Article text is retained; per-article copyright/licensing restrictions still apply."
+      ],
+      "source": "biodex",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "evidence_inference",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Original expert intervention/comparator/outcome effect labels grounded in study text.",
+      "visible_fields": [
+        "text",
+        "question",
+        "codebook"
+      ],
+      "hidden_fields": [
+        "original_answers",
+        "evidence_annotations",
+        "source_locators"
+      ],
+      "scorable_unit_count": 1786,
+      "scorable_cell_count": 1786,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/biomedical.py: original source categorical labels",
+      "dropped_counts": {},
+      "licensing_notes": "MIT; bigbio/evidence_inference README yaml (copy in raw/biomed_science/evidence_inference_hf/upstream_main/README.md): 'license: mit'",
+      "limitations": [
+        "Original interventions, comparators, outcomes and public study identifiers are retained for scientific meaning.",
+        "Registry records contain protocol only; no posted results or expert annotation fields are public."
+      ],
+      "source": "B",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "ntsb_aviation_avall",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Factual accident narratives with original event injury, light, weather and unambiguous damage codes.",
+      "visible_fields": [
+        "narr_accp"
+      ],
+      "hidden_fields": [
+        "ev_highest_injury",
+        "light_cond",
+        "wx_cond_basic",
+        "damage",
+        "Phase_of_Flight",
+        "narr_accf",
+        "narr_cause",
+        "finding_code",
+        "Cause_Factor",
+        "ev_id"
+      ],
+      "scorable_unit_count": 12859,
+      "scorable_cell_count": 50475,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/batch1_text.py: original categorical codes documented in unified/output/cards/ntsb_aviation_avall/label_card.md",
+      "dropped_counts": {},
+      "licensing_notes": "US Government work (public domain)",
+      "limitations": [
+        "Finding-level cause/factor labels remain excluded because their units are private.",
+        "Damage/phase codes require a unique original aircraft/occurrence row per event.",
+        "Factual narratives under 1500 characters or containing conclusion language are excluded.",
+        "No unique original occurrence-level Phase_of_Flight cells are present in the delivered MDB; dictionary definitions alone are not labels."
+      ],
+      "source": "ntsb_aviation_avall",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "asap-chinese-restaurant-absa",
+      "group": "A",
+      "kind": "record_label",
+      "label_card_summary": "Chinese restaurant reviews with 18 original manually annotated aspect polarities; stars excluded.",
+      "visible_fields": [
+        "review"
+      ],
+      "hidden_fields": [
+        "Location#Transportation",
+        "Location#Downtown",
+        "Location#Easy_to_find",
+        "Service#Queue",
+        "Service#Hospitality",
+        "Service#Parking",
+        "Service#Timely",
+        "Price#Level",
+        "Price#Cost_effective",
+        "Price#Discount",
+        "Ambience#Decoration",
+        "Ambience#Noise",
+        "Ambience#Space",
+        "Ambience#Sanitary",
+        "Food#Portion",
+        "Food#Taste",
+        "Food#Appearance",
+        "Food#Recommend",
+        "star",
+        "id",
+        "split"
+      ],
+      "scorable_unit_count": 46730,
+      "scorable_cell_count": 841140,
+      "checker": "categorical_exact",
+      "checker_source": "v5/tada_taskgen/adapters/batch1_text.py: original categorical codes documented in unified/output/cards/asap-chinese-restaurant-absa/label_card.md",
+      "dropped_counts": {},
+      "licensing_notes": "Apache-2.0 (repository LICENSE)",
+      "limitations": [
+        "Only the 18 manual aspects are scored; platform star ratings are excluded.",
+        "Original Chinese review prose and named businesses are retained for meaning."
+      ],
+      "source": "asap-chinese-restaurant-absa",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "oolong-synth",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original synthetic long-context questions; unlabelled context visible and original answers hidden.",
+      "visible_fields": [
+        "context_window_text",
+        "question"
+      ],
+      "hidden_fields": [
+        "answer",
+        "context_window_text_with_labels",
+        "evaluation columns",
+        "ground_truth.csv"
+      ],
+      "scorable_unit_count": 6500,
+      "scorable_cell_count": 6500,
+      "checker": [
+        "oolong_synth"
+      ],
+      "checker_source": "https://github.com/abertsch72/oolong/blob/main/src/eval/eval_helpers.py",
+      "dropped_counts": {},
+      "licensing_notes": "MIT (benchmark); upstream source datasets keep their own terms",
+      "limitations": [],
+      "source": "oolong-synth",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "oolong-real",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original long-context questions from the locally delivered toy_dnd subset.",
+      "visible_fields": [
+        "context_window_text",
+        "question"
+      ],
+      "hidden_fields": [
+        "answer",
+        "context_window_text_with_labels",
+        "evaluation columns",
+        "ground_truth.csv"
+      ],
+      "scorable_unit_count": 907,
+      "scorable_cell_count": 907,
+      "checker": [
+        "oolong_real"
+      ],
+      "checker_source": "https://github.com/abertsch72/oolong/blob/main/src/eval/eval_helpers.py",
+      "dropped_counts": {
+        "original_checker_gold_not_one": 42
+      },
+      "licensing_notes": "MIT (benchmark); Critical Role transcripts (CRD3) carry upstream terms — see upstream CRD3/Critical Role transcript licence terms",
+      "limitations": [],
+      "source": "oolong-real",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "semantic-query-engines-experiments",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original derivation, selection and join queries with declared input columns and hidden result tables.",
+      "visible_fields": [
+        "original nlq",
+        "query-declared input columns"
+      ],
+      "hidden_fields": [
+        "answer",
+        "context_window_text_with_labels",
+        "evaluation columns",
+        "ground_truth.csv"
+      ],
+      "scorable_unit_count": 32,
+      "scorable_cell_count": 32,
+      "checker": [
+        "sqe_derivation",
+        "sqe_set_f1"
+      ],
+      "checker_source": "semantic-query-engines-experiments/repo/experiment_runner/evaluation.py: DerivationEvaluator exact_match_accuracy, SelectionEvaluator/JoinEvaluator f1_score",
+      "dropped_counts": {
+        "unlabelled_aggregation_queries": 6,
+        "answer_exceeds_2000_cell_chars": 28
+      },
+      "licensing_notes": "MIT (code repo); datasets derived from SportSett NBA, NBA Players (Kaggle), Rotten Tomatoes — upstream terms unknown",
+      "limitations": [],
+      "source": "semantic-query-engines-experiments",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "tag-bench",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original table-augmented generation questions and database inputs; unanswered aggregation excluded.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 60,
+      "scorable_cell_count": 60,
+      "checker": [
+        "exact"
+      ],
+      "checker_source": "tag-bench/repo/tag/analyze.py; tag/text2sql.py: literal_eval-compatible Answer and prediction == answer",
+      "dropped_counts": {
+        "missing_aggregation_gold": 20
+      },
+      "licensing_notes": "MIT (repo incl. tag_queries.csv); underlying BIRD DBs CC BY-SA 4.0",
+      "limitations": [],
+      "source": "tag-bench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "bird",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original text-to-SQL questions with local SQLite databases and hidden reference SQL.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 1460,
+      "scorable_cell_count": 1460,
+      "checker": [
+        "sqlite_result_set"
+      ],
+      "checker_source": "longds-bench/repo/datamind/eval/sql/eval_bird.py: execute_sql result-set equality",
+      "dropped_counts": {
+        "answer_exceeds_2000_cell_chars": 35,
+        "gold_sql_not_executable": 39
+      },
+      "licensing_notes": "CC BY-SA 4.0 (BIRD data release); underlying DB sources have their own terms",
+      "limitations": [],
+      "source": "bird",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "loft",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Long-context SQL, retrieval, RAG and in-context classification items with original deterministic metrics.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 1726,
+      "scorable_cell_count": 1726,
+      "checker": [
+        "loft_em",
+        "loft_retrieval",
+        "loft_set_em",
+        "loft_sql",
+        "loft_sql_multi"
+      ],
+      "checker_source": "loft/repo/evaluation/{sql,rag,icl,retrieval,utils}.py: SQL execution accuracy, normalized EM, set EM and recall@5; conversations averaged by turn",
+      "dropped_counts": {},
+      "licensing_notes": "Apache-2.0 (code); datasets inherit upstream licences (Spider CC BY-SA 4.0, etc.)",
+      "limitations": [],
+      "source": "loft",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "palimpzest",
+      "group": "B",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original Enron email field-extraction answers with source email inputs.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 13,
+      "scorable_cell_count": 13,
+      "checker": [
+        "palimpzest_fields"
+      ],
+      "checker_source": "palimpzest/repo/demos/enron-demo.py: EnronValidator.map_score_fn",
+      "dropped_counts": {
+        "unscored_filter_only_record": 237
+      },
+      "licensing_notes": "MIT (code); Enron emails public record; BioDEX/CUAD/MMQA under upstream licences",
+      "limitations": [],
+      "source": "palimpzest",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "longds-bench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original long-horizon data-science tasks; canonical answer verification requires an LLM judge.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 0,
+      "scorable_cell_count": 0,
+      "checker": [],
+      "checker_source": "The canonical longds/runners/src/judge.py and judge_prompt.py verify all turn answers with an LLM, including semantic choice of requested facts; no standalone deterministic verifier is supplied.",
+      "dropped_counts": {},
+      "licensing_notes": "other (HF card); per-source dataset licences; task protocol/judge Apache-2.0 per adapter NOTICE",
+      "limitations": [],
+      "source": "longds-bench",
+      "status": "requires_llm_judge",
+      "reason": "The canonical longds/runners/src/judge.py and judge_prompt.py verify all turn answers with an LLM, including semantic choice of requested facts; no standalone deterministic verifier is supplied.",
+      "owner_decision": {
+        "at": "2026-11-13",
+        "decision": "not included in task space (no LLM judging)",
+        "by": "Richard"
+      }
+    },
+    {
+      "dataset_id": "kramabench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original multi-file analysis workload questions and typed answers with official success/F1/RAE metrics.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 77,
+      "scorable_cell_count": 77,
+      "checker": [
+        "krama_f1",
+        "krama_rae",
+        "krama_success"
+      ],
+      "checker_source": "kramabench/repo/benchmark/metrics.py: Success/F1; benchmark/task_fixtures/answer_type_fixtures.json",
+      "dropped_counts": {
+        "missing_or_ambiguous_inputs": 15,
+        "requires_llm_judge": 12
+      },
+      "licensing_notes": "unknown (no LICENSE in repo; GitHub API none). An unofficial HF mirror eugenie-y/KramaBench states \"license: cc\" (unspecified)",
+      "limitations": [],
+      "source": "kramabench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "discoverybench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original discovery hypotheses and variable relationships; official semantic verification requires a judge.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 0,
+      "scorable_cell_count": 0,
+      "checker": [],
+      "checker_source": "Original hypothesis/relationship verification requires semantic LLM matching; structured variable extraction also uses the judge (repo/discoverybench/evaluation). No original deterministic item-answer metric remains.",
+      "dropped_counts": {},
+      "licensing_notes": "ODC-By (HF card)",
+      "limitations": [],
+      "source": "discoverybench",
+      "status": "requires_llm_judge",
+      "reason": "Original hypothesis/relationship verification requires semantic LLM matching; structured variable extraction also uses the judge (repo/discoverybench/evaluation). No original deterministic item-answer metric remains.",
+      "owner_decision": {
+        "at": "2026-11-13",
+        "decision": "not included in task space (no LLM judging)",
+        "by": "Richard"
+      }
+    },
+    {
+      "dataset_id": "dsbench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original data-analysis and modeling tasks; public answer evaluation uses a judge and competition targets are absent.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 0,
+      "scorable_cell_count": 0,
+      "checker": [],
+      "checker_source": "https://github.com/LiqiangJing/DSBench: data-analysis answer verification",
+      "dropped_counts": {},
+      "licensing_notes": "unknown (HF card has no licence; GitHub repo NOASSERTION); tasks sourced from ModelOff and Kaggle",
+      "limitations": [],
+      "source": "dsbench",
+      "status": "requires_llm_judge",
+      "reason": "Official data_analysis/compute_answer.py:evaluate_prediction sends every question, including MCQ/numeric, to GPT-4o. Data-modeling uses hidden competition targets, absent from the local public task contract. No deterministic answer verifier remains.",
+      "owner_decision": {
+        "at": "2026-11-13",
+        "decision": "not included in task space (no LLM judging)",
+        "by": "Richard"
+      }
+    },
+    {
+      "dataset_id": "lrobench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original relational selection, matching, ordering, clustering and supported multi-operation answers.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 270,
+      "scorable_cell_count": 270,
+      "checker": [
+        "lro_exact_table",
+        "lro_impute",
+        "lro_nmi",
+        "lro_order",
+        "lro_set_f1"
+      ],
+      "checker_source": "lrobench/repo/forward_eval_interface.py: score; src/metrics/classic.py: F1, NMI, Kendall tau, list exact accuracy",
+      "dropped_counts": {
+        "missing_inputs": 30,
+        "missing_gold": 50
+      },
+      "licensing_notes": "unknown (no LICENSE file in repo; GitHub API reports none)",
+      "limitations": [],
+      "source": "lrobench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "spider2",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original Spider2-Lite questions with local SQLite inputs and hidden result-table references.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 110,
+      "scorable_cell_count": 110,
+      "checker": [
+        "spider2_table"
+      ],
+      "checker_source": "spider2/repo/spider2-lite/evaluation_suite/evaluate.py",
+      "dropped_counts": {
+        "remote_warehouse": 412,
+        "answer_exceeds_2000_cell_chars": 24,
+        "original_checker_vacuous_answer": 1
+      },
+      "licensing_notes": "MIT (repo; HF card)",
+      "limitations": [],
+      "source": "spider2",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "semtpch",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original semantic TPC-H workload questions with relational and multimedia inputs and deterministic result metrics.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 16,
+      "scorable_cell_count": 16,
+      "checker": [
+        "semtpch"
+      ],
+      "checker_source": "semtpch/repo/tools/score.py: score_one, row_match, value_match, _cluster_overlap_score",
+      "dropped_counts": {
+        "answer_exceeds_2000_cell_chars": 6
+      },
+      "licensing_notes": "Apache-2.0 (repo); HF data card license: other (per-source licences)",
+      "limitations": [],
+      "source": "semtpch",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "dabstep",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "The ten original answered development tasks; public task inputs retained and reference answers hidden.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 10,
+      "scorable_cell_count": 10,
+      "checker": [
+        "dabstep"
+      ],
+      "checker_source": "longds-bench/repo/datacope/reason_task/eval/val/dabstep_benchmark/evaluation/scorer.py: question_scorer",
+      "dropped_counts": {},
+      "licensing_notes": "CC-BY-4.0",
+      "limitations": [],
+      "source": "dabstep",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "infiagent-dabench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original CSV analysis questions and structured field/value answers with official numeric and string checking.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 257,
+      "scorable_cell_count": 257,
+      "checker": [
+        "infiagent"
+      ],
+      "checker_source": "https://github.com/InfiAgent/InfiAgent/blob/main/examples/DA-Agent/eval_closed_form.py: is_equal, evaluate_responses, evaluate_accuracy_by_question",
+      "dropped_counts": {},
+      "licensing_notes": "Apache-2.0 (HF card); upstream CSVs from various public sources, own terms unknown",
+      "limitations": [],
+      "source": "infiagent-dabench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "tablebench",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original tabular reasoning questions, table inputs and deterministic category-specific answer metrics.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 836,
+      "scorable_cell_count": 836,
+      "checker": [
+        "tablebench"
+      ],
+      "checker_source": "https://github.com/TableBench/TableBench/blob/main/metrics/qa_metrics.py; metrics/custom_em_metric.py; eval_tablebench_script.py: Mix_Metric",
+      "dropped_counts": {
+        "chart_artifact_not_an_answer_cell": 50
+      },
+      "licensing_notes": "Apache-2.0 (HF card)",
+      "limitations": [],
+      "source": "tablebench",
+      "status": "available",
+      "reason": ""
+    },
+    {
+      "dataset_id": "blade",
+      "group": "C",
+      "kind": "benchmark_item",
+      "label_card_summary": "Original analysis-decision multiple-choice items; correct-option indices scored, semantic analysis judging excluded.",
+      "visible_fields": [
+        "original question",
+        "declared input assets",
+        "answer format"
+      ],
+      "hidden_fields": [
+        "answer",
+        "reference SQL/code",
+        "gold files",
+        "rationale",
+        "is_llm_generated"
+      ],
+      "scorable_unit_count": 188,
+      "scorable_cell_count": 188,
+      "checker": [
+        "blade_mcq"
+      ],
+      "checker_source": "blade/repo/blade_bench/baselines/run_mcq.py: answer_index == options.index(correct_answer)",
+      "dropped_counts": {},
+      "licensing_notes": "Apache-2.0 (repo); per-dataset sources (papers, textbooks) have own terms",
+      "limitations": [],
+      "source": "blade",
+      "status": "available",
+      "reason": ""
+    }
+  ],
+  "owner_decisions": [
+    {
+      "at": "2026-11-13",
+      "decision": "requires_llm_judge datasets (longds-bench, discoverybench, dsbench) are not included; no LLM judge is added."
+    }
+  ]
+}

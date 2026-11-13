@@ -1,0 +1,38 @@
+# Copy to local_paths.toml (git-ignored). Values are placeholders, not credentials.
+# Every key can instead be supplied as TADA_<UPPERCASE_KEY>.
+# Relative paths resolve from the pipeline root; remote paths resolve on the SSH host.
+# TADA_LOCAL_PATHS_FILE can select another local file, including for isolated tests.
+
+# Read-only datasets, delivered unified reader, and interpreter with its dependencies.
+datasets_root = "/path/to/Datasets"
+unified_root = "/path/to/Datasets/unified"
+datasets_python = "/path/to/Datasets/.venv/bin/python"
+# Read-only O*NET text tables, exclusion-only quarantine, and legacy source caches.
+onet_root = "/path/to/onet/text"
+quarantine = "/path/to/SOURCE_QUALITY_QUARANTINE.json"
+legacy_cache = "/path/to/legacy/cache"
+private_cache = "private_cache"
+# Local Harbor command and prebuilt offline Python package directory.
+harbor_binary = "/path/to/harbor"
+offline_runtime = "/path/to/offline/runtime"
+# Model/search routes. Model names and API styles remain in v5/config.toml.
+writer_endpoint = "http://localhost:3000/v1"
+extractor_endpoint = "http://localhost:18142/v1"
+review_endpoint = "http://localhost:18142/v1/responses"
+designer_proxy_endpoint = "http://localhost:18142"
+search_url = "http://localhost:18150/v1/search"
+# Default solver route and the environment variable containing its API key.
+solver_endpoint = "https://api.example.org/v1"
+solver_key_env = "SOLVER_API_KEY"
+# Optional local solver route; prefer supplying the key through an environment variable.
+local_solver_endpoint = "http://localhost:3000/v1"
+local_solver_key_env = "TADA_LOCAL_ROUTE_KEY"
+local_solver_key = ""
+# Remote trial SSH target and paths; these never imply permission to start a trial.
+remote_trial_host = "trial-host.example.org"
+remote_trial_root = "~/taskgen-trials"
+remote_docker_config = "~/.docker"
+remote_mirror_image = "registry.example.org/library/alpine@sha256:REPLACE_WITH_APPROVED_DIGEST"
+remote_solver_endpoint = "http://localhost:13000/v1"
+remote_solver_key_env = "TADA_LOCAL_ROUTE_KEY"
+remote_solver_key = ""

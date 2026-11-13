@@ -1,0 +1,13 @@
+local_paths.toml
+v5_runs/
+runs*/
+private_cache/
+node_modules/
+pi_agent_dir/
+__pycache__/
+*.py[cod]
+*.bak*
+.venv/
+.uv-cache/
+.pytest_cache/
+*.egg-info/

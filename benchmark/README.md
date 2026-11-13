@@ -4,7 +4,7 @@ Long-horizon text-analysis tasks built from existing expert-labelled datasets. E
 
 | Path | Contents |
 |---|---|
-| `taskgen/` | Task-generation pipeline: dataset-combination task space, designer loop with bounded revision, fixed compiler, offline hard gates, review, sandboxed trials, and exclusion-only label quarantine. |
-| `tasks/` | Admitted tasks, each with its task card. |
+| [`taskgen/`](taskgen/README.md) | Task-generation pipeline: dataset-combination task space, designer loop with bounded revision, fixed compiler, six offline hard gates, review, sandboxed trials, and exclusion-only label quarantine. |
+| `tasks/` | Admitted tasks with their task cards (added as the first batch is admitted). |
 
-Both directories are populated as the pipeline is published and the first batch is admitted.
+Datasets are not included. The pipeline reads the user's local copies through the paths configured in `taskgen/local_paths.toml`; each dataset's own licence applies.

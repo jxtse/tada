@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TADA v5 dependency graph", "type": "object", "required": ["nodes", "edges"],
+  "properties": {
+    "nodes": {"type": "array", "items": {
+      "type": "object", "required": ["id", "type", "provision", "work_item"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {"enum": ["original_label", "construction_fact", "derived_quantity", "deliverable_column"]},
+        "provision": {"enum": ["given", "in-document", "solver-derived", "build-internal"]},
+        "scoring": {"enum": ["label", "prerequisite", "input", "consistency-only", "unscored"]},
+        "carrier": {"type": "string"}, "work_item": {"type": "string"},
+        "cell": {"type": "object"}, "record": {"type": "string"}, "question": {"type": "string"}
+      },
+      "allOf": [
+        {"if": {"properties": {"type": {"enum": ["original_label", "construction_fact"]}}}, "then": {"required": ["carrier"]}},
+        {"if": {"properties": {"type": {"const": "derived_quantity"}}}, "then": {"required": ["scoring"], "properties": {"scoring": {"enum": ["consistency-only", "unscored"]}}, "not": {"required": ["gold"]}}}
+      ]
+    }},
+    "edges": {"type": "array", "items": {"type": "object", "required": ["from", "to"], "properties": {"from": {"type": "string"}, "to": {"type": "string"}}}}
+  }
+}

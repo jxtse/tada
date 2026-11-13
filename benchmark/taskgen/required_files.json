@@ -1,0 +1,14 @@
+[
+ "task.toml",
+ "instruction.md",
+ "design.md",
+ "build/build.py",
+ "build/sensitivity.py",
+ "build/wrong_answers.py",
+ "build/keyword_baseline.py",
+ "environment/Dockerfile",
+ "tests/Dockerfile",
+ "tests/test.sh",
+ "tests/scoring.py",
+ "solution/solve.sh"
+]

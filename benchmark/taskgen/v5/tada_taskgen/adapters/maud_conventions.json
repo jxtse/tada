@@ -1,0 +1,62 @@
+[
+  [
+    "G1",
+    "All deal points",
+    "Code the provisions that apply to the target company (the \"Company\") and its board. Where the agreement also has a parallel provision for the buyer side (for example a Parent knowledge definition or covenants binding Parent), do not code the buyer-side provision."
+  ],
+  [
+    "G2",
+    "All deal points",
+    "Read a defined term used in the coded provision together with its definition elsewhere in the agreement (for example the definition of 'ordinary course of business' used by the ordinary course covenant)."
+  ],
+  [
+    "G3",
+    "All deal points",
+    "Code the version of each agreement that is in the data room, exactly as it reads there. If the document in the data room is an amended and restated agreement, code the amended and restated text as it stands. Do not assume any later amendment that is not in the folder, and do not try to reconstruct an earlier or original version of the agreement. Read references to dates (for example 'the date of this Agreement', 'the date hereof' or a defined 'Agreement Date') as the agreement itself defines them. Disclosure schedules were not filed and are not to be assumed."
+  ],
+  [
+    "G4",
+    "All deal points",
+    "One answer per agreement and deal point, chosen from Allowed_Answers and written exactly as listed."
+  ],
+  [
+    "C114",
+    "DP114",
+    "Code the efforts standard, if any, that qualifies the Company's obligation to conduct its business in the ordinary course. If that obligation itself is unqualified (\"shall conduct its business in the ordinary course\"), the answer is \"Flat covenant (no efforts standard)\", even if an efforts standard applies to a separate undertaking in the same covenant, such as preserving the business organization or relationships."
+  ],
+  [
+    "C086",
+    "DP086",
+    "\"Yes\" if the ordinary course obligation (read with G2) requires the business to be conducted consistently with past practice. The phrase appearing only elsewhere in the agreement (representations, individual negative covenants) does not make the answer \"Yes\"."
+  ],
+  [
+    "C110",
+    "DP110, DP113",
+    "\"Yes\" if the covenant (DP113: the ordinary course covenant; DP110: the negative covenants restricting specified actions) expressly permits actions taken or omitted in response to a pandemic, COVID-19 or related governmental measures. A general exception for actions required by law or taken with buyer consent is not such a carve-out."
+  ],
+  [
+    "C069",
+    "DP069",
+    "Code the knowledge requirement of the Intervening Event definition. 'Not known at signing': the event must not have been known. 'Not known and not reasonably foreseeable at signing': it must have been neither known nor reasonably foreseeable (wording such as 'not known or reasonably foreseeable' is this answer). If the definition also covers an event that was known at signing but whose consequences were not known, the answer is 'Known, but consequences unknown, at signing', or 'Known, but consequences unknown or not reasonably foreseeable, at signing' where that limb also refers to reasonable foreseeability."
+  ],
+  [
+    "C089",
+    "DP089",
+    "'Must occur or arise after signing' only if the definition requires the event or change itself to occur or arise after the date of the agreement. If an event that occurred or existed before signing can qualify (for example because the test is only that it, or its consequences, were not known at signing), the answer is 'May occur or arise prior to signing'."
+  ],
+  [
+    "C054",
+    "DP054",
+    "\"Yes\" if the agreement permits the Company board to change its recommendation in response to an Intervening Event (whatever the defined term is called), not only in response to a Superior Proposal."
+  ],
+  [
+    "C091",
+    "DP091",
+    "Code the definition of the Company's knowledge (G1). 'Constructive knowledge' if the definition attributes to the Company knowledge that the named persons would have after reasonable inquiry or investigation (including inquiry of their direct reports) or would reasonably be expected to have because of their position; 'Actual knowledge' if it is limited to what the named persons actually know. Where the definition names several persons or has several limbs, the answer is 'Constructive knowledge' if any limb imputes knowledge in that way."
+  ],
+  [
+    "C132",
+    "DP132",
+    "Type of consideration paid for the Company's common stock: 'All Cash' only if every converted share receives cash alone; any stock component makes it one of the stock answers."
+  ]
+]

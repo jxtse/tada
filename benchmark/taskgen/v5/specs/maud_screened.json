@@ -1,0 +1,447 @@
+{
+  "version": 5,
+  "id": "larkspur-screened-terms-review-v5-r2",
+  "source": "MAUD",
+  "category": "parallel_coding",
+  "questions": [
+    "DP128",
+    "DP049",
+    "DP053",
+    "DP068",
+    "DP041",
+    "DP110",
+    "DP093",
+    "DP114",
+    "DP089"
+  ],
+  "sample_size": 16,
+  "work_items": [
+    {
+      "id": "scope",
+      "order": 1,
+      "title": "Reconcile the current review population",
+      "depends_on": []
+    },
+    {
+      "id": "coding",
+      "order": 2,
+      "title": "Prepare the clause review register",
+      "depends_on": [
+        "scope"
+      ],
+      "scope_from": "scope_facts"
+    },
+    {
+      "id": "summary",
+      "order": 3,
+      "title": "Prepare the review summary",
+      "depends_on": [
+        "coding"
+      ]
+    }
+  ],
+  "documents": [],
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "scope_facts",
+        "type": "construction_fact",
+        "provision": "in-document",
+        "scoring": "prerequisite",
+        "carrier": "scope_revision",
+        "work_item": "scope",
+        "template": "record_scope"
+      },
+      {
+        "id": "source_labels",
+        "type": "original_label",
+        "provision": "in-document",
+        "scoring": "label",
+        "carrier": "agreements/{record}.txt",
+        "work_item": "coding",
+        "template": "record_question"
+      },
+      {
+        "id": "summary_counts",
+        "type": "derived_quantity",
+        "provision": "solver-derived",
+        "scoring": "consistency-only",
+        "work_item": "summary",
+        "template": "question_count"
+      }
+    ],
+    "edges": [
+      {
+        "from": "scope_facts",
+        "to": "source_labels"
+      },
+      {
+        "from": "source_labels",
+        "to": "summary_counts"
+      }
+    ]
+  },
+  "parameters": {
+    "scope_exclude_every": 4
+  },
+  "sheets": {
+    "scope": "Review_Scope",
+    "coding": "Terms_Coding",
+    "summary": "Market_Summary"
+  },
+  "thresholds": {
+    "include_all": 0.9,
+    "ignore_revisions": 0.9
+  },
+  "instruction": "Please prepare the transaction team's review workbook for the upcoming merger terms discussion.\n\n1. Reconcile the current review population.\n2. Prepare the agreement coding register and identify the review population.\n3. Prepare a summary of the coded terms for the team.\n",
+  "design": "This regression retains every question used by the frozen MAUD package. The original labelled source text remains intact. Repeated historical source/term labels are consolidated into one reversible coding register; derived term counts receive conditional consistency credit only. The parallel_coding category is explicit because complete independent source coding remains useful. The generated current and prior review notices carry independent scope facts. The original reference package has richer negotiation/group selection motifs; this normalized spec preserves the three work stages without copying its many-to-one gold rules.\n\nO*NET 31.0, occupation 23-2011.00 (Paralegals and Legal Assistants), Task 23994: \"Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements.\" (local Task Statements.txt, line 5837).\n\nRepair R2: Eligible questions sorted by shortcut_bal_q ascending, then n_labels descending, then question ID ascending only to break an exact tie; take the first 9. Fixed n=16; sample once from records scorable on at least 3 requested questions. Drop questions with fewer than 2 present classes or any present class with fewer than 2 cells; retain at least 5 questions, else fail the seed. No seed replacement or resampling. Screening shortcut_bal_q is the maximum of dedicated, generic-token and five-fold OOF multinomial NB balanced accuracy. The workspace review memo publishes the exact per-record retained question checklist. Label credit remains per-question mean class recall (0.70); scope 0.15, facts 0.10, consistency 0.05.\n\nRepair R3: label credit per question is max(0, (balanced recall - 1/k)/(1 - 1/k)), with k from the complete original codebook. Include-all and ignore-revisions thresholds apply to scope F1, not total reward; each is 0.90. Sampling, questions, scope_exclude_every and weights are unchanged.",
+  "regression_origin": "runs/MAUD-20261111T061721Z/controller/task",
+  "original_scenario": {
+    "params": {
+      "apply_r1_closed_only": true,
+      "apply_r3_named_resolution": true,
+      "comparables_version": "v2",
+      "consideration_dp": "DP132",
+      "deal_price": "$41.75",
+      "doc_offsets_days": {
+        "bankers_v1": -24,
+        "bankers_v2": -8,
+        "brief": -2,
+        "conflicts": -59,
+        "draft_v1": -22,
+        "hsr": -30,
+        "i1_resolved": -27,
+        "i2_resolved": -23,
+        "issues_v3": -21,
+        "key_terms": -41,
+        "meeting": 0,
+        "r1": -13,
+        "r3": -3,
+        "register": -14
+      },
+      "dr_id_max": 489,
+      "dr_id_min": 101,
+      "form_role": "H1",
+      "issues": [
+        {
+          "dps": [
+            "DP114",
+            "DP086",
+            "DP110"
+          ],
+          "id": "I1",
+          "predicate_dp": "DP113",
+          "predicate_value": "Yes",
+          "resolution": "descriptor",
+          "topic": "Interim operating covenants (ordinary course covenant and negative covenants)"
+        },
+        {
+          "dps": [
+            "DP069",
+            "DP089"
+          ],
+          "id": "I2",
+          "predicate_dp": "DP054",
+          "predicate_value": "Yes",
+          "resolution": "descriptor",
+          "topic": "Intervening Event definition"
+        },
+        {
+          "dps": [
+            "DP091"
+          ],
+          "id": "I3",
+          "resolution": "form_until_r3",
+          "topic": "Knowledge definition"
+        }
+      ],
+      "market_consideration_values": [
+        "All Cash"
+      ],
+      "meeting_weekday": 3,
+      "min_comparables_v1": 9,
+      "n_added_in_v2": 3,
+      "n_comparables_v1": 14,
+      "n_distractors": 2,
+      "n_halvorsen": 5,
+      "n_removed_in_v2": 2,
+      "pending_role": "H5",
+      "r3_named_role": "H2",
+      "resolve_descriptors": true,
+      "scenario_offset_days": 75,
+      "seed": 7,
+      "unscored_deal_points": [
+        "DP040",
+        "DP041",
+        "DP070",
+        "DP071"
+      ]
+    },
+    "roles": {
+      "H": [
+        "contract_86",
+        "contract_62",
+        "contract_127",
+        "contract_135",
+        "contract_69"
+      ],
+      "added": [
+        "contract_133",
+        "contract_48",
+        "contract_144"
+      ],
+      "dates": {
+        "contract_0": "2021-01-14",
+        "contract_1": "2021-09-29",
+        "contract_121": "2021-07-18",
+        "contract_126": "2020-12-01",
+        "contract_127": "2021-05-08",
+        "contract_130": "2021-06-17",
+        "contract_133": "2020-11-02",
+        "contract_135": "2021-08-11",
+        "contract_142": "2021-01-31",
+        "contract_144": "2020-09-09",
+        "contract_146": "2021-04-26",
+        "contract_28": "2021-01-20",
+        "contract_29": "2021-09-07",
+        "contract_4": null,
+        "contract_40": "2021-07-14",
+        "contract_41": "2021-02-07",
+        "contract_48": "2020-10-05",
+        "contract_62": "2021-03-12",
+        "contract_64": "2021-02-08",
+        "contract_69": "2021-09-01",
+        "contract_79": "2021-04-19",
+        "contract_83": "2021-06-21",
+        "contract_86": "2020-12-08",
+        "contract_92": "2021-05-03"
+      },
+      "distractors": [
+        "contract_121",
+        "contract_126"
+      ],
+      "doc_dates": {
+        "bankers_v1": "2021-11-22",
+        "bankers_v2": "2021-12-08",
+        "brief": "2021-12-14",
+        "conflicts": "2021-10-18",
+        "draft_v1": "2021-11-24",
+        "hsr": "2021-11-16",
+        "i1_resolved": "2021-11-19",
+        "i2_resolved": "2021-11-23",
+        "issues_v3": "2021-11-25",
+        "key_terms": "2021-11-05",
+        "meeting": "2021-12-16",
+        "r1": "2021-12-03",
+        "r3": "2021-12-13",
+        "register": "2021-12-02"
+      },
+      "dr": {
+        "contract_0": "DR-315",
+        "contract_1": "DR-349",
+        "contract_121": "DR-313",
+        "contract_126": "DR-194",
+        "contract_127": "DR-191",
+        "contract_130": "DR-107",
+        "contract_133": "DR-290",
+        "contract_135": "DR-374",
+        "contract_142": "DR-413",
+        "contract_144": "DR-219",
+        "contract_146": "DR-220",
+        "contract_28": "DR-178",
+        "contract_29": "DR-438",
+        "contract_4": "DR-390",
+        "contract_40": "DR-103",
+        "contract_41": "DR-450",
+        "contract_48": "DR-402",
+        "contract_62": "DR-175",
+        "contract_64": "DR-284",
+        "contract_69": "DR-235",
+        "contract_79": "DR-295",
+        "contract_83": "DR-245",
+        "contract_86": "DR-462",
+        "contract_92": "DR-143"
+      },
+      "names": {
+        "contract_0": [
+          "Pinecrest Industries, Inc.",
+          "Quarry Resources Corporation"
+        ],
+        "contract_1": [
+          "Meridian Industries, Inc.",
+          "Birchwood Industries Corporation"
+        ],
+        "contract_121": [
+          "Quarry Systems, Inc.",
+          "Silverline Dynamics Corporation"
+        ],
+        "contract_126": [
+          "Harbor Semiconductor, Inc.",
+          "Juniper Networks Corporation"
+        ],
+        "contract_127": [
+          "Westbrook Energy, Inc.",
+          "Larkspur Materials Corporation"
+        ],
+        "contract_130": [
+          "Zephyr Therapeutics, Inc.",
+          "Pinecrest Capital Corporation"
+        ],
+        "contract_133": [
+          "Redwater Biosystems, Inc.",
+          "Dunmore Industries Corporation"
+        ],
+        "contract_135": [
+          "Quarry Networks, Inc.",
+          "Zephyr Health Corporation"
+        ],
+        "contract_142": [
+          "Northgate Systems, Inc.",
+          "Yarrow Networks Corporation"
+        ],
+        "contract_144": [
+          "Silverline Analytics, Inc.",
+          "Larkspur Foods Corporation"
+        ],
+        "contract_146": [
+          "Westbrook Dynamics, Inc.",
+          "Harbor Pharma Corporation"
+        ],
+        "contract_28": [
+          "Granite Semiconductor, Inc.",
+          "Birchwood Logistics Corporation"
+        ],
+        "contract_29": [
+          "Yarrow Capital, Inc.",
+          "Zephyr Dynamics Corporation"
+        ],
+        "contract_4": [
+          "Cobalt Networks, Inc.",
+          "Kestrel Analytics Corporation"
+        ],
+        "contract_40": [
+          "Alder Therapeutics, Inc.",
+          "Upland Networks Corporation"
+        ],
+        "contract_41": [
+          "Orchard Capital, Inc.",
+          "Upland Systems Corporation"
+        ],
+        "contract_48": [
+          "Harbor Networks, Inc.",
+          "Tamarack Genomics Corporation"
+        ],
+        "contract_62": [
+          "Meridian Foods, Inc.",
+          "Tamarack Systems Corporation"
+        ],
+        "contract_64": [
+          "Fairlight Genomics, Inc.",
+          "Kestrel Resources Corporation"
+        ],
+        "contract_69": [
+          "Zephyr Analytics, Inc.",
+          "Ironvale Foods Corporation"
+        ],
+        "contract_79": [
+          "Birchwood Semiconductor, Inc.",
+          "Orchard Pharma Corporation"
+        ],
+        "contract_83": [
+          "Yarrow Health, Inc.",
+          "Larkspur Logistics Corporation"
+        ],
+        "contract_86": [
+          "Easton Materials, Inc.",
+          "Yarrow Health Corporation"
+        ],
+        "contract_92": [
+          "Pinecrest Networks, Inc.",
+          "Zephyr Logistics Corporation"
+        ]
+      },
+      "paths": {
+        "contract_0": "data_room/comparables/DR-315.txt",
+        "contract_1": "data_room/comparables/DR-349.txt",
+        "contract_121": "data_room/other_matters/DR-313.txt",
+        "contract_126": "data_room/other_matters/DR-194.txt",
+        "contract_127": "data_room/halvorsen_precedents/DR-191.txt",
+        "contract_130": "data_room/comparables/DR-107.txt",
+        "contract_133": "data_room/comparables/DR-290.txt",
+        "contract_135": "data_room/halvorsen_precedents/DR-374.txt",
+        "contract_142": "data_room/comparables/DR-413.txt",
+        "contract_144": "data_room/comparables/DR-219.txt",
+        "contract_146": "data_room/comparables/DR-220.txt",
+        "contract_28": "data_room/comparables/DR-178.txt",
+        "contract_29": "data_room/comparables/DR-438.txt",
+        "contract_4": "data_room/comparables/DR-390.txt",
+        "contract_40": "data_room/comparables/DR-103.txt",
+        "contract_41": "data_room/comparables/DR-450.txt",
+        "contract_48": "data_room/comparables/DR-402.txt",
+        "contract_62": "data_room/halvorsen_precedents/DR-175.txt",
+        "contract_64": "data_room/comparables/DR-284.txt",
+        "contract_69": "data_room/halvorsen_precedents/DR-235.txt",
+        "contract_79": "data_room/comparables/DR-295.txt",
+        "contract_83": "data_room/comparables/DR-245.txt",
+        "contract_86": "data_room/halvorsen_precedents/DR-462.txt",
+        "contract_92": "data_room/comparables/DR-143.txt"
+      },
+      "removed": [
+        "contract_92",
+        "contract_83"
+      ],
+      "v1": [
+        "contract_142",
+        "contract_40",
+        "contract_146",
+        "contract_79",
+        "contract_83",
+        "contract_92",
+        "contract_4",
+        "contract_130",
+        "contract_28",
+        "contract_64",
+        "contract_0",
+        "contract_41",
+        "contract_1",
+        "contract_29"
+      ],
+      "v2": [
+        "contract_142",
+        "contract_40",
+        "contract_146",
+        "contract_79",
+        "contract_4",
+        "contract_130",
+        "contract_28",
+        "contract_64",
+        "contract_0",
+        "contract_41",
+        "contract_1",
+        "contract_29",
+        "contract_133",
+        "contract_48",
+        "contract_144"
+      ]
+    }
+  },
+  "onet_tasks": [
+    {
+      "occupation": "23-2011.00",
+      "id": "23994",
+      "text": "Prepare, edit, or review legal documents, including legislation, briefs, pleadings, appeals, wills, contracts, and real estate closing statements.",
+      "source": "config:onet_root/Task Statements.txt",
+      "line": 5837
+    }
+  ],
+  "question_selection_rule": "Eligible questions sorted by shortcut_bal_q ascending, then n_labels descending, then question ID ascending only to break an exact tie; take the first 9. Fixed n=16; sample once from records scorable on at least 3 requested questions. Drop questions with fewer than 2 present classes or any present class with fewer than 2 cells; retain at least 5 questions, else fail the seed. No seed replacement or resampling.",
+  "screening_version": {
+    "label_pool_sha256": "8b0c86b05673eeb515fc168142a924977d5f1eaf9b553cc3b429b81df4c3581b",
+    "quarantine_sha256": "329c34b71fd2b88066f2d29d3405fd31b12e5bedcc4f3f90c73ab0a3f6ca8bf1",
+    "record_text_sha256": "f4b2425b05b4ab7d85bf4b417096d23d9144aae195670a530a96417e8e690885",
+    "question_schema_sha256": "f7267f49028c9d6c39d06764e8ae9315ddf637d5aaec4f9a0e8d490246c209e5",
+    "rule_version": "r2-three-proxies-nb-oof-v1",
+    "rule_sha256": "12d94b2bb97e285b27c45867053393d0391c7f4520c8d0cad83cd5db71bac62a",
+    "nb_policy_sha256": "7a08ccd3c7b3a07c1dc03e47009f25a43c7a8090e97c12729955eb190ccde186"
+  }
+}

@@ -1,4 +1,4 @@
-name: Agent runtime contracts
+name: Offline tests
 on: [push, pull_request]
 jobs:
   agent:
@@ -23,3 +23,19 @@ jobs:
       - run: npm run build
       - run: npm test
       - run: uv run pytest -q
+  taskgen:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: benchmark/taskgen
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - run: uv sync --project v5 --locked
+      - run: uv pip install --python v5/.venv/bin/python openpyxl PyYAML python-dateutil
+      - run: v5/.venv/bin/python -c "import sys; sys.path[:0]=['.','v5']; import tada_taskgen"
+      - run: uv run --project v5 --no-sync pytest v5/tests -q -rs -p no:cacheprovider
