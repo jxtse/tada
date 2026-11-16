@@ -1,0 +1,205 @@
+[
+  {
+    "id": "maud-pilot",
+    "sources": [
+      "MAUD"
+    ],
+    "difficulty": "easy",
+    "trial_rewards": {
+      "claude-opus-5-5": [
+        0.980357,
+        0.980357
+      ],
+      "deepseek-flash": [
+        0.910714,
+        0.910714
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 425,
+    "bytes": 7649058,
+    "tree_sha256": "f6963feade12fd670892c6a1d29771d66a73dfe8684f043592998832b0c2cbec"
+  },
+  {
+    "id": "bird-infiagent-oolongsynth",
+    "sources": [
+      "bird",
+      "infiagent-dabench",
+      "oolong-synth"
+    ],
+    "difficulty": "medium",
+    "trial_rewards": {
+      "claude-opus-5-5": [
+        0.9049,
+        0.883808
+      ],
+      "deepseek-flash": [
+        0.747232,
+        0.69592
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 491,
+    "bytes": 1810548720,
+    "tree_sha256": "c162a6b95180eccc3c3527a0e139a0577a73f373144aa8d66eb34e62ddd97e3f"
+  },
+  {
+    "id": "dabstep-semtpch-spider2",
+    "sources": [
+      "dabstep",
+      "semtpch",
+      "spider2"
+    ],
+    "difficulty": "hard",
+    "trial_rewards": {
+      "deepseek-flash": [
+        0.437911,
+        0.419608
+      ],
+      "claude-opus-5-5": [
+        0.412745,
+        0.412745
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 541,
+    "bytes": 569243248,
+    "tree_sha256": "deff2f8032ddbb874427ecd7cd20bea467603224451d9d0edc0ff9daffe3ef4f"
+  },
+  {
+    "id": "prec-loft-lrobench",
+    "sources": [
+      "PREC",
+      "loft",
+      "lrobench"
+    ],
+    "difficulty": "hard",
+    "trial_rewards": {
+      "deepseek-flash": [
+        0.67323,
+        0.591878
+      ],
+      "claude-opus-5-5": [
+        0.688672,
+        0.669623
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 1070,
+    "bytes": 896721762,
+    "tree_sha256": "a1d995be158fc24a220c9ecc3b539e403d1b9d6355f41db4da73903d17ece69f"
+  },
+  {
+    "id": "infiagent-kramabench-palimpzest",
+    "sources": [
+      "infiagent-dabench",
+      "kramabench",
+      "palimpzest"
+    ],
+    "difficulty": "easy",
+    "trial_rewards": {
+      "deepseek-flash": [
+        0.873381,
+        0.862013
+      ],
+      "claude-opus-5-5": [
+        0.889949,
+        0.889949
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 693,
+    "bytes": 211225343,
+    "tree_sha256": "cba8d00c814833340cdb7439ae64f2aee8da10cd803e9b8933e084bc1c05b249"
+  },
+  {
+    "id": "biodex-udabench",
+    "sources": [
+      "biodex",
+      "uda-bench-vldb"
+    ],
+    "difficulty": "hard",
+    "trial_rewards": {
+      "deepseek-flash": [
+        0.690924,
+        0.742776
+      ],
+      "claude-opus-5-5": [
+        0.736295,
+        0.749258
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 471,
+    "bytes": 4139548,
+    "tree_sha256": "edcd997074d1ac96c7501fc3964d6f90793da57830f0f15c3e77a3ba6c62df34"
+  },
+  {
+    "id": "blade-udabench",
+    "sources": [
+      "blade",
+      "uda-bench-vldb"
+    ],
+    "difficulty": "hard",
+    "trial_rewards": {
+      "deepseek-flash": [
+        0.643827,
+        0.680864
+      ],
+      "claude-opus-5-5": [
+        0.667593,
+        0.670216
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 493,
+    "bytes": 4655037,
+    "tree_sha256": "af2633800f589c6fa1bd28d647823b57773f5badcbaf765c25ed9997b346e737"
+  },
+  {
+    "id": "b-dabstep-tablebench",
+    "sources": [
+      "B",
+      "dabstep",
+      "tablebench"
+    ],
+    "difficulty": "medium",
+    "trial_rewards": {
+      "claude-opus-5-5": [
+        0.81767,
+        0.820045
+      ],
+      "deepseek-flash": [
+        0.716858,
+        0.732319
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 647,
+    "bytes": 247648593,
+    "tree_sha256": "39cb7850f5596b09b4ee04762a493c6812f1a2691d725f6bcbf6e7f6a45222f9"
+  },
+  {
+    "id": "cuad-maud-lrobench",
+    "sources": [
+      "CUAD",
+      "MAUD",
+      "lrobench"
+    ],
+    "difficulty": "easy",
+    "trial_rewards": {
+      "claude-opus-5-5": [
+        0.915028,
+        0.909977
+      ],
+      "deepseek-flash": [
+        0.853494,
+        0.809739
+      ]
+    },
+    "oracle_reward": 1.0,
+    "files": 498,
+    "bytes": 18478538,
+    "tree_sha256": "f78ac00f36ba30b974735746d1fe071f24823eb0639edc81f68011a9d3031d18"
+  }
+]
