@@ -1,8 +1,9 @@
 # Admitted tasks (pilot)
 
-Task packages are hosted in a private Hugging Face dataset, because they contain text and
+Task packages are hosted in a gated Hugging Face dataset, because they contain text and
 labels from source datasets whose licences have not all been cleared for redistribution:
-<https://huggingface.co/datasets/jxtse/tada-bench> (request access from the maintainer).
+<https://huggingface.co/datasets/jxtse/tada-bench>. Request access on the dataset page; the
+maintainer approves requests manually. Log in with `hf auth login` before downloading.
 
 ```bash
 hf download jxtse/tada-bench --repo-type dataset --local-dir tada-bench
