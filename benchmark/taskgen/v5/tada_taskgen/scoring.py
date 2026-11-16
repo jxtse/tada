@@ -126,6 +126,63 @@ def norm_int(v):
         return None
 
 
+# ------------------------------------------------------------------ document facts
+_MONTHS = {m: i for i, m in enumerate(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august',
+                                         'september', 'october', 'november', 'december'], 1)}
+_MONTHS.update({m[:3]: i for m, i in list(_MONTHS.items())})
+_MONTHS['sept'] = 9
+
+
+def _fact_date(s):
+    m = re.fullmatch(r"(\d{4})-(\d{1,2})-(\d{1,2})", s)
+    if m:
+        y, mo, d = map(int, m.groups())
+    else:
+        m = re.fullmatch(r"(\d{1,2})(?:st|nd|rd|th)? ([a-z]+)\.?,? (\d{4})", s) or None
+        if m:
+            d, mo, y = int(m.group(1)), _MONTHS.get(m.group(2)), int(m.group(3))
+        else:
+            m = re.fullmatch(r"([a-z]+)\.? (\d{1,2})(?:st|nd|rd|th)?,? (\d{4})", s)
+            if not m:
+                return None
+            mo, d, y = _MONTHS.get(m.group(1)), int(m.group(2)), int(m.group(3))
+    if not mo or not 1 <= mo <= 12 or not 1 <= d <= 31:
+        return None
+    return f"{y:04d}-{mo:02d}-{d:02d}"
+
+
+def fact_norm(v):
+    """Equivalence used for document facts: the same value written differently is the same fact.
+
+    Dates in common written forms compare as ISO dates, numeric strings as numbers, and text is
+    compared case-, whitespace- and trailing-full-stop-insensitively. Booleans stay distinct from numbers.
+    """
+    if isinstance(v, bool):
+        return ("bool", v)
+    if isinstance(v, (int, float)):
+        return ("num", float(v)) if math.isfinite(v) else ("invalid",)
+    if isinstance(v, list):
+        return ("list", tuple(fact_norm(x) for x in v))
+    if isinstance(v, dict):
+        return ("dict", tuple(sorted((str(k), fact_norm(x)) for k, x in v.items())))
+    if v is None:
+        return ("none",)
+    s = norm_text(v)
+    if s == INVALID:
+        return ("invalid",)
+    s = s.rstrip(".").strip()
+    date = _fact_date(s)
+    if date:
+        return ("date", date)
+    if re.fullmatch(r"[-+]?\d+(?:\.\d+)?", s.replace(",", "")) and len(s) <= 20:
+        return ("num", float(s.replace(",", "")))
+    return ("str", s)
+
+
+def fact_equal(a, b):
+    return fact_norm(a) == fact_norm(b)
+
+
 def nonempty(v):
     if v is None:
         return False
@@ -764,7 +821,7 @@ def score_records(parsed, gold):
     fact_correct = {}
     for fact in gold.get('facts', []):
         vals = submitted(fact)
-        ok = bool(vals) and all(type(v) is type(fact['value']) and v == fact['value'] for v in vals)
+        ok = bool(vals) and all(fact_equal(v, fact['value']) for v in vals)
         fact_correct[fact['id']] = ok
         decoded_values[fact['id']] = vals[0] if vals else None
         value = float(ok) * penalties[fact['sheet']]

@@ -24,7 +24,17 @@ sha=$(cd "$T" && find . -type f ! -path './environment/runtime/*' ! -path './tes
 printf '{"task": "%s", "task_tree_sha256": "%s", "model": "%s", "host": "%s", "started": "%s"}\n' "$T" "$sha" "$M" "$H" "$(date -u +%FT%TZ)" > "$J/$N.meta.json"
 RN="$N-$(echo "$sha" | cut -c1-8)-$(date +%s)"
 LOG="$J/$N.log"
-rsync -a --delete -e "$SSH" "$T/" "$H:$R/tasks/$sha/" >> "$LOG" 2>&1 || { echo "task sync failed" >> "$LOG"; exit 3; }
+# Concurrent trials of the same task share one remote copy: sync it once, under a local per-task lock.
+SYNC_LOCK="$(dirname "$J")/.sync-$sha.lock"
+python3 - "$SYNC_LOCK" "$LOG" "$SSH" "$T" "$H:$R/tasks/$sha/" <<'PYLOCK' || { echo "task sync failed" >> "$LOG"; exit 3; }
+import fcntl, subprocess, sys
+lock, log, ssh, src, dst = sys.argv[1:6]
+with open(lock, 'a+') as handle:
+    fcntl.flock(handle, fcntl.LOCK_EX)
+    with open(log, 'a') as out:
+        code = subprocess.run(['rsync', '-a', '--delete', '-e', ssh, src + '/', dst], stdout=out, stderr=out).returncode
+sys.exit(code)
+PYLOCK
 rsync -a -e "$SSH" solver/tada_solver_agent.py local_config.py "$H:$R/solver/" >> "$LOG" 2>&1 || exit 3
 rsync -a -e "$SSH" solver/remote_sitecustomize.py "$H:$R/solver/sitecustomize.py" >> "$LOG" 2>&1 || exit 3
 # Quote non-secret settings as one remote shell assignment each.

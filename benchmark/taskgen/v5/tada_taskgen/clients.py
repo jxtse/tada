@@ -83,7 +83,12 @@ def _canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
 
+MIN_GUARDED_SECRET = 12  # shorter local route tokens are ordinary words; guarding them corrupts text
+
+
 def _redact(value, secret):
+    if secret and len(secret) < MIN_GUARDED_SECRET:
+        secret = ''
     if isinstance(value, str):
         return value.replace(secret, '[REDACTED]') if secret else value
     if isinstance(value, list):
@@ -144,6 +149,11 @@ class OpenAICompatibleClient:
                     raise ValueError('Invalid supported sampling parameter: ' + name)
                 self.parameters[name] = value
         self.supported_parameters = list(supported)
+        max_tokens = config.get('max_tokens')
+        if max_tokens is not None:
+            if type(max_tokens) is not int or not 1 <= max_tokens <= 128000:
+                raise ValueError('max_tokens must be an integer in [1, 128000]')
+            self.parameters['max_tokens' if self.api == 'chat_completions' else 'max_output_tokens'] = max_tokens
         self.task_dir = Path(task_dir).resolve()
         self.repo = Path(__file__).resolve().parents[2]
         configured_cache = cache_dir or config.get('cache_dir')
@@ -182,8 +192,9 @@ class OpenAICompatibleClient:
                 'email, notice or meeting minutes in the requested form and workplace context. Convey '
                 'every supplied fact exactly in natural, varied prose. Do not list the facts as a table, '
                 'JSON, a key-value dump, or a mechanical field-by-field list. Use normal salutations, '
-                'narrative context and transitions where appropriate. Do not invent or alter facts.')
-            material = {k: payload[k] for k in ('id', 'kind', 'facts', 'attempt') if k in payload}
+                'narrative context and transitions where appropriate. Do not invent or alter facts. If '
+                '"content" is supplied, also convey that guidance faithfully in the same document.')
+            material = {k: payload[k] for k in ('id', 'kind', 'facts', 'attempt', 'content') if k in payload}
         elif operation == 'extract_facts':
             instruction = (
                 'Extract the named fields from this document only. Return one JSON object under '
@@ -273,7 +284,7 @@ class OpenAICompatibleClient:
             secret = os.environ.get(self.key_env, '')
             if not secret:
                 raise ModelRequestError('Missing model credential environment variable: ' + self.key_env)
-            if secret in _canonical(identity):
+            if len(secret) >= MIN_GUARDED_SECRET and secret in _canonical(identity):
                 raise ModelRequestError('Credential value appeared in model input; request refused')
             headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + secret}
             for retry in range(self.max_retries + 1):

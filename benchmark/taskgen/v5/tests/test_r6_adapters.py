@@ -108,6 +108,10 @@ def test_selected_evidence_is_grounded_in_original_public_record(adapter):
 
 
 def test_quarantine_excludes_pair_and_whole_record_without_relabelling(adapter, tmp_path):
+    # Baseline without the live quarantine file, which grows as pilots confirm label conflicts.
+    empty = tmp_path / 'empty_quarantine.json'
+    empty.write_text('{}')
+    adapter = get_adapter(adapter.source, quarantine=empty, permutation_seed='')
     pool = adapter.label_pool()
     first = next(iter(pool))
     other = next(key for key in pool if key[0] != first[0])

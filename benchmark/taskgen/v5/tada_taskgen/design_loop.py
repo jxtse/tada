@@ -50,8 +50,14 @@ def aggregate_gates(report):
             item['invertibility'] = {'value': _mapping(raw.get('invertibility')).get('pass') is True, 'required': True}
         elif name == 'trivial_answers':
             item['results'] = {key: {'reward': _number(_mapping(_mapping(raw.get('results')).get(key)).get('reward')),
-                                     'limit': .30}
+                                     'limit': .30,
+                                     # Aggregate component scores only (labels/scope/facts/consistency), so the
+                                     # designer can see which part of its design a trivial answer gets for free.
+                                     'components': {name: _number(value) for name, value in _mapping(
+                                         _mapping(_mapping(raw.get('results')).get(key)).get('components')).items()
+                                                    if name in ('labels', 'scope', 'facts', 'consistency')}}
                                for key in ('empty', 'all_majority', 'constant')}
+            item['component_weights'] = {'labels': .70, 'scope': .15, 'facts': .10, 'consistency': .05}
         elif name == 'deterministic_offline':
             item['checks'] = {key: {'value': raw.get(key) is True, 'required': True}
                              for key in ('repeat_identical', 'offline', 'extra_rows_never_raise', 'tail_gap_no_gain')}
@@ -175,6 +181,9 @@ def prepare_candidate(intent, candidate_root, *, designer, compile_and_gate, rev
                 failures.append('compile_or_gates_unavailable')
                 from .compile_errors import from_exception
                 diagnostic = from_exception(exc, spec)
+                if diagnostic is None and isinstance(gates, dict) and gates.get('compile_diagnostic'):
+                    # The gate runner caught the compile error itself and recorded a safe diagnostic.
+                    diagnostic = gates['compile_diagnostic']
                 if diagnostic is not None:
                     gates['compile_diagnostic'] = diagnostic
                 _write(attempt / 'error.json', {'stage': 'compile_and_gate', 'error_type': type(exc).__name__})

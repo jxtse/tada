@@ -54,8 +54,10 @@ V5_EXAMPLE = {
 }
 # Strings that would indicate per-record labels leaked into the prompt. (Paths such as
 # /tests/gold.json are legitimate: the designer must tell the scorer where gold lives.)
-FORBIDDEN_IN_PROMPT = ['"direction": -1', '"direction": 0', '"direction": 1', 'evidence_spans": [',
-                       '"Label Code":', '"label": -1', '"label": 0', '"label": 1']
+# Per-record label payloads. Bare counts after a question key (e.g. clean_label_counts
+# {"direction": 1786}) are aggregate public metadata, so the patterns require a complete value.
+FORBIDDEN_IN_PROMPT = [r'"direction": -?[01][,}\n]', r'evidence_spans": \[',
+                       r'"Label Code":', r'"label": -?[01][,}\n]']
 
 
 def two_source_example():
@@ -118,7 +120,8 @@ def assemble(family: str, v5: bool = False, intent: str | None = None) -> str:
 
 
 def audit_prompt(prompt: str) -> list[str]:
-    return [s for s in FORBIDDEN_IN_PROMPT if s in prompt]
+    import re
+    return [s for s in FORBIDDEN_IN_PROMPT if re.search(s, prompt)]
 
 
 def parse_trace(jsonl: Path) -> dict:

@@ -80,6 +80,8 @@ def validate_v5_review(result):
 
 
 REVIEW_AGREEMENT_CHARS = 40_000
+REVIEW_INPUT_BYTES = 200_000   # read at most this much of any non-source file
+REVIEW_TOTAL_CHARS = 1_200_000  # whole package, roughly 400k tokens (a 1.1 MB package measured 407k)
 
 
 def v5_materials(task, gates=None):
@@ -108,13 +110,36 @@ def v5_materials(task, gates=None):
             with zipfile.ZipFile(path) as archive:
                 material[name] = archive.read('word/document.xml').decode('utf8')
         else:
-            text = path.read_text('utf8')
-            # Source agreements are unchanged dataset text (checked mechanically by the gates). The reviewer
-            # judges the scenario, so it gets a bounded excerpt of each; the prompt limit is ~1.05M tokens.
-            if name.startswith('environment/public/agreements/') and len(text) > REVIEW_AGREEMENT_CHARS:
-                text = (text[:REVIEW_AGREEMENT_CHARS] + f'\n\n[Excerpt for review: first {REVIEW_AGREEMENT_CHARS} of '
-                        f'{len(text)} characters. The solver workspace contains the full unchanged agreement.]')
+            # Source documents and benchmark inputs are unchanged dataset content (checked mechanically by
+            # the gates). The reviewer judges the scenario, so every source file gets a bounded excerpt and
+            # binary inputs (databases, archives) a size note; the prompt limit is ~1.05M tokens.
+            size = path.stat().st_size
+            with path.open('rb') as handle:
+                head = handle.read(REVIEW_INPUT_BYTES)
+            if b'\x00' in head[:8192]:
+                material[name] = (f'[Binary input file, {size} bytes (e.g. a database). Unchanged source data; '
+                                  'not shown to the reviewer.]')
+                continue
+            text = head.decode('utf8', errors='replace')
+            is_source = name.startswith(('environment/public/agreements/', 'environment/public/inputs/'))
+            limit = REVIEW_AGREEMENT_CHARS if is_source else REVIEW_INPUT_BYTES
+            if len(text) > limit or size > len(head):
+                kind = 'agreement' if name.startswith('environment/public/agreements/') else 'file'
+                text = (text[:limit] + f'\n\n[Excerpt for review: first {min(limit, len(text))} characters of a '
+                        f'{size}-byte file. The solver workspace contains the full unchanged {kind}.]')
             material[name] = text
+    # Keep the whole package bounded even when a task carries hundreds of source files.
+    total = sum(len(v) for v in material.values())
+    if total > REVIEW_TOTAL_CHARS:
+        sources = sorted((k for k in material if k.startswith(('environment/public/agreements/',
+                                                               'environment/public/inputs/'))),
+                         key=lambda k: -len(material[k]))
+        per_file = max(2000, (REVIEW_TOTAL_CHARS - sum(len(material[k]) for k in material if k not in sources))
+                       // max(1, len(sources)))
+        for key in sources:
+            if len(material[key]) > per_file:
+                material[key] = (material[key][:per_file] + f'\n\n[Excerpt shortened to {per_file} characters to '
+                                 'keep the review package within the model input limit.]')
     material['aggregate_hard_gates.json'] = json.dumps(aggregate_gates(gates or {}), ensure_ascii=False)
     # This is the fixed public scoring policy, not task gold or any correctness trace.
     import tomllib

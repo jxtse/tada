@@ -201,7 +201,8 @@ def _roundtrip_gate(task):
         path=(task/'environment/public'/d['path']).resolve()
         if not path.is_relative_to((task/'environment/public').resolve()) or not path.is_file() or strip_header(path.read_text())!=d['text']:
             failures.append('carrier differs: '+d['id']); continue
-        if not attempts or canonical(attempts[-1].get('extracted')) != canonical(d['facts']) or attempts[-1].get('pass') is not True:
+        from .scoring import fact_equal
+        if not attempts or not fact_equal(attempts[-1].get('extracted'), d['facts']) or attempts[-1].get('pass') is not True:
             failures.append('blind exact-match verification absent: '+d['id'])
         verified[d['path']]=d
     for n in graph['nodes']:

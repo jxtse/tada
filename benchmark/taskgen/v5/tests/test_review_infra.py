@@ -46,3 +46,17 @@ def test_review_materials_bound_agreement_text(tmp_path):
     assert len(material['environment/public/agreements/A.txt']) < limit + 300
     assert 'full unchanged agreement' in material['environment/public/agreements/A.txt']
     assert len(material['environment/public/notice.txt']) == 60_000
+
+
+def test_review_materials_handle_binary_and_huge_benchmark_inputs(tmp_path):
+    task = tmp_path / 'task'
+    inputs = task / 'environment/public/inputs/bird-x/databases'
+    inputs.mkdir(parents=True)
+    (task / 'instruction.md').write_text('Answer the items.')
+    (inputs / 'db.sqlite').write_bytes(b'SQLite format 3\x00' + bytes(range(256)) * 400)
+    (inputs / 'big.csv').write_bytes(('a,b\n' + 'x' * 70 + ',\xe9\n').encode('latin-1') * 20_000)
+    material = module('review_package').v5_materials(task, {})
+    db = material['environment/public/inputs/bird-x/databases/db.sqlite']
+    assert db.startswith('[Binary input file') and 'bytes' in db
+    big = material['environment/public/inputs/bird-x/databases/big.csv']
+    assert len(big) < module('review_package').REVIEW_AGREEMENT_CHARS + 300 and 'full unchanged file' in big

@@ -239,8 +239,16 @@ def resolve(spec, seed):
                 {'source': source, 'candidate_count': len(pool_records), 'minimum_scorable_questions': minimum_scorable,
                  'sample_size': size, 'seed': seed, 'oversized_items_dropped': len(oversized), 'workspace_max_bytes': cap})
         selected.extend(rng.sample(pool_records, size))
-    if sum(sizes[r] if r in sizes else len(adapter.records()[r]['text'].encode()) for r in selected) > cap:
-        raise InstanceCompilationError('sampled inputs exceed the workspace byte cap', {'max_bytes': cap, 'dropped_oversized': len(oversized)})
+    selected_bytes = {r: sizes[r] if r in sizes else len(adapter.records()[r]['text'].encode()) for r in selected}
+    if sum(selected_bytes.values()) > cap:
+        by_source = defaultdict(int)
+        for r, n in selected_bytes.items():
+            by_source[source_of(spec, record=r) if 'sources' in spec else spec['source']] += n
+        raise InstanceCompilationError('sampled inputs exceed the workspace byte cap',
+                                       {'max_bytes': cap, 'dropped_oversized': len(oversized)},
+                                       code='workspace_too_large',
+                                       context={'max_bytes': cap, 'sampled_bytes': sum(selected_bytes.values()),
+                                                'sampled_bytes_by_source': dict(by_source)})
     records = [{'record_id': r, 'visible_id': adapter.visible_id(r),
                 'visible_file': f'agreements/{adapter.visible_id(r)}.txt', 'questions': available[r]} for r in selected]
     pool = adapter.reference().label_pool()
@@ -297,7 +305,8 @@ def public_scoring_policy(spec):
             'Zero precision and recall give zero; two empty sets give one.'),
         'facts': (facts,
             'Average exact correctness across the document-fact Value cells, each multiplied by its '
-            'sheet precision. Values must match the stated value and value type. Scope status is scored '
+            'sheet precision. Values must state the same value; dates in common written forms, number '
+            'formatting, letter case and surrounding whitespace are normalised. Scope status is scored '
             'only by the scope component. If a task has no document facts, this component is dropped '
             'and the remaining weights are renormalised to sum to one.'),
         'consistency': ([field(summary, 'Positive_Count')],
@@ -350,8 +359,9 @@ def carrier_failure(document, expected):
     from .roundtrip import canonical
     attempts = document.get('attempts', [])
     extracted = attempts[-1].get('extracted') if attempts else None
+    from .scoring import fact_equal
     keys = [key for key, value in expected.items() if not isinstance(extracted, dict)
-            or key not in extracted or canonical(extracted[key]) != canonical(value)]
+            or key not in extracted or not fact_equal(extracted[key], value)]
     # Extra extracted fields also fail exact round trip; their untrusted names
     # must not reach feedback. Name the expected keys needing re-extraction.
     if not keys:
@@ -419,8 +429,12 @@ def compile_task(spec, seed, out, *, writer=None, extractor=None, doc_client=Non
         if client == 'real' and (report.get('fake') is not False or any(d.get('fake') is not False for d in report['documents'])):
             raise ValueError('Real compilation cannot reuse fake document artifacts')
         if (set(archived) != {d['id'] for d in documents} or
-                any(d['id'] not in archived or canonical(archived[d['id']]['facts']) != canonical(d['facts'])
+                any(d['id'] not in archived or (canonical(archived[d['id']]['facts']) != canonical(d['facts'])
+                                                # A dropped carrier keeps no facts; it still matches its declaration.
+                                                and not (archived[d['id']].get('status') == 'dropped'
+                                                         and sorted(archived[d['id']].get('dropped_facts', [])) == sorted(d['facts'])))
                     or archived[d['id']]['path'] != d['path'] or archived[d['id']]['kind'] != d['kind']
+                    or archived[d['id']].get('content') != d.get('content')
                     for d in documents)):
             raise ValueError('archived documents do not match this exact scenario; regenerate explicitly')
     else:

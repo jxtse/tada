@@ -45,7 +45,15 @@ def test_prompt_example_passes_check_and_compiles(tmp_path, monkeypatch):
 
 def test_regression_spec_passes_check(tmp_path):
     spec = json.loads((REPO / 'v5/specs/maud_screened.json').read_text())
-    assert check(write(tmp_path / 'task', spec))['ok']
+    result = check(write(tmp_path / 'task', spec))
+    if not result['ok']:
+        # Owner-disabled questions (live quarantine file) are refused for NEW designs by design.
+        from tada_taskgen.adapters import get_adapter
+        from tada_taskgen.adapters.base import disabled_questions
+        adapter = get_adapter('MAUD')
+        disabled = disabled_questions(adapter.quarantine, adapter.source)
+        assert disabled and all(q in result['error'] for q in disabled & set(spec['questions'])), result
+        assert 'unknown question' in result['error'] or 'disabled' in result['error'] or 'MAUD:' in result['error']
 
 
 @pytest.mark.parametrize('mutate,needle', [

@@ -14,7 +14,7 @@ FILES = (
     'controller.py', 'weekend_checks.py', 'weekend_replay.py', 'label_flip_check.py',
     'review_package.py', 'run_designer.py', 'harbor_templates.md', 'required_files.json',
     'tada_designer_tools.ts', 'tada_web_search.ts', 'designer_v5.md',
-    'v5/README.md', 'v5/config.toml', 'v5/batch1_inventory.json', 'v5/compile_task.py',
+    'v5/README.md', 'v5/config.toml', 'v5/batch1_inventory.json', 'v5/input_sizes.json', 'v5/compile_task.py',
     'v5/pyproject.toml', 'v5/uv.lock', 'tools/export_public.py',
 )
 PATTERNS = (

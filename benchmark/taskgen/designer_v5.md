@@ -21,6 +21,10 @@ write code, gold, per-record labels, scoring scripts or any additional files.
    Linking facts belong to heterogeneous generated emails, notices, minutes or SOPs.
    The compiler asks a different model to extract each carrier's facts blind and
    requires an exact round trip. Failed facts cannot become scored prerequisites.
+   Facts must be recoverable verbatim by a blind reader, so short exact values work
+   (dates, identifiers, names, counts). Rules, procedures and other explanatory text can
+   go in the document's optional `content` string: the writer conveys it in the same
+   document, but it is neither extracted nor scored.
 4. Derived routes, changes, counts and summaries are never independent gold. Mark
    them unscored or consistency-only, recomputed from the solver's own answers.
    Consistency credit is low weight and only available where underlying labels are
@@ -53,6 +57,11 @@ determine the combination. For a multi-source task, declare `sources` (1–3 IDs
 `sample_size` as the number of records to sample from each source. The supplied
 catalogues contain exactly the assigned datasets. Original question IDs remain
 local to their dataset; the compiler qualifies public identifiers to avoid collisions.
+Optionally declare `sample_sizes` (source ID → count) to sample different numbers per
+source. The sampled public inputs of all sources together must fit
+`workspace_max_bytes`; each catalogue's `input_bytes_per_record` gives the median,
+p90 and maximum size of one record, so size samples from sources with large inputs
+(databases, long contexts) accordingly.
 
 The assigned sources cover the agreed batch-1 text corpora and benchmark items.
 Each catalogue includes its label-card summary, visible and hidden fields,

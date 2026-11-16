@@ -97,6 +97,9 @@ def validate_spec_structure(spec):
         safe_path(d['path'])
         if not isinstance(d.get('facts', {}), dict):
             raise ValueError('document facts must be a mapping')
+        if 'content' in d and not isinstance(d['content'], str):
+            raise ValueError('document content must be a string')
+
     for key in ('include_all', 'ignore_revisions'):
         value = spec['thresholds'].get(key)
         if not isinstance(value, (int, float)) or isinstance(value, bool) or not 0 <= value <= 1:

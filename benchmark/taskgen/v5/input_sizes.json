@@ -1,0 +1,179 @@
+{
+ "sources": {
+  "B": {
+   "max": 282680,
+   "median": 46646,
+   "p90": 74841,
+   "records": 2028,
+   "workspace_max_bytes": 2147483648
+  },
+  "CUAD": {
+   "max": 65174,
+   "median": 25887,
+   "p90": 54188,
+   "records": 198,
+   "workspace_max_bytes": 2147483648
+  },
+  "MAUD": {
+   "max": 782225,
+   "median": 337330,
+   "p90": 436309,
+   "records": 77,
+   "workspace_max_bytes": 2147483648
+  },
+  "NDA": {
+   "max": 54957,
+   "median": 9936,
+   "p90": 20866,
+   "records": 607,
+   "workspace_max_bytes": 2147483648
+  },
+  "PREC": {
+   "max": 361539,
+   "median": 21470,
+   "p90": 47114,
+   "records": 8547,
+   "workspace_max_bytes": 2147483648
+  },
+  "asap-chinese-restaurant-absa": {
+   "max": 2974,
+   "median": 793,
+   "p90": 1468,
+   "records": 46730,
+   "workspace_max_bytes": 2147483648
+  },
+  "biodex": {
+   "max": 117402,
+   "median": 19795,
+   "p90": 37334,
+   "records": 15659,
+   "workspace_max_bytes": 2147483648
+  },
+  "bird": {
+   "max": 597755414,
+   "median": 22360236,
+   "p90": 481419535,
+   "records": 1460,
+   "workspace_max_bytes": 2147483648
+  },
+  "blade": {
+   "max": 371072,
+   "median": 25911,
+   "p90": 369183,
+   "records": 188,
+   "workspace_max_bytes": 2147483648
+  },
+  "dabstep": {
+   "max": 24170487,
+   "median": 24170276,
+   "p90": 24170487,
+   "records": 10,
+   "workspace_max_bytes": 2147483648
+  },
+  "infiagent-dabench": {
+   "max": 2296321,
+   "median": 60696,
+   "p90": 671301,
+   "records": 257,
+   "workspace_max_bytes": 2147483648
+  },
+  "kramabench": {
+   "max": 74146740,
+   "median": 241086,
+   "p90": 18573012,
+   "records": 77,
+   "workspace_max_bytes": 2147483648
+  },
+  "loft": {
+   "max": 103976153,
+   "median": 3821783,
+   "p90": 103975997,
+   "records": 1726,
+   "workspace_max_bytes": 2147483648
+  },
+  "lrobench": {
+   "max": 406877889,
+   "median": 6786244,
+   "p90": 156343857,
+   "records": 270,
+   "workspace_max_bytes": 2147483648
+  },
+  "ntsb_aviation_avall": {
+   "max": 158539,
+   "median": 4247,
+   "p90": 14701,
+   "records": 12867,
+   "workspace_max_bytes": 2147483648
+  },
+  "oolong-real": {
+   "max": 4506339,
+   "median": 1072878,
+   "p90": 3094389,
+   "records": 907,
+   "workspace_max_bytes": 2147483648
+  },
+  "oolong-synth": {
+   "max": 14537699,
+   "median": 176995,
+   "p90": 6306735,
+   "records": 6500,
+   "workspace_max_bytes": 2147483648
+  },
+  "palimpzest": {
+   "max": 5435,
+   "median": 2109,
+   "p90": 4606,
+   "records": 13,
+   "workspace_max_bytes": 2147483648
+  },
+  "semantic-query-engines-experiments": {
+   "max": 1085704,
+   "median": 44833,
+   "p90": 183168,
+   "records": 32,
+   "workspace_max_bytes": 2147483648
+  },
+  "sembench": {
+   "max": 363259,
+   "median": 363238,
+   "p90": 363259,
+   "records": 4,
+   "workspace_max_bytes": 2147483648
+  },
+  "semtpch": {
+   "max": 790330392,
+   "median": 7071992,
+   "p90": 790329681,
+   "records": 16,
+   "workspace_max_bytes": 2147483648
+  },
+  "spider2": {
+   "max": 313090395,
+   "median": 45617438,
+   "p90": 114589973,
+   "records": 110,
+   "workspace_max_bytes": 2147483648
+  },
+  "tablebench": {
+   "max": 11934,
+   "median": 1137,
+   "p90": 2487,
+   "records": 836,
+   "workspace_max_bytes": 2147483648
+  },
+  "tag-bench": {
+   "max": 597755111,
+   "median": 481419418,
+   "p90": 597755057,
+   "records": 60,
+   "workspace_max_bytes": 2147483648
+  },
+  "uda-bench-vldb": {
+   "max": 4723426,
+   "median": 3814,
+   "p90": 66116,
+   "records": 1886,
+   "workspace_max_bytes": 2147483648
+  }
+ }
+}

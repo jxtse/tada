@@ -24,7 +24,8 @@ def extract_facts(text: str, fact_names: list[str], client: ModelClient) -> dict
 def verify_document(text: str, expected: dict, client: ModelClient) -> dict:
     try:
         extracted = extract_facts(text, sorted(expected), client)
-        matched = canonical(extracted) == canonical(expected)
+        from .scoring import fact_equal
+        matched = isinstance(extracted, dict) and set(extracted) == set(expected) and fact_equal(extracted, expected)
         return {"pass": matched, "extracted": extracted, "error": None}
     except (ValueError, TypeError, KeyError) as exc:
         return {"pass": False, "extracted": None, "error": str(exc)}

@@ -35,6 +35,11 @@ def sandbox_profile(writable: list[Path]) -> str:
     for dev in ['/dev/null', '/dev/tty', '/dev/dtracehelper']:
         rules.append(f'(allow file-write* (literal "{dev}"))')
     rules.append(f'(allow file-write* (subpath "{Path(os.environ.get("TMPDIR", "/tmp")).resolve()}"))')
+    # Adapters keep label-free derived caches and scratch space (dataset indexes, SQL verification copies,
+    # unified-reader extracts) under v5_runs; builds must be able to lock and fill them.
+    for shared in ('v5_runs/source_cache', 'v5_runs/repair_r7/tmp', 'v5_runs/repair_r7/unified_extensions'):
+        (HERE / shared).mkdir(parents=True, exist_ok=True)
+        rules.append(f'(allow file-write* (subpath "{(HERE / shared).resolve()}"))')
     return '\n'.join(rules)
 
 
@@ -165,10 +170,14 @@ def evidence_index(family: str, task: Path | None = None) -> dict:
     raise ValueError(f'unsupported evidence family: {family}')
 
 
-PRIVATE_STRINGS = ['/' + 'Volumes/', '/' + 'Users/', 'gold.json', 'b_sources', 'c2_sources', 'cuadx_sources', 'private_cache',
+PRIVATE_STRINGS = ['gold.json', 'b_sources', 'c2_sources', 'cuadx_sources', 'private_cache',
                    'Evidence Inference', 'PromptID', 'CUAD', 'master_clauses', 'prec_sources', 'precedentAlteration',
                    'precedent_meta', 'ntsb_sources', 'narr_cause', 'narr_accf', 'Cause_Factor', 'nda_sources',
                    'ContractNLI', 'NotMentioned', 'maud_sources', 'MAUD_', 'MAUD v1']
+# Machine paths: the operator's home and every configured private root (computed, never hard-coded).
+# Generic '/Users/' or '/Volumes/' prefixes also occur inside original third-party benchmark data
+# (e.g. URLs in StackExchange posts), so they are not used as markers.
+PRIVATE_STRINGS += [str(Path.home()) + '/']
 PRIVATE_STRINGS += [str(get(key)) for key in ('datasets_root', 'unified_root', 'legacy_cache', 'quarantine') if get(key)]
 if get('legacy_cache'):
     PRIVATE_STRINGS.append('/'.join(Path(get('legacy_cache')).parts[-2:]))
@@ -231,12 +240,18 @@ def leak_scan(task: Path, family: str = 'B') -> dict:
     if (task / 'instruction.md').is_file():
         files.append(task / 'instruction.md')
     text_hits, private_hits, label_words = [], [], []
+    # Identifier tokens match as whole words ('CUAD' must not fire on 'ECUADOR'); paths match as substrings.
+    def _token(term):
+        lead = r'\b' if term[:1].isalnum() else ''
+        tail = r'\b' if term[-1:].isalnum() else ''
+        return lead + re.escape(term) + tail
+    private_re = re.compile('|'.join(_token(t) for t in private_strings)) if private_strings else None
     import zipfile
     for f in files:
         try:
             private_hit, vocabulary_hit = False, False
             for raw in scan_chunks(f):
-                private_hit |= any(x in raw for x in private_strings)
+                private_hit |= bool(private_re and private_re.search(raw))
                 vocabulary_hit |= bool(re.search(r'Label Code|evidence[_ ]span|annotator', raw, re.I))
         except Exception:
             continue
@@ -356,7 +371,9 @@ def main():
                 raise ValueError('Configured datasets_python has no dateutil verifier runtime')
             shutil.copytree(runtime_root / 'dateutil', task / d / 'runtime/dateutil',
                             ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
-            shutil.copyfile(runtime_root / 'six.py', task / d / 'runtime/six.py')
+            # python-dateutil < 3 imports six; 4.x does not ship or need it.
+            if (runtime_root / 'six.py').exists():
+                shutil.copyfile(runtime_root / 'six.py', task / d / 'runtime/six.py')
     rep: dict = {'run': str(run), 'seed': a.seed, 'family': family, 'steps': {},
                  'controller_revision': file_digest(Path(__file__)),
                  'frozen_gate_source': 'Fixed baseline, sensitivity, leakage and output-contract policy'}

@@ -17,6 +17,7 @@ REASONS = {
     'class_guard_failed': 'Questions failed the fixed sampled-instance class guard. Each retained question requires at least two present classes and at least two cells in each present class.',
     'too_few_retained_questions': 'Too few questions remain after the fixed class guard. Revise the question selection without changing the fixed seed or sampling rules.',
     'insufficient_scorable_records': 'The source pool has too few records scorable for the requested sample. Revise the question selection or requested sample size.',
+    'workspace_too_large': 'The sampled public inputs exceed the fixed workspace byte cap. Reduce sample_sizes for the sources with large inputs (databases, long contexts) so the sampled total fits; the cap and seed are fixed.',
 }
 
 
@@ -57,6 +58,16 @@ def safe_diagnostic(value, spec=None):
             number = context.get(key)
             if type(number) is int and 0 <= number <= 1000000:
                 result[key] = number
+    elif code == 'workspace_too_large':
+        for key in ('max_bytes', 'sampled_bytes'):
+            number = context.get(key)
+            if type(number) is int and 0 <= number:
+                result[key] = number
+        per_source = context.get('sampled_bytes_by_source', {})
+        declared = set(spec.get('sources', [])) | ({spec['source']} if isinstance(spec.get('source'), str) else set())
+        if isinstance(per_source, dict):
+            result['sampled_bytes_by_source'] = {s: n for s, n in sorted(per_source.items())
+                                                 if _identifier(s) and s in declared and type(n) is int and n >= 0}
     elif code == 'insufficient_scorable_records':
         for key in ('available_count', 'required_count', 'minimum_scorable_questions'):
             number = context.get(key)

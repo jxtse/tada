@@ -61,13 +61,15 @@ class MintShellAgent(BaseAgent):
         logs = Path(self.logs_dir)
         logs.mkdir(parents=True, exist_ok=True)
         messages = [{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': instruction}]
-        usage, calls, shell_calls, retries, truncations = [], 0, 0, 0, 0
+        usage, calls, shell_calls, retries, truncations, blocked = [], 0, 0, 0, 0, 0
         started = time.monotonic()
         status = 'failed'
 
         def safe_dump(obj):
             raw = json.dumps(obj, ensure_ascii=False)
-            if key in raw:
+            # Short route tokens (the local Opus route uses a 5-letter word) occur in ordinary text;
+            # only real secrets are guarded, otherwise any document containing the word kills the trial.
+            if len(key) >= 12 and key in raw:
                 raise RuntimeError('credential material blocked from logs')
             return raw
 
@@ -131,7 +133,12 @@ class MintShellAgent(BaseAgent):
                             continue
                         if key_env in command or (urlsplit(endpoint).hostname or '').lower() in command.lower() or \
                                 re.search(r'(localhost|127\.0\.0\.1|host\.docker\.internal)\b', command):
-                            raise RuntimeError('endpoint or credential reference blocked from container')
+                            # Refuse the command, keep the trial: the environment is offline anyway.
+                            blocked += 1
+                            messages.append({'role': 'tool', 'tool_call_id': call['id'], 'content': json.dumps(
+                                {'error': 'command refused: this offline environment does not allow references to '
+                                          'localhost, model endpoints or credentials'})})
+                            continue
                         shell_calls += 1
                         t0 = time.monotonic()
                         try:
@@ -148,7 +155,7 @@ class MintShellAgent(BaseAgent):
         finally:
             (logs / 'messages.json').write_text(safe_dump(messages))
             summary = {'status': status, 'model': MODEL, 'model_calls': calls, 'transport_or_5xx_retries': retries,
-                       'length_truncations': truncations, 'max_tokens': MAX_TOKENS,
+                       'length_truncations': truncations, 'max_tokens': MAX_TOKENS, 'blocked_commands': blocked,
                        'shell_calls': shell_calls, 'seconds': round(time.monotonic() - started, 1),
                        'prompt_tokens': sum(u.get('prompt_tokens', 0) for u in usage),
                        'completion_tokens': sum(u.get('completion_tokens', 0) for u in usage)}

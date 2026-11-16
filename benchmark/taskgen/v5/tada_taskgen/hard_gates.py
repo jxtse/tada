@@ -268,14 +268,20 @@ def score_checks(task, out):
                 ws.cell(row, column).value = value
         path = fixtures/f'constant-{index}.xlsx'
         wb.save(path); wb.close()
-        constants.append({'value': value, 'reward': score(path, gold)[0]})
-    rewards = {name: score(fixtures/f'{name}.xlsx', gold)[0]
-               for name in ('empty', 'all_majority')}
+        constant_reward, constant_details = score(path, gold)
+        constants.append({'value': value, 'reward': constant_reward,
+                          'components': constant_details.get('components', {})})
+    scored = {name: score(fixtures/f'{name}.xlsx', gold) for name in ('empty', 'all_majority')}
+    rewards = {name: result[0] for name, result in scored.items()}
+    components = {name: result[1].get('components', {}) for name, result in scored.items()}
+    if constants:
+        components['constant'] = max(constants, key=lambda row: row['reward']).get('components', {})
     include_reward, include_details = score(fixtures/'include_all.xlsx', gold)
     include_all = {'status': 'reported_only', 'used_for_admission': False,
                    'reward': include_reward, 'scope_f1': include_details['components']['scope']}
     rewards['constant'] = max((row['reward'] for row in constants), default=None)
-    checks = {name: {'reward': value, 'limit': LIMIT, 'pass': isinstance(value, (int, float)) and value <= LIMIT}
+    checks = {name: {'reward': value, 'limit': LIMIT, 'pass': isinstance(value, (int, float)) and value <= LIMIT,
+                     'components': components.get(name, {})}
               for name, value in rewards.items()}
     return {'pass': True, 'reference': {'reward': first}, 'reference_repeat': {'reward': second},
             'identical': first == second and first_details == second_details,

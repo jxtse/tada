@@ -20,6 +20,8 @@ base_url = "http://127.0.0.1:3000/v1"
 key_env = "TADA_LOCAL_ROUTE_KEY"
 api = "chat_completions"
 max_retries = 4
+# The route's default output cap (4096) truncated long scope notices.
+max_tokens = 32000
 supported_parameters = []
 
 [models.extractor]
@@ -28,6 +30,8 @@ base_url = "http://127.0.0.1:18142/v1"
 key_env = "TADA_ASTRA_API_KEY"
 api = "responses"
 max_retries = 4
+# Reviews send ~300-400k tokens with high reasoning; the 120 s client default times out.
+timeout = 1200
 supported_parameters = []
 
 [scheduler]
@@ -39,7 +43,7 @@ max_parallel_candidates = 2
 opus_concurrency = 1
 deepseek_concurrency = 3
 pilot_final_verdicts = 10
-pilot_trial_sets = 15
+pilot_trial_sets = 40
 common_error_rebuilds = 1
 repair_rounds = 3
 

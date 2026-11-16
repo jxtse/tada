@@ -286,7 +286,13 @@ class BenchmarkItemAdapter(SourceAdapter):
                 else:kind='loft_set_em'
                 answer=r.get('answers',r.get('target'))
                 question=r.get('query_text',r.get('input',''))
-                yield item(u['unit_id'],json.dumps(question,ensure_ascii=False)+'\nReturn the original answer as JSON (one result per turn for a conversation; passage IDs for retrieval; result rows for SQL).',answer,kind,assets,multi_turn=multi)
+                fmt={'loft_sql':'Return the result rows as a JSON array of row arrays.',
+                     'loft_sql_multi':'Return a JSON array with one result (a JSON array of row arrays) per turn.',
+                     'loft_retrieval':'Return the IDs of the relevant passages as a JSON array.',
+                     'loft_em':'Return the answer text (not a passage ID) as a JSON string.',
+                     'loft_set_em':'Return every answer text (titles or names, not passage IDs) as a JSON array of strings.'}[kind]
+                if multi and kind not in ('loft_sql_multi',):fmt+=' For a conversation, give one such answer per turn in a JSON array.'
+                yield item(u['unit_id'],json.dumps(question,ensure_ascii=False)+'\n'+fmt,answer,kind,assets,multi_turn=multi)
 
     def _load_blade(self):
         for d in plan(self.source):

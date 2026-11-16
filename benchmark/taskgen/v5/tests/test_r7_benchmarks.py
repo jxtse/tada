@@ -130,3 +130,13 @@ def test_benchmark_quarantine_preserves_inputs(source,tmp_path):
     adapter=BenchmarkItemAdapter(source,quarantine=quarantine)
     assert (record,q) not in adapter.label_pool()
     assert adapter.records()[record]==source_adapter.records()[record]
+
+
+def test_spider2_accepts_row_objects_and_flat_columns():
+    from tada_taskgen.benchmark_checkers import score_answer
+    gold = {'tables': [[['1', '29', '-23.56'], ['2', '17', '59.1']]]}
+    spec = {'kind': 'spider2_table', 'condition_cols': [], 'ignore_order': True}
+    rows = [{'bucket': 1, 'n': 29, 'min': -23.56}, {'bucket': 2, 'n': 17, 'min': 59.1}]
+    assert score_answer(rows, gold, spec) == 1.0
+    assert score_answer([{'bucket': 1, 'n': 30, 'min': -23.56}, {'bucket': 2, 'n': 17, 'min': 59.1}], gold, spec) == 0.0
+    assert score_answer([44.87], {'tables': [[['44.869215']]]}, spec) == 1.0

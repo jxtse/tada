@@ -236,6 +236,12 @@ def spider2_table(predicted,expected,spec):
     """Spider2 compare_pandas_table: column matching, 1e-2 absolute tolerance."""
     tables=expected['tables']
     if isinstance(predicted,dict): predicted=predicted['tables'][0]
+    # The public instruction asks for "a JSON array of rows"; row objects are rows too.
+    # compare_pandas_table matches columns by values, never by name, so dropping keys is lossless.
+    if isinstance(predicted,list) and predicted and all(isinstance(r,dict) for r in predicted):
+        predicted=[list(r.values()) for r in predicted]
+    if isinstance(predicted,list) and predicted and not any(isinstance(r,list) for r in predicted):
+        predicted=[[v] for v in predicted]
     def columns(rows):
         if not rows:return []
         result=[]

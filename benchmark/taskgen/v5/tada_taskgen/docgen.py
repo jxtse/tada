@@ -19,16 +19,21 @@ def generate_document(document: dict, writer: ModelClient | None = None,
     attempts = []
     result = {"id": document["id"], "path": document.get("path", document["id"] + ".txt"),
               "kind": document.get("kind", "notice"), "writer_model": writer.model_id,
+              **({"content": document["content"]} if document.get("content") else {}),
               "extractor_model": extractor.model_id,
               "fake": bool(getattr(writer, "fake", False) and getattr(extractor, "fake", False))}
     # One initial generation plus at most three regenerations.
     for number in range(max_regenerations + 1):
         try:
-            response = writer.complete("write_document", {
+            request = {
                 "instruction": "Write a realistic professional email, notice or minutes conveying every fact exactly in natural, varied prose. Do not list facts as a table, JSON or a key-value dump.",
                 "id": document["id"], "kind": document.get("kind", "notice"),
                 "facts": facts, "attempt": number + 1,
-            })
+            }
+            if document.get("content"):
+                # Unscored guidance: conveyed faithfully, never extracted or round-tripped.
+                request["content"] = document["content"]
+            response = writer.complete("write_document", request)
         except InvalidModelOutputError:
             response = {}
         text = response.get("text", "")

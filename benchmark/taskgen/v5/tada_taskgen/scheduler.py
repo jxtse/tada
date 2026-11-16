@@ -257,7 +257,8 @@ def scored_gold(task: Path):
 class Scheduler:
     def __init__(self, out: Path, hooks: Hooks, *, dry_run=False, max_verdicts=10, max_trial_sets=15,
                  max_parallel_candidates=None, available_sources=None):
-        if not 1 <= max_verdicts <= 10 or not 1 <= max_trial_sets <= 15:
+        # Pilot trial-set cap (owner-set budget).
+        if not 1 <= max_verdicts <= 10 or not 1 <= max_trial_sets <= 40:
             raise ValueError('Pilot caps may not exceed 10 verdicts / 15 trial sets')
         self.out, self.hooks, self.dry_run = Path(out), hooks, dry_run
         self.max_verdicts, self.max_trial_sets = max_verdicts, max_trial_sets
@@ -581,6 +582,11 @@ class Scheduler:
             with self.transaction():
                 self.state['trial_sets'] -= 1
             raise RuntimeError('all trials failed before reaching the solver (infrastructure)')
+        if trials and any(t.get('infra') for t in trials):
+            # Some trials never reached Harbor (sync/launch failure). The task was not tested fairly;
+            # stop with evidence instead of discarding it. The set stays charged (real model work ran).
+            raise RuntimeError('partial trial infrastructure failure: '
+                               + ', '.join(f"trial {i}" for i, t in enumerate(trials, 1) if t.get('infra')))
         return trials, []
 
     def run_one(self, intent: dict, *, _reservation=None):
@@ -822,6 +828,16 @@ def production_trial(task, model, index, out, *, runner=subprocess.run):
                  and not details[0].get('error') and not rows[0].get('exception_info'))
         # Harbor never produced a trial (sync/launch/docker failure): infrastructure, not a solver result.
         infra = not rows
+        # The agent finished normally but never wrote the deliverable: a real solver result of zero,
+        # with every scored cell wrong (not an invalid measurement).
+        summaries = list(results[0].parent.rglob('agent/summary.json')) if len(results) == 1 else []
+        no_output = (not valid and len(rows) == len(scores) == 1 and scores[0] == 0 and len(details) == 1
+                     and 'No such file' in str(details[0].get('error', '')) and len(summaries) == 1
+                     and json.loads(summaries[0].read_text()).get('status') == 'completed'
+                     and not rows[0].get('exception_info'))
+        if no_output:
+            return {'valid': True, 'score': 0.0, 'infra': False, 'no_output': True,
+                    'wrong_cells': sorted(expected), 'job': str(job), 'fake': False, 'error': None}
         return {'valid': valid, 'score': scores[0] if len(scores) == 1 else None, 'infra': infra,
                 'wrong_cells': sorted(k for k, v in cells[0].items() if v is False) if len(cells) == 1 else [],
                 'job': str(job), 'fake': False,
@@ -934,6 +950,7 @@ def main():
     parser.add_argument('--out', type=Path)
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--loops', type=int, default=1)
+    parser.add_argument('--max-trial-sets', type=int, default=15, help='Trial-set cap for this run (pilot budget remaining)')
     parser.add_argument('--combinations-report', action='store_true', help='Read-only enumeration and admission counts')
     parser.add_argument('--datasets-report', action='store_true', help='Read-only inventory of all 29 batch-1 IDs')
     parser.add_argument('--state', type=Path, help='Existing state.json to inspect in --combinations-report mode')
@@ -969,7 +986,8 @@ def main():
     if not intents:
         raise SystemExit('No reviewed intents available')
     hooks = offline_hooks(spec) if args.dry_run else production_hooks(spec)
-    result = Scheduler(args.out, hooks, dry_run=args.dry_run, available_sources=sources).run(intents, loops=args.loops)
+    result = Scheduler(args.out, hooks, dry_run=args.dry_run, available_sources=sources,
+                       max_trial_sets=args.max_trial_sets).run(intents, loops=args.loops)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

@@ -133,7 +133,13 @@
             ]
           },
           "facts": {
-            "type": "object"
+            "type": "object",
+            "description": "Short exact values (dates, identifiers, names, counts, lists) that are blind round-tripped. Rule text belongs in content."
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 4000,
+            "description": "Unscored guidance the document must convey in prose (rules, procedures, context). Not extracted or round-tripped; never a scored prerequisite."
           }
         }
       }
