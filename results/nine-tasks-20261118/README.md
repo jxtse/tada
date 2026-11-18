@@ -1,10 +1,10 @@
 # TADA 九题实验结果与迁移快照（2026-11-18）
 
-本包对应 `jxtse/tada` 的 `jev` 分支中 `results/nine-tasks-20261118/`，保存九题实验的结果、运行现场和继续运行所需数据；仓库原有代码仍保留在原位置。
+本包对应 `jxtse/tada` 的 `jev` 分支中 `results/nine-tasks-20261118/`，保存九题实验的结果、运行现场和过程数据；仓库原有代码仍保留在原位置。
 
 **9 道题中，5 道完成评分；历史上 9 道都启动过。当前没有实验继续执行。**
 
-本包包含两轮实验的结果、历史尝试、原始请求和响应、费用账本、session/state/blob、冻结源码与补丁、官方评分与 oracle 验收、完整九题输入及必要的共享运行组件。它是九题实验的迁移快照，不是整个研究工作区的备份。
+本包仅包含两轮实验的结果、历史尝试、原始请求和响应、费用账本、session/state/blob、冻结源码与补丁、官方评分与 oracle 验收，以及必要的共享运行代码。**原始题目和独立题库不上传**；在新机继续运行时，请从已有渠道另行准备原题库。本包是九题实验过程与结果的快照。
 
 **完整性标志：只有 `archives/manifest.json` 已生成且校验通过，归档才算准备完成。该文件尚不存在时，不要把当前目录当作完整迁移包。** 本地准备状态见 `PREPARATION_STATUS.json`。
 
@@ -39,15 +39,14 @@ python restore.py "C:\TADA-restored"
 
 目标目录必须尚不存在，父目录必须存在。第一条命令校验所有分卷的大小和 SHA256；第二条命令先校验，再安全解包。解压工具不会启动实验、调用模型或修改原始记录。也可在其他操作系统指定一个不存在的目标目录。
 
-分卷保存在 `archives/`，每卷至多 48 MiB，普通 Git 克隆即可取得，不需要 Git LFS。清单见 `archives/manifest.json`。解压后的主要目录：
+分卷保存在 `archives/`，每卷至多 48 MiB，普通 Git 克隆即可取得，不需要 Git LFS。清单见 `archives/manifest.json`，仅有 `experiment-original`、`experiment-main`、`shared-support` 三个归档组，不包含 `task-inputs`。解压后的主要目录：
 
 - `experiments/tada_bench_codex61_sol_20261116`：原九题实验，包含五题有效成绩及所有历史尝试。
 - `experiments/tada_bench_main_codex61_sol_20261117`：四题 main 重跑现场、冻结源码、计时纠正和接续工具。
-- `tada-bench`：完整九题题包，包括输入、原生评分器、自带 runtime 和参考解。
-- `tada-bench-download/DOWNLOAD_COMPLETE.json`：原始数据完整性收据；评分程序仍依赖它。
+- `tada-bench-download/DOWNLOAD_COMPLETE.json`：仅作原题库来源与文件校验的证据，不含原始输入；评分程序会用它校验另行准备的题库。
 - `experiments/harbor_rerun_20261112/harness`：当前 solver 依赖的共享模型桥接组件。
 
-题库版本为 `jxtse/tada-bench@d820cd784fc7e9ace28e77f716bc7bfb23cb0813`。main 源版本为 `2d53ad1d9a2bc091a947332c75717021f4749af2`，运行条件是已记录兼容补丁的 `main-2d53ad1-sol-equivalent-v1`。九题 oracle 已全部取得 1.0，无需重复运行。
+运行时使用的题库版本为 `jxtse/tada-bench@d820cd784fc7e9ace28e77f716bc7bfb23cb0813`。新机需通过已有渠道准备对应题库，并放在解压后工作区的 `tada-bench/` 目录。main 源版本为 `2d53ad1d9a2bc091a947332c75717021f4749af2`，运行条件是已记录兼容补丁的 `main-2d53ad1-sol-equivalent-v1`。九题 oracle 已全部取得 1.0，验收记录保留，无需重复运行。
 
 ## 接续前必须处理的实际状态
 
@@ -58,7 +57,7 @@ python restore.py "C:\TADA-restored"
 
 ## 环境与凭据
 
-凭据文件和 Python 字节码缓存不在归档中。题包自带的 `runtime` 则完整保留。使用本结果包内的 `runtime.env.example` 在新机创建解压后主实验的 `runconfig/runtime.env.local`，配置新机本地模型接口并重新登录。模型条件保留 `gpt-6.1-sol` / high / 1050000 context；不要把新机登录信息提交到 Git。
+凭据文件和 Python 字节码缓存不在归档中。题目环境及题包自带的 `runtime` 随原题库另行准备。使用本结果包内的 `runtime.env.example` 在新机创建解压后主实验的 `runconfig/runtime.env.local`，配置新机本地模型接口并重新登录。模型条件保留 `gpt-6.1-sol` / high / 1050000 context；不要把新机登录信息提交到 Git。
 
 Docker 镜像并非普通项目文件，**本包不包含 Docker 镜像二进制**。原验收镜像为 `tada-bench:main-2d53ad1-sol-equivalent-v1`，ID `sha256:0986ceca1d8d198825678662f1cda21be187aa1c3630f88723dc2bd394b6ab1a`。优先从原机导出并在新机导入该镜像；若从归档内 Dockerfile 重建，需要另做新机环境验收并保留原验收记录，不能改写旧 image ID 冒充同一镜像。详细依赖和验收限制见 [`MIGRATION_DETAILS.md`](MIGRATION_DETAILS.md)。
 
@@ -66,4 +65,4 @@ Docker 镜像并非普通项目文件，**本包不包含 Docker 镜像二进制
 
 ## 保存位置与数据来源
 
-本包按本次明确授权保存到公开仓库 `jxtse/tada` 的 `jev` 分支。题库来源为 gated 数据集，题库 README 中记载的上游许可状态及各项原始许可声明随题包保留；此次存放不改变这些原始声明。实际上传完成状态以远端分支中的文件和提交为准。
+本包按本次明确授权将实验过程、结果和必要共享代码保存到公开仓库 `jxtse/tada` 的 `jev` 分支。原始题库不包含在此次上传中；来源与校验收据用于关联运行记录和另行准备的题库。实际上传完成状态以远端分支中的文件和提交为准。

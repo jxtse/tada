@@ -1,18 +1,19 @@
 # 九题实验迁移依赖与继续运行限制
 
-2026-11-18。本文对应公开仓库 `jxtse/tada` 的 `jev` 分支中 `results/nine-tasks-20261118/` 结果包，只覆盖九题实验的迁移依赖与接续限制，不是整个研究工作区的备份。本文基于只读代码审阅整理，不启动模型、不更改历史证据。
+2026-11-18。本文对应公开仓库 `jxtse/tada` 的 `jev` 分支中 `results/nine-tasks-20261118/` 结果包。此次仅上传两轮实验的过程、结果和必要共享代码，原始题目及独立题库不上传。本文说明恢复这些记录和继续运行时需要另备的依赖，基于只读代码审阅整理，不启动模型、不更改历史证据。
 
-在本结果包目录执行 `python restore.py --verify-only` 校验分卷，再执行 `python restore.py "C:\TADA-restored"` 还原到尚不存在的目标目录。脚本根据自身位置寻找 `archives/manifest.json`，放在仓库子目录不会改变解压后的工作区目录关系。
+在本结果包目录执行 `python restore.py --verify-only` 校验分卷，再执行 `python restore.py "C:\TADA-restored"` 还原到尚不存在的目标目录。脚本根据自身位置寻找 `archives/manifest.json`，放在仓库子目录不会改变解压后的工作区目录关系。清单只包含 `experiment-original`、`experiment-main`、`shared-support` 三组，不含 `task-inputs`。
 
-## 必须保留的目录关系
+## 恢复的目录与另备题库
 
 以下项目应在同一工作区中按原相对路径还原：
 
 - `experiments/tada_bench_main_codex61_sol_20261117/`：当前 main 四题的完整现场、冻结源码、构建材料、配置、报告和保护启动器。
 - `experiments/tada_bench_codex61_sol_20261116/`：旧九题记录，含已完成五题、历史尝试、九题 oracle 与基础构建来源。
 - `experiments/harbor_rerun_20261112/harness/`：当前 solver 复制共享运行组件，preflight 还会校验其中 `host_model_bridge.py`、`bridge_protocol.py` 与当前副本一致。
-- `tada-bench/`：完整九题题包，包括公开输入、`tests`、题包自带 `runtime`、`solution`、`task.toml` 和 `tasks.json`。不要按 runtime 或 cache 名称统一删减。
-- `tada-bench-download/DOWNLOAD_COMPLETE.json`：官方评分器读取它校验题包文件 SHA256。
+- `tada-bench-download/DOWNLOAD_COMPLETE.json`：只保留原题库来源与文件校验的证据，不含原始输入；官方评分器读取它校验另行准备的题库文件 SHA256。
+
+`tada-bench/` 不在本包中。继续运行前，请通过已有渠道取得 `jxtse/tada-bench@d820cd784fc7e9ace28e77f716bc7bfb23cb0813` 的题库，放在解压后工作区的 `tada-bench/`。运行和评分仍需要原题库的公开输入、`tests`、题包自带 `runtime`、`solution`、`task.toml` 和 `tasks.json`；这些材料由新机另行准备。
 
 两套实验中的 `runs/<task>/attempt-*` 应保留完整目录：原始请求/响应及 ready/claim/done、session events/states/blobs、账本、execution、output、runconfig、manifest。结果文件单独存在不足以恢复审计与预算。
 
@@ -32,7 +33,7 @@
 
 最准确的延续方式是从旧机 `docker save` 导出该镜像，在新机 `docker load` 后核对 image ID。普通项目目录中的 build 材料不是 Docker 镜像本体。
 
-如必须重建，主构建入口为 `experiments/tada_bench_main_codex61_sol_20261117/build/main-v1/Dockerfile`，上下文即该目录。它基于 `tada-bench:codex61-sol-runtime-base`；旧实验 `build/Dockerfile.tada` 包含该基础运行环境的构建材料。依赖包括 Python 3.12、Node.js 22、uv、锁文件中的 Python/Node 包，构建需要访问配置的包源。官方 verifier 可从每题 `tests` 中的 Dockerfile 重建。
+如必须重建，主构建入口为 `experiments/tada_bench_main_codex61_sol_20261117/build/main-v1/Dockerfile`，上下文即该目录。它基于 `tada-bench:codex61-sol-runtime-base`；旧实验 `build/Dockerfile.tada` 包含该基础运行环境的构建材料。依赖包括 Python 3.12、Node.js 22、uv、锁文件中的 Python/Node 包，构建需要访问配置的包源。官方 verifier 可从另行准备的原题库中每题 `tests` 目录的 Dockerfile 重建。
 
 重建后的 image ID 通常变化，而 `harness/runtime_revision.py` 和 preflight 会严格比对原镜像、源码归档 SHA256、构建收据及 READY 封印。不能简单改写旧 READY 或构建收据冒充原镜像。应另存迁移后的构建与验证证据，明确新的运行条件/适配。
 

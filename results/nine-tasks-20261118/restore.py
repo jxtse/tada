@@ -4,12 +4,13 @@
 Requires Python 3.12 or newer; uses only the standard library.
 
 From the downloaded results branch:
-    python migration_restore.py --verify-only
-    python migration_restore.py C:\\TADA-restored
+    python restore.py --verify-only
+    python restore.py C:\\TADA-restored
 
 The destination must not exist. Its parent directory must already exist.
 All compressed parts are verified before creating the destination. Archives are
 then read as streams, so neither a joined archive nor a full-memory copy is made.
+Windows paths longer than 260 characters are handled automatically.
 If extraction fails, the partial destination is preserved for inspection; choose
 a different new destination after resolving the error. This script never deletes
 existing files, rewrites historical records, or starts an experiment.
@@ -23,6 +24,7 @@ import argparse
 import hashlib
 import io
 import json
+import os
 from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import sys
@@ -37,8 +39,20 @@ class RestoreError(Exception):
     """An invalid manifest, unsafe archive, or failed integrity check."""
 
 
+def filesystem_path(path):
+    """Use one normalized absolute path for checks and long-path file access."""
+    absolute = os.path.abspath(os.fspath(path))
+    if os.name == "nt" and not absolute.startswith("\\\\?\\"):
+        # Normalize before adding the extended prefix: Windows deliberately
+        # stops normalizing dot segments and separators after that prefix.
+        absolute = os.path.normpath(absolute)
+        absolute = ("\\\\?\\UNC\\" + absolute[2:]
+                    if absolute.startswith("\\\\") else "\\\\?\\" + absolute)
+    return Path(absolute)
+
+
 def load_manifest(manifest_path: Path):
-    manifest_path = manifest_path.resolve(strict=True)
+    manifest_path = filesystem_path(manifest_path).resolve(strict=True)
     root = manifest_path.parent.parent
     with manifest_path.open("r", encoding="utf-8-sig") as stream:
         value = json.load(stream)
@@ -168,6 +182,7 @@ def safe_members(archive):
 
 
 def restore_groups(groups, destination: Path):
+    destination = filesystem_path(destination)
     if destination.exists() or destination.is_symlink():
         raise RestoreError(f"Destination already exists; choose a new directory: {destination}")
     if not destination.parent.is_dir():
@@ -191,7 +206,7 @@ def main(argv=None):
     parser.add_argument("destination", nargs="?", type=Path, help="new, nonexistent restore directory")
     parser.add_argument("--verify-only", action="store_true", help="verify all part hashes and sizes without extraction")
     parser.add_argument("--manifest", type=Path,
-                        default=Path(__file__).resolve().parent / "archives" / "manifest.json")
+                        default=filesystem_path(__file__).resolve().parent / "archives" / "manifest.json")
     args = parser.parse_args(argv)
     if sys.version_info < (3, 12):
         parser.error("Python 3.12 or newer is required for safe tar extraction.")
@@ -199,7 +214,7 @@ def main(argv=None):
         parser.error("Do not supply a destination with --verify-only.")
     if not args.verify_only and args.destination is None:
         parser.error("Supply a new destination directory, or use --verify-only.")
-    destination = args.destination.absolute() if args.destination is not None else None
+    destination = filesystem_path(args.destination) if args.destination is not None else None
     try:
         if destination is not None and (destination.exists() or destination.is_symlink()):
             raise RestoreError(f"Destination already exists; choose a new directory: {destination}")

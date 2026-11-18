@@ -7,11 +7,14 @@
     "shared-support"
   ],
   "pending_groups": [
-    "task-inputs",
-    "experiment-original",
-    "experiment-main"
+    "experiment-main",
+    "experiment-original"
   ],
   "remote_repository": "jxtse/tada",
   "remote_branch": "jev",
-  "remote_path": "results/nine-tasks-20261118"
+  "remote_path": "results/nine-tasks-20261118",
+  "excluded_groups": [
+    "task-inputs"
+  ],
+  "scope": "Experiment process records and results only; original task data excluded"
 }
