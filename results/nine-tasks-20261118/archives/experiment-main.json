@@ -1,0 +1,831 @@
+{
+  "name": "experiment-main",
+  "archive_format": "tar.gz",
+  "source_paths": [
+    "experiments/tada_bench_main_codex61_sol_20261117"
+  ],
+  "archive_bytes": 466391733,
+  "archive_sha256": "d836e5e2109b1ca83ff479d4c0d59fc8ce29f6e89ace4aa066d27c77997ae665",
+  "parts": [
+    {
+      "path": "archives/experiment-main.tar.gz.part001",
+      "bytes": 50331648,
+      "sha256": "9ccf89200350eb30bac5bce172d185d0d7a989eb5cec8b6a51bf43ea88caf71e"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part002",
+      "bytes": 50331648,
+      "sha256": "48b9f0e912ef8b0d78a3e647658560d3039306731feedbfad263f9e9fcb52e75"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part003",
+      "bytes": 50331648,
+      "sha256": "c1f06501edc57964a6aaa09d548545dcaa5d95bf5c3aa8a6ce085992b61810b4"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part004",
+      "bytes": 50331648,
+      "sha256": "291c5fc9b22e79c611c22c480826d7654e16203ca7f354ebf3201acba2ad1ee0"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part005",
+      "bytes": 50331648,
+      "sha256": "b2c7f79da5fecf06537a73e757c54284e0a26a36d313f0f7549990d969005f74"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part006",
+      "bytes": 50331648,
+      "sha256": "544caa9ef292988e686d05526a43fe2c8a9718fd0e98d48553b612956e0d0713"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part007",
+      "bytes": 50331648,
+      "sha256": "2f4a892a362cf8d683396512199e4e41a07878862008bd2fc2bcf63f2c8186b2"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part008",
+      "bytes": 50331648,
+      "sha256": "0097ae2992f365f5cc10380f79c33dcd1247259876e81d2bba88d40ace79c7cc"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part009",
+      "bytes": 50331648,
+      "sha256": "c0e4bc8b8805ab64ab6a266c9cffc7597ab87800d700b03a5c2b38e37125c563"
+    },
+    {
+      "path": "archives/experiment-main.tar.gz.part010",
+      "bytes": 13406901,
+      "sha256": "9b9658278028cec140c5c0ec444af53aa4342a5a9b24d21b859a994ab34eb0cb"
+    }
+  ],
+  "excluded_patterns": [
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "runtime.env.local",
+    ".env",
+    ".env.local",
+    ".env.*",
+    ".git"
+  ],
+  "file_count": 474163,
+  "directory_count": 881,
+  "source_bytes": 2321669849,
+  "elapsed_seconds": 720.5,
+  "blob_reconstruction": {
+    "reconstructed_files_archived": 463196,
+    "method": "Generate byte-identical canonical candidates from retained bridge bodies; require original content-addressed SHA256 filename and file size; archive unmatched files from original bytes. All files remain in the archive.",
+    "original_files_all_read": false,
+    "directories": [
+      {
+        "schema_version": 1,
+        "attempt_path": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-01",
+        "blob_directory": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-01\\session\\tada\\blobs",
+        "method": "reconstruct_from_retained_bridge_bodies_then_match_expected_sha256_filename_and_size",
+        "original_files_all_read": false,
+        "unmatched_policy": "caller_must_read_and_archive_every_unmatched_original_blob",
+        "blob_inventory_count": 137818,
+        "blob_inventory_bytes": 275042143,
+        "reconstructed_blob_count": 135808,
+        "reconstructed_blob_bytes": 178637150,
+        "unmatched_blob_count": 2010,
+        "unmatched_blob_bytes": 96404993,
+        "coverage_by_file_count": 0.9854155480416201,
+        "source_files_read": 489,
+        "source_bytes_read": 104120912,
+        "candidate_count": 280255,
+        "method_counts": {
+          "request.body_canonical": 109,
+          "sse_raw_string": 130374,
+          "sse_parsed_all": 137,
+          "sse_parsed_object": 5185,
+          "response.body_raw": 2,
+          "response_body_string": 1
+        },
+        "sample_byte_comparisons": [
+          {
+            "blob_filename": "a4560b2da9177e195ca124c579f7b04fc24b9c2de9a6fba782523b8b6ffb441a",
+            "bytes": 6485,
+            "source": "model_bridge/requests/00377a128fc74b0dae9fc8d1200c82c3/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "00db7531eb89eeebe9b6d6626efe406f631566cb00db644df40b4d3c867756d2",
+            "bytes": 1896,
+            "source": "model_bridge/requests/00377a128fc74b0dae9fc8d1200c82c3/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "af4a60b1f9a4e47f250cf409c50cce47f70fe0a39fb3bc246e9c9c4f445c5c58",
+            "bytes": 6578,
+            "source": "model_bridge/requests/017e19f6ac8748ec894f97891ebea24c/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "101f51afe300b38d1f6ed9e2680bf7069186e647b7f94914d3d4abe04001f499",
+            "bytes": 1896,
+            "source": "model_bridge/requests/017e19f6ac8748ec894f97891ebea24c/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "15a680c3401c1dd241ca0e8bed94a56348a175d1e3250511444817a060da0ce7",
+            "bytes": 6453,
+            "source": "model_bridge/requests/01cebe654e3a4087aa78b837df1ef80f/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "4361992c7b8a666603b25ae011b2bcdeb85d9b10187f75a498eb8531efde3e20",
+            "bytes": 1896,
+            "source": "model_bridge/requests/01cebe654e3a4087aa78b837df1ef80f/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "045c440daa352c674422c272f8c2d3389346bdfc9802248e47bc5b05ed6666e8",
+            "bytes": 56708,
+            "source": "model_bridge/requests/05bd992f7c9e499aa11d646baf058177/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "f60629ec8a6455f46ff30d19c6488d23d3ec0c616186337affa1625e98af24bc",
+            "bytes": 2096,
+            "source": "model_bridge/requests/05bd992f7c9e499aa11d646baf058177/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "7fdbbc00b0de5ec3241eeba69673659549561f038dad1824d2d5b091041865fc",
+            "bytes": 6627,
+            "source": "model_bridge/requests/06776011af1f4a87ad68161f8febcc08/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "0f72d397cdcfae701e58ccde375d4a485155f76e19cc46148b4017b650098f9f",
+            "bytes": 1896,
+            "source": "model_bridge/requests/06776011af1f4a87ad68161f8febcc08/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "d79e346563aa79f781024ddaea69fe5d006e45486c894f8c174d720e0bff44aa",
+            "bytes": 6548,
+            "source": "model_bridge/requests/0a73ecf7421c4451b6ce9db8878dca6e/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "7bdcc2e9c1540bd73f4c1f351d19065e64d9661821131779617ee63a41959b48",
+            "bytes": 1896,
+            "source": "model_bridge/requests/0a73ecf7421c4451b6ce9db8878dca6e/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "bfcdea41ccd84938d705c2135579d74195be84bc61b29b9de6d8112daefd426a",
+            "bytes": 6569,
+            "source": "model_bridge/requests/0b9f2b3b69ef4b35a72a75503028a738/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "523601e88d50653f737f626507b47f0396f1158c553ba073297630f312aceda0",
+            "bytes": 1896,
+            "source": "model_bridge/requests/0b9f2b3b69ef4b35a72a75503028a738/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "579169206c24055daf2274a3a2c212a87f32eecbdd84fbcd2a2ffe18a82e0a60",
+            "bytes": 6478,
+            "source": "model_bridge/requests/0cb69cc170aa478c86d21e2cbb8a86a5/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "6ff772a2080d457352425cac1be5406764dc99b113ed39284f0afeeb6685ea39",
+            "bytes": 1896,
+            "source": "model_bridge/requests/0cb69cc170aa478c86d21e2cbb8a86a5/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "c9ec6851cdcd93be414d74c724a26d3f0fa124bcf4e3ee0a5b1408231c6a395f",
+            "bytes": 8351,
+            "source": "model_bridge/requests/1113cb2cf8d94475913d240d960d341e/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "06c576e23671568fe3374212ac33aefa79a7a6d81f08423788a1e72a44aabaa5",
+            "bytes": 1896,
+            "source": "model_bridge/requests/1113cb2cf8d94475913d240d960d341e/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "5f913a5ec328f66aeb6dc1099ec554fef30cb045a8827db6d6252f237cda3be6",
+            "bytes": 7289,
+            "source": "model_bridge/requests/11aa5d9060974285b5eb52a7c1a16d54/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "bee671fd67710472e3a5bb914f02891139d813528e7e7d21b496967284cef624",
+            "bytes": 1896,
+            "source": "model_bridge/requests/11aa5d9060974285b5eb52a7c1a16d54/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          }
+        ],
+        "all_sample_byte_exact": true,
+        "sample_mismatch_or_unreadable_blob_count": 0,
+        "estimated_cache_python_bytes": 201223518,
+        "memory_estimate_limit": "Cache dict, key strings and bytes objects only; peak also includes directory index and one source body plus parsed SSE events.",
+        "parse_failures": {},
+        "errors": [],
+        "elapsed_seconds": 29.786,
+        "canonical_encoding": {
+          "ensure_ascii": false,
+          "sort_keys": true,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "allow_nan": false,
+          "encoding": "utf-8"
+        },
+        "archived_blob_directory": "experiments/tada_bench_main_codex61_sol_20261117/runs/bird-infiagent-oolongsynth/attempt-01/session/tada/blobs"
+      },
+      {
+        "schema_version": 1,
+        "attempt_path": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-02",
+        "blob_directory": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-02\\session\\tada\\blobs",
+        "method": "reconstruct_from_retained_bridge_bodies_then_match_expected_sha256_filename_and_size",
+        "original_files_all_read": false,
+        "unmatched_policy": "caller_must_read_and_archive_every_unmatched_original_blob",
+        "blob_inventory_count": 1414,
+        "blob_inventory_bytes": 3146743,
+        "reconstructed_blob_count": 1368,
+        "reconstructed_blob_bytes": 1761539,
+        "unmatched_blob_count": 46,
+        "unmatched_blob_bytes": 1385204,
+        "coverage_by_file_count": 0.9674681753889675,
+        "source_files_read": 16,
+        "source_bytes_read": 1475221,
+        "candidate_count": 2759,
+        "method_counts": {
+          "request.body_canonical": 6,
+          "sse_parsed_object": 582,
+          "sse_raw_string": 779,
+          "sse_parsed_all": 1
+        },
+        "sample_byte_comparisons": [
+          {
+            "blob_filename": "36fc9f25ba65134c297bde28f50b6fbd6239c6c35d307ea652617269e524480b",
+            "bytes": 84702,
+            "source": "model_bridge/requests/50f6077ebe4b41cb92e5bac85a86ae26/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "196500f17aba5ccb47ea5aad4bc99c417accf7f671f26a222251a2d9ce4b4dd3",
+            "bytes": 14836,
+            "source": "model_bridge/requests/7b5c1b28debc46c9860389432e531bbf/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "c204ad448914d3c0d2bb0589ae5c9f48e6a93208f4b5f2fcb27bc5c41b7d17ce",
+            "bytes": 2120,
+            "source": "model_bridge/requests/7b5c1b28debc46c9860389432e531bbf/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "ce045abaca8ae61e85349d4966b1863abf6a8f4e4ba838ee8031d32d08a73813",
+            "bytes": 78506,
+            "source": "model_bridge/requests/7c5f3630cc5f4caab9ac4ce25cd79e17/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "f631f122930bb104781c2ed08330db79a85f3dc20dc2e8359e13bce209978775",
+            "bytes": 1920,
+            "source": "model_bridge/requests/7c5f3630cc5f4caab9ac4ce25cd79e17/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "301cc71a4daa3659dac9bde1467be11e0dde7d03bd520c9a5dfb367aa5a8e0ab",
+            "bytes": 57141,
+            "source": "model_bridge/requests/8f2f7ec04bd14cf3a5068caa69ead1d8/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "064c31e122d9044bc51c0d2a7b8373f448b24daa721646769addeeb8add48a89",
+            "bytes": 2120,
+            "source": "model_bridge/requests/8f2f7ec04bd14cf3a5068caa69ead1d8/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "b5ca8941a3cc3f4a8ec647d1086262f9496fd363c3787de6bfadb0fd4f99b6d6",
+            "bytes": 39563,
+            "source": "model_bridge/requests/ad797d669b464ec08705cf3e12273078/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "ce74c283e16254112028382e1d164473a82ea5272400f7468060d1c40669f201",
+            "bytes": 2120,
+            "source": "model_bridge/requests/ad797d669b464ec08705cf3e12273078/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "b2697c077d22cb320dcc9509bfac49f065fb30b94507b22272a2fd3428b5f04f",
+            "bytes": 9595,
+            "source": "model_bridge/requests/fe1f420c4daf4e578e807b9c5a81ce37/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "e7e8d52e1638296605442dd54c0176401ac5798ec569d178750d9abe02776598",
+            "bytes": 2120,
+            "source": "model_bridge/requests/fe1f420c4daf4e578e807b9c5a81ce37/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          }
+        ],
+        "all_sample_byte_exact": true,
+        "sample_mismatch_or_unreadable_blob_count": 0,
+        "estimated_cache_python_bytes": 2002291,
+        "memory_estimate_limit": "Cache dict, key strings and bytes objects only; peak also includes directory index and one source body plus parsed SSE events.",
+        "parse_failures": {},
+        "errors": [],
+        "elapsed_seconds": 0.788,
+        "canonical_encoding": {
+          "ensure_ascii": false,
+          "sort_keys": true,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "allow_nan": false,
+          "encoding": "utf-8"
+        },
+        "archived_blob_directory": "experiments/tada_bench_main_codex61_sol_20261117/runs/bird-infiagent-oolongsynth/attempt-02/session/tada/blobs"
+      },
+      {
+        "schema_version": 1,
+        "attempt_path": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\maud-pilot\\attempt-01",
+        "blob_directory": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\maud-pilot\\attempt-01\\session\\tada\\blobs",
+        "method": "reconstruct_from_retained_bridge_bodies_then_match_expected_sha256_filename_and_size",
+        "original_files_all_read": false,
+        "unmatched_policy": "caller_must_read_and_archive_every_unmatched_original_blob",
+        "blob_inventory_count": 278060,
+        "blob_inventory_bytes": 584159484,
+        "reconstructed_blob_count": 274585,
+        "reconstructed_blob_bytes": 380218906,
+        "unmatched_blob_count": 3475,
+        "unmatched_blob_bytes": 203940578,
+        "coverage_by_file_count": 0.9875026972595843,
+        "source_files_read": 210,
+        "source_bytes_read": 218177760,
+        "candidate_count": 561878,
+        "method_counts": {
+          "request.body_canonical": 50,
+          "sse_parsed_object": 1466,
+          "sse_raw_string": 273005,
+          "sse_parsed_all": 59,
+          "response.body_raw": 4,
+          "response_body_string": 1
+        },
+        "sample_byte_comparisons": [
+          {
+            "blob_filename": "483e6f4507185f7a0fb15a4584425a5f2d068cddf8f9dda5e130fc1d6e0b7b79",
+            "bytes": 73959,
+            "source": "model_bridge/requests/02ddc2cd9d20477fa052b087ef33c8eb/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "51e81475ab9c809726d951c773486afb73eb40bfdd7a063c1ab9cbc16d900385",
+            "bytes": 2120,
+            "source": "model_bridge/requests/02ddc2cd9d20477fa052b087ef33c8eb/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "8b543e6988163cda68b2a9b95fdcc817e202c6e1b126305f977ae063ff647eb1",
+            "bytes": 130906,
+            "source": "model_bridge/requests/039c6a2fd6c94a6bb5e74b4649fbad85/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "d1b0d6259ad8d7cda27602c52fa3e43408379481890bb00be221f2dace412efb",
+            "bytes": 1920,
+            "source": "model_bridge/requests/039c6a2fd6c94a6bb5e74b4649fbad85/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "e8db5200bfc8d88348927eab55f29f9c5d5e9890a7eb4f2c56ef0a02be1d7c43",
+            "bytes": 122109,
+            "source": "model_bridge/requests/0b57cf68cf14453197915daa48578d6e/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "7c8ab4c74721d6c00bd9742405d42c58c68dc0e0ef0799558af8bd66bc4f4fd4",
+            "bytes": 1920,
+            "source": "model_bridge/requests/0b57cf68cf14453197915daa48578d6e/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "120a2b68cb3f74332edf33050cf497d1f414ad78e68c56cc545c973e4bba63aa",
+            "bytes": 126536,
+            "source": "model_bridge/requests/101042355dbd4c1f86e2ff0180623f97/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "d8bbff64380085d354c0fd9784a048f980562541da7f3dca1cd2f98802abefc1",
+            "bytes": 1920,
+            "source": "model_bridge/requests/101042355dbd4c1f86e2ff0180623f97/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "4c49c61e0b86cbc83c0a635fc207360e88ade2571a293a724f460de72360164b",
+            "bytes": 123905,
+            "source": "model_bridge/requests/1117c67ce209475bbe0d2204b82fc2c2/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "4c7a7654d4fca793e5fe733d757f7ebdfe460c9947966bfaba5668a59a5b5219",
+            "bytes": 1920,
+            "source": "model_bridge/requests/1117c67ce209475bbe0d2204b82fc2c2/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "d84133addb853c2bedae00e62d27a4485cbb46c150d59f2db194e363bf4fec12",
+            "bytes": 48055,
+            "source": "model_bridge/requests/18bcd1dae48f438eb58d2ee320679e7a/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "8458bc4fe1f085619b3f8eccae0f15ff7ad6e641e9393c19440db3a7a8d27f2d",
+            "bytes": 2120,
+            "source": "model_bridge/requests/18bcd1dae48f438eb58d2ee320679e7a/response.body",
+            "method": "sse_parsed_object",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "a54ab8a3d28a50031bdb031553f9a1e93e00a653896cee83dbedce5af30ec4fe",
+            "bytes": 116841,
+            "source": "model_bridge/requests/1969c23144a543e697640b366576c89d/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "3f3738b6afd34c9e17668a8353d207cc203911bd64b5f6ac0627defad1207d2f",
+            "bytes": 1920,
+            "source": "model_bridge/requests/1969c23144a543e697640b366576c89d/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "893941a9e95f2a2aa6776471f3f564c72a47d569e1464394ee260517d0b963ea",
+            "bytes": 124334,
+            "source": "model_bridge/requests/1b7384faaaa14307807df81f27f835bc/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "4de389ee9a322b13940d1a492ac46d791a195c6053a20a3060407c53b3559bdd",
+            "bytes": 1920,
+            "source": "model_bridge/requests/1b7384faaaa14307807df81f27f835bc/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "3e9c486034ca95b889d8b249c90c8ab3a22af6537323587eee71982447eba1fd",
+            "bytes": 120488,
+            "source": "model_bridge/requests/1c5283d9835446179a9daffcc4af9ccb/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "f99c156cc4be2618ae54a2f3ae28206e3298c86fa029e4f6f583279b8448edb4",
+            "bytes": 1920,
+            "source": "model_bridge/requests/1c5283d9835446179a9daffcc4af9ccb/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "12070def06318be3040dce324559ad2b4ee0a71972cd9cd631908b18b1fd5ace",
+            "bytes": 124837,
+            "source": "model_bridge/requests/2bec8864e3d7450bace0d401e32a1c8a/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "c65ec5ff3d6806eda255b9026370f83f2ec5b503adabef9d33bb59f99cdc5717",
+            "bytes": 1920,
+            "source": "model_bridge/requests/2bec8864e3d7450bace0d401e32a1c8a/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          }
+        ],
+        "all_sample_byte_exact": true,
+        "sample_mismatch_or_unreadable_blob_count": 0,
+        "estimated_cache_python_bytes": 425801284,
+        "memory_estimate_limit": "Cache dict, key strings and bytes objects only; peak also includes directory index and one source body plus parsed SSE events.",
+        "parse_failures": {},
+        "errors": [],
+        "elapsed_seconds": 55.877,
+        "canonical_encoding": {
+          "ensure_ascii": false,
+          "sort_keys": true,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "allow_nan": false,
+          "encoding": "utf-8"
+        },
+        "archived_blob_directory": "experiments/tada_bench_main_codex61_sol_20261117/runs/maud-pilot/attempt-01/session/tada/blobs"
+      },
+      {
+        "schema_version": 1,
+        "attempt_path": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\prec-loft-lrobench\\attempt-01",
+        "blob_directory": "\\\\?\\C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\prec-loft-lrobench\\attempt-01\\session\\tada\\blobs",
+        "method": "reconstruct_from_retained_bridge_bodies_then_match_expected_sha256_filename_and_size",
+        "original_files_all_read": false,
+        "unmatched_policy": "caller_must_read_and_archive_every_unmatched_original_blob",
+        "blob_inventory_count": 52442,
+        "blob_inventory_bytes": 148911264,
+        "reconstructed_blob_count": 51435,
+        "reconstructed_blob_bytes": 92605940,
+        "unmatched_blob_count": 1007,
+        "unmatched_blob_bytes": 56305324,
+        "coverage_by_file_count": 0.980797833797338,
+        "source_files_read": 576,
+        "source_bytes_read": 71524744,
+        "candidate_count": 103556,
+        "method_counts": {
+          "request.body_canonical": 192,
+          "sse_raw_string": 48281,
+          "sse_parsed_all": 181,
+          "sse_parsed_object": 2780,
+          "response.body_raw": 1
+        },
+        "sample_byte_comparisons": [
+          {
+            "blob_filename": "f7ba91ab2a6e2553ab7e737c020641bd690ce5ec801bf02471e3b6c408872f49",
+            "bytes": 126763,
+            "source": "model_bridge/requests/01108d28ec854b148df1057423ea404b/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "8493c50163a6a8270bb2a2628e2732b0aadbc8d578844b6037416fc2a5c8e100",
+            "bytes": 1920,
+            "source": "model_bridge/requests/01108d28ec854b148df1057423ea404b/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "a205e033c938211ec5866a127403fc01d5cffdd152cf717aaeb199e8ab2b3588",
+            "bytes": 46376,
+            "source": "model_bridge/requests/025046bb42e742559a49a07350aa333c/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "c09a3ffa94cec11de12c3dda5e005b108765e754c93dae6d5ccf32a2a22bc454",
+            "bytes": 1920,
+            "source": "model_bridge/requests/025046bb42e742559a49a07350aa333c/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "611d3a3e0988ad7f49c62e34d64ef0f414f6533bc2ce10c80f1cdda2f3ea8032",
+            "bytes": 46424,
+            "source": "model_bridge/requests/0275c75584544349b0735555352dd3d0/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "4b490782a1903638dfcebd59f9c4ef61c88ddad7a3826105e8b196fcca90505f",
+            "bytes": 1920,
+            "source": "model_bridge/requests/0275c75584544349b0735555352dd3d0/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "2e92a7eccf9678e75d4475122984bf147315557fb977c243773afcf2a50a5ba1",
+            "bytes": 117260,
+            "source": "model_bridge/requests/0285c03e776143fb817180527f867652/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "55593e47bf339304b7676b67c394c0094ed1e7b477fa5a15278758c2329eeff0",
+            "bytes": 1920,
+            "source": "model_bridge/requests/0285c03e776143fb817180527f867652/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "7893f04694a46b0f7af3dcdfdafb098e7f2e964204e2eb589c5c9b4b22647e15",
+            "bytes": 116106,
+            "source": "model_bridge/requests/03907aceebdf42bbb9a590fa04c6d750/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "dcdb367265af93c66b35848a3af0ce42fb29aa121941defbe3b6d5a7ec00f0d8",
+            "bytes": 1920,
+            "source": "model_bridge/requests/03907aceebdf42bbb9a590fa04c6d750/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "d5f97dc7ec0c1d3d50ff6951d398052aa0f628823ec458594f6c8783a5ae4630",
+            "bytes": 43138,
+            "source": "model_bridge/requests/03fedb7477ab47de8644db1a7d0b7cbd/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "6914f2fa23b4c6749dd3488f08cc4ce92e0ded17af99a8ea027fbb7613b37e51",
+            "bytes": 1920,
+            "source": "model_bridge/requests/03fedb7477ab47de8644db1a7d0b7cbd/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "0060de3843c462b4bfa0bd7c51884e057ad228cb741dfdcf2bbe30408d1dcfea",
+            "bytes": 49219,
+            "source": "model_bridge/requests/04b0311ac36e4d86ad06e2f29b4c17a3/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "08c0e89294c6b73811bb7adb0a2a08496bf2dd97ee5d552fe4eed0f3a09846df",
+            "bytes": 1920,
+            "source": "model_bridge/requests/04b0311ac36e4d86ad06e2f29b4c17a3/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "5e06a244c7b9321d5771d4f2192c9b11528155c18b7a62d04266d47f518cc01d",
+            "bytes": 105598,
+            "source": "model_bridge/requests/057c7de7ef924125b0d7903e695a4073/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "e0044db130af0546eba1bfa2a86bf318ed40ce6d2bbcbd08cfc028bfb280373a",
+            "bytes": 1920,
+            "source": "model_bridge/requests/057c7de7ef924125b0d7903e695a4073/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "b425c87e89ddc6087087a1e02910115b0da6536f4c30af2de46dca0ccf7e54ec",
+            "bytes": 42945,
+            "source": "model_bridge/requests/067ded166458423aa957c48bc8e45ef0/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "c471e3a2b5aa607e4077b8c8789126f6dbba5f2a01cf25dd4e6729304e14c852",
+            "bytes": 1920,
+            "source": "model_bridge/requests/067ded166458423aa957c48bc8e45ef0/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "da37774e3a66adad8db2df42e0f2de402801f30a38aca1f457f7d4927150048e",
+            "bytes": 118518,
+            "source": "model_bridge/requests/088098d59c5a4ec98b5a5c86665cbf1c/request.body",
+            "method": "request.body_canonical",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          },
+          {
+            "blob_filename": "8598f2baf1cbf5c4ad7221d80be75b3b34735769924aeb9c2f647ed657cd966a",
+            "bytes": 1920,
+            "source": "model_bridge/requests/088098d59c5a4ec98b5a5c86665cbf1c/response.body",
+            "method": "sse_raw_string",
+            "byte_exact": true,
+            "actual_hash_matches_name": true
+          }
+        ],
+        "all_sample_byte_exact": true,
+        "sample_mismatch_or_unreadable_blob_count": 0,
+        "estimated_cache_python_bytes": 101626450,
+        "memory_estimate_limit": "Cache dict, key strings and bytes objects only; peak also includes directory index and one source body plus parsed SSE events.",
+        "parse_failures": {},
+        "errors": [],
+        "elapsed_seconds": 14.391,
+        "canonical_encoding": {
+          "ensure_ascii": false,
+          "sort_keys": true,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "allow_nan": false,
+          "encoding": "utf-8"
+        },
+        "archived_blob_directory": "experiments/tada_bench_main_codex61_sol_20261117/runs/prec-loft-lrobench/attempt-01/session/tada/blobs"
+      }
+    ]
+  }
+}
