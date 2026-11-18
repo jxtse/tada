@@ -1,0 +1,33 @@
+{
+  "name": "shared-support",
+  "archive_format": "tar.gz",
+  "source_paths": [
+    "experiments/harbor_rerun_20261112/harness",
+    "tada-bench-download/DOWNLOAD_COMPLETE.json",
+    "tada-bench-download/download_deduplicated.py",
+    "tada-bench-download/download_git_seed.py",
+    "tada-bench-download/download_tada.py",
+    "PROJECT_HANDOFF.md",
+    "项目迁移清单_20261118.md"
+  ],
+  "archive_bytes": 299564,
+  "archive_sha256": "ec9e32c70f7a0cb6253af9e167fbfb32597a3e7b370110e50b2ae025b88c2e70",
+  "parts": [
+    {
+      "path": "archives/shared-support.tar.gz.part001",
+      "bytes": 299564,
+      "sha256": "ec9e32c70f7a0cb6253af9e167fbfb32597a3e7b370110e50b2ae025b88c2e70"
+    }
+  ],
+  "excluded_patterns": [
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "runtime.env.local",
+    ".env",
+    ".env.local",
+    ".env.*",
+    ".git"
+  ],
+  "elapsed_seconds": 20.8
+}
