@@ -29,5 +29,8 @@
     ".env.*",
     ".git"
   ],
-  "elapsed_seconds": 20.8
+  "elapsed_seconds": 20.8,
+  "file_count": 30,
+  "directory_count": 2,
+  "source_bytes": 1361204
 }

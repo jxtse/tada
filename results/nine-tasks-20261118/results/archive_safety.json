@@ -1,0 +1,66 @@
+{
+  "env_exclusions": [
+    {
+      "path": "experiments\\tada_bench_main_codex61_sol_20261117\\runconfig\\runtime.env.local",
+      "sensitive_keys": [
+        "OPENAI_API_KEY"
+      ]
+    },
+    {
+      "path": "experiments\\tada_bench_codex61_sol_20261116\\runconfig\\runtime.env.local",
+      "sensitive_keys": [
+        "OPENAI_API_KEY"
+      ]
+    }
+  ],
+  "known_env_secret_count": 1,
+  "archives": [
+    {
+      "path": "C:\\Users\\v-senguo\\Downloads\\tada_results_20261118\\.staging\\shared-support.tar.gz",
+      "uncompressed_bytes_checked": 1387520,
+      "matched_checks": [],
+      "member_hits": [],
+      "archive_sha256": "ec9e32c70f7a0cb6253af9e167fbfb32597a3e7b370110e50b2ae025b88c2e70",
+      "archive_bytes": 299564,
+      "elapsed_seconds": 0.7
+    },
+    {
+      "path": "C:\\Users\\v-senguo\\Downloads\\tada_results_20261118\\.staging\\experiment-main.tar.gz",
+      "uncompressed_bytes_checked": 3230402560,
+      "matched_checks": [],
+      "member_hits": [],
+      "archive_sha256": "d836e5e2109b1ca83ff479d4c0d59fc8ce29f6e89ace4aa066d27c77997ae665",
+      "archive_bytes": 466391733,
+      "independent_inventory_match": true,
+      "expected_file_count": 474163,
+      "expected_source_bytes": 2321669849,
+      "elapsed_seconds": 85.8
+    },
+    {
+      "path": "C:\\Users\\v-senguo\\Downloads\\tada_results_20261118\\.staging\\experiment-original.tar.gz",
+      "uncompressed_bytes_checked": 5310474240,
+      "matched_checks": [],
+      "member_hits": [],
+      "archive_sha256": "a26217a4476446bfc2224355046721eabeddf52bcd3dce49274ef03ce913c963",
+      "archive_bytes": 939421442,
+      "independent_inventory_match": true,
+      "expected_file_count": 699316,
+      "expected_source_bytes": 3952073154,
+      "elapsed_seconds": 173.8
+    }
+  ],
+  "errors": [],
+  "nested_zip": {
+    "path": "experiments\\tada_bench_codex61_sol_20261116\\runs\\infiagent-kramabench-palimpzest\\attempt-02\\output\\reproducibility.zip",
+    "members_checked": 6,
+    "member_hits": []
+  },
+  "readable_files": {
+    "files_checked": 17,
+    "bytes_checked": 155909,
+    "member_hits": [],
+    "missing_requested_files": []
+  },
+  "has_findings": false,
+  "status": "passed_for_checked_scope"
+}

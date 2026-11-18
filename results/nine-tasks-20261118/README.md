@@ -6,7 +6,7 @@
 
 本包仅包含两轮实验的结果、历史尝试、原始请求和响应、费用账本、session/state/blob、冻结源码与补丁、官方评分与 oracle 验收，以及必要的共享运行代码。**原始题目和独立题库不上传**；在新机继续运行时，请从已有渠道另行准备原题库。本包是九题实验过程与结果的快照。
 
-**完整性标志：只有 `archives/manifest.json` 已生成且校验通过，归档才算准备完成。该文件尚不存在时，不要把当前目录当作完整迁移包。** 本地准备状态见 `PREPARATION_STATUS.json`。
+**完整性标志：只有 `archives/manifest.json` 已生成且校验通过，归档才算准备完成。该文件尚不存在时，不要把当前目录当作完整迁移包。** 归档状态见 `PREPARATION_STATUS.json`。
 
 ## 已有结果
 
@@ -37,7 +37,7 @@ python restore.py "C:\TADA-restored"
 
 已有该仓库时，先获取最新 `jev`，再进入 `results/nine-tasks-20261118`；无需再次克隆。也可在任意目录用结果包内 `restore.py` 的完整路径执行，它会自动定位旁边的 `archives/manifest.json`。
 
-目标目录必须尚不存在，父目录必须存在。第一条命令校验所有分卷的大小和 SHA256；第二条命令先校验，再安全解包。解压工具不会启动实验、调用模型或修改原始记录。也可在其他操作系统指定一个不存在的目标目录。
+目标目录必须尚不存在，父目录必须存在。两条 Python 命令分别用于校验所有分卷的大小和 SHA256，以及先校验再安全解包。解压工具不会启动实验、调用模型或修改原始记录。也可在其他操作系统指定一个不存在的目标目录。
 
 分卷保存在 `archives/`，每卷至多 48 MiB，普通 Git 克隆即可取得，不需要 Git LFS。清单见 `archives/manifest.json`，仅有 `experiment-original`、`experiment-main`、`shared-support` 三个归档组，不包含 `task-inputs`。解压后的主要目录：
 
@@ -45,6 +45,8 @@ python restore.py "C:\TADA-restored"
 - `experiments/tada_bench_main_codex61_sol_20261117`：四题 main 重跑现场、冻结源码、计时纠正和接续工具。
 - `tada-bench-download/DOWNLOAD_COMPLETE.json`：仅作原题库来源与文件校验的证据，不含原始输入；评分程序会用它校验另行准备的题库。
 - `experiments/harbor_rerun_20261112/harness`：当前 solver 依赖的共享模型桥接组件。
+
+两个实验的全部记录文件均保留。打包时，部分内容寻址 blob 从已保留的请求和响应中按原编码重建，要求生成字节的 SHA256 与原文件名一致、长度与原目录记录一致；未匹配文件直接读取原件。归档组 JSON 的 `blob_reconstruction` 记录了覆盖情况和原文件逐字节抽样核对；该方法未逐一读取所有源 blob。原始实验目录未修改。
 
 运行时使用的题库版本为 `jxtse/tada-bench@d820cd784fc7e9ace28e77f716bc7bfb23cb0813`。新机需通过已有渠道准备对应题库，并放在解压后工作区的 `tada-bench/` 目录。main 源版本为 `2d53ad1d9a2bc091a947332c75717021f4749af2`，运行条件是已记录兼容补丁的 `main-2d53ad1-sol-equivalent-v1`。九题 oracle 已全部取得 1.0，验收记录保留，无需重复运行。
 

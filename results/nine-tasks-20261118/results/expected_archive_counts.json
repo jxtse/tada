@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-18T15:14:34.165938+08:00",
+  "source_root": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731",
+  "scope": "only the two experiment groups; excludes original task-inputs",
+  "method": "os.scandir and cached DirEntry.stat only; no experimental file contents read",
+  "excluded_patterns": [
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "runtime.env.local",
+    ".env",
+    ".env.local",
+    ".env.*",
+    ".git"
+  ],
+  "pattern_semantics": "fnmatch.fnmatchcase on each path component, inherited through excluded directories; matches migration_pack_fast.py included()",
+  "groups": {
+    "experiment-main": {
+      "source_paths": [
+        "experiments/tada_bench_main_codex61_sol_20261117"
+      ],
+      "file_count": 474163,
+      "source_bytes": 2321669849,
+      "excluded_file_count": 15,
+      "excluded_file_bytes": 242148,
+      "excluded_directories": [
+        "experiments/tada_bench_main_codex61_sol_20261117/tools/__pycache__",
+        "experiments/tada_bench_main_codex61_sol_20261117/harness/__pycache__"
+      ],
+      "excluded_directory_subtrees_enumerated_for_exact_counts": true,
+      "all_scanned_file_count": 474178,
+      "all_scanned_file_bytes": 2321911997,
+      "non_regular_entries": [],
+      "errors": [],
+      "elapsed_seconds": 31.057
+    },
+    "experiment-original": {
+      "source_paths": [
+        "experiments/tada_bench_codex61_sol_20261116"
+      ],
+      "file_count": 699316,
+      "source_bytes": 3952073154,
+      "excluded_file_count": 38,
+      "excluded_file_bytes": 819254,
+      "excluded_directories": [
+        "experiments/tada_bench_codex61_sol_20261116/reports/__pycache__",
+        "experiments/tada_bench_codex61_sol_20261116/harness/__pycache__",
+        "experiments/tada_bench_codex61_sol_20261116/build/v5-readerror/__pycache__"
+      ],
+      "excluded_directory_subtrees_enumerated_for_exact_counts": true,
+      "all_scanned_file_count": 699354,
+      "all_scanned_file_bytes": 3952892408,
+      "non_regular_entries": [],
+      "errors": [],
+      "elapsed_seconds": 75.841
+    }
+  },
+  "totals": {
+    "file_count": 1173479,
+    "source_bytes": 6273743003,
+    "excluded_file_count": 53,
+    "excluded_file_bytes": 1061402,
+    "all_scanned_file_count": 1173532,
+    "all_scanned_file_bytes": 6274804405
+  }
+}
