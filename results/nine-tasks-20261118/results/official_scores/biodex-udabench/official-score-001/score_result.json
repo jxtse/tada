@@ -1,0 +1,507 @@
+{
+  "task_id": "biodex-udabench",
+  "submission_path": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\biodex-udabench\\attempt-03\\output\\review.xlsx",
+  "submission_sha256": "81bbeeb70daba3a511cce13c6fd49d7fd08c2c4683547bde864799f911ff259e",
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "scorer_sha256": "a8b0602dc7d40926a1cfd84fc0adbaf13dc3f7610dedd951ab18870980d41eb4",
+  "verifier_manifest_sha256": "22189338f65a9f5afd9e1e2423618d833e96ad3da989729247fd8ed1b97e6a7a",
+  "started_at": "2026-11-16T18:04:07.629316+00:00",
+  "verifier_environment_mode": "separate",
+  "network_mode": "none",
+  "status": "scored",
+  "reward": 0.699111,
+  "details": {
+    "reward": 0.6991113404426098,
+    "components": {
+      "labels": 0.6845717234262125,
+      "facts": 0.0,
+      "scope": 1.0,
+      "consistency": 0.0
+    },
+    "weights": {
+      "consistency": 0.05,
+      "facts": 0.1,
+      "labels": 0.7,
+      "scope": 0.15
+    },
+    "sheets": {
+      "Committee_Summary": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 5,
+        "precision": 1.0
+      },
+      "Evidence_Coding": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 127,
+        "precision": 1.0
+      },
+      "Review_Scope": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 60,
+        "precision": 1.0
+      }
+    },
+    "scope": {
+      "coding": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "cell_correct": {
+      "label:biodex::biodex:582c98f5d8d8f77f445b8ffa9c5014bd:biodex::patientsex": true,
+      "label:biodex::biodex:fde07e1ab9ed776efb61c1648b506904:biodex::patientsex": true,
+      "label:biodex::biodex:28fddefb890a7487cad104a06d4203f5:biodex::patientsex": true,
+      "label:biodex::biodex:6b56936b18433c0ffcf5b8366636dbda:biodex::patientsex": true,
+      "label:biodex::biodex:af7101cfbf99c789ff2e0ba01334401b:biodex::patientsex": true,
+      "label:biodex::biodex:0ceac3e8e49810db798e48ed944e61a9:biodex::patientsex": true,
+      "label:biodex::biodex:134a6d6ee0f7f7f945b541415f651784:biodex::patientsex": true,
+      "label:biodex::biodex:900054f9bba46266f7dbb4d4f05f04bc:biodex::patientsex": true,
+      "label:biodex::biodex:1938edbaf60170a3b86d5f7520e508ce:biodex::patientsex": true,
+      "label:biodex::biodex:638e80bb895ab2d513a123c11840cfab:biodex::patientsex": true,
+      "label:biodex::biodex:9c9f65583f135644d0bdfcc88d40ca7e:biodex::patientsex": true,
+      "label:biodex::biodex:0fcab43fac19b2b77efa2c50734f8210:biodex::patientsex": false,
+      "label:biodex::biodex:f48fb9315857586bc42b5d92f18dde62:biodex::patientsex": true,
+      "label:biodex::biodex:88542fdef3ba5ccc6b5db9ab6a3331d6:biodex::patientsex": true,
+      "label:biodex::biodex:3a8fd1fd9732fee732b93b7ae6ff1115:biodex::patientsex": true,
+      "label:biodex::biodex:09fc5d3a80f5d2b015494f71ac9e755f:biodex::patientsex": true,
+      "label:biodex::biodex:16f4e95056e7b8893eba805a695790d9:biodex::patientsex": true,
+      "label:biodex::biodex:751aed55a558eee60c63f1385dba063f:biodex::patientsex": true,
+      "label:biodex::biodex:713b1ce32ffca4ecea4c44cc1127241c:biodex::patientsex": true,
+      "label:biodex::biodex:12b72e66e15d6a1ef1270f56dc8ed071:biodex::patientsex": true,
+      "label:biodex::biodex:41f1a02fea237d86d14ef5e7b0e92a1d:biodex::patientsex": true,
+      "label:biodex::biodex:183be4c46ac369e9f9792c02a02d16f5:biodex::patientsex": true,
+      "label:biodex::biodex:93d587bcd3afdb5ce84af7153d560234:biodex::patientsex": true,
+      "label:biodex::biodex:de43e6fbd2fb050a0b7b866d95889295:biodex::patientsex": true,
+      "label:biodex::biodex:98073bbe7c207a64cb6d41129c2de8cf:biodex::patientsex": true,
+      "label:biodex::biodex:219e8ec37c75a9f67cdb4b538d2aaeba:biodex::patientsex": true,
+      "label:biodex::biodex:fdcca4116ed07ea93e8af0cfadeea1f8:biodex::patientsex": false,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:verdict": false,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:3e6bdd6e64e74579f01703d7f44e890c:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:3e6bdd6e64e74579f01703d7f44e890c:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:84372f98cf8b5f33c7459bbc8360a5a6:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17bc713090c02828f8c67d1528458624:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17bc713090c02828f8c67d1528458624:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17bc713090c02828f8c67d1528458624:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17bc713090c02828f8c67d1528458624:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:5d2476ee14112cf577d78f15a50795c5:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:5d2476ee14112cf577d78f15a50795c5:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:5d2476ee14112cf577d78f15a50795c5:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:5d2476ee14112cf577d78f15a50795c5:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:e5ed339b308e3a14d84ad69a50217a04:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:e5ed339b308e3a14d84ad69a50217a04:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:e5ed339b308e3a14d84ad69a50217a04:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:e5ed339b308e3a14d84ad69a50217a04:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f5d0265394c70e84dac1d9aec8581e0b:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:f5d0265394c70e84dac1d9aec8581e0b:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:f5d0265394c70e84dac1d9aec8581e0b:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c4af70605292fff327af32b7e1a36b48:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c4af70605292fff327af32b7e1a36b48:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c4af70605292fff327af32b7e1a36b48:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:8fbea97a99ebbcc21ef6d4426d6a6109:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:8fbea97a99ebbcc21ef6d4426d6a6109:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8fbea97a99ebbcc21ef6d4426d6a6109:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8fbea97a99ebbcc21ef6d4426d6a6109:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:d7d81c2e28549b7497ec9c94209a9d5a:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:d7d81c2e28549b7497ec9c94209a9d5a:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:d3534ffa447513456596aafa4123da68:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:d3534ffa447513456596aafa4123da68:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:d3534ffa447513456596aafa4123da68:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:a1ed13e63340aceb11faa3b2988570c0:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a1ed13e63340aceb11faa3b2988570c0:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:87628454d1575e718738f760bc01a7ed:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:87628454d1575e718738f760bc01a7ed:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:87628454d1575e718738f760bc01a7ed:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:87628454d1575e718738f760bc01a7ed:uda-bench-vldb::legal:first_judge": true
+    },
+    "label_aggregation": "per_question_chance_corrected_balanced_accuracy",
+    "per_question": {
+      "biodex::patientsex": {
+        "present_classes": [
+          "1",
+          "2"
+        ],
+        "class_counts": {
+          "1": 9,
+          "2": 18
+        },
+        "class_recalls": {
+          "1": 1.0,
+          "2": 0.8888888888888888
+        },
+        "balanced_accuracy": 0.9444444444444444,
+        "codebook_option_count": 3,
+        "chance_floor": 0.3333333333333333,
+        "score": 0.9166666666666666
+      },
+      "uda-bench-vldb::legal:case_type": {
+        "present_classes": [
+          "Administrative Case",
+          "Civil Case",
+          "Commercial Case"
+        ],
+        "class_counts": {
+          "Administrative Case": 17,
+          "Commercial Case": 3,
+          "Civil Case": 5
+        },
+        "class_recalls": {
+          "Administrative Case": 0.9411764705882353,
+          "Commercial Case": 1.0,
+          "Civil Case": 0.2
+        },
+        "balanced_accuracy": 0.7137254901960784,
+        "codebook_option_count": 5,
+        "chance_floor": 0.2,
+        "score": 0.642156862745098
+      },
+      "uda-bench-vldb::legal:verdict": {
+        "present_classes": [
+          "Approved",
+          "Dismissed",
+          "Others"
+        ],
+        "class_counts": {
+          "Dismissed": 20,
+          "Others": 2,
+          "Approved": 4
+        },
+        "class_recalls": {
+          "Dismissed": 1.0,
+          "Others": 0.5,
+          "Approved": 1.0
+        },
+        "balanced_accuracy": 0.8333333333333334,
+        "codebook_option_count": 5,
+        "chance_floor": 0.2,
+        "score": 0.7916666666666666
+      },
+      "uda-bench-vldb::legal:first_judge": {
+        "present_classes": [
+          "0",
+          "1"
+        ],
+        "class_counts": {
+          "0": 16,
+          "1": 8
+        },
+        "class_recalls": {
+          "0": 0.75,
+          "1": 0.875
+        },
+        "balanced_accuracy": 0.8125,
+        "codebook_option_count": 2,
+        "chance_floor": 0.5,
+        "score": 0.625
+      },
+      "uda-bench-vldb::legal:evidence": {
+        "present_classes": [
+          "0",
+          "1"
+        ],
+        "class_counts": {
+          "1": 19,
+          "0": 6
+        },
+        "class_recalls": {
+          "1": 0.9473684210526315,
+          "0": 0.5
+        },
+        "balanced_accuracy": 0.7236842105263157,
+        "codebook_option_count": 2,
+        "chance_floor": 0.5,
+        "score": 0.4473684210526314
+      }
+    },
+    "per_work_item": {
+      "coding": 0.6845717234262125,
+      "summary": 0.0
+    },
+    "per_work_item_details": {
+      "coding": {
+        "score": 0.6845717234262125,
+        "components": {
+          "labels": 0.6845717234262125
+        },
+        "per_question": {
+          "biodex::patientsex": {
+            "present_classes": [
+              "1",
+              "2"
+            ],
+            "class_counts": {
+              "1": 9,
+              "2": 18
+            },
+            "class_recalls": {
+              "1": 1.0,
+              "2": 0.8888888888888888
+            },
+            "balanced_accuracy": 0.9444444444444444,
+            "codebook_option_count": 3,
+            "chance_floor": 0.3333333333333333,
+            "score": 0.9166666666666666
+          },
+          "uda-bench-vldb::legal:case_type": {
+            "present_classes": [
+              "Administrative Case",
+              "Civil Case",
+              "Commercial Case"
+            ],
+            "class_counts": {
+              "Administrative Case": 17,
+              "Commercial Case": 3,
+              "Civil Case": 5
+            },
+            "class_recalls": {
+              "Administrative Case": 0.9411764705882353,
+              "Commercial Case": 1.0,
+              "Civil Case": 0.2
+            },
+            "balanced_accuracy": 0.7137254901960784,
+            "codebook_option_count": 5,
+            "chance_floor": 0.2,
+            "score": 0.642156862745098
+          },
+          "uda-bench-vldb::legal:verdict": {
+            "present_classes": [
+              "Approved",
+              "Dismissed",
+              "Others"
+            ],
+            "class_counts": {
+              "Dismissed": 20,
+              "Others": 2,
+              "Approved": 4
+            },
+            "class_recalls": {
+              "Dismissed": 1.0,
+              "Others": 0.5,
+              "Approved": 1.0
+            },
+            "balanced_accuracy": 0.8333333333333334,
+            "codebook_option_count": 5,
+            "chance_floor": 0.2,
+            "score": 0.7916666666666666
+          },
+          "uda-bench-vldb::legal:first_judge": {
+            "present_classes": [
+              "0",
+              "1"
+            ],
+            "class_counts": {
+              "0": 16,
+              "1": 8
+            },
+            "class_recalls": {
+              "0": 0.75,
+              "1": 0.875
+            },
+            "balanced_accuracy": 0.8125,
+            "codebook_option_count": 2,
+            "chance_floor": 0.5,
+            "score": 0.625
+          },
+          "uda-bench-vldb::legal:evidence": {
+            "present_classes": [
+              "0",
+              "1"
+            ],
+            "class_counts": {
+              "1": 19,
+              "0": 6
+            },
+            "class_recalls": {
+              "1": 0.9473684210526315,
+              "0": 0.5
+            },
+            "balanced_accuracy": 0.7236842105263157,
+            "codebook_option_count": 2,
+            "chance_floor": 0.5,
+            "score": 0.4473684210526314
+          }
+        }
+      },
+      "summary": {
+        "score": 0.0,
+        "components": {
+          "consistency": 0.0
+        },
+        "per_question": {}
+      }
+    },
+    "sheet_selection": {
+      "Committee_Summary": {
+        "title": "Committee_Summary",
+        "how": "exact"
+      },
+      "Evidence_Coding": {
+        "title": "Evidence_Coding",
+        "how": "exact"
+      },
+      "Review_Scope": {
+        "title": "Review_Scope",
+        "how": "exact"
+      }
+    },
+    "pre_check": {
+      "Committee_Summary": {
+        "bytes": 1425,
+        "cell_elements": 12,
+        "cells": 12,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B6",
+        "cells_over_text_limit": 0
+      },
+      "Evidence_Coding": {
+        "bytes": 29866,
+        "cell_elements": 384,
+        "cells": 384,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:C128",
+        "cells_over_text_limit": 0
+      },
+      "Review_Scope": {
+        "bytes": 9735,
+        "cell_elements": 122,
+        "cells": 122,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B61",
+        "cells_over_text_limit": 0
+      }
+    },
+    "problems": {},
+    "shared_strings": {
+      "scan": {
+        "part": null,
+        "needed": 0,
+        "max_needed": null,
+        "parsed_through": -1,
+        "error": null
+      },
+      "per_sheet": {
+        "Committee_Summary": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Evidence_Coding": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Review_Scope": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        }
+      }
+    },
+    "limits": {
+      "file_bytes": 157286400,
+      "zip_entries": 10000,
+      "package_part_bytes": 8388608,
+      "sheets_in_workbook": 1000,
+      "sheet_part_bytes": 134217728,
+      "cell_elements_per_sheet": 1000000,
+      "cells_per_sheet": 200000,
+      "merge_ranges_per_sheet": 2000,
+      "merge_area_cells": 100000,
+      "sst_part_bytes": 1073741824,
+      "shared_strings_scanned": 20000000,
+      "text_chars": 2000
+    }
+  },
+  "image": "tada-bench-verifier:biodex-udabench-22189338f65a",
+  "image_id": "sha256:c441ba935a2092261388fc30f7f786adc7e2ab092ee4da7f917504f7129e7fd9",
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-16T18:04:35.355132+00:00",
+      "finished_at": "2026-11-16T18:04:49.338454+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\biodex-udabench\\attempt-03\\evaluation\\official-score-001\\verifier-01\\container.log"
+    }
+  ],
+  "build_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\biodex-udabench\\attempt-03\\evaluation\\official-score-001\\build-01.log"
+    }
+  ],
+  "finished_at": "2026-11-16T18:04:52.544390+00:00"
+}

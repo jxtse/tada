@@ -1,0 +1,470 @@
+{
+  "task_id": "blade-udabench",
+  "submission_path": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\blade-udabench\\attempt-02\\output\\review.xlsx",
+  "submission_sha256": "eef532ce7f08d9b507c93291d36e834cc8738349d36f678e05c64bb2fa50b705",
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "scorer_sha256": "a8b0602dc7d40926a1cfd84fc0adbaf13dc3f7610dedd951ab18870980d41eb4",
+  "verifier_manifest_sha256": "613aa0b0c46954d62d9234a012492c5c78d8324103d4c58c06a3b62ff19e5bbb",
+  "started_at": "2026-11-16T17:39:18.605821+00:00",
+  "verifier_environment_mode": "separate",
+  "network_mode": "none",
+  "status": "scored",
+  "reward": 0.660802,
+  "details": {
+    "reward": 0.6608024691358024,
+    "components": {
+      "labels": 0.6353174603174603,
+      "facts": 0.0,
+      "scope": 1.0,
+      "consistency": 0.0
+    },
+    "weights": {
+      "consistency": 0.05,
+      "facts": 0.1,
+      "labels": 0.7,
+      "scope": 0.15
+    },
+    "sheets": {
+      "Evidence_Register": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 116,
+        "precision": 1.0
+      },
+      "Register_Summary": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 5,
+        "precision": 1.0
+      },
+      "Review_Scope": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 32,
+        "precision": 1.0
+      }
+    },
+    "scope": {
+      "coding": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "cell_correct": {
+      "label:blade::blade:36e705faedaa6b56606cef0eb2b90ef6:14:blade::answer": true,
+      "label:blade::blade:05f16dd5435eb3670946e42531984d46:4:blade::answer": true,
+      "label:blade::blade:593219b7b9f1b9d08899f9816ce1343b:7:blade::answer": false,
+      "label:blade::blade:fa47aa87aa973a4313d869eeea981572:1:blade::answer": true,
+      "label:blade::blade:01f63ddeaf1835fe3eb0b55b46732c1e:2:blade::answer": true,
+      "label:blade::blade:01f63ddeaf1835fe3eb0b55b46732c1e:4:blade::answer": false,
+      "label:blade::blade:b8a0992066e4300970eaeca73925663d:18:blade::answer": false,
+      "label:blade::blade:05f16dd5435eb3670946e42531984d46:0:blade::answer": true,
+      "label:blade::blade:593219b7b9f1b9d08899f9816ce1343b:0:blade::answer": false,
+      "label:blade::blade:b8a0992066e4300970eaeca73925663d:29:blade::answer": true,
+      "label:blade::blade:01f63ddeaf1835fe3eb0b55b46732c1e:21:blade::answer": true,
+      "label:blade::blade:b8a0992066e4300970eaeca73925663d:10:blade::answer": false,
+      "label:uda-bench-vldb::uda-bench-vldb:603e2fddade377a5009f7cea3eb7d1a2:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:603e2fddade377a5009f7cea3eb7d1a2:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:603e2fddade377a5009f7cea3eb7d1a2:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0b78aab15d539b7201ef94daa4b2bf7f:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:0b78aab15d539b7201ef94daa4b2bf7f:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0b78aab15d539b7201ef94daa4b2bf7f:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:26bf0ceb2060e6d9008f25ae31002940:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:26bf0ceb2060e6d9008f25ae31002940:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:26bf0ceb2060e6d9008f25ae31002940:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c878f1df3fa60d50030e963695445e57:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c878f1df3fa60d50030e963695445e57:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:beb5ee8b3dd10cec5997a56f5cc3f1a4:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:beb5ee8b3dd10cec5997a56f5cc3f1a4:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1be0fd1b9a4c5bc8a588ee822d4dfd5f:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1be0fd1b9a4c5bc8a588ee822d4dfd5f:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1be0fd1b9a4c5bc8a588ee822d4dfd5f:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6d40ebf94ceaa2e34e503aea7b18ef38:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6d40ebf94ceaa2e34e503aea7b18ef38:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:277f4b42618ef479d823dcf05ddc87a7:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:277f4b42618ef479d823dcf05ddc87a7:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:277f4b42618ef479d823dcf05ddc87a7:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:277f4b42618ef479d823dcf05ddc87a7:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:fc4ddd7675ca0bef2dfd7226fee51f59:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:fc4ddd7675ca0bef2dfd7226fee51f59:uda-bench-vldb::legal:verdict": false,
+      "label:uda-bench-vldb::uda-bench-vldb:fc4ddd7675ca0bef2dfd7226fee51f59:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:fc4ddd7675ca0bef2dfd7226fee51f59:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c225876e17fa5b120d8fb7baaeb8baa5:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c225876e17fa5b120d8fb7baaeb8baa5:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:c225876e17fa5b120d8fb7baaeb8baa5:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1592a5569c9085b16c5bfbadd94d76aa:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1592a5569c9085b16c5bfbadd94d76aa:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1592a5569c9085b16c5bfbadd94d76aa:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1592a5569c9085b16c5bfbadd94d76aa:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:37b99eb980aff906c10bbc5730fa4ef8:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:37b99eb980aff906c10bbc5730fa4ef8:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:37b99eb980aff906c10bbc5730fa4ef8:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:37b99eb980aff906c10bbc5730fa4ef8:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:6572e7167a65a8d3c84de836204f40eb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:17ed2895d2c1b99324b633fd03b05e2a:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:b14c4e80cc46d94853425ad806ef6cfb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:verdict": false,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:116a09b9cd6f52698e2df9fa4cfef740:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:636e5a1e2ba30625dca2bf1feb5aaafb:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:0f32ce228d25194cf3b5a9f04904e786:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:3e6bdd6e64e74579f01703d7f44e890c:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:3e6bdd6e64e74579f01703d7f44e890c:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:84372f98cf8b5f33c7459bbc8360a5a6:uda-bench-vldb::legal:first_judge": false,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:bee796fa776d3ab7cf1a0a1cda24bab0:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:42d29507f0e953c8a548013d619710d6:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:f7315abb9bee1fff379055a66f3d0ab2:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:359950226b5294c2100a6d1e728f8a38:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:8b5671fe307b8281451503f74a5111bc:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:54132a3a1e0349d37aae92f477749997:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2cf83cb85e9a97ffd87af17b4d5644c2:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:569fa6b89aec694f7f014e204fe47a8a:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:a805dea191078648eaad866ad14a6c94:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:2a19d7aabb33f49f7a21d426842ed631:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:case_type": false,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:evidence": true,
+      "label:uda-bench-vldb::uda-bench-vldb:fb75a81323d9fbdb5cc8707968a23809:uda-bench-vldb::legal:first_judge": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:case_type": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:verdict": true,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:evidence": false,
+      "label:uda-bench-vldb::uda-bench-vldb:1902d3d5879071b2774cf65e82992768:uda-bench-vldb::legal:first_judge": true
+    },
+    "label_aggregation": "per_question_chance_corrected_balanced_accuracy",
+    "per_question": {
+      "uda-bench-vldb::legal:case_type": {
+        "present_classes": [
+          "Administrative Case",
+          "Civil Case",
+          "Commercial Case"
+        ],
+        "class_counts": {
+          "Administrative Case": 20,
+          "Civil Case": 6,
+          "Commercial Case": 2
+        },
+        "class_recalls": {
+          "Administrative Case": 1.0,
+          "Civil Case": 0.16666666666666666,
+          "Commercial Case": 1.0
+        },
+        "balanced_accuracy": 0.7222222222222222,
+        "codebook_option_count": 5,
+        "chance_floor": 0.2,
+        "score": 0.6527777777777777
+      },
+      "uda-bench-vldb::legal:verdict": {
+        "present_classes": [
+          "Approved",
+          "Dismissed",
+          "Others"
+        ],
+        "class_counts": {
+          "Dismissed": 22,
+          "Others": 2,
+          "Approved": 4
+        },
+        "class_recalls": {
+          "Dismissed": 1.0,
+          "Others": 0.0,
+          "Approved": 1.0
+        },
+        "balanced_accuracy": 0.6666666666666666,
+        "codebook_option_count": 5,
+        "chance_floor": 0.2,
+        "score": 0.5833333333333333
+      },
+      "uda-bench-vldb::legal:first_judge": {
+        "present_classes": [
+          "0",
+          "1"
+        ],
+        "class_counts": {
+          "0": 18,
+          "1": 6
+        },
+        "class_recalls": {
+          "0": 0.8333333333333334,
+          "1": 1.0
+        },
+        "balanced_accuracy": 0.9166666666666667,
+        "codebook_option_count": 2,
+        "chance_floor": 0.5,
+        "score": 0.8333333333333335
+      },
+      "uda-bench-vldb::legal:evidence": {
+        "present_classes": [
+          "0",
+          "1"
+        ],
+        "class_counts": {
+          "1": 21,
+          "0": 3
+        },
+        "class_recalls": {
+          "1": 0.8571428571428571,
+          "0": 0.6666666666666666
+        },
+        "balanced_accuracy": 0.7619047619047619,
+        "codebook_option_count": 2,
+        "chance_floor": 0.5,
+        "score": 0.5238095238095237
+      },
+      "blade::answer": {
+        "score": 0.5833333333333334,
+        "items": 12,
+        "verification": "original_deterministic_checker"
+      }
+    },
+    "per_work_item": {
+      "coding": 0.6353174603174603,
+      "summary": 0.0
+    },
+    "per_work_item_details": {
+      "coding": {
+        "score": 0.6353174603174603,
+        "components": {
+          "labels": 0.6353174603174603
+        },
+        "per_question": {
+          "uda-bench-vldb::legal:case_type": {
+            "present_classes": [
+              "Administrative Case",
+              "Civil Case",
+              "Commercial Case"
+            ],
+            "class_counts": {
+              "Administrative Case": 20,
+              "Civil Case": 6,
+              "Commercial Case": 2
+            },
+            "class_recalls": {
+              "Administrative Case": 1.0,
+              "Civil Case": 0.16666666666666666,
+              "Commercial Case": 1.0
+            },
+            "balanced_accuracy": 0.7222222222222222,
+            "codebook_option_count": 5,
+            "chance_floor": 0.2,
+            "score": 0.6527777777777777
+          },
+          "uda-bench-vldb::legal:verdict": {
+            "present_classes": [
+              "Approved",
+              "Dismissed",
+              "Others"
+            ],
+            "class_counts": {
+              "Dismissed": 22,
+              "Others": 2,
+              "Approved": 4
+            },
+            "class_recalls": {
+              "Dismissed": 1.0,
+              "Others": 0.0,
+              "Approved": 1.0
+            },
+            "balanced_accuracy": 0.6666666666666666,
+            "codebook_option_count": 5,
+            "chance_floor": 0.2,
+            "score": 0.5833333333333333
+          },
+          "uda-bench-vldb::legal:first_judge": {
+            "present_classes": [
+              "0",
+              "1"
+            ],
+            "class_counts": {
+              "0": 18,
+              "1": 6
+            },
+            "class_recalls": {
+              "0": 0.8333333333333334,
+              "1": 1.0
+            },
+            "balanced_accuracy": 0.9166666666666667,
+            "codebook_option_count": 2,
+            "chance_floor": 0.5,
+            "score": 0.8333333333333335
+          },
+          "uda-bench-vldb::legal:evidence": {
+            "present_classes": [
+              "0",
+              "1"
+            ],
+            "class_counts": {
+              "1": 21,
+              "0": 3
+            },
+            "class_recalls": {
+              "1": 0.8571428571428571,
+              "0": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.7619047619047619,
+            "codebook_option_count": 2,
+            "chance_floor": 0.5,
+            "score": 0.5238095238095237
+          },
+          "blade::answer": {
+            "score": 0.5833333333333334,
+            "items": 12,
+            "verification": "original_deterministic_checker"
+          }
+        }
+      },
+      "summary": {
+        "score": 0.0,
+        "components": {
+          "consistency": 0.0
+        },
+        "per_question": {}
+      }
+    },
+    "sheet_selection": {
+      "Evidence_Register": {
+        "title": "Evidence_Register",
+        "how": "exact"
+      },
+      "Register_Summary": {
+        "title": "Register_Summary",
+        "how": "exact"
+      },
+      "Review_Scope": {
+        "title": "Review_Scope",
+        "how": "exact"
+      }
+    },
+    "pre_check": {
+      "Evidence_Register": {
+        "bytes": 29963,
+        "cell_elements": 351,
+        "cells": 351,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:C117",
+        "cells_over_text_limit": 0
+      },
+      "Register_Summary": {
+        "bytes": 1774,
+        "cell_elements": 12,
+        "cells": 12,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B6",
+        "cells_over_text_limit": 0
+      },
+      "Review_Scope": {
+        "bytes": 6375,
+        "cell_elements": 66,
+        "cells": 66,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B33",
+        "cells_over_text_limit": 0
+      }
+    },
+    "problems": {},
+    "shared_strings": {
+      "scan": {
+        "part": null,
+        "needed": 0,
+        "max_needed": null,
+        "parsed_through": -1,
+        "error": null
+      },
+      "per_sheet": {
+        "Evidence_Register": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Register_Summary": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Review_Scope": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        }
+      }
+    },
+    "limits": {
+      "file_bytes": 157286400,
+      "zip_entries": 10000,
+      "package_part_bytes": 8388608,
+      "sheets_in_workbook": 1000,
+      "sheet_part_bytes": 134217728,
+      "cell_elements_per_sheet": 1000000,
+      "cells_per_sheet": 200000,
+      "merge_ranges_per_sheet": 2000,
+      "merge_area_cells": 100000,
+      "sst_part_bytes": 1073741824,
+      "shared_strings_scanned": 20000000,
+      "text_chars": 2000
+    }
+  },
+  "image": "tada-bench-verifier:blade-udabench-613aa0b0c469",
+  "image_id": "sha256:890549de632e92b21e4471bce4b8bd37b58b3c44ff35edd6c731f28cd2fda4d5",
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-16T17:39:32.050117+00:00",
+      "finished_at": "2026-11-16T17:39:37.191574+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\blade-udabench\\attempt-02\\evaluation\\official-score-001\\verifier-01\\container.log"
+    }
+  ],
+  "build_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\blade-udabench\\attempt-02\\evaluation\\official-score-001\\build-01.log"
+    }
+  ],
+  "finished_at": "2026-11-16T17:39:39.011594+00:00"
+}

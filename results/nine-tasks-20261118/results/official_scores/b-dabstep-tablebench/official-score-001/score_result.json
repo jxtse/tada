@@ -1,0 +1,390 @@
+{
+  "task_id": "b-dabstep-tablebench",
+  "submission_path": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\b-dabstep-tablebench\\attempt-01\\output\\review.xlsx",
+  "submission_sha256": "ced5595b1bef0bcd6cb97ea4fd03e654a7613e651c5e45ada39425af6440f390",
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "scorer_sha256": "a8b0602dc7d40926a1cfd84fc0adbaf13dc3f7610dedd951ab18870980d41eb4",
+  "verifier_manifest_sha256": "ae9dbf2edc929b39c5e3d1cef1d448572e18afcf711d1551d219884db88226b1",
+  "started_at": "2026-11-17T00:09:17.325905+00:00",
+  "verifier_environment_mode": "separate",
+  "network_mode": "none",
+  "status": "scored",
+  "reward": 0.696955,
+  "details": {
+    "reward": 0.6969552117733321,
+    "components": {
+      "labels": 0.681799557994284,
+      "facts": 0.0,
+      "scope": 1.0,
+      "consistency": 0.0
+    },
+    "weights": {
+      "consistency": 0.05,
+      "facts": 0.1,
+      "labels": 0.7,
+      "scope": 0.15
+    },
+    "sheets": {
+      "Coding": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 140,
+        "precision": 1.0
+      },
+      "Register_Summary": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 3,
+        "precision": 1.0
+      },
+      "Review_Scope": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 130,
+        "precision": 1.0
+      }
+    },
+    "scope": {
+      "review": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "cell_correct": {
+      "label:B::2341:B::direction": true,
+      "label:B::12507:B::direction": true,
+      "label:B::3402:B::direction": true,
+      "label:B::6831:B::direction": true,
+      "label:B::1065:B::direction": true,
+      "label:B::10873:B::direction": true,
+      "label:B::9253:B::direction": true,
+      "label:B::515:B::direction": true,
+      "label:B::11521:B::direction": true,
+      "label:B::314:B::direction": true,
+      "label:B::5708:B::direction": true,
+      "label:B::10791:B::direction": true,
+      "label:B::4709:B::direction": true,
+      "label:B::13391:B::direction": true,
+      "label:B::10553:B::direction": true,
+      "label:B::11107:B::direction": true,
+      "label:B::372:B::direction": true,
+      "label:B::3571:B::direction": true,
+      "label:B::10868:B::direction": true,
+      "label:B::13776:B::direction": true,
+      "label:B::11150:B::direction": true,
+      "label:B::5347:B::direction": true,
+      "label:B::3648:B::direction": true,
+      "label:B::10802:B::direction": false,
+      "label:B::9288:B::direction": true,
+      "label:B::5579:B::direction": true,
+      "label:B::12093:B::direction": true,
+      "label:B::1352:B::direction": true,
+      "label:B::6580:B::direction": true,
+      "label:B::6562:B::direction": true,
+      "label:B::10807:B::direction": true,
+      "label:B::5678:B::direction": true,
+      "label:B::5720:B::direction": false,
+      "label:B::344:B::direction": true,
+      "label:B::10687:B::direction": true,
+      "label:B::13466:B::direction": true,
+      "label:B::10633:B::direction": true,
+      "label:B::5442:B::direction": true,
+      "label:B::9645:B::direction": true,
+      "label:B::12237:B::direction": true,
+      "label:dabstep::dabstep:9ce28a49969b6868da803f6f58a864a9:dabstep::answer": false,
+      "label:dabstep::dabstep:dbffae6076d69636cc276721211e15f7:dabstep::answer": false,
+      "label:dabstep::dabstep:8c67b35715e43f2a2c9ded3b00727b4a:dabstep::answer": true,
+      "label:dabstep::dabstep:fdf10ecd9e6fe5ad644e7f3905a5890a:dabstep::answer": true,
+      "label:dabstep::dabstep:3d3fbb9245f7627389e0082a34bed122:dabstep::answer": true,
+      "label:dabstep::dabstep:f806357e126707ce5bed03add247a4a4:dabstep::answer": true,
+      "label:dabstep::dabstep:ed17209fa13b51783632a9b78a4be536:dabstep::answer": false,
+      "label:dabstep::dabstep:9c6176ab5f6a2944a4686d534705896a:dabstep::answer": true,
+      "label:dabstep::dabstep:cb69d4d82698eab1afc3db404146cc2b:dabstep::answer": true,
+      "label:dabstep::dabstep:527506e296577b81d9b00e66a0dcaf65:dabstep::answer": true,
+      "label:tablebench::tablebench:b2be1bd9af785f69a680d864a8dab7fe:tablebench::answer": false,
+      "label:tablebench::tablebench:ad867858b60fb7f20fe5652d065a3a16:tablebench::answer": false,
+      "label:tablebench::tablebench:c38648cc693d66d477a90159b6c1dd06:tablebench::answer": false,
+      "label:tablebench::tablebench:3d5fba190fabd21f0afa2caeff88816e:tablebench::answer": false,
+      "label:tablebench::tablebench:702e0220500e6a55b114ab7e61078b80:tablebench::answer": false,
+      "label:tablebench::tablebench:1e7e4f7387a0ecbd14a5be724f80503f:tablebench::answer": false,
+      "label:tablebench::tablebench:a64ddf0d50aa1dbc082b33aeb9036ebd:tablebench::answer": false,
+      "label:tablebench::tablebench:e12da9f53f7858a7fbd624791d4f79e7:tablebench::answer": false,
+      "label:tablebench::tablebench:132080b491237e7109c7847e7c6d197c:tablebench::answer": true,
+      "label:tablebench::tablebench:ab459bfaef8bddcde514f7b425bbb63a:tablebench::answer": true,
+      "label:tablebench::tablebench:12371b1f1d02272770440ea1b6336728:tablebench::answer": true,
+      "label:tablebench::tablebench:bd1a311c555f677a49815d27582f6d5c:tablebench::answer": false,
+      "label:tablebench::tablebench:41be977e07ef49b7afc1a7e187ceed5e:tablebench::answer": false,
+      "label:tablebench::tablebench:958118ac4a47c5b174a24bcbe7377cb7:tablebench::answer": false,
+      "label:tablebench::tablebench:d55914759bd32bb1f939d95c8be455c3:tablebench::answer": true,
+      "label:tablebench::tablebench:a076652d5d284cfb4230b32ed2ceb6c6:tablebench::answer": false,
+      "label:tablebench::tablebench:81c1ad8d122408295617cdc51d32cefc:tablebench::answer": false,
+      "label:tablebench::tablebench:f33fc04a2407cfb1395d5d211801081e:tablebench::answer": false,
+      "label:tablebench::tablebench:6304cd039da9f97edea70e77f980d65f:tablebench::answer": false,
+      "label:tablebench::tablebench:8c0d832d7db8e1341ce7113c8adb3a1a:tablebench::answer": false,
+      "label:tablebench::tablebench:b3d23e851cd05e5e78245f4089d2881e:tablebench::answer": false,
+      "label:tablebench::tablebench:886762f3c0c36ee3b53965681126aa94:tablebench::answer": true,
+      "label:tablebench::tablebench:6dc521ca2b477acc99b30acb74aca4b0:tablebench::answer": true,
+      "label:tablebench::tablebench:5f03745c28c9111ccc0587a969abe000:tablebench::answer": true,
+      "label:tablebench::tablebench:5084822a79d9fac7b6fbbf851a9b2e91:tablebench::answer": true,
+      "label:tablebench::tablebench:3c402f20c04b8b7946fa275b90fa6eab:tablebench::answer": true,
+      "label:tablebench::tablebench:dc6798b47f22b5c4884167c5c6a9cc4e:tablebench::answer": false,
+      "label:tablebench::tablebench:f40d4549ea6c5346f730da11562f22ef:tablebench::answer": true,
+      "label:tablebench::tablebench:4e09fca154d4f9a080f0638aa2ecf104:tablebench::answer": false,
+      "label:tablebench::tablebench:18286f2e9fd089f398bd3d4793fddbb7:tablebench::answer": false,
+      "label:tablebench::tablebench:aeac132cf7bfbd7ca4a5590504d1fcf9:tablebench::answer": false,
+      "label:tablebench::tablebench:5f7b4d46a7fa125ad2319cd69610c0c4:tablebench::answer": true,
+      "label:tablebench::tablebench:9f1095fd0ac92ef394b6a7474d3292ff:tablebench::answer": true,
+      "label:tablebench::tablebench:94e2cd32f25a5e3aa75986a2e7fbadc0:tablebench::answer": false,
+      "label:tablebench::tablebench:69ef769634e64a8bc3f0e0248f7f7fd1:tablebench::answer": false,
+      "label:tablebench::tablebench:e63e107d782ca2d7d4efaa2906154901:tablebench::answer": false,
+      "label:tablebench::tablebench:87ac8596d2863074d7868d16010b8c23:tablebench::answer": false,
+      "label:tablebench::tablebench:5b0806ba5d6a7daa6b341de3542a11fc:tablebench::answer": true,
+      "label:tablebench::tablebench:ba7fb830a5d0c5c9fbdb9a69bbe5d73c:tablebench::answer": false,
+      "label:tablebench::tablebench:158b23b01f7eee7097172eb8b1fce321:tablebench::answer": false,
+      "label:tablebench::tablebench:2511fa7414fa05ddda19ac485301c1e0:tablebench::answer": true,
+      "label:tablebench::tablebench:9d318421747e32369d501486d8d8286d:tablebench::answer": false,
+      "label:tablebench::tablebench:7ee02a9eadacf6eb96514a8f9d76d094:tablebench::answer": false,
+      "label:tablebench::tablebench:36a76a2931eb55e4e8922303a31fe454:tablebench::answer": false,
+      "label:tablebench::tablebench:eda950f4b975a7410e7a2b0ab2c49cbc:tablebench::answer": false,
+      "label:tablebench::tablebench:69b8f5dd50822a18e0773dfa6f5c88b8:tablebench::answer": false,
+      "label:tablebench::tablebench:3230741940b453d44ebf9eb7eb41f1b0:tablebench::answer": true,
+      "label:tablebench::tablebench:938b495cef65aa924c5fea4daf53ef64:tablebench::answer": false,
+      "label:tablebench::tablebench:7fb33b487d58d9ee3e1ae7500e03bd42:tablebench::answer": false,
+      "label:tablebench::tablebench:0bfaf96a344adc7b523f8dc986df3752:tablebench::answer": false,
+      "label:tablebench::tablebench:d0b2956f4ca593063f1a3b7ef7de42ca:tablebench::answer": false,
+      "label:tablebench::tablebench:176ed7e2e778501e13c79cda1d54ac7c:tablebench::answer": false,
+      "label:tablebench::tablebench:f0b2020b7b1d5c663795c919dd7d8ac1:tablebench::answer": true,
+      "label:tablebench::tablebench:aa531fa10745a907f5c3e7a0dbb4eec8:tablebench::answer": false,
+      "label:tablebench::tablebench:ae9ffd4c1f315dc52de0271b50103aa0:tablebench::answer": true,
+      "label:tablebench::tablebench:f96e0a329698fb18f8b8f4adff946647:tablebench::answer": false,
+      "label:tablebench::tablebench:693d6b8378f2f28823096606a5b3b4fb:tablebench::answer": false,
+      "label:tablebench::tablebench:da8281b025b98cbefca43d4e3d0f388f:tablebench::answer": false,
+      "label:tablebench::tablebench:6bb0623ba09bfd4443ca1505002a2b5b:tablebench::answer": true,
+      "label:tablebench::tablebench:b6c094d7997546c52ee9340a6f6ce102:tablebench::answer": true,
+      "label:tablebench::tablebench:fb3066068cd48bd868b70bbe00d552b4:tablebench::answer": true,
+      "label:tablebench::tablebench:b2233ff0357cd5d514724e9f95f504df:tablebench::answer": true,
+      "label:tablebench::tablebench:8a80dda49f311985bee94e0746005ef4:tablebench::answer": true,
+      "label:tablebench::tablebench:146f6d6fc241ede138783c94808fa718:tablebench::answer": false,
+      "label:tablebench::tablebench:1c65f90619e54aa88234f63d429c6295:tablebench::answer": false,
+      "label:tablebench::tablebench:569e49116796224e94671de7e8cc1b21:tablebench::answer": true,
+      "label:tablebench::tablebench:8ec670e069b6604f5d5b644091d4108a:tablebench::answer": false,
+      "label:tablebench::tablebench:dafa61f6276fe14c3ca56c7ca0b5f828:tablebench::answer": false,
+      "label:tablebench::tablebench:cf63fa8105fa8724db1572352f0da42e:tablebench::answer": false,
+      "label:tablebench::tablebench:135712fd999b709e7e68819ef96171f5:tablebench::answer": true,
+      "label:tablebench::tablebench:12ef8fb4d2dc38425974fc0a985821ee:tablebench::answer": false,
+      "label:tablebench::tablebench:e692803d23c2ecd3d9abc0184c6c7d03:tablebench::answer": true,
+      "label:tablebench::tablebench:dd7c485d3f6d5b862366fdeb4864ccdf:tablebench::answer": false,
+      "label:tablebench::tablebench:6200a3889cb40416ec1aa230687ce65f:tablebench::answer": true,
+      "label:tablebench::tablebench:c7d8246c67fce1f3d651600f7cbe657e:tablebench::answer": true,
+      "label:tablebench::tablebench:b0ccc91091b18e186befc36b5c5254e8:tablebench::answer": false,
+      "label:tablebench::tablebench:d55af60bde61556a56c582d3eb5e3004:tablebench::answer": false,
+      "label:tablebench::tablebench:85ff106ddb663520f7ee8e8c9be14da8:tablebench::answer": false,
+      "label:tablebench::tablebench:5a1cc9dd95a77c12cb587d7aa7e00c26:tablebench::answer": true,
+      "label:tablebench::tablebench:e26d8dbeb618e06e45a6acff58635505:tablebench::answer": true,
+      "label:tablebench::tablebench:75b6b0a9cda799412d8f77f80f49dba1:tablebench::answer": false,
+      "label:tablebench::tablebench:f1536c7f9f8ae751ba3d941ec38f689a:tablebench::answer": false,
+      "label:tablebench::tablebench:6b0316aeb0cafb72a3d6741dfe08aa32:tablebench::answer": true,
+      "label:tablebench::tablebench:07ad1e9c38b738d31f1f265c61059f04:tablebench::answer": false,
+      "label:tablebench::tablebench:8b7a744e2f811906d3de39fd9f121b06:tablebench::answer": true,
+      "label:tablebench::tablebench:6c536e681c2d9ac773196af5bace585b:tablebench::answer": true,
+      "label:tablebench::tablebench:3776ce8e57fef5f80609aba9975c22df:tablebench::answer": true,
+      "label:tablebench::tablebench:ba8fc7c50a7f6cf1a24b996e1d01a6fa:tablebench::answer": false,
+      "label:tablebench::tablebench:24efdc384a6537a2c2f6516fb1e37120:tablebench::answer": false,
+      "label:tablebench::tablebench:94a6669709d0ebd5002ff85037904d20:tablebench::answer": true
+    },
+    "label_aggregation": "per_question_chance_corrected_balanced_accuracy",
+    "per_question": {
+      "B::direction": {
+        "present_classes": [
+          -1,
+          0,
+          1
+        ],
+        "class_counts": {
+          "0": 18,
+          "1": 17,
+          "-1": 5
+        },
+        "class_recalls": {
+          "0": 1.0,
+          "1": 0.8823529411764706,
+          "-1": 1.0
+        },
+        "balanced_accuracy": 0.9607843137254902,
+        "codebook_option_count": 3,
+        "chance_floor": 0.3333333333333333,
+        "score": 0.9411764705882352
+      },
+      "dabstep::answer": {
+        "score": 0.7,
+        "items": 10,
+        "verification": "original_deterministic_checker"
+      },
+      "tablebench::answer": {
+        "score": 0.40422220339461723,
+        "items": 90,
+        "verification": "original_deterministic_checker"
+      }
+    },
+    "per_work_item": {
+      "review": 0.681799557994284,
+      "summary": 0.0
+    },
+    "per_work_item_details": {
+      "review": {
+        "score": 0.681799557994284,
+        "components": {
+          "labels": 0.681799557994284
+        },
+        "per_question": {
+          "B::direction": {
+            "present_classes": [
+              -1,
+              0,
+              1
+            ],
+            "class_counts": {
+              "0": 18,
+              "1": 17,
+              "-1": 5
+            },
+            "class_recalls": {
+              "0": 1.0,
+              "1": 0.8823529411764706,
+              "-1": 1.0
+            },
+            "balanced_accuracy": 0.9607843137254902,
+            "codebook_option_count": 3,
+            "chance_floor": 0.3333333333333333,
+            "score": 0.9411764705882352
+          },
+          "dabstep::answer": {
+            "score": 0.7,
+            "items": 10,
+            "verification": "original_deterministic_checker"
+          },
+          "tablebench::answer": {
+            "score": 0.40422220339461723,
+            "items": 90,
+            "verification": "original_deterministic_checker"
+          }
+        }
+      },
+      "summary": {
+        "score": 0.0,
+        "components": {
+          "consistency": 0.0
+        },
+        "per_question": {}
+      }
+    },
+    "sheet_selection": {
+      "Coding": {
+        "title": "Coding",
+        "how": "exact"
+      },
+      "Register_Summary": {
+        "title": "Register_Summary",
+        "how": "exact"
+      },
+      "Review_Scope": {
+        "title": "Review_Scope",
+        "how": "exact"
+      }
+    },
+    "pre_check": {
+      "Coding": {
+        "bytes": 39542,
+        "cell_elements": 423,
+        "cells": 423,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:C141",
+        "cells_over_text_limit": 1
+      },
+      "Register_Summary": {
+        "bytes": 1605,
+        "cell_elements": 8,
+        "cells": 8,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B4",
+        "cells_over_text_limit": 0
+      },
+      "Review_Scope": {
+        "bytes": 19833,
+        "cell_elements": 262,
+        "cells": 262,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B131",
+        "cells_over_text_limit": 0
+      }
+    },
+    "problems": {},
+    "shared_strings": {
+      "scan": {
+        "part": null,
+        "needed": 0,
+        "max_needed": null,
+        "parsed_through": -1,
+        "error": null
+      },
+      "per_sheet": {
+        "Coding": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Register_Summary": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Review_Scope": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        }
+      }
+    },
+    "limits": {
+      "file_bytes": 157286400,
+      "zip_entries": 10000,
+      "package_part_bytes": 8388608,
+      "sheets_in_workbook": 1000,
+      "sheet_part_bytes": 134217728,
+      "cell_elements_per_sheet": 1000000,
+      "cells_per_sheet": 200000,
+      "merge_ranges_per_sheet": 2000,
+      "merge_area_cells": 100000,
+      "sst_part_bytes": 1073741824,
+      "shared_strings_scanned": 20000000,
+      "text_chars": 2000
+    }
+  },
+  "image": "tada-bench-verifier:b-dabstep-tablebench-ae9dbf2edc92",
+  "image_id": "sha256:484280d3ddfea191fe138a2e62f03fab293afa3aea1cf6b71c9c2a6aa75cd2bc",
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-17T00:09:44.183109+00:00",
+      "finished_at": "2026-11-17T00:10:19.774402+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\b-dabstep-tablebench\\attempt-01\\evaluation\\official-score-001\\verifier-01\\container.log"
+    }
+  ],
+  "build_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\b-dabstep-tablebench\\attempt-01\\evaluation\\official-score-001\\build-01.log"
+    }
+  ],
+  "finished_at": "2026-11-17T00:10:23.212709+00:00"
+}

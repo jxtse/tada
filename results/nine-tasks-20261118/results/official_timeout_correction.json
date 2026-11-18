@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-11-18T00:07:06.3668799+08:00",
+  "reason": "Official 28800-second BIRD attempt completed; cancellation audit caused an unauthorized fresh attempt with reset time. Preserve attempt-01, exclude attempt-02 from quality results, settle accepted requests, continue remaining three tasks.",
+  "coordinator_pid": 52732,
+  "coordinator_created": "2026-11-17T15:56:14.866572+08:00",
+  "unintended_attempt": "bird-infiagent-oolongsynth/attempt-02",
+  "unintended_container": "tada61-bird-infiagent-oolongsynth-ad01954c",
+  "status": "unintended_retry_stopped_all_accepted_requests_settled",
+  "original_job": {
+    "pid": 52732,
+    "started_at": "2026-11-17T15:56:17.43178+08:00",
+    "interpreter": "C:\\Users\\v-senguo\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "entrypoint": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\harness\\run_main_suite.py",
+    "concurrency": 1,
+    "status": "running",
+    "source_commit": "2d53ad1d9a2bc091a947332c75717021f4749af2",
+    "model": "gpt-6.1-sol",
+    "prevent_system_sleep": true
+  },
+  "settled_attempt02_claims": 5,
+  "unsettled_attempt02_claims": 0,
+  "unclaimed_ready_requests_not_dispatched": 1,
+  "unintended_container_stopped_at": "2026-11-17T16:11:32.7902390+00:00",
+  "original_request_accounting": {
+    "started": 163,
+    "settled": 163,
+    "in_flight": 0,
+    "success": 161,
+    "non_success": 2,
+    "known_total_tokens": 955686,
+    "unknown_usage": 3,
+    "oldest_in_flight_seconds": null
+  },
+  "excluded_automatic_attempt_accounting": {
+    "started": 5,
+    "settled": 5,
+    "in_flight": 0,
+    "success": 5,
+    "non_success": 0,
+    "known_total_tokens": 59680,
+    "unknown_usage": 0,
+    "oldest_in_flight_seconds": null
+  },
+  "original_quality_reward": null,
+  "original_quality_status": "technical_invalid_at_official_timeout",
+  "unexpected_attempt_quality_excluded": true,
+  "all_cost_records_preserved": true
+}

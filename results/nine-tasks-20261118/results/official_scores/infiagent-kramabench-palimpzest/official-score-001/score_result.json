@@ -1,0 +1,344 @@
+{
+  "task_id": "infiagent-kramabench-palimpzest",
+  "submission_path": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\infiagent-kramabench-palimpzest\\attempt-02\\output\\review.xlsx",
+  "submission_sha256": "c69258c0109584017bb68d3940646bc3b79e6b559a066bc05002e8b90119e130",
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "scorer_sha256": "a8b0602dc7d40926a1cfd84fc0adbaf13dc3f7610dedd951ab18870980d41eb4",
+  "verifier_manifest_sha256": "4828653b7dc7cbd451cd44e0ef37938fbf24231489f23c8ff40b728be0d3d044",
+  "started_at": "2026-11-16T22:43:56.299266+00:00",
+  "verifier_environment_mode": "separate",
+  "network_mode": "none",
+  "status": "scored",
+  "reward": 0.871402,
+  "details": {
+    "reward": 0.8714024864024864,
+    "components": {
+      "labels": 0.8639083139083139,
+      "facts": 1.0,
+      "scope": 1.0,
+      "consistency": 0.3333333333333333
+    },
+    "weights": {
+      "consistency": 0.05,
+      "facts": 0.1,
+      "labels": 0.7,
+      "scope": 0.15
+    },
+    "sheets": {
+      "Evidence_Register": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 99,
+        "precision": 1.0
+      },
+      "Fact_Checks": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 4,
+        "precision": 1.0
+      },
+      "Findings_Summary": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 3,
+        "precision": 1.0
+      },
+      "Review_Scope": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 99,
+        "precision": 1.0
+      }
+    },
+    "scope": {
+      "review": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "cell_correct": {
+      "label:infiagent-dabench::infiagent-dabench:9f2d05040d12e70fa1aa0348f0946e18:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:47563271030812a533f74a21c6bc2a09:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:63efd12b4c90f458fb12eeec3493cddf:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:a02b05295be45da514587b104f7d60a6:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:0df12e40cfb333b149f79bae44549f55:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:10bde6f32e94ac6c52126edc7edeedd0:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:cc8ab18d4b9737fabf65b0c5d925c460:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:86d5e41be14f728f05755d8bce1042dc:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:1afa13465357ae453b13ef63b7dba10b:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:58fb48609ab0ff55dc028f833f095438:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:90ac6e64a9421dd0ea48bb0ad7d7539a:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:0ee2adaecdf88ae14b2b1907b2d1a298:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:e62d4e74232d77d07deacf8dbcec1562:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:7d243c095ce77d49513e3668ccd9414d:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:32376069adcd3e2ee4d58aed52112233:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:0bb492bd611595be6659305c85be386c:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:16bed9be767bfbbcb69b80fa26e03675:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:6d24ba10be603044abeb80a7f517e6a8:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:69ae3fc3501f5517139754943dd589d3:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:10b07a7e67cc471e8f284b16ac0d012f:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:37fff6136873dfe4520b05fb1e3c60f9:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:1a5e406d3129402baa9a170622f8f9f2:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:887eea9ca8e3fd2f1ac2dede8ca1643d:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:6c57d10d6ba3414fd8c4899ed86cc9f7:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:0fd58ed4ccae3c7cfaeb000139782f20:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:cd631443d84cf509a44de0bae6611a2b:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:8b3485a02f932df182b0f0442c1e9e49:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:1e26971a14cc8a1109dd355d724c48e7:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:32c6c56db4bfa653ffeea32bb68b94d6:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:9c59011f315c9446fd14aeafb891afaf:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:9b9ab753ffcac2faca878bec49dff379:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:f9c89c8bde270c55d601d6b486310b72:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:f894e21ca7ec4ab6e7f149c77beabe7a:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:8f15fb95daeacf28ec4ef8338ec66d2a:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:de24b207f643091234d75fc9e404be0f:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:fecbbe4a442abc8a28d554eefd674856:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:fd96bb0ca1150c8fbd22c3d405bbaa6d:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:32a0a97ef1b260ab9c7a9fb764e0fade:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:0d55c7a1dd1585b9f1b5a3bd89a79e50:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:88bd3a54f64ad4b8e9782135f8ee559b:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:236b228cfc950283e5e5a670df165302:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:4690f712432ef26a868274210aaf4372:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:ef0c1e3cd8b8cfced8d2b8694114a98b:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:253a38967a39c9ba9d75a6e30c315ae8:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:87037cfdcae3bcea01b0a4fa78965b0e:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:1d9c50337930e6d5d6535595e99277fb:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:8e9b856ba864650ba34eaac07ec14289:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:4794623c5f689c657052a3843e08e978:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:8a798ab8b6d1f8e51c07f624446d9dd2:infiagent-dabench::answer": false,
+      "label:infiagent-dabench::infiagent-dabench:a87143e0b7dfe3a8d97e3edfff5a47f6:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:2be7643e4eb8414cb446e8f6cb534116:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:1b991129ef14b96ad9d2ee31c7fe758e:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:8f9faccf739fb8ffa5c3dd57a3f5b121:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:fbef9b8375ff58af2540c2c366f55ccd:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:9decbacec220706db64f5122570703a8:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:2deb0693111b5eda423ba291e1b678af:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:5ae297b3f8de0e9258ef5015c5dccd0d:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:fa846e3c8f1c38e9c3428ec0290fbd2a:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:886ae25df83332c712c691aec01e7ec4:infiagent-dabench::answer": true,
+      "label:infiagent-dabench::infiagent-dabench:b00e98b283e2cdaf2bcc2878532f4281:infiagent-dabench::answer": true,
+      "label:kramabench::kramabench:30e3408ca8aedb011b44137daa66993c:kramabench::answer": false,
+      "label:kramabench::kramabench:d931011891e6fda0d820b8c52743d3c3:kramabench::answer": true,
+      "label:kramabench::kramabench:2a92d6c3ffe39d462dc4796ddc8295a6:kramabench::answer": true,
+      "label:kramabench::kramabench:63d0fa1370060f343262dc71b2f44666:kramabench::answer": true,
+      "label:kramabench::kramabench:bde48bcbdb053577742665793443ec89:kramabench::answer": true,
+      "label:kramabench::kramabench:d235b024df2fc3acb175aecd9822d703:kramabench::answer": true,
+      "label:kramabench::kramabench:ae3b284ca40f03fbbbb1a73a95ceaed6:kramabench::answer": true,
+      "label:kramabench::kramabench:872399669651be227cdd71e8e756eac2:kramabench::answer": true,
+      "label:kramabench::kramabench:b9d87ad6bd2abb0e75f7d45283288cd7:kramabench::answer": true,
+      "label:kramabench::kramabench:b9816843524c48d76cf140afe0dc7b9f:kramabench::answer": false,
+      "label:kramabench::kramabench:a07377a959e972eda53f29d251fa0dab:kramabench::answer": true,
+      "label:kramabench::kramabench:7a8756a82a488288c35487c52a7251ef:kramabench::answer": false,
+      "label:kramabench::kramabench:6aa7987bff66a13c7b39e7d6d14aab59:kramabench::answer": false,
+      "label:kramabench::kramabench:5ace9134151820bef02a641369a3ae95:kramabench::answer": true,
+      "label:kramabench::kramabench:994b2f20785becabd76ed83258a4fd6d:kramabench::answer": true,
+      "label:kramabench::kramabench:a5b43ddb92b446cf1927040a0170c05a:kramabench::answer": true,
+      "label:kramabench::kramabench:44a257fb732059528f26ffb9a2f0b65d:kramabench::answer": false,
+      "label:kramabench::kramabench:1d84b184b68567415b4bb4f0d4ed9632:kramabench::answer": true,
+      "label:kramabench::kramabench:7556b82701fee2f8ba04aa7c3dae4d87:kramabench::answer": true,
+      "label:kramabench::kramabench:53be5e943e5aedb994eded15f37c666c:kramabench::answer": false,
+      "label:kramabench::kramabench:6ed70b7273192d4bb5d5479ac70fb83a:kramabench::answer": false,
+      "label:kramabench::kramabench:c0331780b5bcb87ad3c8fe21a93008a2:kramabench::answer": true,
+      "label:kramabench::kramabench:54cff5d536fe5944c62f947b9068439a:kramabench::answer": true,
+      "label:kramabench::kramabench:c9192f1b0fb829eeca58c4aedd7fd1b7:kramabench::answer": true,
+      "label:kramabench::kramabench:644f51a8ce6246eec1c2676b1a904d8b:kramabench::answer": true,
+      "label:kramabench::kramabench:4b8d60bac3838632081bd5b715dcdc9b:kramabench::answer": false,
+      "label:palimpzest::palimpzest:e0ca84c7cae4827561e9abdd17ee997f:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:00c904e4d4c8cfdf349f70ba4f249faa:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:e950e9a2313341109012e0b7c62b950f:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:d36002277d02af06b46cbc8f94aded98:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:9a9c11f4ce0fc2503ba9b99fbf243468:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:13def5d0b94db5d2d10ab63d45b2c857:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:fa8d1afd1e48de1c78429ddd23163495:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:b301efcedb5224d1896bce46aa23dc17:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:e58668f2e29f8732f8d92aadc48dd337:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:7303b0b6b620c726b5f9b6b5da7b06ee:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:99033f029d1bb54b688a9069bbc32aa1:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:00324d3bd7e75b18342a2c8be5b10baf:palimpzest::answer": true,
+      "label:palimpzest::palimpzest:990e6ad0c6e024d542902670eb43ee68:palimpzest::answer": true
+    },
+    "label_aggregation": "per_question_chance_corrected_balanced_accuracy",
+    "per_question": {
+      "infiagent-dabench::answer": {
+        "score": 0.8166666666666667,
+        "items": 60,
+        "verification": "original_deterministic_checker"
+      },
+      "kramabench::answer": {
+        "score": 0.7750582750582751,
+        "items": 26,
+        "verification": "original_deterministic_checker"
+      },
+      "palimpzest::answer": {
+        "score": 1.0,
+        "items": 13,
+        "verification": "original_deterministic_checker"
+      }
+    },
+    "per_work_item": {
+      "review": 0.8809197746697747,
+      "summary": 0.7777777777777777
+    },
+    "per_work_item_details": {
+      "review": {
+        "score": 0.8809197746697747,
+        "components": {
+          "facts": 1.0,
+          "labels": 0.8639083139083139
+        },
+        "per_question": {
+          "infiagent-dabench::answer": {
+            "score": 0.8166666666666667,
+            "items": 60,
+            "verification": "original_deterministic_checker"
+          },
+          "kramabench::answer": {
+            "score": 0.7750582750582751,
+            "items": 26,
+            "verification": "original_deterministic_checker"
+          },
+          "palimpzest::answer": {
+            "score": 1.0,
+            "items": 13,
+            "verification": "original_deterministic_checker"
+          }
+        }
+      },
+      "summary": {
+        "score": 0.7777777777777777,
+        "components": {
+          "facts": 1.0,
+          "consistency": 0.3333333333333333
+        },
+        "per_question": {}
+      }
+    },
+    "sheet_selection": {
+      "Evidence_Register": {
+        "title": "Evidence_Register",
+        "how": "exact"
+      },
+      "Fact_Checks": {
+        "title": "Fact_Checks",
+        "how": "exact"
+      },
+      "Findings_Summary": {
+        "title": "Findings_Summary",
+        "how": "exact"
+      },
+      "Review_Scope": {
+        "title": "Review_Scope",
+        "how": "exact"
+      }
+    },
+    "pre_check": {
+      "Evidence_Register": {
+        "bytes": 99947,
+        "cell_elements": 300,
+        "cells": 300,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:C100",
+        "cells_over_text_limit": 1
+      },
+      "Fact_Checks": {
+        "bytes": 1627,
+        "cell_elements": 10,
+        "cells": 10,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B5",
+        "cells_over_text_limit": 0
+      },
+      "Findings_Summary": {
+        "bytes": 1412,
+        "cell_elements": 8,
+        "cells": 8,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B4",
+        "cells_over_text_limit": 0
+      },
+      "Review_Scope": {
+        "bytes": 17986,
+        "cell_elements": 200,
+        "cells": 200,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B100",
+        "cells_over_text_limit": 0
+      }
+    },
+    "problems": {},
+    "shared_strings": {
+      "scan": {
+        "part": null,
+        "needed": 0,
+        "max_needed": null,
+        "parsed_through": -1,
+        "error": null
+      },
+      "per_sheet": {
+        "Evidence_Register": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Fact_Checks": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Findings_Summary": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Review_Scope": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        }
+      }
+    },
+    "limits": {
+      "file_bytes": 157286400,
+      "zip_entries": 10000,
+      "package_part_bytes": 8388608,
+      "sheets_in_workbook": 1000,
+      "sheet_part_bytes": 134217728,
+      "cell_elements_per_sheet": 1000000,
+      "cells_per_sheet": 200000,
+      "merge_ranges_per_sheet": 2000,
+      "merge_area_cells": 100000,
+      "sst_part_bytes": 1073741824,
+      "shared_strings_scanned": 20000000,
+      "text_chars": 2000
+    }
+  },
+  "image": "tada-bench-verifier:infiagent-kramabench-palimpzest-4828653b7dc7",
+  "image_id": "sha256:469c4a3c12b713efeb0d15491e2d438424acd6de4dd10de20b4d536143502481",
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-16T22:44:39.783291+00:00",
+      "finished_at": "2026-11-16T22:45:04.682580+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\infiagent-kramabench-palimpzest\\attempt-02\\evaluation\\official-score-001\\verifier-01\\container.log"
+    }
+  ],
+  "build_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\infiagent-kramabench-palimpzest\\attempt-02\\evaluation\\official-score-001\\build-01.log"
+    }
+  ],
+  "finished_at": "2026-11-16T22:45:09.768517+00:00"
+}

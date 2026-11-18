@@ -1,0 +1,85 @@
+{
+  "as_of_date_beijing": "2026-11-18",
+  "task_count": 9,
+  "scored_count": 5,
+  "historically_started_count": 9,
+  "currently_running": false,
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "source_commit_main": "2d53ad1d9a2bc091a947332c75717021f4749af2",
+  "conditions_must_not_be_combined": true,
+  "tasks": [
+    {
+      "task": "blade-udabench",
+      "status": "scored",
+      "score": 0.660802,
+      "condition": "original experiment (jev/patch provenance)",
+      "attempt": "attempt-02",
+      "evidence": "experiments/tada_bench_codex61_sol_20261116/runs/blade-udabench/attempt-02/evaluation"
+    },
+    {
+      "task": "biodex-udabench",
+      "status": "scored",
+      "score": 0.699111,
+      "condition": "original experiment (jev/patch provenance)",
+      "attempt": "attempt-03",
+      "evidence": "experiments/tada_bench_codex61_sol_20261116/runs/biodex-udabench/attempt-03/evaluation"
+    },
+    {
+      "task": "dabstep-semtpch-spider2",
+      "status": "scored",
+      "score": 0.440196,
+      "condition": "original experiment (jev/patch provenance)",
+      "attempt": "attempt-04",
+      "evidence": "experiments/tada_bench_codex61_sol_20261116/runs/dabstep-semtpch-spider2/attempt-04/evaluation"
+    },
+    {
+      "task": "infiagent-kramabench-palimpzest",
+      "status": "scored",
+      "score": 0.871402,
+      "condition": "original experiment (jev/patch provenance)",
+      "attempt": "attempt-02",
+      "evidence": "experiments/tada_bench_codex61_sol_20261116/runs/infiagent-kramabench-palimpzest/attempt-02/evaluation"
+    },
+    {
+      "task": "b-dabstep-tablebench",
+      "status": "scored",
+      "score": 0.696955,
+      "condition": "original experiment (jev/patch provenance)",
+      "attempt": "attempt-01",
+      "evidence": "experiments/tada_bench_codex61_sol_20261116/runs/b-dabstep-tablebench/attempt-01/evaluation"
+    },
+    {
+      "task": "bird-infiagent-oolongsynth",
+      "status": "official_time_exhausted_no_valid_answer",
+      "score": null,
+      "condition": "main-2d53ad1-sol-equivalent-v1",
+      "remaining_official_seconds": 0,
+      "evidence": "experiments/tada_bench_main_codex61_sol_20261117/reports/official_timeout_correction_20261118.json"
+    },
+    {
+      "task": "maud-pilot",
+      "status": "official_time_exhausted_no_submission",
+      "score": null,
+      "condition": "main-2d53ad1-sol-equivalent-v1",
+      "remaining_official_seconds": 0,
+      "evidence": "experiments/tada_bench_main_codex61_sol_20261117/reports/maud_closeout_20261118.json"
+    },
+    {
+      "task": "prec-loft-lrobench",
+      "status": "interrupted_requires_timing_reconciliation",
+      "score": null,
+      "condition": "main-2d53ad1-sol-equivalent-v1",
+      "last_recorded_elapsed_seconds": 7773.89,
+      "remaining_official_seconds": null,
+      "evidence": "experiments/tada_bench_main_codex61_sol_20261117/runs/prec-loft-lrobench/attempt-01/execution/phase-001.json"
+    },
+    {
+      "task": "cuad-maud-lrobench",
+      "status": "not_started_in_main_condition",
+      "score": null,
+      "condition": "main-2d53ad1-sol-equivalent-v1",
+      "note": "Original-condition attempt-01 exists (5937.969 seconds); preserve separately.",
+      "evidence": "experiments/tada_bench_main_codex61_sol_20261117/suite.json"
+    }
+  ]
+}

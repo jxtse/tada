@@ -1,0 +1,268 @@
+{
+  "task_id": "dabstep-semtpch-spider2",
+  "submission_path": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\dabstep-semtpch-spider2\\attempt-04\\output\\review.xlsx",
+  "submission_sha256": "11f946281b2ca889324a6f2f743ab1a15e0235b9d4fcd9b4ab089b9988981a0e",
+  "dataset_revision": "d820cd784fc7e9ace28e77f716bc7bfb23cb0813",
+  "scorer_sha256": "a8b0602dc7d40926a1cfd84fc0adbaf13dc3f7610dedd951ab18870980d41eb4",
+  "verifier_manifest_sha256": "eeec87b254339302ac9a7fb171bb025e36d5cbabeac92323fc5202584f17e462",
+  "started_at": "2026-11-17T05:18:11.716331+00:00",
+  "verifier_environment_mode": "separate",
+  "network_mode": "none",
+  "status": "scored",
+  "reward": 0.440196,
+  "details": {
+    "reward": 0.44019607843137254,
+    "components": {
+      "labels": 0.39166666666666666,
+      "facts": 1.0,
+      "scope": 0.0,
+      "consistency": 0.0
+    },
+    "weights": {
+      "consistency": 0.05,
+      "facts": 0.1,
+      "labels": 0.7,
+      "scope": 0.15
+    },
+    "sheets": {
+      "Coding": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 22,
+        "precision": 1.0
+      },
+      "Fact_Checks": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 10,
+        "precision": 1.0
+      },
+      "Review_Summary": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 3,
+        "precision": 1.0
+      },
+      "Scope": {
+        "status": "ok",
+        "extra_rows": 0,
+        "matched_keys": 0,
+        "precision": 1.0
+      }
+    },
+    "scope": {},
+    "cell_correct": {
+      "label:dabstep::dabstep:cb69d4d82698eab1afc3db404146cc2b:dabstep::answer": true,
+      "label:dabstep::dabstep:8c67b35715e43f2a2c9ded3b00727b4a:dabstep::answer": true,
+      "label:dabstep::dabstep:dbffae6076d69636cc276721211e15f7:dabstep::answer": true,
+      "label:dabstep::dabstep:fdf10ecd9e6fe5ad644e7f3905a5890a:dabstep::answer": true,
+      "label:dabstep::dabstep:3d3fbb9245f7627389e0082a34bed122:dabstep::answer": true,
+      "label:dabstep::dabstep:ed17209fa13b51783632a9b78a4be536:dabstep::answer": false,
+      "label:dabstep::dabstep:9ce28a49969b6868da803f6f58a864a9:dabstep::answer": false,
+      "label:dabstep::dabstep:527506e296577b81d9b00e66a0dcaf65:dabstep::answer": true,
+      "label:dabstep::dabstep:9c6176ab5f6a2944a4686d534705896a:dabstep::answer": true,
+      "label:dabstep::dabstep:f806357e126707ce5bed03add247a4a4:dabstep::answer": true,
+      "label:semtpch::semtpch:11560bc6b0a7498094745dafcfbdfca8:semtpch::answer": false,
+      "label:semtpch::semtpch:f665e18e66b9198896caa6f322f10672:semtpch::answer": false,
+      "label:semtpch::semtpch:52b984bb22ded53f929ec60b349b6b13:semtpch::answer": false,
+      "label:semtpch::semtpch:ce51054a1bb29ea70062c4dafba32103:semtpch::answer": false,
+      "label:spider2::spider2:16ca07a7b430f58e98a0d3428c30903c:spider2::answer": false,
+      "label:spider2::spider2:445de82a1652a4d091fe3ed37e5c9670:spider2::answer": false,
+      "label:spider2::spider2:1fb9502cbc3a8a395c7b3fdb732f0ee8:spider2::answer": true,
+      "label:spider2::spider2:99a5d84c75e88e05a552a04ace0ddca5:spider2::answer": true,
+      "label:spider2::spider2:7ce4fa8ae70846916b83b840d2623d48:spider2::answer": false,
+      "label:spider2::spider2:0d6911c0008ad6f13772832b275124e2:spider2::answer": true,
+      "label:spider2::spider2:ed8270cc193943e6384c31607b23c7f2:spider2::answer": false,
+      "label:spider2::spider2:9ac89dadd63a940b8f3ebd687dc9bc68:spider2::answer": false
+    },
+    "label_aggregation": "per_question_chance_corrected_balanced_accuracy",
+    "per_question": {
+      "dabstep::answer": {
+        "score": 0.8,
+        "items": 10,
+        "verification": "original_deterministic_checker"
+      },
+      "semtpch::answer": {
+        "score": 0.0,
+        "items": 4,
+        "verification": "original_deterministic_checker"
+      },
+      "spider2::answer": {
+        "score": 0.375,
+        "items": 8,
+        "verification": "original_deterministic_checker"
+      }
+    },
+    "per_work_item": {
+      "resolve": 1.0,
+      "review": 0.39166666666666666,
+      "summary": 0.6666666666666666
+    },
+    "per_work_item_details": {
+      "resolve": {
+        "score": 1.0,
+        "components": {
+          "facts": 1.0
+        },
+        "per_question": {}
+      },
+      "review": {
+        "score": 0.39166666666666666,
+        "components": {
+          "labels": 0.39166666666666666
+        },
+        "per_question": {
+          "dabstep::answer": {
+            "score": 0.8,
+            "items": 10,
+            "verification": "original_deterministic_checker"
+          },
+          "semtpch::answer": {
+            "score": 0.0,
+            "items": 4,
+            "verification": "original_deterministic_checker"
+          },
+          "spider2::answer": {
+            "score": 0.375,
+            "items": 8,
+            "verification": "original_deterministic_checker"
+          }
+        }
+      },
+      "summary": {
+        "score": 0.6666666666666666,
+        "components": {
+          "facts": 1.0,
+          "consistency": 0.0
+        },
+        "per_question": {}
+      }
+    },
+    "sheet_selection": {
+      "Coding": {
+        "title": "Coding",
+        "how": "exact"
+      },
+      "Fact_Checks": {
+        "title": "Fact_Checks",
+        "how": "exact"
+      },
+      "Review_Summary": {
+        "title": "Review_Summary",
+        "how": "exact"
+      },
+      "Scope": {
+        "title": "Scope",
+        "how": "exact"
+      }
+    },
+    "pre_check": {
+      "Coding": {
+        "bytes": 15462,
+        "cell_elements": 69,
+        "cells": 65,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:C23",
+        "cells_over_text_limit": 3
+      },
+      "Fact_Checks": {
+        "bytes": 2560,
+        "cell_elements": 22,
+        "cells": 22,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B11",
+        "cells_over_text_limit": 0
+      },
+      "Review_Summary": {
+        "bytes": 1522,
+        "cell_elements": 8,
+        "cells": 8,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B4",
+        "cells_over_text_limit": 0
+      },
+      "Scope": {
+        "bytes": 1168,
+        "cell_elements": 2,
+        "cells": 2,
+        "merged_ranges": 0,
+        "largest_merge_area": 0,
+        "dimension": "A1:B1",
+        "cells_over_text_limit": 0
+      }
+    },
+    "problems": {},
+    "shared_strings": {
+      "scan": {
+        "part": null,
+        "needed": 0,
+        "max_needed": null,
+        "parsed_through": -1,
+        "error": null
+      },
+      "per_sheet": {
+        "Coding": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Fact_Checks": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Review_Summary": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        },
+        "Scope": {
+          "needed": 0,
+          "resolved": 0,
+          "unresolved": 0,
+          "unresolved_first": []
+        }
+      }
+    },
+    "limits": {
+      "file_bytes": 157286400,
+      "zip_entries": 10000,
+      "package_part_bytes": 8388608,
+      "sheets_in_workbook": 1000,
+      "sheet_part_bytes": 134217728,
+      "cell_elements_per_sheet": 1000000,
+      "cells_per_sheet": 200000,
+      "merge_ranges_per_sheet": 2000,
+      "merge_area_cells": 100000,
+      "sst_part_bytes": 1073741824,
+      "shared_strings_scanned": 20000000,
+      "text_chars": 2000
+    }
+  },
+  "image": "tada-bench-verifier:dabstep-semtpch-spider2-eeec87b25433",
+  "image_id": "sha256:905d8545e899d12500e72995fcf1c40a9dff6cb759b8c202fd64cb89e65dbca2",
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-17T05:18:58.965935+00:00",
+      "finished_at": "2026-11-17T05:19:14.393472+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\dabstep-semtpch-spider2\\attempt-04\\evaluation\\official-score-001\\verifier-01\\container.log"
+    }
+  ],
+  "build_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "log": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_codex61_sol_20261116\\runs\\dabstep-semtpch-spider2\\attempt-04\\evaluation\\official-score-001\\build-01.log"
+    }
+  ],
+  "finished_at": "2026-11-17T05:19:17.863399+00:00"
+}

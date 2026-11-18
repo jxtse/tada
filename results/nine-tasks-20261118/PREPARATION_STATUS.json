@@ -1,0 +1,17 @@
+{
+  "status": "archiving",
+  "updated_at_beijing": "2026-11-18T14:13:30.766148+08:00",
+  "local_branch": "results/nine-tasks-20261118",
+  "remote_upload": "pending_push_to_jev",
+  "completed_groups": [
+    "shared-support"
+  ],
+  "pending_groups": [
+    "task-inputs",
+    "experiment-original",
+    "experiment-main"
+  ],
+  "remote_repository": "jxtse/tada",
+  "remote_branch": "jev",
+  "remote_path": "results/nine-tasks-20261118"
+}

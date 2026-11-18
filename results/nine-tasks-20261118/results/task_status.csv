@@ -1,0 +1,10 @@
+﻿task,status,score,condition,evidence
+blade-udabench,scored,0.660802,original experiment (jev/patch provenance),experiments/tada_bench_codex61_sol_20261116/runs/blade-udabench/attempt-02/evaluation
+biodex-udabench,scored,0.699111,original experiment (jev/patch provenance),experiments/tada_bench_codex61_sol_20261116/runs/biodex-udabench/attempt-03/evaluation
+dabstep-semtpch-spider2,scored,0.440196,original experiment (jev/patch provenance),experiments/tada_bench_codex61_sol_20261116/runs/dabstep-semtpch-spider2/attempt-04/evaluation
+infiagent-kramabench-palimpzest,scored,0.871402,original experiment (jev/patch provenance),experiments/tada_bench_codex61_sol_20261116/runs/infiagent-kramabench-palimpzest/attempt-02/evaluation
+b-dabstep-tablebench,scored,0.696955,original experiment (jev/patch provenance),experiments/tada_bench_codex61_sol_20261116/runs/b-dabstep-tablebench/attempt-01/evaluation
+bird-infiagent-oolongsynth,official_time_exhausted_no_valid_answer,,main-2d53ad1-sol-equivalent-v1,experiments/tada_bench_main_codex61_sol_20261117/reports/official_timeout_correction_20261118.json
+maud-pilot,official_time_exhausted_no_submission,,main-2d53ad1-sol-equivalent-v1,experiments/tada_bench_main_codex61_sol_20261117/reports/maud_closeout_20261118.json
+prec-loft-lrobench,interrupted_requires_timing_reconciliation,,main-2d53ad1-sol-equivalent-v1,experiments/tada_bench_main_codex61_sol_20261117/runs/prec-loft-lrobench/attempt-01/execution/phase-001.json
+cuad-maud-lrobench,not_started_in_main_condition,,main-2d53ad1-sol-equivalent-v1,experiments/tada_bench_main_codex61_sol_20261117/suite.json

@@ -1,0 +1,56 @@
+{
+  "experiment": "TADA-Bench / TADA / Codex 6.1 Sol",
+  "started_at": "2026-11-17T15:56:19.46315+08:00",
+  "tasks": {
+    "bird-infiagent-oolongsynth": {
+      "status": "budget_exhausted_requires_review",
+      "phase": 1,
+      "run_dir": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-01",
+      "last_update": "2026-11-17T16:12:21.8739726+00:00",
+      "error": "Original official task budget exhausted. Original attempt remains technical_invalid due to a cancellation audit during timeout shutdown; no valid reward is asserted. Automatic attempt-02 exceeded the original task budget, was stopped after all five accepted requests settled, and is excluded from quality results.",
+      "error_type": "HostOfficialTaskBudgetExhausted",
+      "traceback": null,
+      "queued_requests": 163,
+      "execution_elapsed_seconds": 28886.578,
+      "reward": null,
+      "finished_at": "2026-11-17T16:12:21.8739726+00:00",
+      "host_correction_receipt": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\reports\\official_timeout_correction_20261118.json",
+      "excluded_automatic_attempt": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\bird-infiagent-oolongsynth\\attempt-02",
+      "inference_requests": 163,
+      "known_total_tokens": 955686,
+      "excluded_automatic_attempt_requests": 5,
+      "excluded_automatic_attempt_known_tokens": 59680
+    },
+    "maud-pilot": {
+      "status": "requires_infrastructure_repair",
+      "phase": 1,
+      "run_dir": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\maud-pilot\\attempt-01",
+      "last_update": "2026-11-18T00:26:13.257599+00:00",
+      "error": "Container startup/resource failure (exit 137); repair infrastructure before recovery",
+      "error_type": "RuntimeError",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\harness\\run_experiment.py\", line 628, in main\n    future.result()\n  File \"C:\\Users\\v-senguo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\v-senguo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"C:\\Users\\v-senguo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\harness\\run_experiment.py\", line 396, in run_task\n    return _run_task_attempt(task_id, suite)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\tools\\resume_remaining_with_task_budget.py\", line 336, in guarded_attempt\n    return self._attempt(task_id, suite)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\tools\\resume_remaining_with_task_budget.py\", line 279, in _attempt\n    return self.originals[\"_run_task_attempt\"](task_id, suite)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\harness\\run_experiment.py\", line 503, in _run_task_attempt\n    raise RuntimeError(f\"Container startup/resource failure (exit {phase_receipt['exit_code']}); repair infrastructure before recovery\")\nRuntimeError: Container startup/resource failure (exit 137); repair infrastructure before recovery\n",
+      "queued_requests": 70,
+      "execution_elapsed_seconds": 28789.57800000001
+    },
+    "prec-loft-lrobench": {
+      "status": "running",
+      "phase": 1,
+      "run_dir": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\prec-loft-lrobench\\attempt-01",
+      "last_update": "2026-11-18T02:36:12.043825+00:00",
+      "error": null,
+      "error_type": null,
+      "traceback": null,
+      "queued_requests": 192,
+      "execution_elapsed_seconds": 7773.890000000014
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "context_window": 1050000,
+  "cumulative_request_limit": null,
+  "cumulative_token_limit": null,
+  "cost_limit": null,
+  "per_response_output_token_limit": null,
+  "status": "running",
+  "updated_at": "2026-11-18T02:36:13.053297+00:00"
+}

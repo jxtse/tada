@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-11-18T00:29:19.771Z",
+  "timezone": "Asia/Shanghai",
+  "experiment_root": "C:/Users/v-senguo/Downloads/TADASkill_Release_20260731/experiments/tada_bench_main_codex61_sol_20261117",
+  "report_kind": "host_closeout_annotation_only",
+  "task_id": "maud-pilot",
+  "run_dir": "C:/Users/v-senguo/Downloads/TADASkill_Release_20260731/experiments/tada_bench_main_codex61_sol_20261117/runs/maud-pilot/attempt-01",
+  "official_budget": {
+    "nominal_seconds": 28800,
+    "phase_official_task_timeout_reached": true,
+    "recorded_solver_elapsed_seconds": 28853.437999999995,
+    "remaining_official_seconds": 0,
+    "new_eight_hour_window_authorized": false,
+    "policy": "The original official task window is exhausted. Preserve all records and costs; do not relaunch MAUD or grant a replacement eight-hour window."
+  },
+  "phase_receipt": {
+    "phase": 1,
+    "status": "stopped",
+    "started_at": "2026-11-17T16:24:38.433882+00:00",
+    "finished_at": "2026-11-18T00:25:33.493478+00:00",
+    "solver_elapsed_seconds": 28853.437999999995,
+    "elapsed_seconds": 28855.04700000002,
+    "exit_code": 137,
+    "official_task_timeout_reached": true,
+    "new_request_count": 70,
+    "forced_technical_error": null
+  },
+  "host_result": {
+    "suite_status": "requires_infrastructure_repair",
+    "suite_last_update": "2026-11-18T00:26:13.257599+00:00",
+    "error_type": "RuntimeError",
+    "error_message": "Container startup/resource failure (exit 137); repair infrastructure before recovery",
+    "source_file": "harness/run_experiment.py",
+    "source_line": 503,
+    "source_branch": "The frozen coordinator raises on exit codes 125/126/127/137 before its later official-timeout scoring/final-status branch; this condition does not exempt official_task_timeout_reached.",
+    "original_manifest_status": "prepared",
+    "manifest_operational_audit_status": "passed",
+    "original_files_not_modified": true
+  },
+  "operational_validity": {
+    "schema_version": "1.0",
+    "blocker": false,
+    "evidence": [],
+    "audit_complete": true,
+    "scan_errors": [],
+    "coverage": {
+      "native_events_present": true,
+      "checkpoint_present": false,
+      "native_execute_python_results": 5,
+      "native_failed_execute_python_results": 1,
+      "checkpoint_execute_python_results": 0,
+      "checkpoint_failed_execute_python_results": 0,
+      "ignored_trailing_partial_line": false,
+      "native_captured_prefix_bytes": 466233753
+    },
+    "reason": "No precise executor/kernel failure found in the inspected tool results."
+  },
+  "submission_and_score": {
+    "review_xlsx_exists": false,
+    "review_xlsx_checked_at": "2026-11-18T00:28:24.466Z",
+    "valid_measured_reward": null,
+    "valid_score_asserted": false,
+    "manifest_scoring_field_present": false,
+    "note": "No valid reward is asserted. Do not convert a missing reward to zero or grant another solver window based on this host error."
+  },
+  "physical_request_settlement": {
+    "sampled_at": "2026-11-18T00:25:58.787Z",
+    "directory_count": 70,
+    "ready_count": 70,
+    "claimed_count": 70,
+    "done_count": 70,
+    "success_http_200_count": 68,
+    "http_500_count": 2,
+    "unsettled_claimed_count": 0,
+    "unclaimed_count": 0,
+    "metadata_read_failures": 0,
+    "resends_performed_by_this_audit": 0
+  },
+  "maud_container_closeout": {
+    "previous_container_id": "ee8a5942308a9cbb2f36c7d03ce002953ed66cf9ca197698c5d01369225fce4b",
+    "name": "tada61-maud-pilot-c162f7ba",
+    "docker_exit_snapshot_at": "2026-11-18T08:25:34+08:00",
+    "docker_finished_at": "2026-11-18T00:25:24.830390973Z",
+    "exit_code": 137,
+    "oom_killed": false,
+    "restart_count": 0,
+    "running_maud_container_observed_at_prec_check": false,
+    "prec_check_at": "2026-11-18T08:28:17+08:00"
+  },
+  "guard_and_continuation": {
+    "coordinator_pid": 43368,
+    "entrypoint": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\tools\\resume_remaining_with_task_budget.py",
+    "status": "running",
+    "guard_decisions": [
+      {
+        "file": "decision-0001.json",
+        "recorded_at": "2026-11-17T16:24:37.108755+00:00",
+        "kind": "attempt_selection_allowed",
+        "task_id": "maud-pilot"
+      },
+      {
+        "file": "decision-0002.json",
+        "recorded_at": "2026-11-17T16:24:38.382927+00:00",
+        "kind": "phase_start_allowed",
+        "task_id": "maud-pilot",
+        "phase": 1,
+        "run_dir": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\maud-pilot\\attempt-01",
+        "effective_attempt_deadline_seconds": 28800
+      },
+      {
+        "file": "decision-0003.json",
+        "recorded_at": "2026-11-18T00:26:13.133451+00:00",
+        "kind": "attempt_selection_allowed",
+        "task_id": "prec-loft-lrobench"
+      },
+      {
+        "file": "decision-0004.json",
+        "recorded_at": "2026-11-18T00:26:39.115573+00:00",
+        "kind": "phase_start_allowed",
+        "task_id": "prec-loft-lrobench",
+        "phase": 1,
+        "run_dir": "C:\\Users\\v-senguo\\Downloads\\TADASkill_Release_20260731\\experiments\\tada_bench_main_codex61_sol_20261117\\runs\\prec-loft-lrobench\\attempt-01",
+        "effective_attempt_deadline_seconds": 28800
+      }
+    ],
+    "maud_attempts_observed": [
+      "attempt-01"
+    ],
+    "maud_fresh_attempt_started": false,
+    "explicit_fresh_refusal_exercised_for_maud": false,
+    "note": "MAUD exited through the frozen coordinator RuntimeError branch, not through FreshTechnicalAttempt. No additional MAUD attempt/phase was observed. The queue continued to PREC under the cumulative-budget launcher.",
+    "remaining_queue": [
+      "prec-loft-lrobench",
+      "cuad-maud-lrobench"
+    ]
+  },
+  "prec_actual_verification": {
+    "sampled_at": "2026-11-18T08:28:17+08:00",
+    "container_name": "tada61-prec-loft-lrobench-5902fda5",
+    "started_at": "2026-11-18T00:26:43.612Z",
+    "image_tag": "tada-bench:main-2d53ad1-sol-equivalent-v1",
+    "image_id": "sha256:0986ceca1d8d198825678662f1cda21be187aa1c3630f88723dc2bd394b6ab1a",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "context_window": 1050000,
+    "config_user": "65532:65532",
+    "docker_top_all_listed_process_uid": 65532,
+    "docker_top_listed_process_count": 6,
+    "nanocpus": 1000000000,
+    "memory_limit_bytes": 2147483648,
+    "network_mode": "none",
+    "public_and_runtime_mounts_original_task": "prec-loft-lrobench",
+    "public_and_runtime_mounts_readonly": true,
+    "session_output_bridge_runconfig_task_attempt": "prec-loft-lrobench/attempt-01",
+    "runconfig_mount_readonly": true,
+    "old_experiment_or_maud_mount_seen": false,
+    "phase": 1,
+    "phase_status": "running",
+    "resume": false
+  },
+  "conclusions": [
+    "MAUD reached its original official timeout and has no valid score or deliverable.",
+    "The host RuntimeError is specifically the generic exit-137 guard at frozen run_experiment.py:503; it is not by itself evidence that startup failed or that OOM occurred.",
+    "Operational audit completed successfully, found no precise executor/kernel failure, and reported blocker=false.",
+    "All seventy accepted physical requests settled; no new MAUD eight-hour window is authorized.",
+    "PREC is running with the intended unchanged main image/configuration and original task resources, in a fresh attempt/session mount."
+  ],
+  "evidence_limits": [
+    "This report annotates host closeout; it does not rewrite the frozen manifest, suite status, configuration, logs, or historical outcomes.",
+    "Phase timing includes the observed shutdown/exit tail after the official deadline; it does not represent a second task window.",
+    "Docker OOMKilled=false and the generic exit code do not establish the absence of all earlier memory pressure; no final cgroup probe was run for this closeout.",
+    "No native event log, SSE payload, model content, or session36836 was read.",
+    "No quality reward is inferred from host lifecycle metadata."
+  ],
+  "changes": {
+    "original_manifest": "unchanged",
+    "suite": "unchanged",
+    "configuration": "unchanged",
+    "process_or_container_start_stop": "none",
+    "files_written_for_this_request": [
+      "reports/maud_closeout_20261118.json"
+    ]
+  }
+}
