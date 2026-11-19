@@ -26,6 +26,28 @@ export function strippedLoader(systemPrompt:string):ResourceLoader {
   };
 }
 
+type ObservationLike = {status:string; images?:{media_type:string;data_base64:string}[]} & Record<string,unknown>;
+
+/** Text JSON of the observation for the model, plus each displayed image as native image input. */
+export function toolResult(observation:ObservationLike) {
+  const {images=[],...rest}=observation;
+  const text=images.length?{...rest,images_attached:images.length}:rest;
+  const content:({type:'text';text:string}|{type:'image';data:string;mimeType:string})[]=[{type:'text',text:JSON.stringify(text)}];
+  for (const image of images) content.push({type:'image',data:image.data_base64,mimeType:image.media_type});
+  return {content,details:observation,isError:observation.status!=='ok'};
+}
+
+export const SYSTEM_PROMPT_RULES=`Working discipline:
+- Every tool result has "budget" (used/limit/left requests and seconds to the deadline) and "operators" (progress of semantic calls). Before a large semantic call, estimate it with tag(..., dry_run=True); a call that cannot fit the remaining budget is refused before any request.
+- Write the deliverable as soon as you have a complete first version of every required answer, then improve it. Never end a turn or run out of budget without a written deliverable built from the results you have.
+- A synchronous tag/categorize stops before the cell time limit and reports progress; repeating the identical call continues from cached batches, so never rewrite or re-split a call that was stopped. For long jobs use job=tag_async(...) and job.result(timeout=...); jobs() lists running work.
+- For long documents where the answer sits in identifiable sections, pass long_rows={"locate": [regex, ...]} so only matching segments (and neighbours) are read. When each row needs its own parameters, pass row_context= (a Series of strings) instead of one call per row; use mode="independent" for per-row extraction.
+- Review selectively: re-check minority classes, rows whose segment answers disagree, and items you flagged as ambiguous, by re-judging from evidence you already extracted. Do not re-run a whole extraction to review it.
+- Use the codebook, annex and option definitions supplied by the task verbatim in labels and queries. Do not widen, narrow or reinterpret a definition, and do not add your own decision rules or tie-breakers.
+- When a question asks only for the final answer, record only the canonical value: no units, labels or explanation, the requested precision, and the exact case and spelling of supplied options (for example True/False). Compute numbers with pandas and write that value itself.
+- Before submitting, run check_deliverable(path) and fix every issue; re-read your own notes of ambiguous items and confirm each submitted value matches your final reasoning.
+- tag(images=...) accepts a Series of image file paths for visual attributes; images you display in a cell are shown to you.`;
+
 export async function createController(rpc:Supervisor, initial:InitializeResult) {
   const config:Config = initial.config;
   const profile = config.models.agent;
@@ -33,7 +55,8 @@ export async function createController(rpc:Supervisor, initial:InitializeResult)
   const model:Model<Api> = {
     id:profile.model,name:profile.model,api,provider:'tada-explicit',
     baseUrl:providerBaseUrl(profile.base_url,profile.protocol),reasoning:!!profile.reasoning_effort,
-    input:['text'],contextWindow:Number(process.env.TADA_AGENT_CONTEXT_WINDOW ?? 200000),maxTokens:profile.max_output_tokens ?? 4096,
+    // Images displayed by a cell are forwarded to the controller only when runtime.observation_images > 0.
+    input:(config.runtime?.observation_images ?? 0)>0?['text','image']:['text'],contextWindow:Number(process.env.TADA_AGENT_CONTEXT_WINDOW ?? 200000),maxTokens:profile.max_output_tokens ?? 4096,
     cost:{input:0,output:0,cacheRead:0,cacheWrite:0},
   };
   const credentials:CredentialStore = {read:async()=>undefined,list:async()=>[],modify:async(_,fn)=>fn(undefined),delete:async()=>{}};
@@ -60,19 +83,20 @@ export async function createController(rpc:Supervisor, initial:InitializeResult)
       try {
         if(signal?.aborted) throw new Error('Execution cancelled');
         const observation=await rpc.call('execute_tool',{tool_call_id:toolCallId});
-        return {content:[{type:'text',text:JSON.stringify(observation)}],details:observation,isError:observation.status!=='ok'};
+        return toolResult(observation);
       } finally { signal?.removeEventListener('abort',abort); }
     },
   };
   const prompt=`You are TADA, a trusted-local text analysis agent. Your only tool is execute_python.
 Use the persistent Python namespace, retaining intermediate variables across cells and turns.
-Available: pd, np, json; tag(texts: pd.Series, query: str, *, name=None, fresh=False, cardinality=None, labels=None, multi=False, long_rows=None) -> Series of strings;
+Available: pd, np, json; tag(texts: pd.Series, query: str, *, name=None, fresh=False, cardinality=None, labels=None, multi=False, long_rows=None, row_context=None, images=None, mode="auto", dry_run=False) -> Series of strings;
 categorize(texts: pd.Series, query: str, *, name=None, fresh=False, cardinality=None) -> category DataFrame indexed by cid with name and description.
+tag_async(...)/categorize_async(...) take the same arguments and return a job with status(), result(timeout=None), cancel(); jobs() lists them; budget() shows the request budget; check_deliverable(path) checks an output file.
 For a requested category count, cardinality={"k": positive_integer, "mode": "exact" or "at_most"} explicitly constrains discovery, including joint tagging's shared domain.
 When the allowed answers are known, pass labels= (a list of names, a list of {"name","description"} records, or a categorize() table). With multi=False each row gets exactly one label name;
 with multi=True each row gets a JSON array string of every applicable label (possibly "[]"), so several yes/no clause or topic checks share one pass over the text. labels_frame(series, labels) expands it to a boolean table.
-Long texts are handled inside tag: rows too long for one request are segmented and aggregated (labels+multi: union of segment labels; otherwise one extra reduce judgment per long row). Do not split long texts yourself.
-long_rows={"aggregate": "collect"} returns a JSON array of non-empty segment results for free-text extraction; other long_rows fields are optional overrides.
+Long texts are handled inside tag: rows too long for one request are segmented and aggregated (labels+multi: union of segment labels; otherwise one extra reduce judgment per long row). Do not split long texts yourself; to read only relevant parts use long_rows={"locate": [...]}.
+long_rows={"aggregate": "collect"} returns a JSON array of non-empty segment results for free-text extraction; other long_rows fields (segment_chars, max_segments_per_row, locate, locate_window, locate_on_miss) are optional overrides.
 Large discovery runs its pilot, retention planner and one global reducer internally. Do not implement bootstrap in a cell or bypass a capacity refusal with hidden hierarchical pruning.
 Inputs have immutable rid indices. Do not replace row identities with current positions. Prepare missing/nontext input explicitly.
 Tag outputs are always strings, including structured JSON encoded inside strings. Use json.loads explicitly when needed.
@@ -83,6 +107,7 @@ Only committed state/input objects survive resume; ordinary functions and tempor
 Use ordinary pandas to count/group/join. Store outputs under outputs_dir and report their paths. Never assert task success without checking results.
 Do not run subprocess model clients or make direct inference/network calls. All model calls go through supervised tag/categorize.
 If a cell errors, use its actual error and existing namespace to repair through the same loop. A budget failure is a hard stop for new semantic work.
+${SYSTEM_PROMPT_RULES}
 Namespace: ${initial.namespace_summary}`;
   // Automatic threshold/overflow compaction keeps long tasks inside the context window.
   // Compaction requests go through the same audited stream (role='compaction') and the

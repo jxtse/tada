@@ -22,7 +22,7 @@ from .storage_contracts import SNAPSHOT_ADAPTER
 from .rpc_contracts import *
 from .budget import BudgetLedger
 from .providers import Provider
-from .cancellation import cancellation_token
+from .cancellation import cancellation_token, LinkedCancellation, ExecutionCancelled
 from .streaming import StreamingRedactor, RawTransportChunk, opaque_raw_fragment
 from tada_operators.engine import Engine
 from .tool_boundary import ToolBoundary
@@ -49,6 +49,35 @@ class PiToolBlock(StrictModel):
     arguments: JsonValue
 
 PiBlock = Annotated[PiTextBlock | PiThinkingBlock | PiToolBlock, Field(discriminator='type')]
+
+# A background job holds the operator slot for at most this long before yielding to queued calls.
+JOB_SLICE_SECONDS = 120.0
+BUDGET_WARNING_FRACTION = 0.2
+
+
+class Job:
+    """One operator call submitted with tag_async/categorize_async.
+
+    It runs in time slices: each slice is an ordinary operator call with a near deadline, so it
+    releases the operator slot regularly and other calls are not blocked behind it. Finished batches
+    are cached by the engine, so the next slice continues where the previous one stopped.
+    """
+    def __init__(self, request, execution_id):
+        self.id = 'job-' + uuid.uuid4().hex[:12]
+        self.request = request
+        self.op = request.job_op
+        self.execution_id = execution_id
+        self.token = LinkedCancellation(None)
+        self.status = 'queued'
+        self.result = None
+        self.error = None
+        self.slices = 0
+        self.thread = None
+
+    def view(self, progress):
+        latest = [p for p in progress.values() if p.get('job_id') == self.id]
+        return {'job_id': self.id, 'op': self.op, 'status': self.status, 'slices': self.slices,
+                'progress': latest[-1] if latest else None, 'error': self.error}
 PI_BLOCK = TypeAdapter(PiBlock)
 
 class PiProjection(StrictModel):
@@ -76,6 +105,10 @@ class Supervisor:
         self.tool_boundary=ToolBoundary(self)
         self.audit=None; self.kernel=None; self.http=None; self.store=None
         self.atom_lock=threading.Lock()
+        self.jobs={}
+        self.calls={}
+        self.operator_progress={}
+        self._operator_owner=None
         self.namespace=[]
         self.requests={}
         self.stream_redactors={}
@@ -110,8 +143,10 @@ class Supervisor:
         for folder in ('inputs','outputs','blobs','states','pi-checkpoints'): (path/folder).mkdir(exist_ok=True,mode=0o700)
         self.store=Store(self.audit)
         self.budget=BudgetLedger(config.require_budget(),self.audit)
-        self.provider=Provider(config.models.operators,self.budget,self.audit)
+        # The configured operator concurrency applies to HTTP requests too, not only to batch workers.
+        self.provider=Provider(config.models.operators,self.budget,self.audit,concurrency=config.runtime.operator_concurrency)
         self.engine=Engine(config,self.provider,self.store,self.audit)
+        self.engine.progress=self._on_progress
         checkpoint=self.audit.load_checkpoint() if params.resume else None
         projection=checkpoint.provider_raw if checkpoint else {}
         projection=TypeAdapter(dict[str,JsonValue]).validate_python(projection)
@@ -122,7 +157,8 @@ class Supervisor:
             atomic_write(path/'session.json',canonical(header))
             self.audit.append('session/start',{'status':'open','revision':revision,'versions':versions,'producer_redaction_tail_chars':max((len(s)-1 for s in secrets),default=0),'producer_timeout_seconds':max(config.models.agent.timeout_seconds,config.models.operators.timeout_seconds),'config_ref':self.audit.blob(config.model_dump(mode='json')).model_dump()})
             for spec in params.inputs:
-                if spec.name in {'pd','np','json','tag','categorize','state','preview','validate_category_references','labels_frame'}: raise ValueError('reserved input name')
+                if spec.name in {'pd','np','json','tag','categorize','state','preview','validate_category_references','labels_frame',
+                                 'tag_async','categorize_async','jobs','budget','check_deliverable'}: raise ValueError('reserved input name')
                 source=Path(spec.path)
                 if source.suffix.lower()!='.csv': raise ValueError('input currently requires CSV; other tables may be explicitly loaded in Python')
                 frame=pd.read_csv(source)
@@ -163,6 +199,7 @@ class Supervisor:
         from .kernel import Kernel
         self.kernel=Kernel(self.audit,self.store,config.runtime,f'http://127.0.0.1:{self.http.server_port}',token)
         self.kernel.namespace=self.namespace
+        self.kernel.status_hook=self._cell_status
         return {'config':config.model_dump(mode='json'),'session_dir':str(path),'session_id':self.audit.session_id,
                 'agent_api_key':config.models.agent.api_key(), 'tool_schema':ExecuteArgs.model_json_schema(),
                 'restored_messages':projection.get('messages',[]),'restored_entries':projection.get('pi_entries',[]),
@@ -178,21 +215,149 @@ class Supervisor:
         if request.op=='state.put':
             value=restore(SNAPSHOT_ADAPTER.validate_python(request.snapshot))
             return self.store.put(request.name,value).model_dump(mode='json')
+        if request.op=='budget':return self._budget_view()
+        if request.op=='call.cancel':
+            token=self.calls.get(request.call_id)
+            if token is not None:token.set()
+            return {'cancelled':token is not None}
+        if request.op.startswith('job.'):return self._job_call(request)
         # Capture this execution's token before waiting for another atom. A
         # later cell gets a different token and cannot revive this queued call.
-        cancellation=cancellation_token(self.kernel.cancelled) if self.kernel else None
+        # The linked token is also cancelled when the client gives up (call.cancel).
+        parent=cancellation_token(self.kernel.cancelled) if self.kernel else None
+        cancellation=LinkedCancellation(parent)
         execution_id=self.kernel.active_execution if self.kernel else None
-        with self.atom_lock:
+        deadline=self.kernel.cell_deadline() if execution_id and hasattr(self.kernel,'cell_deadline') else None
+        if request.call_id:self.calls[request.call_id]=cancellation
+        try:
+            if not self._acquire_operator_slot(cancellation,deadline):
+                from tada_operators.engine import OperatorIncomplete
+                raise OperatorIncomplete('the operator slot stayed busy (a background job or another call) until the cell '
+                                         'time limit; no request was sent. Retry, or check jobs() for running work.')
+            try:
+                result=self._run_operator(request,request.op,cancellation,execution_id,deadline)
+            finally:
+                self.atom_lock.release()
+            return snapshot(result).model_dump(mode='json')
+        finally:
+            if request.call_id:self.calls.pop(request.call_id,None)
+
+    def _acquire_operator_slot(self,cancellation,deadline):
+        """Wait for the single operator slot while honouring cancellation and the cell deadline."""
+        while True:
             if cancellation:
                 cancellation.check()
-            value=restore(SNAPSHOT_ADAPTER.validate_python(request.snapshot))
-            options={}
-            if request.op=='tag':
-                options={'labels':[c.model_dump() for c in request.labels] if request.labels is not None else None,'multi':request.multi,
-                    'long_rows':request.long_rows.model_dump(mode='json') if request.long_rows is not None else None}
-            result=getattr(self.engine,request.op)(value,request.query,name=request.name,fresh=request.fresh,
-                parent_id=execution_id,cancellation=cancellation,cardinality=request.cardinality,**options)
-            return snapshot(result).model_dump(mode='json')
+            if self.atom_lock.acquire(timeout=.2):
+                if cancellation and cancellation.is_set():
+                    self.atom_lock.release()
+                    cancellation.check()
+                return True
+            if deadline is not None and time.monotonic()>deadline:
+                return False
+
+    def _run_operator(self,request,op,cancellation,execution_id,deadline,job_id=None):
+        value=restore(SNAPSHOT_ADAPTER.validate_python(request.snapshot))
+        options={}
+        if op=='tag':
+            options={'labels':[c.model_dump() for c in request.labels] if request.labels is not None else None,'multi':request.multi,
+                'long_rows':request.long_rows.model_dump(mode='json',exclude_none=True) if request.long_rows is not None else None}
+            if request.row_context is not None:options['row_context']=restore(SNAPSHOT_ADAPTER.validate_python(request.row_context))
+            if request.images is not None:options['images']=restore(SNAPSHOT_ADAPTER.validate_python(request.images))
+            if request.mode!='auto':options['mode']=request.mode
+            if request.dry_run:options['dry_run']=True
+        self._operator_owner={'op':op,'execution_id':execution_id,'job_id':job_id}
+        self.engine.min_batches_before_deadline=1 if job_id else 0
+        try:
+            result=getattr(self.engine,op)(value,request.query,name=request.name,fresh=request.fresh,
+                parent_id=execution_id,cancellation=cancellation,cardinality=request.cardinality,deadline=deadline,**options)
+            self._mark_owner_atoms('done')
+            return result
+        except BaseException as error:
+            self._mark_owner_atoms(type(error).__name__)
+            raise
+        finally:
+            self._operator_owner=None
+            self.engine.min_batches_before_deadline=0
+
+    def _on_progress(self,atom_call_id,stage,done,total):
+        owner=self._operator_owner or {}
+        self.operator_progress[atom_call_id]={'atom_call_id':atom_call_id,'op':owner.get('op',''),'stage':stage,
+            'done':done,'total':total,'status':'running','job_id':owner.get('job_id'),'execution_id':owner.get('execution_id')}
+        while len(self.operator_progress)>200:
+            self.operator_progress.pop(next(iter(self.operator_progress)))
+
+    def _mark_owner_atoms(self,status):
+        owner=self._operator_owner or {}
+        for entry in self.operator_progress.values():
+            if entry['status']=='running' and entry.get('job_id')==owner.get('job_id') and entry.get('execution_id')==owner.get('execution_id'):
+                entry['status']=status
+
+    def _budget_view(self):
+        status=self.budget.remaining()
+        view={'used':status.used,'limit':status.limit,'left':status.left,'seconds_to_deadline':status.seconds_to_deadline,'warning':None}
+        if status.limit and status.left<=status.limit*BUDGET_WARNING_FRACTION:
+            view['warning']=(f'only {status.left} of {status.limit} requests remain: write the deliverable from the results '
+                             'you have before starting more semantic work')
+        return view
+
+    def _cell_status(self,execution_id):
+        """Budget and operator progress attached to every observation."""
+        try:
+            budget=self._budget_view()
+        except Exception:
+            budget=None
+        running_jobs={job.id for job in self.jobs.values() if job.status in ('queued','running')}
+        operators=[{k:v for k,v in entry.items() if k!='execution_id'} for entry in self.operator_progress.values()
+                   if entry.get('execution_id')==execution_id or entry.get('job_id') in running_jobs]
+        return budget,operators[-20:]
+
+    # ---- background operator jobs (tag_async / categorize_async)
+
+    def _job_call(self,request):
+        if request.op=='job.submit':
+            job=Job(request,self.kernel.active_execution if self.kernel else None)
+            self.jobs[job.id]=job
+            job.thread=threading.Thread(target=self._run_job,args=(job,),name=job.id,daemon=True)
+            job.thread.start()
+            return job.view(self.operator_progress)
+        if request.op=='job.list':return [job.view(self.operator_progress) for job in self.jobs.values()]
+        job=self.jobs.get(request.job_id)
+        if job is None:raise KeyError(f'unknown job {request.job_id}')
+        if request.op=='job.cancel':
+            job.token.set()
+            return job.view(self.operator_progress)
+        if request.op=='job.result':
+            view=job.view(self.operator_progress)
+            if job.status=='done':view['value']=job.result
+            return view
+        return job.view(self.operator_progress)
+
+    def _run_job(self,job):
+        while True:
+            if job.token.is_set():
+                job.status='cancelled';return
+            try:
+                acquired=self._acquire_operator_slot(job.token,None)
+            except ExecutionCancelled:
+                job.status='cancelled';return
+            job.status='running';job.slices+=1
+            try:
+                result=self._run_operator(job.request,job.op,job.token,job.execution_id,time.monotonic()+JOB_SLICE_SECONDS,job_id=job.id)
+            except ExecutionCancelled:
+                job.status='cancelled';return
+            except Exception as error:
+                from tada_operators.engine import OperatorIncomplete
+                if isinstance(error,OperatorIncomplete):
+                    # Slice ended; finished batches are cached. Yield the slot so queued calls run, then continue.
+                    job.status='queued'
+                    continue
+                job.status='failed';job.error=self.error(error).model_dump(mode='json');return
+            else:
+                job.result=snapshot(result).model_dump(mode='json');job.status='done';return
+            finally:
+                if acquired:
+                    self.atom_lock.release()
+                time.sleep(.3)
 
     def error(self,error):
         text=str(error)
@@ -326,6 +491,11 @@ class Supervisor:
         if self.audit:
             self._flush_streams()
         failure = None
+        # Background jobs and waiting client calls end with the session; never leave orphan operator work.
+        for job in list(self.jobs.values()):
+            job.token.set()
+        for token in list(self.calls.values()):
+            token.set()
         try:
             if self.kernel:
                 self.kernel.close()

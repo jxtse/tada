@@ -35,6 +35,28 @@ class LedgerState(StrictModel):
 class BudgetExceeded(RuntimeError):
     pass
 
+
+class BudgetStatus(StrictModel):
+    used: int = Field(ge=0)
+    limit: int = Field(ge=0)
+    left: int = Field(ge=0)
+    seconds_to_deadline: float = Field(ge=0)
+
+
+def _replace_with_retry(source, target, attempts: int = 8, first_delay: float = 0.05):
+    """Atomic rename, retried briefly: on some host bind mounts another process holding the
+    ledger open makes rename fail with EACCES/EPERM for a moment (seen as PermissionError)."""
+    delay = first_delay
+    for attempt in range(attempts):
+        try:
+            os.replace(source, target)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(delay)
+            delay = min(delay * 2, 1.0)
+
 class BudgetLedger:
     def __init__(self, config: BudgetConfig, collector=None):
         self.config = config
@@ -60,7 +82,7 @@ class BudgetLedger:
                     handle.write(state.model_dump_json().encode())
                     handle.flush()
                     os.fsync(handle.fileno())
-                os.replace(tmp, self.path)
+                _replace_with_retry(tmp, self.path)
                 directory = os.open(self.path.parent, os.O_RDONLY)
                 try:
                     os.fsync(directory)
@@ -73,6 +95,17 @@ class BudgetLedger:
 
     def snapshot(self) -> LedgerState:
         return self._transaction(lambda state: state.model_copy(deep=True))
+
+    def remaining(self) -> BudgetStatus:
+        """Read-only view of the cumulative budget, shown to the controller and used by operator preflight."""
+        with self._thread_lock, self.lock_path.open('a+b') as lock:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_SH)
+            state = (LedgerState.model_validate_json(self.path.read_bytes()) if self.path.exists() else
+                     LedgerState(max_requests=self.config.max_requests, deadline_at=time.time() + self.config.deadline_seconds))
+        limit = min(state.max_requests, self.config.max_requests)
+        used = len(state.reservations)
+        return BudgetStatus(used=used, limit=limit, left=max(0, limit - used),
+                            seconds_to_deadline=max(0.0, round(state.deadline_at - time.time(), 1)))
 
     def reserve(self, role: str, requested_model: str, request_id: str, *, output_cap: int = 0) -> Reservation:
         def reserve(state):

@@ -51,10 +51,19 @@ class ModelsConfig(StrictModel):
             raise ValueError('operator output limit exceeds 8192')
         return self
 
+class DeliverableRules(StrictModel):
+    """Optional output contract checked by check_deliverable(); set by the evaluation adapter or user."""
+    max_cell_chars: Annotated[int, Field(ge=1, le=1_000_000)] | None = None
+    # Columns whose cells should hold a short canonical answer (no trailing explanation).
+    short_answer_columns: list[str] = Field(default_factory=lambda: ['Answer', 'Value'])
+    short_answer_max_words: Annotated[int, Field(ge=1, le=10_000)] = 40
+
+
 class RuntimeConfig(StrictModel):
     mode: Literal['trusted-local'] = 'trusted-local'
     large_scale: LargeScaleConfig = Field(default_factory=LargeScaleConfig)
-    operator_concurrency: Annotated[int, Field(ge=1, le=2)] = 1
+    # Number of operator HTTP requests that may be in flight at once (batch workers and Provider slots).
+    operator_concurrency: Annotated[int, Field(ge=1, le=8)] = 1
     reuse: Literal['exact', 'off'] = 'exact'
     cell_timeout_seconds: Annotated[float, Field(gt=0, le=1800)] = 180.0
     output_view_chars: Annotated[int, Field(ge=100, le=100000)] = 8000
@@ -66,6 +75,26 @@ class RuntimeConfig(StrictModel):
     # Default 1: one corrective retry per batch; set 0 for strictly one dispatch per batch.
     # Transport/provider failures, budget exhaustion and cancellation are never retried here.
     batch_retries: Annotated[int, Field(ge=0, le=2)] = 1
+    # Transient transport/provider failures (HTTP 408/429/5xx, connection errors, stream disconnects) of one
+    # operator request are retried with exponential backoff. Each retry is a new budget-counted, audited request.
+    transport_retries: Annotated[int, Field(ge=0, le=5)] = 2
+    transport_backoff_seconds: Annotated[float, Field(ge=0, le=120)] = 5.0
+    # A batch whose response was truncated by max_output_tokens is split in halves up to this depth.
+    split_on_truncation_depth: Annotated[int, Field(ge=0, le=6)] = 3
+    # Successful operator batches are persisted and reused when the same operator call is repeated
+    # (for example after a cell timeout, cancellation or a later batch failure).
+    batch_cache: bool = True
+    # Synchronous operator calls stop dispatching new batches this many seconds before the cell deadline
+    # and return an OperatorIncomplete error with progress; a repeated call resumes from the cache.
+    cell_deadline_margin_seconds: Annotated[float, Field(ge=0, le=900)] = 60.0
+    # Refuse an operator call before any request when its plan cannot fit the remaining request budget.
+    budget_preflight: bool = True
+    # Images displayed by a cell (PNG/JPEG/GIF/WEBP) that are forwarded to the controller model.
+    observation_images: Annotated[int, Field(ge=0, le=16)] = 4
+    observation_image_max_bytes: Annotated[int, Field(ge=1024, le=20_000_000)] = 4_000_000
+    # Images attached to one operator batch when tag(images=...) is used.
+    max_images_per_batch: Annotated[int, Field(ge=1, le=64)] = 8
+    deliverable_rules: DeliverableRules = Field(default_factory=DeliverableRules)
     # Long rows are segmented inside tag; capacity against batch_chars is checked when segmentation is used.
     long_rows: LongRowsConfig = Field(default_factory=LongRowsConfig)
 

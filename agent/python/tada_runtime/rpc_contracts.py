@@ -85,6 +85,27 @@ class RpcFailure(StrictModel):
     id: str | int
     error: ErrorInfo
 
+class BudgetView(StrictModel):
+    used: int = Field(ge=0)
+    limit: int = Field(ge=0)
+    left: int = Field(ge=0)
+    seconds_to_deadline: float = Field(ge=0)
+    warning: str | None = None
+
+class OperatorProgress(StrictModel):
+    """Progress of an operator call that ran during this cell or is still running as a job."""
+    atom_call_id: str
+    op: str = ''
+    stage: str = ''
+    done: int = Field(ge=0)
+    total: int = Field(ge=0)
+    status: str = ''
+    job_id: str | None = None
+
+class ObservationImage(StrictModel):
+    media_type: Literal['image/png','image/jpeg','image/gif','image/webp']
+    data_base64: str
+
 class Observation(StrictModel):
     execution_id: str
     status: Literal['ok','error','cancelled','timeout']
@@ -97,11 +118,18 @@ class Observation(StrictModel):
     committed_state_refs: list[str] = Field(default_factory=list)
     truncated: bool = False
     full_output_ref: BlobRef
+    # Cumulative request budget after this cell, so the controller can plan before a hard stop.
+    budget: BudgetView | None = None
+    # Operator calls touched by this cell and jobs still running; on timeout this says how far they got.
+    operators: list[OperatorProgress] = Field(default_factory=list)
+    # Images displayed by this cell, forwarded to the controller model as image input.
+    images: list[ObservationImage] = Field(default_factory=list)
 
 from .large_contracts import CardinalitySpec
 
 class KernelRequest(StrictModel):
-    op: Literal['tag','categorize','state.list','state.get','state.put','inventory']
+    op: Literal['tag','categorize','state.list','state.get','state.put','inventory',
+                'job.submit','job.status','job.result','job.cancel','job.list','call.cancel','budget']
     snapshot: JsonValue = None
     query: str | None = None
     name: str | None = None
@@ -110,13 +138,28 @@ class KernelRequest(StrictModel):
     labels: list[Category] | None = None
     multi: bool = False
     long_rows: LongRowsOverride | None = None
+    # tag only: per-row context (Series snapshot), per-row image paths (Series snapshot), intent mode, plan-only estimate.
+    row_context: JsonValue = None
+    images: JsonValue = None
+    mode: Literal['auto','independent','joint'] = 'auto'
+    dry_run: bool = False
     key: str | None = None
     namespace: list[str] = Field(default_factory=list)
+    # job.submit: which operator to run; job.*: the job; call.cancel / tag / categorize: the client call identity.
+    job_op: Literal['tag','categorize'] | None = None
+    job_id: str | None = None
+    call_id: str | None = None
 
     @model_validator(mode='after')
     def tag_only_options(self):
-        if self.op != 'tag' and (self.labels is not None or self.multi or self.long_rows is not None):
-            raise ValueError('labels, multi and long_rows apply to tag only')
+        operator = self.job_op if self.op == 'job.submit' else self.op
+        if operator != 'tag' and (self.labels is not None or self.multi or self.long_rows is not None
+                                  or self.row_context is not None or self.images is not None or self.mode != 'auto' or self.dry_run):
+            raise ValueError('labels, multi, long_rows, row_context, images, mode and dry_run apply to tag only')
+        if self.op == 'job.submit' and self.job_op is None:
+            raise ValueError('job.submit requires job_op')
+        if self.op in ('job.status','job.result','job.cancel') and not self.job_id:
+            raise ValueError(f'{self.op} requires job_id')
         return self
 
 class KernelResult(StrictModel):

@@ -41,6 +41,39 @@ class ExecutionCancellation:
             pass
 
 
+class LinkedCancellation(ExecutionCancellation):
+    """Cancelled explicitly or when its parent (for example the calling cell) is cancelled.
+
+    One operator call owns one linked token, so a client that stops waiting can cancel the
+    server-side work it started without affecting any other call.
+    """
+    def __init__(self, parent: ExecutionCancellation | None = None):
+        super().__init__()
+        self._parent = parent
+
+    def is_set(self) -> bool:
+        return self._event.is_set() or (self._parent is not None and self._parent.is_set())
+
+    @contextmanager
+    def guard(self):
+        # Hold the parent's gate too, so cancelling the cell and admitting a commit stay linearized.
+        if self._parent is None:
+            with self._gate:
+                self.check()
+                yield
+            return
+        with self._parent.guard():
+            with self._gate:
+                self.check()
+                yield
+
+    def admit_dispatch(self) -> None:
+        if self._parent is not None:
+            self._parent.admit_dispatch()
+        with self.guard():
+            pass
+
+
 def cancellation_token(value) -> ExecutionCancellation | None:
     if value is None or isinstance(value, ExecutionCancellation):
         return value

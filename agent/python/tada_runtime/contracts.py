@@ -1,7 +1,8 @@
 """Strict shared contracts. Pydantic is the authority at every domain boundary."""
 from __future__ import annotations
 from typing import Annotated, Literal
-from pydantic import BaseModel, ConfigDict, Field, JsonValue, StrictInt, StrictStr, TypeAdapter, ValidationInfo, field_validator, model_validator
+from pydantic import (BaseModel, ConfigDict, Field, JsonValue, StrictInt, StrictStr, TypeAdapter, ValidationInfo,
+    field_validator, model_serializer, model_validator)
 
 SCHEMA_VERSION = '1.0'
 
@@ -19,9 +20,32 @@ from .audit_contracts import ErrorInfo, Usage, ContentBlock, TextBlock, Reasonin
 class ExecuteArgs(StrictModel):
     code: StrictStr
 
-class TextRow(StrictModel):
+class _OmitUnset(StrictModel):
+    """Optional extension fields are serialized only when set.
+
+    This keeps prompts, request identities and state hashes of calls that do not use an
+    extension byte-identical to earlier versions, so existing reuse keeps working.
+    """
+    _omit_when_none: tuple[str, ...] = ()
+
+    @model_serializer(mode='wrap')
+    def _omit_none_extensions(self, handler):
+        data = handler(self)
+        if isinstance(data, dict):
+            for key in self._omit_when_none:
+                if data.get(key) is None:
+                    data.pop(key, None)
+        return data
+
+
+class TextRow(_OmitUnset):
     rid: RID
     text: StrictStr
+    # Row-specific instruction or parameters (for example this record's comparison); carried into every segment.
+    context: StrictStr | None = None
+    # SHA-256 of an image attached to this row with tag(images=...); the image bytes travel as a request part.
+    image: StrictStr | None = None
+    _omit_when_none = ('context', 'image')
 
 class TextSnapshot(StrictModel):
     rows: list[TextRow]
@@ -156,7 +180,7 @@ class ProviderIdentity(StrictModel):
     temperature: float | None = None
     reasoning_effort: str | None = None
 
-class LongRowsConfig(StrictModel):
+class LongRowsConfig(_OmitUnset):
     """Scale-transparent handling of rows longer than one request can carry.
 
     Rows are segmented inside tag; the row-level result is aggregated by a fixed
@@ -173,6 +197,13 @@ class LongRowsConfig(StrictModel):
     boundary: Literal['paragraph', 'line', 'chars'] = 'paragraph'
     max_segments_per_row: Annotated[int, Field(ge=1, le=10000)] = 64
     policy: Literal['segment-aggregate-v1'] = 'segment-aggregate-v1'
+    # Locate-then-judge: only segments whose body matches one of these case-insensitive regular
+    # expressions (plus `locate_window` neighbours on each side) are sent to the model.
+    locate: list[Annotated[StrictStr, Field(min_length=1)]] | None = None
+    locate_window: Annotated[int, Field(ge=0, le=20)] | None = None
+    # A long row with no matching segment is scanned completely ('all') or answered from no segment ('none').
+    locate_on_miss: Literal['all', 'none'] | None = None
+    _omit_when_none = ('locate', 'locate_window', 'locate_on_miss')
 
     @model_validator(mode='after')
     def geometry(self):
@@ -180,6 +211,13 @@ class LongRowsConfig(StrictModel):
             raise ValueError('overlap_chars must be less than half of segment_chars')
         if self.head_chars >= self.segment_chars:
             raise ValueError('head_chars must be smaller than segment_chars')
+        if self.locate is not None:
+            import re
+            for pattern in self.locate:
+                try:
+                    re.compile(pattern)
+                except re.error as exc:
+                    raise ValueError(f'invalid locate pattern {pattern!r}: {exc}') from None
         return self
 
 class LongRowsOverride(StrictModel):
@@ -190,6 +228,10 @@ class LongRowsOverride(StrictModel):
     overlap_chars: Annotated[int, Field(ge=0, le=100000)] | None = None
     head_chars: Annotated[int, Field(ge=0, le=100000)] | None = None
     boundary: Literal['paragraph', 'line', 'chars'] | None = None
+    max_segments_per_row: Annotated[int, Field(ge=1, le=10000)] | None = None
+    locate: list[Annotated[StrictStr, Field(min_length=1)]] | None = None
+    locate_window: Annotated[int, Field(ge=0, le=20)] | None = None
+    locate_on_miss: Literal['all', 'none'] | None = None
 
 class LabelSpec(StrictModel):
     """Caller-supplied closed label set for tag(labels=...)."""
@@ -204,7 +246,7 @@ class LabelSpec(StrictModel):
     def names(self) -> list[str]:
         return [c.name for c in self.labels]
 
-class OperatorIdentity(StrictModel):
+class OperatorIdentity(_OmitUnset):
     op: Literal['tag', 'categorize']
     query: str
     snapshot: TextSnapshot
@@ -226,3 +268,6 @@ class OperatorIdentity(StrictModel):
     cardinality: CardinalitySpec | None = None
     effective_seed: int | None = None
     operator_concurrency: int = 1
+    # tag(mode='independent'|'joint') skips the intent request; unset means the default 'auto'.
+    intent_mode: Literal['independent', 'joint'] | None = None
+    _omit_when_none = ('intent_mode',)

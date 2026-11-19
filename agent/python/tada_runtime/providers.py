@@ -52,6 +52,7 @@ class WireResponse(WireModel):
     output: list[WireOutput] = Field(default_factory=list)
     usage: WireUsage | None = None
     error: JsonValue = None
+    incomplete_details: JsonValue = None
 
 class ResponseEvent(WireModel):
     type: str
@@ -87,17 +88,40 @@ class ChatChunk(WireModel):
 class ReasoningParameters(StrictModel):
     effort: str
 
+class InputText(StrictModel):
+    type: Literal['input_text'] = 'input_text'
+    text: str
+
+class InputImage(StrictModel):
+    type: Literal['input_image'] = 'input_image'
+    image_url: str
+
+class InputMessage(StrictModel):
+    role: Literal['user'] = 'user'
+    content: list[InputText | InputImage]
+
 class ResponsesRequest(StrictModel):
     model: str
-    input: str
+    input: str | list[InputMessage]
     max_output_tokens: int
     stream: Literal[True] = True
     temperature: float | None = None
     reasoning: ReasoningParameters | None = None
 
+class ChatImageUrl(StrictModel):
+    url: str
+
+class ChatText(StrictModel):
+    type: Literal['text'] = 'text'
+    text: str
+
+class ChatImage(StrictModel):
+    type: Literal['image_url'] = 'image_url'
+    image_url: ChatImageUrl
+
 class RequestMessage(StrictModel):
     role: Literal['user'] = 'user'
-    content: str
+    content: str | list[ChatText | ChatImage]
 
 class StreamOptions(StrictModel):
     include_usage: Literal[True] = True
@@ -111,15 +135,39 @@ class ChatRequest(StrictModel):
     temperature: float | None = None
     reasoning_effort: str | None = None
 
-def prepare_request(cfg: ProviderConfig, prompt: str, schema: type[BaseModel]):
+class RequestImage(StrictModel):
+    """One image attached to an operator request: a text label followed by the image itself."""
+    label: str
+    media_type: Literal['image/png', 'image/jpeg', 'image/gif', 'image/webp']
+    data_base64: str
+
+    def data_url(self) -> str:
+        return f'data:{self.media_type};base64,{self.data_base64}'
+
+
+def prepare_request(cfg: ProviderConfig, prompt: str, schema: type[BaseModel], images: list[RequestImage] | None = None):
     import json
     prompt += '\nReturn only one JSON object matching this schema, without markdown fences:\n' + json.dumps(schema.model_json_schema(), ensure_ascii=False)
     if cfg.protocol == 'openai-responses':
-        request = ResponsesRequest(model=cfg.model, input=prompt, max_output_tokens=cfg.max_output_tokens,
+        if images:
+            parts: list = [InputText(text=prompt)]
+            for image in images:
+                parts += [InputText(text=image.label), InputImage(image_url=image.data_url())]
+            payload = [InputMessage(content=parts)]
+        else:
+            payload = prompt
+        request = ResponsesRequest(model=cfg.model, input=payload, max_output_tokens=cfg.max_output_tokens,
             temperature=cfg.temperature, reasoning=ReasoningParameters(effort=cfg.reasoning_effort) if cfg.reasoning_effort else None)
         path = '/responses'
     elif cfg.protocol == 'openai-chat':
-        request = ChatRequest(model=cfg.model, messages=[RequestMessage(content=prompt)], max_completion_tokens=cfg.max_output_tokens,
+        if images:
+            content: list = [ChatText(text=prompt)]
+            for image in images:
+                content += [ChatText(text=image.label), ChatImage(image_url=ChatImageUrl(url=image.data_url()))]
+            message = RequestMessage(content=content)
+        else:
+            message = RequestMessage(content=prompt)
+        request = ChatRequest(model=cfg.model, messages=[message], max_completion_tokens=cfg.max_output_tokens,
             temperature=cfg.temperature, reasoning_effort=cfg.reasoning_effort)
         path = '/chat/completions'
     else:
@@ -130,6 +178,19 @@ def prepare_request(cfg: ProviderConfig, prompt: str, schema: type[BaseModel]):
 
 class ProviderFailure(RuntimeError):
     pass
+
+
+class TransientProviderFailure(ProviderFailure):
+    """A failure that a later identical request may not repeat: HTTP 408/429/5xx, a broken
+    connection, or a stream that ended without a terminal response. Retried by the engine."""
+
+
+class OutputTruncated(ProviderFailure):
+    """The model stopped because it hit max_output_tokens (often all spent on reasoning).
+    The engine splits a multi-row batch in halves instead of failing the whole operator."""
+
+
+TRANSIENT_HTTP_STATUS = frozenset({408, 409, 425, 429, 500, 502, 503, 504})
 
 def structured_answer_text(content) -> str:
     """Return the one answer text that strict schema validation receives.
@@ -182,7 +243,8 @@ class Provider:
     def __init__(self, config: ProviderConfig, budget: BudgetLedger, collector, *, transport=None, concurrency: int = 1):
         self.config, self.budget, self.collector = config, budget, collector
         self.transport = transport
-        concurrency = TypeAdapter(Annotated[StrictInt, Field(ge=1, le=2)]).validate_python(concurrency)
+        concurrency = TypeAdapter(Annotated[StrictInt, Field(ge=1, le=8)]).validate_python(concurrency)
+        self.concurrency = concurrency
         self._slots = threading.BoundedSemaphore(concurrency)
         self.last_response: NormalizedResponse | None = None
         self._local = threading.local()
@@ -195,7 +257,7 @@ class Provider:
 
     def call(self, prompt: str, schema: type[T], *, role: str, parent_id: str | None = None,
              context: dict | None = None, cancellation: ExecutionCancellation | None = None,
-             retry_of: str | None = None) -> T:
+             retry_of: str | None = None, images: list[RequestImage] | None = None) -> T:
         cancellation = cancellation_token(cancellation)
         # Poll only while queued; an already-dispatched request is drained and
         # settled once rather than discarded or silently retried.
@@ -208,15 +270,30 @@ class Provider:
             if cancellation:
                 cancellation.check()
             return self._call_impl(prompt, schema, role=role, parent_id=parent_id,
-                context=context, cancellation=cancellation, retry_of=retry_of)
+                context=context, cancellation=cancellation, retry_of=retry_of, images=images)
         finally:
             self._slots.release()
 
+    @staticmethod
+    def _incomplete_reason(normalized) -> str | None:
+        """The provider's stated reason for an incomplete response, when it reported one."""
+        raw = normalized.provider_raw
+        candidates = []
+        if isinstance(raw, dict):
+            candidates.append(raw)
+        elif isinstance(raw, list):
+            candidates.extend(item.get('response') for item in reversed(raw) if isinstance(item, dict) and isinstance(item.get('response'), dict))
+        for response in candidates:
+            details = response.get('incomplete_details') if isinstance(response, dict) else None
+            if isinstance(details, dict) and isinstance(details.get('reason'), str):
+                return details['reason']
+        return None
+
     def _call_impl(self, prompt: str, schema: type[T], *, role: str, parent_id: str | None = None,
                    context: dict | None = None, cancellation: ExecutionCancellation | None = None,
-                   retry_of: str | None = None) -> T:
+                   retry_of: str | None = None, images: list[RequestImage] | None = None) -> T:
         cfg = self.config
-        body, path = prepare_request(cfg, prompt, schema)
+        body, path = prepare_request(cfg, prompt, schema, images)
         key = cfg.api_key()
         headers = {'Accept': 'text/event-stream', 'Content-Type': 'application/json'}
         if key:
@@ -246,20 +323,25 @@ class Provider:
             transport = self.transport
             if cancellation:
                 transport = _CancellationTransport(transport if transport is not None else httpx.HTTPTransport(), cancellation)
-            with httpx.Client(timeout=cfg.timeout_seconds, transport=transport, trust_env=False) as client:
-                with client.stream('POST', cfg.base_url.rstrip('/') + path, json=body, headers=headers) as response:
-                    if response.is_error:
-                        raw_ref = self.collector.blob(response.read().decode('utf-8', errors='replace'))
-                        status = 'failed'
-                        raise ProviderFailure(f'provider HTTP {response.status_code}; see raw response artifact')
-                    if 'text/event-stream' in response.headers.get('content-type', ''):
-                        normalized, raw_ref = self._stream(response, ids)
-                    else:
-                        raw_bytes = response.read()
-                        raw_ref = self.collector.blob_bytes(raw_bytes, media_type='application/json')
-                        raw = raw_bytes.decode('utf-8')
-                        parsed = JSON.validate_json(raw)
-                        normalized = self._normalize_response(parsed) if cfg.protocol == 'openai-responses' else self._normalize_chat(parsed)
+            try:
+                with httpx.Client(timeout=cfg.timeout_seconds, transport=transport, trust_env=False) as client:
+                    with client.stream('POST', cfg.base_url.rstrip('/') + path, json=body, headers=headers) as response:
+                        if response.is_error:
+                            raw_ref = self.collector.blob(response.read().decode('utf-8', errors='replace'))
+                            status = 'failed'
+                            failure = TransientProviderFailure if response.status_code in TRANSIENT_HTTP_STATUS else ProviderFailure
+                            raise failure(f'provider HTTP {response.status_code}; see raw response artifact')
+                        if 'text/event-stream' in response.headers.get('content-type', ''):
+                            normalized, raw_ref = self._stream(response, ids)
+                        else:
+                            raw_bytes = response.read()
+                            raw_ref = self.collector.blob_bytes(raw_bytes, media_type='application/json')
+                            raw = raw_bytes.decode('utf-8')
+                            parsed = JSON.validate_json(raw)
+                            normalized = self._normalize_response(parsed) if cfg.protocol == 'openai-responses' else self._normalize_chat(parsed)
+            except httpx.TransportError as exc:
+                # The request may or may not have reached the provider; the attempt stays 'unknown'.
+                raise TransientProviderFailure(f'transport error: {type(exc).__name__}: {exc}') from exc
             usage = normalized.usage
             self.last_response = normalized
             response_payload = normalized.model_dump(exclude={'schema_version', 'provider_raw'})
@@ -269,7 +351,11 @@ class Provider:
             self.collector.emit('model/response', response_payload, **ids)
             if normalized.finish_reason not in ('completed', 'stop'):
                 status = 'failed'
-                raise ProviderFailure('provider did not complete: ' + normalized.finish_reason)
+                reason = self._incomplete_reason(normalized)
+                if normalized.finish_reason == 'length' or reason == 'max_output_tokens':
+                    raise OutputTruncated(f'provider did not complete: {normalized.finish_reason} '
+                        f'(reason: max_output_tokens={cfg.max_output_tokens}; reasoning may have used the whole allowance)')
+                raise ProviderFailure('provider did not complete: ' + normalized.finish_reason + (f' (reason: {reason})' if reason else ''))
             status = 'failed'
             text = structured_answer_text(normalized.content)
             result = schema.model_validate_json(text, context=context)
@@ -392,13 +478,13 @@ class Provider:
         raw_ref = self._stream_raw(raws)
         if self.config.protocol == 'openai-responses':
             if final is None:
-                raise ProviderFailure('stream disconnected without terminal response; result unknown')
+                raise TransientProviderFailure('stream disconnected without terminal response; result unknown')
             normalized = self._normalize_response(final.model_dump())
             normalized.provider_raw = raws
             normalized = NormalizedResponse.model_validate(normalized.model_dump())
             return normalized, raw_ref
         if not finish:
-            raise ProviderFailure('stream disconnected without finish reason; result unknown')
+            raise TransientProviderFailure('stream disconnected without finish reason; result unknown')
         blocks = [TextBlock(text=chat_text)]
         if chat_reasoning:
             blocks.insert(0, ReasoningBlock(text=chat_reasoning, availability='exposed'))

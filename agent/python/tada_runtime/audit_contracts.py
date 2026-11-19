@@ -182,7 +182,7 @@ class AtomPayload(AuditModel):
     row_limit: int | None = None
     token_limit: int | None = None
     char_limit: int | None = None
-    concurrency: int = Field(default=1, ge=1, le=2)
+    concurrency: int = Field(default=1, ge=1, le=8)
     status: str = ''
     state_id: str | None = None
     error: ErrorInfo | None = None
@@ -191,6 +191,18 @@ class AtomPayload(AuditModel):
     retry_of: str | None = None
     # Long-row segmentation plan (aggregate rule, effective config, segments per row); absent when no row was segmented.
     long_rows: dict[str, JsonValue] | None = None
+    # Pre-dispatch estimate: planned/cached requests, remaining budget and estimated duration.
+    preflight: dict[str, JsonValue] | None = None
+    # Progress of a stopped call (done/total batches); a repeated identical call reuses the done batches.
+    progress: dict[str, JsonValue] | None = None
+
+
+class BatchCachePayload(AuditModel):
+    """One persisted operator batch result; a repeated identical operator call reuses it by key."""
+    key: str = Field(pattern=r'^[a-f0-9]{64}$')
+    role: str = ''
+    rows: int = Field(default=0, ge=0)
+    result_ref: BlobRef | None = None
 
 
 class StatePayload(AuditModel):
@@ -280,6 +292,7 @@ PAYLOAD_TYPES = {
     'tool/call': ToolCallPayload, 'tool/result': ObservationPayload,
     'cell/start': CellStartPayload, 'cell/stream': CellStreamPayload, 'cell/end': CellEndPayload,
     **{k: AtomPayload for k in ['atom/start','atom/plan','atom/end']},
+    'atom/batch_commit': BatchCachePayload,
     **{k: StatePayload for k in ['state/commit','state/reuse','state/alias']},
     **{k: CompactionPayload for k in ['compaction/start','compaction/summary','compaction/end']},
     'budget/reserve': BudgetPayload, 'budget/settle': BudgetPayload,

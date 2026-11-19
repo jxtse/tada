@@ -78,6 +78,10 @@ class Kernel:
         self.cancel_time = None
         self.poisoned = False
         self.client = None
+        self.cell_started = None
+        self._cell_images = []
+        # Set by the supervisor: execution_id -> (budget view, operator progress list).
+        self.status_hook = None
         self.km = KernelManager(connection_file=str(audit.root/'kernel.json'))
         self.km._kernel_spec = KernelSpec(argv=[sys.executable,'-m','ipykernel_launcher','-f','{connection_file}'], display_name='TADA Python', language='python')
         env = {key:os.environ[key] for key in ('PATH','HOME','TMPDIR','LANG') if key in os.environ}
@@ -88,8 +92,13 @@ class Kernel:
             self.client.start_channels()
             self.client.wait_for_ready(timeout=30)
             self.kernel_id = str(self.km.kernel_id)
+            rules = getattr(config, 'deliverable_rules', None)
+            rules_json = rules.model_dump_json() if rules is not None else '{}'
+            # The client waits slightly longer than a cell may run; a synchronous operator stops itself before that.
+            rpc_timeout = float(getattr(config, 'cell_timeout_seconds', 1800.0)) + 120.0
             bootstrap = ('from tada_runtime.kernel_client import install as _tada_install\n'
-                         f'_tada_install(globals(), {bridge_url!r}, {bridge_token!r}, {list(store.aliases)!r})\n'
+                         f'_tada_install(globals(), {bridge_url!r}, {bridge_token!r}, {list(store.aliases)!r}, '
+                         f'rpc_timeout={rpc_timeout!r}, rules_json={rules_json!r})\n'
                          '_tada_inventory()')
             _, _, _, error, _, _ = self._cell(bootstrap, 'bootstrap', visible=False)
             if error:
@@ -180,6 +189,8 @@ class Kernel:
                     ref=self.audit.blob(self._safe_raw(raw_message) if self.audit._secrets else content)
                     displays.append(ref)
                     if visible:
+                        self._collect_images(content)
+                    if visible:
                         self.audit.append('cell/stream',{'channel':'display','raw_ref':ref.model_dump(),'parent_message_id':parent},execution_id=execution_id,source='kernel')
                 elif kind=='error':
                     exception=ErrorContent.model_validate(content)
@@ -198,6 +209,31 @@ class Kernel:
                 pass
         return ''.join(stdout), ''.join(stderr), displays, error, raw, interrupted
 
+    def _collect_images(self, content):
+        """Keep displayed images (base64 in Jupyter display data) for the controller, within configured caps."""
+        limit = int(getattr(self.config, 'observation_images', 0) or 0)
+        max_bytes = int(getattr(self.config, 'observation_image_max_bytes', 0) or 0)
+        data = content.get('data') if isinstance(content, dict) else None
+        if not limit or not isinstance(data, dict):
+            return
+        if not hasattr(self, '_cell_images'):
+            self._cell_images = []
+        for media_type in ('image/png', 'image/jpeg', 'image/gif', 'image/webp'):
+            value = data.get(media_type)
+            if isinstance(value, str) and len(self._cell_images) < limit:
+                encoded = value.replace('\n', '')
+                if len(encoded) * 3 // 4 <= max_bytes:
+                    self._cell_images.append({'media_type': media_type, 'data_base64': encoded})
+                break
+
+    def cell_deadline(self):
+        """Monotonic time by which a synchronous operator in the running cell must stop dispatching."""
+        if self.cell_started is None:
+            return None
+        margin = float(getattr(self.config, 'cell_deadline_margin_seconds', 60.0))
+        timeout = float(self.config.cell_timeout_seconds)
+        return self.cell_started + max(timeout * 0.5, timeout - margin)
+
     def execute(self, code):
         if self.closed or self.closing or self.poisoned:
             raise RuntimeError('kernel unavailable; explicit session recovery required')
@@ -205,6 +241,8 @@ class Kernel:
             raise RuntimeError('only one cell may be in flight')
         execution_id=uuid.uuid4().hex
         self.active_execution=execution_id
+        self.cell_started=time.monotonic()
+        self._cell_images=[]
         self.cancellation = ExecutionCancellation()
         self.cancelled = self.cancellation
         self.cancel_time = None
@@ -219,7 +257,17 @@ class Kernel:
             err=self.audit._redact(err)[0]
             if error:
                 error=ErrorInfo.model_validate(self.audit._redact(error.model_dump(mode='json'))[0])
-            observation=Observation(execution_id=execution_id,status=status,stdout=out[:limit],stderr=err[:limit],exception=error,displays=displays,namespace_summary=self.namespace,committed_state_refs=[s.state_id for s in self.store.list() if s.state_id not in before],truncated=len(out)>limit or len(err)>limit,full_output_ref=full)
+            budget, operators = (None, [])
+            hook = getattr(self, 'status_hook', None)
+            if hook is not None:
+                try:
+                    budget, operators = hook(execution_id)
+                except Exception:
+                    budget, operators = (None, [])
+            observation=Observation(execution_id=execution_id,status=status,stdout=out[:limit],stderr=err[:limit],exception=error,displays=displays,
+                namespace_summary=self.namespace,committed_state_refs=[s.state_id for s in self.store.list() if s.state_id not in before],
+                truncated=len(out)>limit or len(err)>limit,full_output_ref=full,budget=budget,operators=operators,
+                images=getattr(self, '_cell_images', []))
             self.audit.append('cell/end',{'status':status,'stdout':observation.stdout,'stderr':observation.stderr,'error':error.model_dump() if error else None,'namespace_summary':self.namespace,'committed_state_refs':observation.committed_state_refs,'output_ref':full.model_dump()},execution_id=execution_id,source='kernel')
             return observation
         except BaseException:
@@ -228,6 +276,7 @@ class Kernel:
             raise
         finally:
             self.active_execution=None
+            self.cell_started=None
             self.lock.release()
 
     def cancel(self):
